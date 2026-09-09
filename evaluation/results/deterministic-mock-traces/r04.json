@@ -1,0 +1,550 @@
+{
+  "state": {
+    "request_id": "59fc77d2-3bfc-49dc-9662-9d171f0648a3",
+    "session_id": "d54ebcfc-4c4c-43fa-ae35-aa8bf4bc66f1",
+    "execution_mode": "react",
+    "user_request": "",
+    "status": "SUCCESS",
+    "current_step": 3,
+    "tool_history": [
+      {
+        "call_id": "d32016d9-c0dd-446c-b053-f90f655cc312",
+        "step": "1",
+        "call": {
+          "name": "missing",
+          "args": {}
+        },
+        "result": {
+          "ok": false,
+          "value": null,
+          "error": {
+            "code": "UNAVAILABLE_TOOL",
+            "message": "Tool is not registered",
+            "retryable": false,
+            "details": {}
+          },
+          "attempts": 0,
+          "latency_ms": 0.0050000089686363935
+        }
+      },
+      {
+        "call_id": "d4bdcefd-7265-4c01-8cfc-be19c48c8a81",
+        "step": "2",
+        "call": {
+          "name": "calculator",
+          "args": {
+            "expression": "5+7"
+          }
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "value": 12.0
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 0.05758300540037453
+        }
+      }
+    ],
+    "observations": [
+      {
+        "name": "missing",
+        "ok": false,
+        "value": null,
+        "error": {
+          "code": "UNAVAILABLE_TOOL",
+          "message": "Tool is not registered",
+          "retryable": false,
+          "details": {}
+        },
+        "attempts": 0,
+        "latency_ms": 0.0050000089686363935
+      },
+      {
+        "name": "calculator",
+        "ok": true,
+        "value": {
+          "value": 12.0
+        },
+        "error": null,
+        "attempts": 1,
+        "latency_ms": 0.05758300540037453
+      }
+    ],
+    "context_state": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "",
+          "important": true,
+          "facts": {}
+        },
+        {
+          "role": "tool",
+          "content": "{\"name\": \"missing\", \"ok\": false, \"value\": null, \"error\": {\"code\": \"UNAVAILABLE_TOOL\", \"message\": \"Tool is not registered\", \"retryable\": false, \"details\": {}}, \"attempts\": 0, \"latency_ms\": 0.0050000089686363935}",
+          "important": false,
+          "facts": {}
+        },
+        {
+          "role": "tool",
+          "content": "{\"name\": \"calculator\", \"ok\": true, \"value\": {\"value\": 12.0}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.05758300540037453}",
+          "important": false,
+          "facts": {}
+        }
+      ],
+      "facts": {},
+      "history_summary": [],
+      "estimated_tokens": 126,
+      "dropped_messages": 0,
+      "dropped_facts": 0,
+      "estimator": "ceil(UTF-8 bytes / 4), not provider tokens"
+    },
+    "errors": [
+      {
+        "code": "UNAVAILABLE_TOOL",
+        "message": "Tool is not registered",
+        "retryable": false,
+        "details": {}
+      }
+    ],
+    "final_result": {
+      "value": 12.0
+    },
+    "created_at": "2026-09-09T10:50:11.674230+00:00",
+    "finished_at": "2026-09-09T10:50:11.686720+00:00",
+    "latency_ms": 12.364125010208227,
+    "llm_call_count": 3,
+    "tool_call_count": 1,
+    "token_usage": null,
+    "cost_usd": null,
+    "replay_of": null
+  },
+  "events": [
+    {
+      "seq": 0,
+      "timestamp": "2026-09-09T10:50:11.674306+00:00",
+      "kind": "request",
+      "step": null,
+      "data": {
+        "request": {
+          "mode": "react",
+          "user_request": "",
+          "session_id": "d54ebcfc-4c4c-43fa-ae35-aa8bf4bc66f1",
+          "tool": null,
+          "steps": [],
+          "parallel": true,
+          "max_parallel": 4,
+          "max_steps": 8,
+          "timeout_s": 30.0,
+          "llm_timeout_s": 15.0,
+          "llm_retries": 1,
+          "provider": "mock",
+          "mock_script": [
+            {
+              "type": "tool",
+              "name": "missing",
+              "args": {}
+            },
+            {
+              "type": "tool",
+              "name": "calculator",
+              "args": {
+                "expression": "5+7"
+              }
+            },
+            {
+              "type": "final",
+              "result": {
+                "$last_observation": true
+              }
+            }
+          ],
+          "fallback": null,
+          "permissions": [
+            "read"
+          ],
+          "messages": [],
+          "context_policy": {
+            "strategy": "structured",
+            "message_budget": 8,
+            "token_budget": 2048,
+            "recent_window": 4,
+            "tool_summary_chars": 400
+          }
+        },
+        "mode": "react"
+      }
+    },
+    {
+      "seq": 1,
+      "timestamp": "2026-09-09T10:50:11.674356+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 17,
+        "messages": 1,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 2,
+      "timestamp": "2026-09-09T10:50:11.676280+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "PENDING",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 3,
+      "timestamp": "2026-09-09T10:50:11.678358+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 17,
+        "messages": 1,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 4,
+      "timestamp": "2026-09-09T10:50:11.678365+00:00",
+      "kind": "llm_start",
+      "step": "1",
+      "data": {
+        "provider": "mock",
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 5,
+      "timestamp": "2026-09-09T10:50:11.678385+00:00",
+      "kind": "llm_call",
+      "step": "1",
+      "data": {
+        "metadata": {
+          "provider": "mock",
+          "model": "scripted-v1",
+          "script_index": 1
+        },
+        "usage": null,
+        "attempt": 1,
+        "latency_ms": 0.018749997252598405
+      }
+    },
+    {
+      "seq": 6,
+      "timestamp": "2026-09-09T10:50:11.678405+00:00",
+      "kind": "action",
+      "step": "1",
+      "data": {
+        "type": "tool",
+        "name": "missing",
+        "args": {},
+        "result": null
+      }
+    },
+    {
+      "seq": 7,
+      "timestamp": "2026-09-09T10:50:11.678412+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "WAITING_TOOL"
+      }
+    },
+    {
+      "seq": 8,
+      "timestamp": "2026-09-09T10:50:11.679632+00:00",
+      "kind": "tool_selected",
+      "step": "1",
+      "data": {
+        "call_id": "d32016d9-c0dd-446c-b053-f90f655cc312",
+        "name": "missing",
+        "args": {}
+      }
+    },
+    {
+      "seq": 9,
+      "timestamp": "2026-09-09T10:50:11.679675+00:00",
+      "kind": "tool_result",
+      "step": "1",
+      "data": {
+        "call_id": "d32016d9-c0dd-446c-b053-f90f655cc312",
+        "name": "missing",
+        "args": {},
+        "result": {
+          "ok": false,
+          "value": null,
+          "error": {
+            "code": "UNAVAILABLE_TOOL",
+            "message": "Tool is not registered",
+            "retryable": false,
+            "details": {}
+          },
+          "attempts": 0,
+          "latency_ms": 0.0050000089686363935
+        },
+        "summary": "null"
+      }
+    },
+    {
+      "seq": 10,
+      "timestamp": "2026-09-09T10:50:11.679684+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "WAITING_TOOL",
+        "to": "RECOVERING"
+      }
+    },
+    {
+      "seq": 11,
+      "timestamp": "2026-09-09T10:50:11.680909+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RECOVERING",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 12,
+      "timestamp": "2026-09-09T10:50:11.682124+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 83,
+        "messages": 2,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 13,
+      "timestamp": "2026-09-09T10:50:11.682148+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 83,
+        "messages": 2,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 14,
+      "timestamp": "2026-09-09T10:50:11.682155+00:00",
+      "kind": "llm_start",
+      "step": "2",
+      "data": {
+        "provider": "mock",
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 15,
+      "timestamp": "2026-09-09T10:50:11.682170+00:00",
+      "kind": "llm_call",
+      "step": "2",
+      "data": {
+        "metadata": {
+          "provider": "mock",
+          "model": "scripted-v1",
+          "script_index": 2
+        },
+        "usage": null,
+        "attempt": 1,
+        "latency_ms": 0.014417004422284663
+      }
+    },
+    {
+      "seq": 16,
+      "timestamp": "2026-09-09T10:50:11.682185+00:00",
+      "kind": "action",
+      "step": "2",
+      "data": {
+        "type": "tool",
+        "name": "calculator",
+        "args": {
+          "expression": "5+7"
+        },
+        "result": null
+      }
+    },
+    {
+      "seq": 17,
+      "timestamp": "2026-09-09T10:50:11.682191+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "WAITING_TOOL"
+      }
+    },
+    {
+      "seq": 18,
+      "timestamp": "2026-09-09T10:50:11.683502+00:00",
+      "kind": "tool_selected",
+      "step": "2",
+      "data": {
+        "call_id": "d4bdcefd-7265-4c01-8cfc-be19c48c8a81",
+        "name": "calculator",
+        "args": {
+          "expression": "5+7"
+        }
+      }
+    },
+    {
+      "seq": 19,
+      "timestamp": "2026-09-09T10:50:11.683520+00:00",
+      "kind": "tool_attempt",
+      "step": "2",
+      "data": {
+        "call_id": "d4bdcefd-7265-4c01-8cfc-be19c48c8a81",
+        "name": "calculator",
+        "args": {
+          "expression": "5+7"
+        },
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 20,
+      "timestamp": "2026-09-09T10:50:11.683562+00:00",
+      "kind": "attempt_end",
+      "step": "2",
+      "data": {
+        "call_id": "d4bdcefd-7265-4c01-8cfc-be19c48c8a81",
+        "attempt": 1,
+        "ok": true,
+        "latency_ms": 0.044625005102716386
+      }
+    },
+    {
+      "seq": 21,
+      "timestamp": "2026-09-09T10:50:11.683587+00:00",
+      "kind": "tool_result",
+      "step": "2",
+      "data": {
+        "call_id": "d4bdcefd-7265-4c01-8cfc-be19c48c8a81",
+        "name": "calculator",
+        "args": {
+          "expression": "5+7"
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "value": 12.0
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 0.05758300540037453
+        },
+        "summary": "{\"value\":12.0}"
+      }
+    },
+    {
+      "seq": 22,
+      "timestamp": "2026-09-09T10:50:11.683595+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "WAITING_TOOL",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 23,
+      "timestamp": "2026-09-09T10:50:11.685076+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 126,
+        "messages": 3,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 24,
+      "timestamp": "2026-09-09T10:50:11.685102+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 126,
+        "messages": 3,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 25,
+      "timestamp": "2026-09-09T10:50:11.685108+00:00",
+      "kind": "llm_start",
+      "step": "3",
+      "data": {
+        "provider": "mock",
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 26,
+      "timestamp": "2026-09-09T10:50:11.685123+00:00",
+      "kind": "llm_call",
+      "step": "3",
+      "data": {
+        "metadata": {
+          "provider": "mock",
+          "model": "scripted-v1",
+          "script_index": 3
+        },
+        "usage": null,
+        "attempt": 1,
+        "latency_ms": 0.013833996490575373
+      }
+    },
+    {
+      "seq": 27,
+      "timestamp": "2026-09-09T10:50:11.685138+00:00",
+      "kind": "action",
+      "step": "3",
+      "data": {
+        "type": "final",
+        "name": null,
+        "args": {},
+        "result": {
+          "value": 12.0
+        }
+      }
+    },
+    {
+      "seq": 28,
+      "timestamp": "2026-09-09T10:50:11.685145+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "SUCCESS"
+      }
+    },
+    {
+      "seq": 29,
+      "timestamp": "2026-09-09T10:50:11.686729+00:00",
+      "kind": "final",
+      "step": null,
+      "data": {
+        "result": {
+          "value": 12.0
+        },
+        "status": "SUCCESS",
+        "latency_ms": 12.364125010208227
+      }
+    }
+  ]
+}

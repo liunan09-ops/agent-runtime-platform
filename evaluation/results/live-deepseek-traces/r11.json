@@ -1,0 +1,384 @@
+{
+  "state": {
+    "request_id": "e29721be-6c4d-4822-8089-31d3ebe4d264",
+    "session_id": "3057c621-3ede-4d60-bffb-ac2ab96ef91e",
+    "execution_mode": "react",
+    "user_request": "Read the retry knowledge key. Return the entire tool output.",
+    "status": "SUCCESS",
+    "current_step": 2,
+    "tool_history": [
+      {
+        "call_id": "a16e2f12-e58b-480d-a5e4-927b50001660",
+        "step": "1",
+        "call": {
+          "name": "knowledge_lookup",
+          "args": {
+            "key": "retry"
+          }
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "key": "retry",
+            "text": "Retry only transient failures of idempotent tools within a bounded budget.",
+            "source": "synthetic-knowledge-v1"
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 0.4233329964336008
+        }
+      }
+    ],
+    "observations": [
+      {
+        "name": "knowledge_lookup",
+        "ok": true,
+        "value": {
+          "key": "retry",
+          "text": "Retry only transient failures of idempotent tools within a bounded budget.",
+          "source": "synthetic-knowledge-v1"
+        },
+        "error": null,
+        "attempts": 1,
+        "latency_ms": 0.4233329964336008
+      }
+    ],
+    "context_state": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "Read the retry knowledge key. Return the entire tool output.",
+          "important": true,
+          "facts": {}
+        },
+        {
+          "role": "tool",
+          "content": "{\"name\": \"knowledge_lookup\", \"ok\": true, \"value\": {\"key\": \"retry\", \"text\": \"Retry only transient failures of idempotent tools within a bounded budget.\", \"source\": \"synthetic-knowledge-v1\"}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.4233329964336008}",
+          "important": false,
+          "facts": {}
+        }
+      ],
+      "facts": {},
+      "history_summary": [],
+      "estimated_tokens": 109,
+      "dropped_messages": 0,
+      "dropped_facts": 0,
+      "estimator": "ceil(UTF-8 bytes / 4), not provider tokens"
+    },
+    "errors": [],
+    "final_result": {
+      "key": "retry",
+      "text": "Retry only transient failures of idempotent tools within a bounded budget.",
+      "source": "synthetic-knowledge-v1"
+    },
+    "created_at": "2026-09-09T10:50:49.158013+00:00",
+    "finished_at": "2026-09-09T10:50:51.058925+00:00",
+    "latency_ms": 1900.6396250042599,
+    "llm_call_count": 2,
+    "tool_call_count": 1,
+    "token_usage": {
+      "prompt_tokens": 3310,
+      "completion_tokens": 60,
+      "total_tokens": 3370
+    },
+    "cost_usd": null,
+    "replay_of": null
+  },
+  "events": [
+    {
+      "seq": 0,
+      "timestamp": "2026-09-09T10:50:49.158150+00:00",
+      "kind": "request",
+      "step": null,
+      "data": {
+        "request": {
+          "mode": "react",
+          "user_request": "Read the retry knowledge key. Return the entire tool output.",
+          "session_id": "3057c621-3ede-4d60-bffb-ac2ab96ef91e",
+          "tool": null,
+          "steps": [],
+          "parallel": true,
+          "max_parallel": 4,
+          "max_steps": 8,
+          "timeout_s": 150.0,
+          "llm_timeout_s": 60.0,
+          "llm_retries": 1,
+          "provider": "deepseek",
+          "mock_script": [],
+          "fallback": null,
+          "permissions": [
+            "read"
+          ],
+          "messages": [],
+          "context_policy": {
+            "strategy": "structured",
+            "message_budget": 8,
+            "token_budget": 2048,
+            "recent_window": 4,
+            "tool_summary_chars": 400
+          }
+        },
+        "mode": "react"
+      }
+    },
+    {
+      "seq": 1,
+      "timestamp": "2026-09-09T10:50:49.158286+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 32,
+        "messages": 1,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 2,
+      "timestamp": "2026-09-09T10:50:49.161866+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "PENDING",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 3,
+      "timestamp": "2026-09-09T10:50:49.165288+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 32,
+        "messages": 1,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 4,
+      "timestamp": "2026-09-09T10:50:49.165304+00:00",
+      "kind": "llm_start",
+      "step": "1",
+      "data": {
+        "provider": "deepseek",
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 5,
+      "timestamp": "2026-09-09T10:50:49.900020+00:00",
+      "kind": "llm_call",
+      "step": "1",
+      "data": {
+        "metadata": {
+          "provider": "openai-compatible",
+          "model": "deepseek-v4-flash",
+          "finish_reason": "stop",
+          "http_status": 200
+        },
+        "usage": {
+          "prompt_tokens": 1609,
+          "completion_tokens": 19,
+          "total_tokens": 1628
+        },
+        "attempt": 1,
+        "latency_ms": 734.6457079984248
+      }
+    },
+    {
+      "seq": 6,
+      "timestamp": "2026-09-09T10:50:49.900150+00:00",
+      "kind": "action",
+      "step": "1",
+      "data": {
+        "type": "tool",
+        "name": "knowledge_lookup",
+        "args": {
+          "key": "retry"
+        },
+        "result": null
+      }
+    },
+    {
+      "seq": 7,
+      "timestamp": "2026-09-09T10:50:49.900187+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "WAITING_TOOL"
+      }
+    },
+    {
+      "seq": 8,
+      "timestamp": "2026-09-09T10:50:49.904974+00:00",
+      "kind": "tool_selected",
+      "step": "1",
+      "data": {
+        "call_id": "a16e2f12-e58b-480d-a5e4-927b50001660",
+        "name": "knowledge_lookup",
+        "args": {
+          "key": "retry"
+        }
+      }
+    },
+    {
+      "seq": 9,
+      "timestamp": "2026-09-09T10:50:49.905054+00:00",
+      "kind": "tool_attempt",
+      "step": "1",
+      "data": {
+        "call_id": "a16e2f12-e58b-480d-a5e4-927b50001660",
+        "name": "knowledge_lookup",
+        "args": {
+          "key": "retry"
+        },
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 10,
+      "timestamp": "2026-09-09T10:50:49.905416+00:00",
+      "kind": "attempt_end",
+      "step": "1",
+      "data": {
+        "call_id": "a16e2f12-e58b-480d-a5e4-927b50001660",
+        "attempt": 1,
+        "ok": true,
+        "latency_ms": 0.3662910021375865
+      }
+    },
+    {
+      "seq": 11,
+      "timestamp": "2026-09-09T10:50:49.905517+00:00",
+      "kind": "tool_result",
+      "step": "1",
+      "data": {
+        "call_id": "a16e2f12-e58b-480d-a5e4-927b50001660",
+        "name": "knowledge_lookup",
+        "args": {
+          "key": "retry"
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "key": "retry",
+            "text": "Retry only transient failures of idempotent tools within a bounded budget.",
+            "source": "synthetic-knowledge-v1"
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 0.4233329964336008
+        },
+        "summary": "{\"key\":\"retry\",\"text\":\"Retry only transient failures of idempotent tools within a bounded budget.\",\"source\":\"synthetic-knowledge-v1\"}"
+      }
+    },
+    {
+      "seq": 12,
+      "timestamp": "2026-09-09T10:50:49.905544+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "WAITING_TOOL",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 13,
+      "timestamp": "2026-09-09T10:50:49.908469+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 109,
+        "messages": 2,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 14,
+      "timestamp": "2026-09-09T10:50:49.908527+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 109,
+        "messages": 2,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 15,
+      "timestamp": "2026-09-09T10:50:49.908547+00:00",
+      "kind": "llm_start",
+      "step": "2",
+      "data": {
+        "provider": "deepseek",
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 16,
+      "timestamp": "2026-09-09T10:50:51.053657+00:00",
+      "kind": "llm_call",
+      "step": "2",
+      "data": {
+        "metadata": {
+          "provider": "openai-compatible",
+          "model": "deepseek-v4-flash",
+          "finish_reason": "stop",
+          "http_status": 200
+        },
+        "usage": {
+          "prompt_tokens": 1701,
+          "completion_tokens": 41,
+          "total_tokens": 1742
+        },
+        "attempt": 1,
+        "latency_ms": 1144.9985830113292
+      }
+    },
+    {
+      "seq": 17,
+      "timestamp": "2026-09-09T10:50:51.053842+00:00",
+      "kind": "action",
+      "step": "2",
+      "data": {
+        "type": "final",
+        "name": null,
+        "args": {},
+        "result": {
+          "key": "retry",
+          "text": "Retry only transient failures of idempotent tools within a bounded budget.",
+          "source": "synthetic-knowledge-v1"
+        }
+      }
+    },
+    {
+      "seq": 18,
+      "timestamp": "2026-09-09T10:50:51.053894+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "SUCCESS"
+      }
+    },
+    {
+      "seq": 19,
+      "timestamp": "2026-09-09T10:50:51.058975+00:00",
+      "kind": "final",
+      "step": null,
+      "data": {
+        "result": {
+          "key": "retry",
+          "text": "Retry only transient failures of idempotent tools within a bounded budget.",
+          "source": "synthetic-knowledge-v1"
+        },
+        "status": "SUCCESS",
+        "latency_ms": 1900.6396250042599
+      }
+    }
+  ]
+}

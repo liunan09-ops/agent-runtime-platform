@@ -1,0 +1,247 @@
+{
+  "state": {
+    "request_id": "079dc04f-7058-4ce5-897a-40d1e96d43a7",
+    "session_id": "88999959-918d-4f78-b654-7480f666c0bf",
+    "execution_mode": "direct",
+    "user_request": "",
+    "status": "REJECTED",
+    "current_step": 1,
+    "tool_history": [
+      {
+        "call_id": "d5d7b913-1280-4ad5-ba58-b6d7b35da295",
+        "step": "direct",
+        "call": {
+          "name": "missing",
+          "args": {}
+        },
+        "result": {
+          "ok": false,
+          "value": null,
+          "error": {
+            "code": "UNAVAILABLE_TOOL",
+            "message": "Tool is not registered",
+            "retryable": false,
+            "details": {}
+          },
+          "attempts": 0,
+          "latency_ms": 0.008082992280833423
+        }
+      }
+    ],
+    "observations": [
+      {
+        "name": "missing",
+        "ok": false,
+        "value": null,
+        "error": {
+          "code": "UNAVAILABLE_TOOL",
+          "message": "Tool is not registered",
+          "retryable": false,
+          "details": {}
+        },
+        "attempts": 0,
+        "latency_ms": 0.008082992280833423
+      }
+    ],
+    "context_state": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "",
+          "important": true,
+          "facts": {}
+        },
+        {
+          "role": "tool",
+          "content": "{\"name\": \"missing\", \"ok\": false, \"value\": null, \"error\": {\"code\": \"UNAVAILABLE_TOOL\", \"message\": \"Tool is not registered\", \"retryable\": false, \"details\": {}}, \"attempts\": 0, \"latency_ms\": 0.008082992280833423}",
+          "important": false,
+          "facts": {}
+        }
+      ],
+      "facts": {},
+      "history_summary": [],
+      "estimated_tokens": 83,
+      "dropped_messages": 0,
+      "dropped_facts": 0,
+      "estimator": "ceil(UTF-8 bytes / 4), not provider tokens"
+    },
+    "errors": [
+      {
+        "code": "UNAVAILABLE_TOOL",
+        "message": "Tool is not registered",
+        "retryable": false,
+        "details": {}
+      }
+    ],
+    "final_result": null,
+    "created_at": "2026-09-09T10:50:11.503798+00:00",
+    "finished_at": "2026-09-09T10:50:11.511817+00:00",
+    "latency_ms": 7.891707995440811,
+    "llm_call_count": 0,
+    "tool_call_count": 0,
+    "token_usage": null,
+    "cost_usd": null,
+    "replay_of": null
+  },
+  "events": [
+    {
+      "seq": 0,
+      "timestamp": "2026-09-09T10:50:11.503869+00:00",
+      "kind": "request",
+      "step": null,
+      "data": {
+        "request": {
+          "mode": "direct",
+          "user_request": "",
+          "session_id": "88999959-918d-4f78-b654-7480f666c0bf",
+          "tool": {
+            "name": "missing",
+            "args": {}
+          },
+          "steps": [],
+          "parallel": true,
+          "max_parallel": 4,
+          "max_steps": 8,
+          "timeout_s": 30.0,
+          "llm_timeout_s": 15.0,
+          "llm_retries": 1,
+          "provider": "mock",
+          "mock_script": [],
+          "fallback": null,
+          "permissions": [
+            "read"
+          ],
+          "messages": [],
+          "context_policy": {
+            "strategy": "structured",
+            "message_budget": 8,
+            "token_budget": 2048,
+            "recent_window": 4,
+            "tool_summary_chars": 400
+          }
+        },
+        "mode": "direct"
+      }
+    },
+    {
+      "seq": 1,
+      "timestamp": "2026-09-09T10:50:11.503924+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 17,
+        "messages": 1,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 2,
+      "timestamp": "2026-09-09T10:50:11.505841+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "PENDING",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 3,
+      "timestamp": "2026-09-09T10:50:11.507047+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "WAITING_TOOL"
+      }
+    },
+    {
+      "seq": 4,
+      "timestamp": "2026-09-09T10:50:11.508201+00:00",
+      "kind": "tool_selected",
+      "step": "direct",
+      "data": {
+        "call_id": "d5d7b913-1280-4ad5-ba58-b6d7b35da295",
+        "name": "missing",
+        "args": {}
+      }
+    },
+    {
+      "seq": 5,
+      "timestamp": "2026-09-09T10:50:11.508245+00:00",
+      "kind": "tool_result",
+      "step": "direct",
+      "data": {
+        "call_id": "d5d7b913-1280-4ad5-ba58-b6d7b35da295",
+        "name": "missing",
+        "args": {},
+        "result": {
+          "ok": false,
+          "value": null,
+          "error": {
+            "code": "UNAVAILABLE_TOOL",
+            "message": "Tool is not registered",
+            "retryable": false,
+            "details": {}
+          },
+          "attempts": 0,
+          "latency_ms": 0.008082992280833423
+        },
+        "summary": "null"
+      }
+    },
+    {
+      "seq": 6,
+      "timestamp": "2026-09-09T10:50:11.508256+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "WAITING_TOOL",
+        "to": "RECOVERING"
+      }
+    },
+    {
+      "seq": 7,
+      "timestamp": "2026-09-09T10:50:11.509431+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RECOVERING",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 8,
+      "timestamp": "2026-09-09T10:50:11.510586+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 83,
+        "messages": 2,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 9,
+      "timestamp": "2026-09-09T10:50:11.510600+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "REJECTED"
+      }
+    },
+    {
+      "seq": 10,
+      "timestamp": "2026-09-09T10:50:11.511825+00:00",
+      "kind": "final",
+      "step": null,
+      "data": {
+        "result": null,
+        "status": "REJECTED",
+        "latency_ms": 7.891707995440811
+      }
+    }
+  ]
+}

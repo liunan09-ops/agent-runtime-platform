@@ -1,0 +1,11 @@
+{
+  "mode":"pipeline",
+  "user_request":"Fetch two independent fixtures, combine them, and take the matching branch",
+  "steps":[
+    {"id":"alpha","tool":{"name":"http_mock","args":{"resource":"alpha","delay_ms":80}}},
+    {"id":"beta","tool":{"name":"http_mock","args":{"resource":"beta","delay_ms":80}}},
+    {"id":"summary","depends_on":["alpha","beta"],"tool":{"name":"data_analysis","args":{"values":[{"$ref":"alpha.value"},{"$ref":"beta.value"}]}}},
+    {"id":"matched","depends_on":["summary"],"when":{"ref":"summary.sum","equals":30},"tool":{"name":"knowledge_lookup","args":{"key":"runtime"}}},
+    {"id":"unmatched","depends_on":["summary"],"when":{"ref":"summary.sum","equals":0},"tool":{"name":"calculator","args":{"expression":"0"}}}
+  ]
+}

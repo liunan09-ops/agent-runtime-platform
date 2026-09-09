@@ -1,0 +1,299 @@
+{
+  "state": {
+    "request_id": "d36f9062-5190-4ef2-8151-5e089e1d3d48",
+    "session_id": "b6f3e6b6-000c-4db7-9b02-07b04733ceab",
+    "execution_mode": "direct",
+    "user_request": "Analyze [4,9,14] with data_analysis. Return the entire tool output.",
+    "status": "SUCCESS",
+    "current_step": 1,
+    "tool_history": [
+      {
+        "call_id": "8a2af59c-6a6e-4268-b955-82d275bd878a",
+        "step": "direct",
+        "call": {
+          "name": "data_analysis",
+          "args": {
+            "values": [
+              4,
+              9,
+              14
+            ]
+          }
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "count": 3,
+            "sum": 27.0,
+            "mean": 9.0,
+            "min": 4.0,
+            "max": 14.0
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 0.05112499638926238
+        }
+      }
+    ],
+    "observations": [
+      {
+        "name": "data_analysis",
+        "ok": true,
+        "value": {
+          "count": 3,
+          "sum": 27.0,
+          "mean": 9.0,
+          "min": 4.0,
+          "max": 14.0
+        },
+        "error": null,
+        "attempts": 1,
+        "latency_ms": 0.05112499638926238
+      }
+    ],
+    "context_state": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "Analyze [4,9,14] with data_analysis. Return the entire tool output.",
+          "important": true,
+          "facts": {}
+        },
+        {
+          "role": "tool",
+          "content": "{\"name\": \"data_analysis\", \"ok\": true, \"value\": {\"count\": 3, \"sum\": 27.0, \"mean\": 9.0, \"min\": 4.0, \"max\": 14.0}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.05112499638926238}",
+          "important": false,
+          "facts": {}
+        }
+      ],
+      "facts": {},
+      "history_summary": [],
+      "estimated_tokens": 91,
+      "dropped_messages": 0,
+      "dropped_facts": 0,
+      "estimator": "ceil(UTF-8 bytes / 4), not provider tokens"
+    },
+    "errors": [],
+    "final_result": {
+      "count": 3,
+      "sum": 27.0,
+      "mean": 9.0,
+      "min": 4.0,
+      "max": 14.0
+    },
+    "created_at": "2026-09-09T10:50:11.583871+00:00",
+    "finished_at": "2026-09-09T10:50:11.590984+00:00",
+    "latency_ms": 6.982415987295099,
+    "llm_call_count": 0,
+    "tool_call_count": 1,
+    "token_usage": null,
+    "cost_usd": null,
+    "replay_of": null
+  },
+  "events": [
+    {
+      "seq": 0,
+      "timestamp": "2026-09-09T10:50:11.583946+00:00",
+      "kind": "request",
+      "step": null,
+      "data": {
+        "request": {
+          "mode": "direct",
+          "user_request": "Analyze [4,9,14] with data_analysis. Return the entire tool output.",
+          "session_id": "b6f3e6b6-000c-4db7-9b02-07b04733ceab",
+          "tool": {
+            "name": "data_analysis",
+            "args": {
+              "values": [
+                4,
+                9,
+                14
+              ]
+            }
+          },
+          "steps": [],
+          "parallel": true,
+          "max_parallel": 4,
+          "max_steps": 8,
+          "timeout_s": 30.0,
+          "llm_timeout_s": 15.0,
+          "llm_retries": 1,
+          "provider": "mock",
+          "mock_script": [],
+          "fallback": null,
+          "permissions": [
+            "read"
+          ],
+          "messages": [],
+          "context_policy": {
+            "strategy": "structured",
+            "message_budget": 8,
+            "token_budget": 2048,
+            "recent_window": 4,
+            "tool_summary_chars": 400
+          }
+        },
+        "mode": "direct"
+      }
+    },
+    {
+      "seq": 1,
+      "timestamp": "2026-09-09T10:50:11.584000+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 34,
+        "messages": 1,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 2,
+      "timestamp": "2026-09-09T10:50:11.586066+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "PENDING",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 3,
+      "timestamp": "2026-09-09T10:50:11.587265+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "WAITING_TOOL"
+      }
+    },
+    {
+      "seq": 4,
+      "timestamp": "2026-09-09T10:50:11.588369+00:00",
+      "kind": "tool_selected",
+      "step": "direct",
+      "data": {
+        "call_id": "8a2af59c-6a6e-4268-b955-82d275bd878a",
+        "name": "data_analysis",
+        "args": {
+          "values": [
+            4,
+            9,
+            14
+          ]
+        }
+      }
+    },
+    {
+      "seq": 5,
+      "timestamp": "2026-09-09T10:50:11.588407+00:00",
+      "kind": "tool_attempt",
+      "step": "direct",
+      "data": {
+        "call_id": "8a2af59c-6a6e-4268-b955-82d275bd878a",
+        "name": "data_analysis",
+        "args": {
+          "values": [
+            4,
+            9,
+            14
+          ]
+        },
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 6,
+      "timestamp": "2026-09-09T10:50:11.588430+00:00",
+      "kind": "attempt_end",
+      "step": "direct",
+      "data": {
+        "call_id": "8a2af59c-6a6e-4268-b955-82d275bd878a",
+        "attempt": 1,
+        "ok": true,
+        "latency_ms": 0.024917011614888906
+      }
+    },
+    {
+      "seq": 7,
+      "timestamp": "2026-09-09T10:50:11.588463+00:00",
+      "kind": "tool_result",
+      "step": "direct",
+      "data": {
+        "call_id": "8a2af59c-6a6e-4268-b955-82d275bd878a",
+        "name": "data_analysis",
+        "args": {
+          "values": [
+            4,
+            9,
+            14
+          ]
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "count": 3,
+            "sum": 27.0,
+            "mean": 9.0,
+            "min": 4.0,
+            "max": 14.0
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 0.05112499638926238
+        },
+        "summary": "{\"count\":3,\"sum\":27.0,\"mean\":9.0,\"min\":4.0,\"max\":14.0}"
+      }
+    },
+    {
+      "seq": 8,
+      "timestamp": "2026-09-09T10:50:11.588472+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "WAITING_TOOL",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 9,
+      "timestamp": "2026-09-09T10:50:11.589731+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 91,
+        "messages": 2,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 10,
+      "timestamp": "2026-09-09T10:50:11.589744+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "SUCCESS"
+      }
+    },
+    {
+      "seq": 11,
+      "timestamp": "2026-09-09T10:50:11.590993+00:00",
+      "kind": "final",
+      "step": null,
+      "data": {
+        "result": {
+          "count": 3,
+          "sum": 27.0,
+          "mean": 9.0,
+          "min": 4.0,
+          "max": 14.0
+        },
+        "status": "SUCCESS",
+        "latency_ms": 6.982415987295099
+      }
+    }
+  ]
+}

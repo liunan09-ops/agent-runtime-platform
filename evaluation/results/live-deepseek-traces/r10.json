@@ -1,0 +1,608 @@
+{
+  "state": {
+    "request_id": "e9b935e3-c417-41ff-ba23-e8d43e70047c",
+    "session_id": "53372e64-c2ee-489d-8454-14a260072971",
+    "execution_mode": "react",
+    "user_request": "Fetch beta using http_mock. Then analyze the list [the fetched value,4,6] with data_analysis. Return the entire analysis output.",
+    "status": "SUCCESS",
+    "current_step": 3,
+    "tool_history": [
+      {
+        "call_id": "47537310-7b8c-484c-98fb-d7b6e13a0f4b",
+        "step": "1",
+        "call": {
+          "name": "http_mock",
+          "args": {
+            "resource": "beta"
+          }
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "resource": "beta",
+            "value": 20,
+            "source": "httpx.MockTransport"
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 1.028291997499764
+        }
+      },
+      {
+        "call_id": "a0bca513-3c50-4629-ae93-83db0c6cad1e",
+        "step": "2",
+        "call": {
+          "name": "data_analysis",
+          "args": {
+            "values": [
+              20,
+              4,
+              6
+            ]
+          }
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "count": 3,
+            "sum": 30.0,
+            "mean": 10.0,
+            "min": 4.0,
+            "max": 20.0
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 0.11504199937917292
+        }
+      }
+    ],
+    "observations": [
+      {
+        "name": "http_mock",
+        "ok": true,
+        "value": {
+          "resource": "beta",
+          "value": 20,
+          "source": "httpx.MockTransport"
+        },
+        "error": null,
+        "attempts": 1,
+        "latency_ms": 1.028291997499764
+      },
+      {
+        "name": "data_analysis",
+        "ok": true,
+        "value": {
+          "count": 3,
+          "sum": 30.0,
+          "mean": 10.0,
+          "min": 4.0,
+          "max": 20.0
+        },
+        "error": null,
+        "attempts": 1,
+        "latency_ms": 0.11504199937917292
+      }
+    ],
+    "context_state": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "Fetch beta using http_mock. Then analyze the list [the fetched value,4,6] with data_analysis. Return the entire analysis output.",
+          "important": true,
+          "facts": {}
+        },
+        {
+          "role": "tool",
+          "content": "{\"name\": \"http_mock\", \"ok\": true, \"value\": {\"resource\": \"beta\", \"value\": 20, \"source\": \"httpx.MockTransport\"}, \"error\": null, \"attempts\": 1, \"latency_ms\": 1.028291997499764}",
+          "important": false,
+          "facts": {}
+        },
+        {
+          "role": "tool",
+          "content": "{\"name\": \"data_analysis\", \"ok\": true, \"value\": {\"count\": 3, \"sum\": 30.0, \"mean\": 10.0, \"min\": 4.0, \"max\": 20.0}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.11504199937917292}",
+          "important": false,
+          "facts": {}
+        }
+      ],
+      "facts": {},
+      "history_summary": [],
+      "estimated_tokens": 163,
+      "dropped_messages": 0,
+      "dropped_facts": 0,
+      "estimator": "ceil(UTF-8 bytes / 4), not provider tokens"
+    },
+    "errors": [],
+    "final_result": {
+      "count": 3,
+      "sum": 30.0,
+      "mean": 10.0,
+      "min": 4.0,
+      "max": 20.0
+    },
+    "created_at": "2026-09-09T10:50:46.195153+00:00",
+    "finished_at": "2026-09-09T10:50:49.127704+00:00",
+    "latency_ms": 2932.3071249964414,
+    "llm_call_count": 3,
+    "tool_call_count": 2,
+    "token_usage": {
+      "prompt_tokens": 5119,
+      "completion_tokens": 75,
+      "total_tokens": 5194
+    },
+    "cost_usd": null,
+    "replay_of": null
+  },
+  "events": [
+    {
+      "seq": 0,
+      "timestamp": "2026-09-09T10:50:46.195289+00:00",
+      "kind": "request",
+      "step": null,
+      "data": {
+        "request": {
+          "mode": "react",
+          "user_request": "Fetch beta using http_mock. Then analyze the list [the fetched value,4,6] with data_analysis. Return the entire analysis output.",
+          "session_id": "53372e64-c2ee-489d-8454-14a260072971",
+          "tool": null,
+          "steps": [],
+          "parallel": true,
+          "max_parallel": 4,
+          "max_steps": 8,
+          "timeout_s": 150.0,
+          "llm_timeout_s": 60.0,
+          "llm_retries": 1,
+          "provider": "deepseek",
+          "mock_script": [],
+          "fallback": null,
+          "permissions": [
+            "read"
+          ],
+          "messages": [],
+          "context_policy": {
+            "strategy": "structured",
+            "message_budget": 8,
+            "token_budget": 2048,
+            "recent_window": 4,
+            "tool_summary_chars": 400
+          }
+        },
+        "mode": "react"
+      }
+    },
+    {
+      "seq": 1,
+      "timestamp": "2026-09-09T10:50:46.195404+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 49,
+        "messages": 1,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 2,
+      "timestamp": "2026-09-09T10:50:46.199036+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "PENDING",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 3,
+      "timestamp": "2026-09-09T10:50:46.205119+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 49,
+        "messages": 1,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 4,
+      "timestamp": "2026-09-09T10:50:46.205137+00:00",
+      "kind": "llm_start",
+      "step": "1",
+      "data": {
+        "provider": "deepseek",
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 5,
+      "timestamp": "2026-09-09T10:50:47.195045+00:00",
+      "kind": "llm_call",
+      "step": "1",
+      "data": {
+        "metadata": {
+          "provider": "openai-compatible",
+          "model": "deepseek-v4-flash",
+          "finish_reason": "stop",
+          "http_status": 200
+        },
+        "usage": {
+          "prompt_tokens": 1627,
+          "completion_tokens": 18,
+          "total_tokens": 1645
+        },
+        "attempt": 1,
+        "latency_ms": 989.8349580034846
+      }
+    },
+    {
+      "seq": 6,
+      "timestamp": "2026-09-09T10:50:47.195222+00:00",
+      "kind": "action",
+      "step": "1",
+      "data": {
+        "type": "tool",
+        "name": "http_mock",
+        "args": {
+          "resource": "beta"
+        },
+        "result": null
+      }
+    },
+    {
+      "seq": 7,
+      "timestamp": "2026-09-09T10:50:47.195269+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "WAITING_TOOL"
+      }
+    },
+    {
+      "seq": 8,
+      "timestamp": "2026-09-09T10:50:47.201053+00:00",
+      "kind": "tool_selected",
+      "step": "1",
+      "data": {
+        "call_id": "47537310-7b8c-484c-98fb-d7b6e13a0f4b",
+        "name": "http_mock",
+        "args": {
+          "resource": "beta"
+        }
+      }
+    },
+    {
+      "seq": 9,
+      "timestamp": "2026-09-09T10:50:47.201277+00:00",
+      "kind": "tool_attempt",
+      "step": "1",
+      "data": {
+        "call_id": "47537310-7b8c-484c-98fb-d7b6e13a0f4b",
+        "name": "http_mock",
+        "args": {
+          "resource": "beta"
+        },
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 10,
+      "timestamp": "2026-09-09T10:50:47.202100+00:00",
+      "kind": "attempt_end",
+      "step": "1",
+      "data": {
+        "call_id": "47537310-7b8c-484c-98fb-d7b6e13a0f4b",
+        "attempt": 1,
+        "ok": true,
+        "latency_ms": 0.8447500003967434
+      }
+    },
+    {
+      "seq": 11,
+      "timestamp": "2026-09-09T10:50:47.202210+00:00",
+      "kind": "tool_result",
+      "step": "1",
+      "data": {
+        "call_id": "47537310-7b8c-484c-98fb-d7b6e13a0f4b",
+        "name": "http_mock",
+        "args": {
+          "resource": "beta"
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "resource": "beta",
+            "value": 20,
+            "source": "httpx.MockTransport"
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 1.028291997499764
+        },
+        "summary": "{\"resource\":\"beta\",\"value\":20,\"source\":\"httpx.MockTransport\"}"
+      }
+    },
+    {
+      "seq": 12,
+      "timestamp": "2026-09-09T10:50:47.202240+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "WAITING_TOOL",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 13,
+      "timestamp": "2026-09-09T10:50:47.206256+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 106,
+        "messages": 2,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 14,
+      "timestamp": "2026-09-09T10:50:47.206333+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 106,
+        "messages": 2,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 15,
+      "timestamp": "2026-09-09T10:50:47.206357+00:00",
+      "kind": "llm_start",
+      "step": "2",
+      "data": {
+        "provider": "deepseek",
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 16,
+      "timestamp": "2026-09-09T10:50:48.085378+00:00",
+      "kind": "llm_call",
+      "step": "2",
+      "data": {
+        "metadata": {
+          "provider": "openai-compatible",
+          "model": "deepseek-v4-flash",
+          "finish_reason": "stop",
+          "http_status": 200
+        },
+        "usage": {
+          "prompt_tokens": 1701,
+          "completion_tokens": 22,
+          "total_tokens": 1723
+        },
+        "attempt": 1,
+        "latency_ms": 878.9475840021623
+      }
+    },
+    {
+      "seq": 17,
+      "timestamp": "2026-09-09T10:50:48.085535+00:00",
+      "kind": "action",
+      "step": "2",
+      "data": {
+        "type": "tool",
+        "name": "data_analysis",
+        "args": {
+          "values": [
+            20,
+            4,
+            6
+          ]
+        },
+        "result": null
+      }
+    },
+    {
+      "seq": 18,
+      "timestamp": "2026-09-09T10:50:48.085581+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "WAITING_TOOL"
+      }
+    },
+    {
+      "seq": 19,
+      "timestamp": "2026-09-09T10:50:48.090696+00:00",
+      "kind": "tool_selected",
+      "step": "2",
+      "data": {
+        "call_id": "a0bca513-3c50-4629-ae93-83db0c6cad1e",
+        "name": "data_analysis",
+        "args": {
+          "values": [
+            20,
+            4,
+            6
+          ]
+        }
+      }
+    },
+    {
+      "seq": 20,
+      "timestamp": "2026-09-09T10:50:48.090763+00:00",
+      "kind": "tool_attempt",
+      "step": "2",
+      "data": {
+        "call_id": "a0bca513-3c50-4629-ae93-83db0c6cad1e",
+        "name": "data_analysis",
+        "args": {
+          "values": [
+            20,
+            4,
+            6
+          ]
+        },
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 21,
+      "timestamp": "2026-09-09T10:50:48.090826+00:00",
+      "kind": "attempt_end",
+      "step": "2",
+      "data": {
+        "call_id": "a0bca513-3c50-4629-ae93-83db0c6cad1e",
+        "attempt": 1,
+        "ok": true,
+        "latency_ms": 0.06883300375193357
+      }
+    },
+    {
+      "seq": 22,
+      "timestamp": "2026-09-09T10:50:48.090922+00:00",
+      "kind": "tool_result",
+      "step": "2",
+      "data": {
+        "call_id": "a0bca513-3c50-4629-ae93-83db0c6cad1e",
+        "name": "data_analysis",
+        "args": {
+          "values": [
+            20,
+            4,
+            6
+          ]
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "count": 3,
+            "sum": 30.0,
+            "mean": 10.0,
+            "min": 4.0,
+            "max": 20.0
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 0.11504199937917292
+        },
+        "summary": "{\"count\":3,\"sum\":30.0,\"mean\":10.0,\"min\":4.0,\"max\":20.0}"
+      }
+    },
+    {
+      "seq": 23,
+      "timestamp": "2026-09-09T10:50:48.090953+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "WAITING_TOOL",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 24,
+      "timestamp": "2026-09-09T10:50:48.094760+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 163,
+        "messages": 3,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 25,
+      "timestamp": "2026-09-09T10:50:48.094836+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 163,
+        "messages": 3,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 26,
+      "timestamp": "2026-09-09T10:50:48.094856+00:00",
+      "kind": "llm_start",
+      "step": "3",
+      "data": {
+        "provider": "deepseek",
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 27,
+      "timestamp": "2026-09-09T10:50:49.121612+00:00",
+      "kind": "llm_call",
+      "step": "3",
+      "data": {
+        "metadata": {
+          "provider": "openai-compatible",
+          "model": "deepseek-v4-flash",
+          "finish_reason": "stop",
+          "http_status": 200
+        },
+        "usage": {
+          "prompt_tokens": 1791,
+          "completion_tokens": 35,
+          "total_tokens": 1826
+        },
+        "attempt": 1,
+        "latency_ms": 1026.6984999907436
+      }
+    },
+    {
+      "seq": 28,
+      "timestamp": "2026-09-09T10:50:49.121730+00:00",
+      "kind": "action",
+      "step": "3",
+      "data": {
+        "type": "final",
+        "name": null,
+        "args": {},
+        "result": {
+          "count": 3,
+          "sum": 30.0,
+          "mean": 10.0,
+          "min": 4.0,
+          "max": 20.0
+        }
+      }
+    },
+    {
+      "seq": 29,
+      "timestamp": "2026-09-09T10:50:49.121764+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "SUCCESS"
+      }
+    },
+    {
+      "seq": 30,
+      "timestamp": "2026-09-09T10:50:49.127747+00:00",
+      "kind": "final",
+      "step": null,
+      "data": {
+        "result": {
+          "count": 3,
+          "sum": 30.0,
+          "mean": 10.0,
+          "min": 4.0,
+          "max": 20.0
+        },
+        "status": "SUCCESS",
+        "latency_ms": 2932.3071249964414
+      }
+    }
+  ]
+}

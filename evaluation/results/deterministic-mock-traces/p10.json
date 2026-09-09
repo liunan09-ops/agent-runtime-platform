@@ -1,0 +1,490 @@
+{
+  "state": {
+    "request_id": "9094f17a-8d47-4848-84e5-26c3a0eec368",
+    "session_id": "b6375759-eec4-4357-ba99-eff9a365b29e",
+    "execution_mode": "pipeline",
+    "user_request": "",
+    "status": "SUCCESS",
+    "current_step": 3,
+    "tool_history": [
+      {
+        "call_id": "c5760ad4-8c24-445d-b791-5f1a2f96f19d",
+        "step": "a",
+        "call": {
+          "name": "http_mock",
+          "args": {
+            "resource": "gamma"
+          }
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "resource": "gamma",
+            "value": 30,
+            "source": "httpx.MockTransport"
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 0.38341700565069914
+        }
+      },
+      {
+        "call_id": "68f1d35c-95e1-488a-bf31-7e274d3eb13e",
+        "step": "yes",
+        "call": {
+          "name": "calculator",
+          "args": {
+            "expression": "30*2"
+          }
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "value": 60.0
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 0.06533399573527277
+        }
+      }
+    ],
+    "observations": [
+      {
+        "name": "http_mock",
+        "ok": true,
+        "value": {
+          "resource": "gamma",
+          "value": 30,
+          "source": "httpx.MockTransport"
+        },
+        "error": null,
+        "attempts": 1,
+        "latency_ms": 0.38341700565069914
+      },
+      {
+        "name": "calculator",
+        "ok": true,
+        "value": {
+          "value": 60.0
+        },
+        "error": null,
+        "attempts": 1,
+        "latency_ms": 0.06533399573527277
+      }
+    ],
+    "context_state": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "",
+          "important": true,
+          "facts": {}
+        },
+        {
+          "role": "tool",
+          "content": "{\"name\": \"http_mock\", \"ok\": true, \"value\": {\"resource\": \"gamma\", \"value\": 30, \"source\": \"httpx.MockTransport\"}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.38341700565069914}",
+          "important": false,
+          "facts": {}
+        },
+        {
+          "role": "tool",
+          "content": "{\"name\": \"calculator\", \"ok\": true, \"value\": {\"value\": 60.0}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.06533399573527277}",
+          "important": false,
+          "facts": {}
+        }
+      ],
+      "facts": {},
+      "history_summary": [],
+      "estimated_tokens": 117,
+      "dropped_messages": 0,
+      "dropped_facts": 0,
+      "estimator": "ceil(UTF-8 bytes / 4), not provider tokens"
+    },
+    "errors": [],
+    "final_result": {
+      "steps": {
+        "a": {
+          "status": "SUCCESS",
+          "value": {
+            "resource": "gamma",
+            "value": 30,
+            "source": "httpx.MockTransport"
+          },
+          "error": null
+        },
+        "no": {
+          "status": "SKIPPED",
+          "value": null
+        },
+        "yes": {
+          "status": "SUCCESS",
+          "value": {
+            "value": 60.0
+          },
+          "error": null
+        }
+      }
+    },
+    "created_at": "2026-09-09T10:50:12.146836+00:00",
+    "finished_at": "2026-09-09T10:50:12.157563+00:00",
+    "latency_ms": 10.562957992078736,
+    "llm_call_count": 0,
+    "tool_call_count": 2,
+    "token_usage": null,
+    "cost_usd": null,
+    "replay_of": null
+  },
+  "events": [
+    {
+      "seq": 0,
+      "timestamp": "2026-09-09T10:50:12.146940+00:00",
+      "kind": "request",
+      "step": null,
+      "data": {
+        "request": {
+          "mode": "pipeline",
+          "user_request": "",
+          "session_id": "b6375759-eec4-4357-ba99-eff9a365b29e",
+          "tool": null,
+          "steps": [
+            {
+              "id": "a",
+              "tool": {
+                "name": "http_mock",
+                "args": {
+                  "resource": "gamma"
+                }
+              },
+              "depends_on": [],
+              "when": null,
+              "fallback": null,
+              "optional": false
+            },
+            {
+              "id": "yes",
+              "tool": {
+                "name": "calculator",
+                "args": {
+                  "expression": "30*2"
+                }
+              },
+              "depends_on": [
+                "a"
+              ],
+              "when": {
+                "ref": "a.value",
+                "equals": 30
+              },
+              "fallback": null,
+              "optional": false
+            },
+            {
+              "id": "no",
+              "tool": {
+                "name": "calculator",
+                "args": {
+                  "expression": "0"
+                }
+              },
+              "depends_on": [
+                "a"
+              ],
+              "when": {
+                "ref": "a.value",
+                "equals": 0
+              },
+              "fallback": null,
+              "optional": false
+            }
+          ],
+          "parallel": true,
+          "max_parallel": 4,
+          "max_steps": 8,
+          "timeout_s": 30.0,
+          "llm_timeout_s": 15.0,
+          "llm_retries": 1,
+          "provider": "mock",
+          "mock_script": [],
+          "fallback": null,
+          "permissions": [
+            "read"
+          ],
+          "messages": [],
+          "context_policy": {
+            "strategy": "structured",
+            "message_budget": 8,
+            "token_budget": 2048,
+            "recent_window": 4,
+            "tool_summary_chars": 400
+          }
+        },
+        "mode": "pipeline"
+      }
+    },
+    {
+      "seq": 1,
+      "timestamp": "2026-09-09T10:50:12.146998+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 17,
+        "messages": 1,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 2,
+      "timestamp": "2026-09-09T10:50:12.149131+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "PENDING",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 3,
+      "timestamp": "2026-09-09T10:50:12.150375+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "WAITING_TOOL"
+      }
+    },
+    {
+      "seq": 4,
+      "timestamp": "2026-09-09T10:50:12.151616+00:00",
+      "kind": "tool_selected",
+      "step": "a",
+      "data": {
+        "call_id": "c5760ad4-8c24-445d-b791-5f1a2f96f19d",
+        "name": "http_mock",
+        "args": {
+          "resource": "gamma"
+        }
+      }
+    },
+    {
+      "seq": 5,
+      "timestamp": "2026-09-09T10:50:12.151670+00:00",
+      "kind": "tool_attempt",
+      "step": "a",
+      "data": {
+        "call_id": "c5760ad4-8c24-445d-b791-5f1a2f96f19d",
+        "name": "http_mock",
+        "args": {
+          "resource": "gamma"
+        },
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 6,
+      "timestamp": "2026-09-09T10:50:12.152004+00:00",
+      "kind": "attempt_end",
+      "step": "a",
+      "data": {
+        "call_id": "c5760ad4-8c24-445d-b791-5f1a2f96f19d",
+        "attempt": 1,
+        "ok": true,
+        "latency_ms": 0.3347089950693771
+      }
+    },
+    {
+      "seq": 7,
+      "timestamp": "2026-09-09T10:50:12.152040+00:00",
+      "kind": "tool_result",
+      "step": "a",
+      "data": {
+        "call_id": "c5760ad4-8c24-445d-b791-5f1a2f96f19d",
+        "name": "http_mock",
+        "args": {
+          "resource": "gamma"
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "resource": "gamma",
+            "value": 30,
+            "source": "httpx.MockTransport"
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 0.38341700565069914
+        },
+        "summary": "{\"resource\":\"gamma\",\"value\":30,\"source\":\"httpx.MockTransport\"}"
+      }
+    },
+    {
+      "seq": 8,
+      "timestamp": "2026-09-09T10:50:12.152091+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "WAITING_TOOL",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 9,
+      "timestamp": "2026-09-09T10:50:12.153535+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 74,
+        "messages": 2,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 10,
+      "timestamp": "2026-09-09T10:50:12.153552+00:00",
+      "kind": "step_skipped",
+      "step": "no",
+      "data": {
+        "status": "SKIPPED"
+      }
+    },
+    {
+      "seq": 11,
+      "timestamp": "2026-09-09T10:50:12.153559+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "WAITING_TOOL"
+      }
+    },
+    {
+      "seq": 12,
+      "timestamp": "2026-09-09T10:50:12.154849+00:00",
+      "kind": "tool_selected",
+      "step": "yes",
+      "data": {
+        "call_id": "68f1d35c-95e1-488a-bf31-7e274d3eb13e",
+        "name": "calculator",
+        "args": {
+          "expression": "30*2"
+        }
+      }
+    },
+    {
+      "seq": 13,
+      "timestamp": "2026-09-09T10:50:12.154871+00:00",
+      "kind": "tool_attempt",
+      "step": "yes",
+      "data": {
+        "call_id": "68f1d35c-95e1-488a-bf31-7e274d3eb13e",
+        "name": "calculator",
+        "args": {
+          "expression": "30*2"
+        },
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 14,
+      "timestamp": "2026-09-09T10:50:12.154917+00:00",
+      "kind": "attempt_end",
+      "step": "yes",
+      "data": {
+        "call_id": "68f1d35c-95e1-488a-bf31-7e274d3eb13e",
+        "attempt": 1,
+        "ok": true,
+        "latency_ms": 0.04866700328420848
+      }
+    },
+    {
+      "seq": 15,
+      "timestamp": "2026-09-09T10:50:12.154942+00:00",
+      "kind": "tool_result",
+      "step": "yes",
+      "data": {
+        "call_id": "68f1d35c-95e1-488a-bf31-7e274d3eb13e",
+        "name": "calculator",
+        "args": {
+          "expression": "30*2"
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "value": 60.0
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 0.06533399573527277
+        },
+        "summary": "{\"value\":60.0}"
+      }
+    },
+    {
+      "seq": 16,
+      "timestamp": "2026-09-09T10:50:12.154983+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "WAITING_TOOL",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 17,
+      "timestamp": "2026-09-09T10:50:12.156286+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 117,
+        "messages": 3,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 18,
+      "timestamp": "2026-09-09T10:50:12.156296+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "SUCCESS"
+      }
+    },
+    {
+      "seq": 19,
+      "timestamp": "2026-09-09T10:50:12.157577+00:00",
+      "kind": "final",
+      "step": null,
+      "data": {
+        "result": {
+          "steps": {
+            "a": {
+              "status": "SUCCESS",
+              "value": {
+                "resource": "gamma",
+                "value": 30,
+                "source": "httpx.MockTransport"
+              },
+              "error": null
+            },
+            "no": {
+              "status": "SKIPPED",
+              "value": null
+            },
+            "yes": {
+              "status": "SUCCESS",
+              "value": {
+                "value": 60.0
+              },
+              "error": null
+            }
+          }
+        },
+        "status": "SUCCESS",
+        "latency_ms": 10.562957992078736
+      }
+    }
+  ]
+}

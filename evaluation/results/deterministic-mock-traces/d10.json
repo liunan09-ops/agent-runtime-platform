@@ -1,0 +1,284 @@
+{
+  "state": {
+    "request_id": "891caa01-1043-446c-b671-789633fbde2b",
+    "session_id": "461bb4fc-5f98-4383-b472-9a9df63bbc74",
+    "execution_mode": "direct",
+    "user_request": "Use SQL to sum inventory quantity, alias the column total. Return the entire tool output.",
+    "status": "SUCCESS",
+    "current_step": 1,
+    "tool_history": [
+      {
+        "call_id": "cec81839-6e75-4a7a-b65a-82f3e7c02e64",
+        "step": "direct",
+        "call": {
+          "name": "sql_query",
+          "args": {
+            "query": "SELECT SUM(quantity) AS total FROM inventory"
+          }
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "rows": [
+              {
+                "total": 47
+              }
+            ],
+            "row_count": 1
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 0.2664170024218038
+        }
+      }
+    ],
+    "observations": [
+      {
+        "name": "sql_query",
+        "ok": true,
+        "value": {
+          "rows": [
+            {
+              "total": 47
+            }
+          ],
+          "row_count": 1
+        },
+        "error": null,
+        "attempts": 1,
+        "latency_ms": 0.2664170024218038
+      }
+    ],
+    "context_state": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "Use SQL to sum inventory quantity, alias the column total. Return the entire tool output.",
+          "important": true,
+          "facts": {}
+        },
+        {
+          "role": "tool",
+          "content": "{\"name\": \"sql_query\", \"ok\": true, \"value\": {\"rows\": [{\"total\": 47}], \"row_count\": 1}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.2664170024218038}",
+          "important": false,
+          "facts": {}
+        }
+      ],
+      "facts": {},
+      "history_summary": [],
+      "estimated_tokens": 89,
+      "dropped_messages": 0,
+      "dropped_facts": 0,
+      "estimator": "ceil(UTF-8 bytes / 4), not provider tokens"
+    },
+    "errors": [],
+    "final_result": {
+      "rows": [
+        {
+          "total": 47
+        }
+      ],
+      "row_count": 1
+    },
+    "created_at": "2026-09-09T10:50:11.543749+00:00",
+    "finished_at": "2026-09-09T10:50:11.551594+00:00",
+    "latency_ms": 7.705791009357199,
+    "llm_call_count": 0,
+    "tool_call_count": 1,
+    "token_usage": null,
+    "cost_usd": null,
+    "replay_of": null
+  },
+  "events": [
+    {
+      "seq": 0,
+      "timestamp": "2026-09-09T10:50:11.543832+00:00",
+      "kind": "request",
+      "step": null,
+      "data": {
+        "request": {
+          "mode": "direct",
+          "user_request": "Use SQL to sum inventory quantity, alias the column total. Return the entire tool output.",
+          "session_id": "461bb4fc-5f98-4383-b472-9a9df63bbc74",
+          "tool": {
+            "name": "sql_query",
+            "args": {
+              "query": "SELECT SUM(quantity) AS total FROM inventory"
+            }
+          },
+          "steps": [],
+          "parallel": true,
+          "max_parallel": 4,
+          "max_steps": 8,
+          "timeout_s": 30.0,
+          "llm_timeout_s": 15.0,
+          "llm_retries": 1,
+          "provider": "mock",
+          "mock_script": [],
+          "fallback": null,
+          "permissions": [
+            "read"
+          ],
+          "messages": [],
+          "context_policy": {
+            "strategy": "structured",
+            "message_budget": 8,
+            "token_budget": 2048,
+            "recent_window": 4,
+            "tool_summary_chars": 400
+          }
+        },
+        "mode": "direct"
+      }
+    },
+    {
+      "seq": 1,
+      "timestamp": "2026-09-09T10:50:11.543887+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 39,
+        "messages": 1,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 2,
+      "timestamp": "2026-09-09T10:50:11.545884+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "PENDING",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 3,
+      "timestamp": "2026-09-09T10:50:11.547096+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "WAITING_TOOL"
+      }
+    },
+    {
+      "seq": 4,
+      "timestamp": "2026-09-09T10:50:11.548255+00:00",
+      "kind": "tool_selected",
+      "step": "direct",
+      "data": {
+        "call_id": "cec81839-6e75-4a7a-b65a-82f3e7c02e64",
+        "name": "sql_query",
+        "args": {
+          "query": "SELECT SUM(quantity) AS total FROM inventory"
+        }
+      }
+    },
+    {
+      "seq": 5,
+      "timestamp": "2026-09-09T10:50:11.548289+00:00",
+      "kind": "tool_attempt",
+      "step": "direct",
+      "data": {
+        "call_id": "cec81839-6e75-4a7a-b65a-82f3e7c02e64",
+        "name": "sql_query",
+        "args": {
+          "query": "SELECT SUM(quantity) AS total FROM inventory"
+        },
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 6,
+      "timestamp": "2026-09-09T10:50:11.548524+00:00",
+      "kind": "attempt_end",
+      "step": "direct",
+      "data": {
+        "call_id": "cec81839-6e75-4a7a-b65a-82f3e7c02e64",
+        "attempt": 1,
+        "ok": true,
+        "latency_ms": 0.2348749985685572
+      }
+    },
+    {
+      "seq": 7,
+      "timestamp": "2026-09-09T10:50:11.548562+00:00",
+      "kind": "tool_result",
+      "step": "direct",
+      "data": {
+        "call_id": "cec81839-6e75-4a7a-b65a-82f3e7c02e64",
+        "name": "sql_query",
+        "args": {
+          "query": "SELECT SUM(quantity) AS total FROM inventory"
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "rows": [
+              {
+                "total": 47
+              }
+            ],
+            "row_count": 1
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 0.2664170024218038
+        },
+        "summary": "{\"rows\":[{\"total\":47}],\"row_count\":1}"
+      }
+    },
+    {
+      "seq": 8,
+      "timestamp": "2026-09-09T10:50:11.548573+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "WAITING_TOOL",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 9,
+      "timestamp": "2026-09-09T10:50:11.550021+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 89,
+        "messages": 2,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 10,
+      "timestamp": "2026-09-09T10:50:11.550047+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "SUCCESS"
+      }
+    },
+    {
+      "seq": 11,
+      "timestamp": "2026-09-09T10:50:11.551604+00:00",
+      "kind": "final",
+      "step": null,
+      "data": {
+        "result": {
+          "rows": [
+            {
+              "total": 47
+            }
+          ],
+          "row_count": 1
+        },
+        "status": "SUCCESS",
+        "latency_ms": 7.705791009357199
+      }
+    }
+  ]
+}

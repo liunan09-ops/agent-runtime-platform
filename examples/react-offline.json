@@ -1,0 +1,1 @@
+{"mode":"react","user_request":"Use the calculator to compute 17*19","mock_script":[{"type":"tool","name":"calculator","args":{"expression":"17*19"}},{"type":"final","result":{"$last_observation":true}}]}

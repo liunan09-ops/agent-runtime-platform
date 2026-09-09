@@ -1,0 +1,343 @@
+{
+  "state": {
+    "request_id": "0be2e0d5-0b29-4929-9a3b-0c91ad891358",
+    "session_id": "6d10d59e-3889-4d02-946d-8f04e6d1c8b9",
+    "execution_mode": "direct",
+    "user_request": "",
+    "status": "FAILED",
+    "current_step": 1,
+    "tool_history": [
+      {
+        "call_id": "70d596f1-c807-41e8-8668-ecb83d2521c9",
+        "step": "direct",
+        "call": {
+          "name": "http_mock",
+          "args": {
+            "scenario": "timeout"
+          }
+        },
+        "result": {
+          "ok": false,
+          "value": null,
+          "error": {
+            "code": "RETRY_EXHAUSTED",
+            "message": "Tool retry budget exhausted",
+            "retryable": false,
+            "details": {
+              "cause": "TOOL_TIMEOUT",
+              "attempts": 2
+            }
+          },
+          "attempts": 2,
+          "latency_ms": 253.57020799128804
+        }
+      }
+    ],
+    "observations": [
+      {
+        "name": "http_mock",
+        "ok": false,
+        "value": null,
+        "error": {
+          "code": "RETRY_EXHAUSTED",
+          "message": "Tool retry budget exhausted",
+          "retryable": false,
+          "details": {
+            "cause": "TOOL_TIMEOUT",
+            "attempts": 2
+          }
+        },
+        "attempts": 2,
+        "latency_ms": 253.57020799128804
+      }
+    ],
+    "context_state": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "",
+          "important": true,
+          "facts": {}
+        },
+        {
+          "role": "tool",
+          "content": "{\"name\": \"http_mock\", \"ok\": false, \"value\": null, \"error\": {\"code\": \"RETRY_EXHAUSTED\", \"message\": \"Tool retry budget exhausted\", \"retryable\": false, \"details\": {\"cause\": \"TOOL_TIMEOUT\", \"attempts\": 2}}, \"attempts\": 2, \"latency_ms\": 253.57020799128804}",
+          "important": false,
+          "facts": {}
+        }
+      ],
+      "facts": {},
+      "history_summary": [],
+      "estimated_tokens": 95,
+      "dropped_messages": 0,
+      "dropped_facts": 0,
+      "estimator": "ceil(UTF-8 bytes / 4), not provider tokens"
+    },
+    "errors": [
+      {
+        "code": "RETRY_EXHAUSTED",
+        "message": "Tool retry budget exhausted",
+        "retryable": false,
+        "details": {
+          "cause": "TOOL_TIMEOUT",
+          "attempts": 2
+        }
+      }
+    ],
+    "final_result": null,
+    "created_at": "2026-09-09T10:50:12.640581+00:00",
+    "finished_at": "2026-09-09T10:50:12.910539+00:00",
+    "latency_ms": 269.8247079970315,
+    "llm_call_count": 0,
+    "tool_call_count": 2,
+    "token_usage": null,
+    "cost_usd": null,
+    "replay_of": null
+  },
+  "events": [
+    {
+      "seq": 0,
+      "timestamp": "2026-09-09T10:50:12.640666+00:00",
+      "kind": "request",
+      "step": null,
+      "data": {
+        "request": {
+          "mode": "direct",
+          "user_request": "",
+          "session_id": "6d10d59e-3889-4d02-946d-8f04e6d1c8b9",
+          "tool": {
+            "name": "http_mock",
+            "args": {
+              "scenario": "timeout"
+            }
+          },
+          "steps": [],
+          "parallel": true,
+          "max_parallel": 4,
+          "max_steps": 8,
+          "timeout_s": 30.0,
+          "llm_timeout_s": 15.0,
+          "llm_retries": 1,
+          "provider": "mock",
+          "mock_script": [],
+          "fallback": null,
+          "permissions": [
+            "read"
+          ],
+          "messages": [],
+          "context_policy": {
+            "strategy": "structured",
+            "message_budget": 8,
+            "token_budget": 2048,
+            "recent_window": 4,
+            "tool_summary_chars": 400
+          }
+        },
+        "mode": "direct"
+      }
+    },
+    {
+      "seq": 1,
+      "timestamp": "2026-09-09T10:50:12.640721+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 17,
+        "messages": 1,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 2,
+      "timestamp": "2026-09-09T10:50:12.642590+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "PENDING",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 3,
+      "timestamp": "2026-09-09T10:50:12.643699+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "WAITING_TOOL"
+      }
+    },
+    {
+      "seq": 4,
+      "timestamp": "2026-09-09T10:50:12.644754+00:00",
+      "kind": "tool_selected",
+      "step": "direct",
+      "data": {
+        "call_id": "70d596f1-c807-41e8-8668-ecb83d2521c9",
+        "name": "http_mock",
+        "args": {
+          "scenario": "timeout"
+        }
+      }
+    },
+    {
+      "seq": 5,
+      "timestamp": "2026-09-09T10:50:12.644807+00:00",
+      "kind": "tool_attempt",
+      "step": "direct",
+      "data": {
+        "call_id": "70d596f1-c807-41e8-8668-ecb83d2521c9",
+        "name": "http_mock",
+        "args": {
+          "scenario": "timeout"
+        },
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 6,
+      "timestamp": "2026-09-09T10:50:12.765922+00:00",
+      "kind": "attempt_end",
+      "step": "direct",
+      "data": {
+        "call_id": "70d596f1-c807-41e8-8668-ecb83d2521c9",
+        "attempt": 1,
+        "ok": false,
+        "error": {
+          "code": "TOOL_TIMEOUT",
+          "message": "Tool attempt exceeded deadline",
+          "retryable": true,
+          "details": {}
+        },
+        "latency_ms": 121.09420799242798
+      }
+    },
+    {
+      "seq": 7,
+      "timestamp": "2026-09-09T10:50:12.765939+00:00",
+      "kind": "retry",
+      "step": "direct",
+      "data": {
+        "call_id": "70d596f1-c807-41e8-8668-ecb83d2521c9",
+        "attempt": 1,
+        "next_attempt": 2,
+        "cause": "TOOL_TIMEOUT"
+      }
+    },
+    {
+      "seq": 8,
+      "timestamp": "2026-09-09T10:50:12.777014+00:00",
+      "kind": "tool_attempt",
+      "step": "direct",
+      "data": {
+        "call_id": "70d596f1-c807-41e8-8668-ecb83d2521c9",
+        "name": "http_mock",
+        "args": {
+          "scenario": "timeout"
+        },
+        "attempt": 2
+      }
+    },
+    {
+      "seq": 9,
+      "timestamp": "2026-09-09T10:50:12.898285+00:00",
+      "kind": "attempt_end",
+      "step": "direct",
+      "data": {
+        "call_id": "70d596f1-c807-41e8-8668-ecb83d2521c9",
+        "attempt": 2,
+        "ok": false,
+        "error": {
+          "code": "TOOL_TIMEOUT",
+          "message": "Tool attempt exceeded deadline",
+          "retryable": true,
+          "details": {}
+        },
+        "latency_ms": 121.23304199485574
+      }
+    },
+    {
+      "seq": 10,
+      "timestamp": "2026-09-09T10:50:12.898473+00:00",
+      "kind": "tool_result",
+      "step": "direct",
+      "data": {
+        "call_id": "70d596f1-c807-41e8-8668-ecb83d2521c9",
+        "name": "http_mock",
+        "args": {
+          "scenario": "timeout"
+        },
+        "result": {
+          "ok": false,
+          "value": null,
+          "error": {
+            "code": "RETRY_EXHAUSTED",
+            "message": "Tool retry budget exhausted",
+            "retryable": false,
+            "details": {
+              "cause": "TOOL_TIMEOUT",
+              "attempts": 2
+            }
+          },
+          "attempts": 2,
+          "latency_ms": 253.57020799128804
+        },
+        "summary": "null"
+      }
+    },
+    {
+      "seq": 11,
+      "timestamp": "2026-09-09T10:50:12.898533+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "WAITING_TOOL",
+        "to": "RECOVERING"
+      }
+    },
+    {
+      "seq": 12,
+      "timestamp": "2026-09-09T10:50:12.904751+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RECOVERING",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 13,
+      "timestamp": "2026-09-09T10:50:12.907808+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 95,
+        "messages": 2,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 14,
+      "timestamp": "2026-09-09T10:50:12.907854+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "FAILED"
+      }
+    },
+    {
+      "seq": 15,
+      "timestamp": "2026-09-09T10:50:12.910568+00:00",
+      "kind": "final",
+      "step": null,
+      "data": {
+        "result": null,
+        "status": "FAILED",
+        "latency_ms": 269.8247079970315
+      }
+    }
+  ]
+}

@@ -1,0 +1,438 @@
+{
+  "state": {
+    "request_id": "3539218e-30c7-4019-8509-8b494da4a567",
+    "session_id": "e4fd23ca-1ee1-4b32-a017-0900af11906c",
+    "execution_mode": "pipeline",
+    "user_request": "",
+    "status": "SUCCESS",
+    "current_step": 2,
+    "tool_history": [
+      {
+        "call_id": "33d4b115-de93-4cf0-ba8f-aadce1095a62",
+        "step": "a",
+        "call": {
+          "name": "http_mock",
+          "args": {
+            "resource": "alpha",
+            "delay_ms": 40
+          }
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "resource": "alpha",
+            "value": 10,
+            "source": "httpx.MockTransport"
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 41.13737501029391
+        }
+      },
+      {
+        "call_id": "4c11f554-0fd8-4530-9f4e-a503033f75fe",
+        "step": "b",
+        "call": {
+          "name": "http_mock",
+          "args": {
+            "resource": "beta",
+            "delay_ms": 40
+          }
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "resource": "beta",
+            "value": 20,
+            "source": "httpx.MockTransport"
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 41.22187499888241
+        }
+      }
+    ],
+    "observations": [
+      {
+        "name": "http_mock",
+        "ok": true,
+        "value": {
+          "resource": "alpha",
+          "value": 10,
+          "source": "httpx.MockTransport"
+        },
+        "error": null,
+        "attempts": 1,
+        "latency_ms": 41.13737501029391
+      },
+      {
+        "name": "http_mock",
+        "ok": true,
+        "value": {
+          "resource": "beta",
+          "value": 20,
+          "source": "httpx.MockTransport"
+        },
+        "error": null,
+        "attempts": 1,
+        "latency_ms": 41.22187499888241
+      }
+    ],
+    "context_state": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "",
+          "important": true,
+          "facts": {}
+        },
+        {
+          "role": "tool",
+          "content": "{\"name\": \"http_mock\", \"ok\": true, \"value\": {\"resource\": \"alpha\", \"value\": 10, \"source\": \"httpx.MockTransport\"}, \"error\": null, \"attempts\": 1, \"latency_ms\": 41.13737501029391}",
+          "important": false,
+          "facts": {}
+        },
+        {
+          "role": "tool",
+          "content": "{\"name\": \"http_mock\", \"ok\": true, \"value\": {\"resource\": \"beta\", \"value\": 20, \"source\": \"httpx.MockTransport\"}, \"error\": null, \"attempts\": 1, \"latency_ms\": 41.22187499888241}",
+          "important": false,
+          "facts": {}
+        }
+      ],
+      "facts": {},
+      "history_summary": [],
+      "estimated_tokens": 130,
+      "dropped_messages": 0,
+      "dropped_facts": 0,
+      "estimator": "ceil(UTF-8 bytes / 4), not provider tokens"
+    },
+    "errors": [],
+    "final_result": {
+      "steps": {
+        "a": {
+          "status": "SUCCESS",
+          "value": {
+            "resource": "alpha",
+            "value": 10,
+            "source": "httpx.MockTransport"
+          },
+          "error": null
+        },
+        "b": {
+          "status": "SUCCESS",
+          "value": {
+            "resource": "beta",
+            "value": 20,
+            "source": "httpx.MockTransport"
+          },
+          "error": null
+        }
+      }
+    },
+    "created_at": "2026-09-09T10:50:11.922815+00:00",
+    "finished_at": "2026-09-09T10:50:11.972014+00:00",
+    "latency_ms": 49.07216600258835,
+    "llm_call_count": 0,
+    "tool_call_count": 2,
+    "token_usage": null,
+    "cost_usd": null,
+    "replay_of": null
+  },
+  "events": [
+    {
+      "seq": 0,
+      "timestamp": "2026-09-09T10:50:11.922892+00:00",
+      "kind": "request",
+      "step": null,
+      "data": {
+        "request": {
+          "mode": "pipeline",
+          "user_request": "",
+          "session_id": "e4fd23ca-1ee1-4b32-a017-0900af11906c",
+          "tool": null,
+          "steps": [
+            {
+              "id": "a",
+              "tool": {
+                "name": "http_mock",
+                "args": {
+                  "resource": "alpha",
+                  "delay_ms": 40
+                }
+              },
+              "depends_on": [],
+              "when": null,
+              "fallback": null,
+              "optional": false
+            },
+            {
+              "id": "b",
+              "tool": {
+                "name": "http_mock",
+                "args": {
+                  "resource": "beta",
+                  "delay_ms": 40
+                }
+              },
+              "depends_on": [],
+              "when": null,
+              "fallback": null,
+              "optional": false
+            }
+          ],
+          "parallel": true,
+          "max_parallel": 4,
+          "max_steps": 8,
+          "timeout_s": 30.0,
+          "llm_timeout_s": 15.0,
+          "llm_retries": 1,
+          "provider": "mock",
+          "mock_script": [],
+          "fallback": null,
+          "permissions": [
+            "read"
+          ],
+          "messages": [],
+          "context_policy": {
+            "strategy": "structured",
+            "message_budget": 8,
+            "token_budget": 2048,
+            "recent_window": 4,
+            "tool_summary_chars": 400
+          }
+        },
+        "mode": "pipeline"
+      }
+    },
+    {
+      "seq": 1,
+      "timestamp": "2026-09-09T10:50:11.922943+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 17,
+        "messages": 1,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 2,
+      "timestamp": "2026-09-09T10:50:11.924891+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "PENDING",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 3,
+      "timestamp": "2026-09-09T10:50:11.926062+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "WAITING_TOOL"
+      }
+    },
+    {
+      "seq": 4,
+      "timestamp": "2026-09-09T10:50:11.927192+00:00",
+      "kind": "tool_selected",
+      "step": "a",
+      "data": {
+        "call_id": "33d4b115-de93-4cf0-ba8f-aadce1095a62",
+        "name": "http_mock",
+        "args": {
+          "resource": "alpha",
+          "delay_ms": 40
+        }
+      }
+    },
+    {
+      "seq": 5,
+      "timestamp": "2026-09-09T10:50:11.927241+00:00",
+      "kind": "tool_attempt",
+      "step": "a",
+      "data": {
+        "call_id": "33d4b115-de93-4cf0-ba8f-aadce1095a62",
+        "name": "http_mock",
+        "args": {
+          "resource": "alpha",
+          "delay_ms": 40
+        },
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 6,
+      "timestamp": "2026-09-09T10:50:11.927273+00:00",
+      "kind": "tool_selected",
+      "step": "b",
+      "data": {
+        "call_id": "4c11f554-0fd8-4530-9f4e-a503033f75fe",
+        "name": "http_mock",
+        "args": {
+          "resource": "beta",
+          "delay_ms": 40
+        }
+      }
+    },
+    {
+      "seq": 7,
+      "timestamp": "2026-09-09T10:50:11.927285+00:00",
+      "kind": "tool_attempt",
+      "step": "b",
+      "data": {
+        "call_id": "4c11f554-0fd8-4530-9f4e-a503033f75fe",
+        "name": "http_mock",
+        "args": {
+          "resource": "beta",
+          "delay_ms": 40
+        },
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 8,
+      "timestamp": "2026-09-09T10:50:11.968325+00:00",
+      "kind": "attempt_end",
+      "step": "a",
+      "data": {
+        "call_id": "33d4b115-de93-4cf0-ba8f-aadce1095a62",
+        "attempt": 1,
+        "ok": true,
+        "latency_ms": 41.08229200937785
+      }
+    },
+    {
+      "seq": 9,
+      "timestamp": "2026-09-09T10:50:11.968377+00:00",
+      "kind": "tool_result",
+      "step": "a",
+      "data": {
+        "call_id": "33d4b115-de93-4cf0-ba8f-aadce1095a62",
+        "name": "http_mock",
+        "args": {
+          "resource": "alpha",
+          "delay_ms": 40
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "resource": "alpha",
+            "value": 10,
+            "source": "httpx.MockTransport"
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 41.13737501029391
+        },
+        "summary": "{\"resource\":\"alpha\",\"value\":10,\"source\":\"httpx.MockTransport\"}"
+      }
+    },
+    {
+      "seq": 10,
+      "timestamp": "2026-09-09T10:50:11.968494+00:00",
+      "kind": "attempt_end",
+      "step": "b",
+      "data": {
+        "call_id": "4c11f554-0fd8-4530-9f4e-a503033f75fe",
+        "attempt": 1,
+        "ok": true,
+        "latency_ms": 41.208875001757406
+      }
+    },
+    {
+      "seq": 11,
+      "timestamp": "2026-09-09T10:50:11.968524+00:00",
+      "kind": "tool_result",
+      "step": "b",
+      "data": {
+        "call_id": "4c11f554-0fd8-4530-9f4e-a503033f75fe",
+        "name": "http_mock",
+        "args": {
+          "resource": "beta",
+          "delay_ms": 40
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "resource": "beta",
+            "value": 20,
+            "source": "httpx.MockTransport"
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 41.22187499888241
+        },
+        "summary": "{\"resource\":\"beta\",\"value\":20,\"source\":\"httpx.MockTransport\"}"
+      }
+    },
+    {
+      "seq": 12,
+      "timestamp": "2026-09-09T10:50:11.968583+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "WAITING_TOOL",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 13,
+      "timestamp": "2026-09-09T10:50:11.970421+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 130,
+        "messages": 3,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 14,
+      "timestamp": "2026-09-09T10:50:11.970434+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "SUCCESS"
+      }
+    },
+    {
+      "seq": 15,
+      "timestamp": "2026-09-09T10:50:11.972037+00:00",
+      "kind": "final",
+      "step": null,
+      "data": {
+        "result": {
+          "steps": {
+            "a": {
+              "status": "SUCCESS",
+              "value": {
+                "resource": "alpha",
+                "value": 10,
+                "source": "httpx.MockTransport"
+              },
+              "error": null
+            },
+            "b": {
+              "status": "SUCCESS",
+              "value": {
+                "resource": "beta",
+                "value": 20,
+                "source": "httpx.MockTransport"
+              },
+              "error": null
+            }
+          }
+        },
+        "status": "SUCCESS",
+        "latency_ms": 49.07216600258835
+      }
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"mode":"react","provider":"deepseek","user_request":"Use calculator to compute 17*19. Return its entire output object.","timeout_s":120,"llm_timeout_s":60}

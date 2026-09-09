@@ -1,0 +1,384 @@
+{
+  "state": {
+    "request_id": "1a3f2ed7-7266-40bc-bc8c-fe8e47d6845a",
+    "session_id": "7651e4f1-63e5-48cc-9510-cde81c1b69a6",
+    "execution_mode": "react",
+    "user_request": "Look up the owner knowledge key. Return the entire tool output.",
+    "status": "SUCCESS",
+    "current_step": 2,
+    "tool_history": [
+      {
+        "call_id": "5a512a1e-3d70-439e-b2f1-02e33fe9fe02",
+        "step": "1",
+        "call": {
+          "name": "knowledge_lookup",
+          "args": {
+            "key": "owner"
+          }
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "key": "owner",
+            "text": "Synthetic project owner: Team Atlas.",
+            "source": "synthetic-knowledge-v1"
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 0.6914580008015037
+        }
+      }
+    ],
+    "observations": [
+      {
+        "name": "knowledge_lookup",
+        "ok": true,
+        "value": {
+          "key": "owner",
+          "text": "Synthetic project owner: Team Atlas.",
+          "source": "synthetic-knowledge-v1"
+        },
+        "error": null,
+        "attempts": 1,
+        "latency_ms": 0.6914580008015037
+      }
+    ],
+    "context_state": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "Look up the owner knowledge key. Return the entire tool output.",
+          "important": true,
+          "facts": {}
+        },
+        {
+          "role": "tool",
+          "content": "{\"name\": \"knowledge_lookup\", \"ok\": true, \"value\": {\"key\": \"owner\", \"text\": \"Synthetic project owner: Team Atlas.\", \"source\": \"synthetic-knowledge-v1\"}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.6914580008015037}",
+          "important": false,
+          "facts": {}
+        }
+      ],
+      "facts": {},
+      "history_summary": [],
+      "estimated_tokens": 100,
+      "dropped_messages": 0,
+      "dropped_facts": 0,
+      "estimator": "ceil(UTF-8 bytes / 4), not provider tokens"
+    },
+    "errors": [],
+    "final_result": {
+      "key": "owner",
+      "text": "Synthetic project owner: Team Atlas.",
+      "source": "synthetic-knowledge-v1"
+    },
+    "created_at": "2026-09-09T10:50:38.008882+00:00",
+    "finished_at": "2026-09-09T10:50:40.596522+00:00",
+    "latency_ms": 2586.5965419943677,
+    "llm_call_count": 2,
+    "tool_call_count": 1,
+    "token_usage": {
+      "prompt_tokens": 3301,
+      "completion_tokens": 50,
+      "total_tokens": 3351
+    },
+    "cost_usd": null,
+    "replay_of": null
+  },
+  "events": [
+    {
+      "seq": 0,
+      "timestamp": "2026-09-09T10:50:38.009433+00:00",
+      "kind": "request",
+      "step": null,
+      "data": {
+        "request": {
+          "mode": "react",
+          "user_request": "Look up the owner knowledge key. Return the entire tool output.",
+          "session_id": "7651e4f1-63e5-48cc-9510-cde81c1b69a6",
+          "tool": null,
+          "steps": [],
+          "parallel": true,
+          "max_parallel": 4,
+          "max_steps": 8,
+          "timeout_s": 150.0,
+          "llm_timeout_s": 60.0,
+          "llm_retries": 1,
+          "provider": "deepseek",
+          "mock_script": [],
+          "fallback": null,
+          "permissions": [
+            "read"
+          ],
+          "messages": [],
+          "context_policy": {
+            "strategy": "structured",
+            "message_budget": 8,
+            "token_budget": 2048,
+            "recent_window": 4,
+            "tool_summary_chars": 400
+          }
+        },
+        "mode": "react"
+      }
+    },
+    {
+      "seq": 1,
+      "timestamp": "2026-09-09T10:50:38.009930+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 33,
+        "messages": 1,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 2,
+      "timestamp": "2026-09-09T10:50:38.019327+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "PENDING",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 3,
+      "timestamp": "2026-09-09T10:50:38.024352+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 33,
+        "messages": 1,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 4,
+      "timestamp": "2026-09-09T10:50:38.024372+00:00",
+      "kind": "llm_start",
+      "step": "1",
+      "data": {
+        "provider": "deepseek",
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 5,
+      "timestamp": "2026-09-09T10:50:39.281030+00:00",
+      "kind": "llm_call",
+      "step": "1",
+      "data": {
+        "metadata": {
+          "provider": "openai-compatible",
+          "model": "deepseek-v4-flash",
+          "finish_reason": "stop",
+          "http_status": 200
+        },
+        "usage": {
+          "prompt_tokens": 1609,
+          "completion_tokens": 18,
+          "total_tokens": 1627
+        },
+        "attempt": 1,
+        "latency_ms": 1256.5748750057537
+      }
+    },
+    {
+      "seq": 6,
+      "timestamp": "2026-09-09T10:50:39.281196+00:00",
+      "kind": "action",
+      "step": "1",
+      "data": {
+        "type": "tool",
+        "name": "knowledge_lookup",
+        "args": {
+          "key": "owner"
+        },
+        "result": null
+      }
+    },
+    {
+      "seq": 7,
+      "timestamp": "2026-09-09T10:50:39.281244+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "WAITING_TOOL"
+      }
+    },
+    {
+      "seq": 8,
+      "timestamp": "2026-09-09T10:50:39.287300+00:00",
+      "kind": "tool_selected",
+      "step": "1",
+      "data": {
+        "call_id": "5a512a1e-3d70-439e-b2f1-02e33fe9fe02",
+        "name": "knowledge_lookup",
+        "args": {
+          "key": "owner"
+        }
+      }
+    },
+    {
+      "seq": 9,
+      "timestamp": "2026-09-09T10:50:39.287417+00:00",
+      "kind": "tool_attempt",
+      "step": "1",
+      "data": {
+        "call_id": "5a512a1e-3d70-439e-b2f1-02e33fe9fe02",
+        "name": "knowledge_lookup",
+        "args": {
+          "key": "owner"
+        },
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 10,
+      "timestamp": "2026-09-09T10:50:39.288024+00:00",
+      "kind": "attempt_end",
+      "step": "1",
+      "data": {
+        "call_id": "5a512a1e-3d70-439e-b2f1-02e33fe9fe02",
+        "attempt": 1,
+        "ok": true,
+        "latency_ms": 0.6122500053606927
+      }
+    },
+    {
+      "seq": 11,
+      "timestamp": "2026-09-09T10:50:39.288147+00:00",
+      "kind": "tool_result",
+      "step": "1",
+      "data": {
+        "call_id": "5a512a1e-3d70-439e-b2f1-02e33fe9fe02",
+        "name": "knowledge_lookup",
+        "args": {
+          "key": "owner"
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "key": "owner",
+            "text": "Synthetic project owner: Team Atlas.",
+            "source": "synthetic-knowledge-v1"
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 0.6914580008015037
+        },
+        "summary": "{\"key\":\"owner\",\"text\":\"Synthetic project owner: Team Atlas.\",\"source\":\"synthetic-knowledge-v1\"}"
+      }
+    },
+    {
+      "seq": 12,
+      "timestamp": "2026-09-09T10:50:39.288179+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "WAITING_TOOL",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 13,
+      "timestamp": "2026-09-09T10:50:39.292232+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 100,
+        "messages": 2,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 14,
+      "timestamp": "2026-09-09T10:50:39.292309+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 100,
+        "messages": 2,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 15,
+      "timestamp": "2026-09-09T10:50:39.292336+00:00",
+      "kind": "llm_start",
+      "step": "2",
+      "data": {
+        "provider": "deepseek",
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 16,
+      "timestamp": "2026-09-09T10:50:40.591902+00:00",
+      "kind": "llm_call",
+      "step": "2",
+      "data": {
+        "metadata": {
+          "provider": "openai-compatible",
+          "model": "deepseek-v4-flash",
+          "finish_reason": "stop",
+          "http_status": 200
+        },
+        "usage": {
+          "prompt_tokens": 1692,
+          "completion_tokens": 32,
+          "total_tokens": 1724
+        },
+        "attempt": 1,
+        "latency_ms": 1299.5264999917708
+      }
+    },
+    {
+      "seq": 17,
+      "timestamp": "2026-09-09T10:50:40.592033+00:00",
+      "kind": "action",
+      "step": "2",
+      "data": {
+        "type": "final",
+        "name": null,
+        "args": {},
+        "result": {
+          "key": "owner",
+          "text": "Synthetic project owner: Team Atlas.",
+          "source": "synthetic-knowledge-v1"
+        }
+      }
+    },
+    {
+      "seq": 18,
+      "timestamp": "2026-09-09T10:50:40.592068+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "SUCCESS"
+      }
+    },
+    {
+      "seq": 19,
+      "timestamp": "2026-09-09T10:50:40.596583+00:00",
+      "kind": "final",
+      "step": null,
+      "data": {
+        "result": {
+          "key": "owner",
+          "text": "Synthetic project owner: Team Atlas.",
+          "source": "synthetic-knowledge-v1"
+        },
+        "status": "SUCCESS",
+        "latency_ms": 2586.5965419943677
+      }
+    }
+  ]
+}

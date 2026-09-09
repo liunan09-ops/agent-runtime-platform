@@ -1,0 +1,479 @@
+{
+  "state": {
+    "request_id": "d43470a7-4e03-45d9-9f57-6d5d69f8f219",
+    "session_id": "ecb88c48-6e36-4bb7-a9a9-5e6b7f83554e",
+    "execution_mode": "pipeline",
+    "user_request": "",
+    "status": "SUCCESS",
+    "current_step": 2,
+    "tool_history": [
+      {
+        "call_id": "7cd32a8a-8296-4d2f-9f4a-40eb2eaa9f42",
+        "step": "a",
+        "call": {
+          "name": "calculator",
+          "args": {
+            "expression": "2+3"
+          }
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "value": 5.0
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 0.07683401054237038
+        }
+      },
+      {
+        "call_id": "6854e2e9-b7a1-4c33-92f2-1d63312e808d",
+        "step": "b",
+        "call": {
+          "name": "data_analysis",
+          "args": {
+            "values": [
+              5.0,
+              7
+            ]
+          }
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "count": 2,
+            "sum": 12.0,
+            "mean": 6.0,
+            "min": 5.0,
+            "max": 7.0
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 0.032790994737297297
+        }
+      }
+    ],
+    "observations": [
+      {
+        "name": "calculator",
+        "ok": true,
+        "value": {
+          "value": 5.0
+        },
+        "error": null,
+        "attempts": 1,
+        "latency_ms": 0.07683401054237038
+      },
+      {
+        "name": "data_analysis",
+        "ok": true,
+        "value": {
+          "count": 2,
+          "sum": 12.0,
+          "mean": 6.0,
+          "min": 5.0,
+          "max": 7.0
+        },
+        "error": null,
+        "attempts": 1,
+        "latency_ms": 0.032790994737297297
+      }
+    ],
+    "context_state": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "",
+          "important": true,
+          "facts": {}
+        },
+        {
+          "role": "tool",
+          "content": "{\"name\": \"calculator\", \"ok\": true, \"value\": {\"value\": 5.0}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.07683401054237038}",
+          "important": false,
+          "facts": {}
+        },
+        {
+          "role": "tool",
+          "content": "{\"name\": \"data_analysis\", \"ok\": true, \"value\": {\"count\": 2, \"sum\": 12.0, \"mean\": 6.0, \"min\": 5.0, \"max\": 7.0}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.032790994737297297}",
+          "important": false,
+          "facts": {}
+        }
+      ],
+      "facts": {},
+      "history_summary": [],
+      "estimated_tokens": 117,
+      "dropped_messages": 0,
+      "dropped_facts": 0,
+      "estimator": "ceil(UTF-8 bytes / 4), not provider tokens"
+    },
+    "errors": [],
+    "final_result": {
+      "steps": {
+        "a": {
+          "status": "SUCCESS",
+          "value": {
+            "value": 5.0
+          },
+          "error": null
+        },
+        "b": {
+          "status": "SUCCESS",
+          "value": {
+            "count": 2,
+            "sum": 12.0,
+            "mean": 6.0,
+            "min": 5.0,
+            "max": 7.0
+          },
+          "error": null
+        }
+      }
+    },
+    "created_at": "2026-09-09T10:50:11.899613+00:00",
+    "finished_at": "2026-09-09T10:50:11.909867+00:00",
+    "latency_ms": 10.119958998984657,
+    "llm_call_count": 0,
+    "tool_call_count": 2,
+    "token_usage": null,
+    "cost_usd": null,
+    "replay_of": null
+  },
+  "events": [
+    {
+      "seq": 0,
+      "timestamp": "2026-09-09T10:50:11.899688+00:00",
+      "kind": "request",
+      "step": null,
+      "data": {
+        "request": {
+          "mode": "pipeline",
+          "user_request": "",
+          "session_id": "ecb88c48-6e36-4bb7-a9a9-5e6b7f83554e",
+          "tool": null,
+          "steps": [
+            {
+              "id": "a",
+              "tool": {
+                "name": "calculator",
+                "args": {
+                  "expression": "2+3"
+                }
+              },
+              "depends_on": [],
+              "when": null,
+              "fallback": null,
+              "optional": false
+            },
+            {
+              "id": "b",
+              "tool": {
+                "name": "data_analysis",
+                "args": {
+                  "values": [
+                    {
+                      "$ref": "a.value"
+                    },
+                    7
+                  ]
+                }
+              },
+              "depends_on": [
+                "a"
+              ],
+              "when": null,
+              "fallback": null,
+              "optional": false
+            }
+          ],
+          "parallel": false,
+          "max_parallel": 4,
+          "max_steps": 8,
+          "timeout_s": 30.0,
+          "llm_timeout_s": 15.0,
+          "llm_retries": 1,
+          "provider": "mock",
+          "mock_script": [],
+          "fallback": null,
+          "permissions": [
+            "read"
+          ],
+          "messages": [],
+          "context_policy": {
+            "strategy": "structured",
+            "message_budget": 8,
+            "token_budget": 2048,
+            "recent_window": 4,
+            "tool_summary_chars": 400
+          }
+        },
+        "mode": "pipeline"
+      }
+    },
+    {
+      "seq": 1,
+      "timestamp": "2026-09-09T10:50:11.899746+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 17,
+        "messages": 1,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 2,
+      "timestamp": "2026-09-09T10:50:11.901933+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "PENDING",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 3,
+      "timestamp": "2026-09-09T10:50:11.903263+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "WAITING_TOOL"
+      }
+    },
+    {
+      "seq": 4,
+      "timestamp": "2026-09-09T10:50:11.904485+00:00",
+      "kind": "tool_selected",
+      "step": "a",
+      "data": {
+        "call_id": "7cd32a8a-8296-4d2f-9f4a-40eb2eaa9f42",
+        "name": "calculator",
+        "args": {
+          "expression": "2+3"
+        }
+      }
+    },
+    {
+      "seq": 5,
+      "timestamp": "2026-09-09T10:50:11.904515+00:00",
+      "kind": "tool_attempt",
+      "step": "a",
+      "data": {
+        "call_id": "7cd32a8a-8296-4d2f-9f4a-40eb2eaa9f42",
+        "name": "calculator",
+        "args": {
+          "expression": "2+3"
+        },
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 6,
+      "timestamp": "2026-09-09T10:50:11.904566+00:00",
+      "kind": "attempt_end",
+      "step": "a",
+      "data": {
+        "call_id": "7cd32a8a-8296-4d2f-9f4a-40eb2eaa9f42",
+        "attempt": 1,
+        "ok": true,
+        "latency_ms": 0.05320899072103202
+      }
+    },
+    {
+      "seq": 7,
+      "timestamp": "2026-09-09T10:50:11.904596+00:00",
+      "kind": "tool_result",
+      "step": "a",
+      "data": {
+        "call_id": "7cd32a8a-8296-4d2f-9f4a-40eb2eaa9f42",
+        "name": "calculator",
+        "args": {
+          "expression": "2+3"
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "value": 5.0
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 0.07683401054237038
+        },
+        "summary": "{\"value\":5.0}"
+      }
+    },
+    {
+      "seq": 8,
+      "timestamp": "2026-09-09T10:50:11.904609+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "WAITING_TOOL",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 9,
+      "timestamp": "2026-09-09T10:50:11.905884+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 59,
+        "messages": 2,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 10,
+      "timestamp": "2026-09-09T10:50:11.905896+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "WAITING_TOOL"
+      }
+    },
+    {
+      "seq": 11,
+      "timestamp": "2026-09-09T10:50:11.907168+00:00",
+      "kind": "tool_selected",
+      "step": "b",
+      "data": {
+        "call_id": "6854e2e9-b7a1-4c33-92f2-1d63312e808d",
+        "name": "data_analysis",
+        "args": {
+          "values": [
+            5.0,
+            7
+          ]
+        }
+      }
+    },
+    {
+      "seq": 12,
+      "timestamp": "2026-09-09T10:50:11.907186+00:00",
+      "kind": "tool_attempt",
+      "step": "b",
+      "data": {
+        "call_id": "6854e2e9-b7a1-4c33-92f2-1d63312e808d",
+        "name": "data_analysis",
+        "args": {
+          "values": [
+            5.0,
+            7
+          ]
+        },
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 13,
+      "timestamp": "2026-09-09T10:50:11.907203+00:00",
+      "kind": "attempt_end",
+      "step": "b",
+      "data": {
+        "call_id": "6854e2e9-b7a1-4c33-92f2-1d63312e808d",
+        "attempt": 1,
+        "ok": true,
+        "latency_ms": 0.019040991901420057
+      }
+    },
+    {
+      "seq": 14,
+      "timestamp": "2026-09-09T10:50:11.907231+00:00",
+      "kind": "tool_result",
+      "step": "b",
+      "data": {
+        "call_id": "6854e2e9-b7a1-4c33-92f2-1d63312e808d",
+        "name": "data_analysis",
+        "args": {
+          "values": [
+            5.0,
+            7
+          ]
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "count": 2,
+            "sum": 12.0,
+            "mean": 6.0,
+            "min": 5.0,
+            "max": 7.0
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 0.032790994737297297
+        },
+        "summary": "{\"count\":2,\"sum\":12.0,\"mean\":6.0,\"min\":5.0,\"max\":7.0}"
+      }
+    },
+    {
+      "seq": 15,
+      "timestamp": "2026-09-09T10:50:11.907242+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "WAITING_TOOL",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 16,
+      "timestamp": "2026-09-09T10:50:11.908556+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 117,
+        "messages": 3,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 17,
+      "timestamp": "2026-09-09T10:50:11.908566+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "SUCCESS"
+      }
+    },
+    {
+      "seq": 18,
+      "timestamp": "2026-09-09T10:50:11.909877+00:00",
+      "kind": "final",
+      "step": null,
+      "data": {
+        "result": {
+          "steps": {
+            "a": {
+              "status": "SUCCESS",
+              "value": {
+                "value": 5.0
+              },
+              "error": null
+            },
+            "b": {
+              "status": "SUCCESS",
+              "value": {
+                "count": 2,
+                "sum": 12.0,
+                "mean": 6.0,
+                "min": 5.0,
+                "max": 7.0
+              },
+              "error": null
+            }
+          }
+        },
+        "status": "SUCCESS",
+        "latency_ms": 10.119958998984657
+      }
+    }
+  ]
+}

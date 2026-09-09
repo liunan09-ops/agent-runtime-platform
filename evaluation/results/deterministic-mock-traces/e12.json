@@ -1,0 +1,253 @@
+{
+  "state": {
+    "request_id": "7c091006-d1de-42bf-9f6f-fe6e67090416",
+    "session_id": "8604ec97-2e10-4d7d-9ddf-8cef726a2a63",
+    "execution_mode": "direct",
+    "user_request": "",
+    "status": "REJECTED",
+    "current_step": 1,
+    "tool_history": [
+      {
+        "call_id": "f1bc8d77-45ee-4e36-b4a8-9c4897142651",
+        "step": "direct",
+        "call": {
+          "name": "calculator",
+          "args": {
+            "expression": "1"
+          }
+        },
+        "result": {
+          "ok": false,
+          "value": null,
+          "error": {
+            "code": "PERMISSION_DENIED",
+            "message": "Tool permission is not granted",
+            "retryable": false,
+            "details": {}
+          },
+          "attempts": 0,
+          "latency_ms": 0.013208002201281488
+        }
+      }
+    ],
+    "observations": [
+      {
+        "name": "calculator",
+        "ok": false,
+        "value": null,
+        "error": {
+          "code": "PERMISSION_DENIED",
+          "message": "Tool permission is not granted",
+          "retryable": false,
+          "details": {}
+        },
+        "attempts": 0,
+        "latency_ms": 0.013208002201281488
+      }
+    ],
+    "context_state": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "",
+          "important": true,
+          "facts": {}
+        },
+        {
+          "role": "tool",
+          "content": "{\"name\": \"calculator\", \"ok\": false, \"value\": null, \"error\": {\"code\": \"PERMISSION_DENIED\", \"message\": \"Tool permission is not granted\", \"retryable\": false, \"details\": {}}, \"attempts\": 0, \"latency_ms\": 0.013208002201281488}",
+          "important": false,
+          "facts": {}
+        }
+      ],
+      "facts": {},
+      "history_summary": [],
+      "estimated_tokens": 86,
+      "dropped_messages": 0,
+      "dropped_facts": 0,
+      "estimator": "ceil(UTF-8 bytes / 4), not provider tokens"
+    },
+    "errors": [
+      {
+        "code": "PERMISSION_DENIED",
+        "message": "Tool permission is not granted",
+        "retryable": false,
+        "details": {}
+      }
+    ],
+    "final_result": null,
+    "created_at": "2026-09-09T10:50:12.939063+00:00",
+    "finished_at": "2026-09-09T10:50:12.950176+00:00",
+    "latency_ms": 10.847792000276968,
+    "llm_call_count": 0,
+    "tool_call_count": 0,
+    "token_usage": null,
+    "cost_usd": null,
+    "replay_of": null
+  },
+  "events": [
+    {
+      "seq": 0,
+      "timestamp": "2026-09-09T10:50:12.939209+00:00",
+      "kind": "request",
+      "step": null,
+      "data": {
+        "request": {
+          "mode": "direct",
+          "user_request": "",
+          "session_id": "8604ec97-2e10-4d7d-9ddf-8cef726a2a63",
+          "tool": {
+            "name": "calculator",
+            "args": {
+              "expression": "1"
+            }
+          },
+          "steps": [],
+          "parallel": true,
+          "max_parallel": 4,
+          "max_steps": 8,
+          "timeout_s": 30.0,
+          "llm_timeout_s": 15.0,
+          "llm_retries": 1,
+          "provider": "mock",
+          "mock_script": [],
+          "fallback": null,
+          "permissions": [],
+          "messages": [],
+          "context_policy": {
+            "strategy": "structured",
+            "message_budget": 8,
+            "token_budget": 2048,
+            "recent_window": 4,
+            "tool_summary_chars": 400
+          }
+        },
+        "mode": "direct"
+      }
+    },
+    {
+      "seq": 1,
+      "timestamp": "2026-09-09T10:50:12.939325+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 17,
+        "messages": 1,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 2,
+      "timestamp": "2026-09-09T10:50:12.942689+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "PENDING",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 3,
+      "timestamp": "2026-09-09T10:50:12.944264+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "WAITING_TOOL"
+      }
+    },
+    {
+      "seq": 4,
+      "timestamp": "2026-09-09T10:50:12.945645+00:00",
+      "kind": "tool_selected",
+      "step": "direct",
+      "data": {
+        "call_id": "f1bc8d77-45ee-4e36-b4a8-9c4897142651",
+        "name": "calculator",
+        "args": {
+          "expression": "1"
+        }
+      }
+    },
+    {
+      "seq": 5,
+      "timestamp": "2026-09-09T10:50:12.945721+00:00",
+      "kind": "tool_result",
+      "step": "direct",
+      "data": {
+        "call_id": "f1bc8d77-45ee-4e36-b4a8-9c4897142651",
+        "name": "calculator",
+        "args": {
+          "expression": "1"
+        },
+        "result": {
+          "ok": false,
+          "value": null,
+          "error": {
+            "code": "PERMISSION_DENIED",
+            "message": "Tool permission is not granted",
+            "retryable": false,
+            "details": {}
+          },
+          "attempts": 0,
+          "latency_ms": 0.013208002201281488
+        },
+        "summary": "null"
+      }
+    },
+    {
+      "seq": 6,
+      "timestamp": "2026-09-09T10:50:12.945739+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "WAITING_TOOL",
+        "to": "RECOVERING"
+      }
+    },
+    {
+      "seq": 7,
+      "timestamp": "2026-09-09T10:50:12.947238+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RECOVERING",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 8,
+      "timestamp": "2026-09-09T10:50:12.948671+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 86,
+        "messages": 2,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 9,
+      "timestamp": "2026-09-09T10:50:12.948689+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "REJECTED"
+      }
+    },
+    {
+      "seq": 10,
+      "timestamp": "2026-09-09T10:50:12.950187+00:00",
+      "kind": "final",
+      "step": null,
+      "data": {
+        "result": null,
+        "status": "REJECTED",
+        "latency_ms": 10.847792000276968
+      }
+    }
+  ]
+}

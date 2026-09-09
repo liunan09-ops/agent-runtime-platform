@@ -1,0 +1,417 @@
+{
+  "state": {
+    "request_id": "d050598b-40d3-45b3-84da-e574317ec9a8",
+    "session_id": "c64d6672-bfd2-440a-951e-93d3b5ebc67d",
+    "execution_mode": "react",
+    "user_request": "Use a parameterized SQL query to get the price of gadget from inventory. Return the entire tool output.",
+    "status": "SUCCESS",
+    "current_step": 2,
+    "tool_history": [
+      {
+        "call_id": "3bb5f16c-3f9e-42b0-82c8-5ab42ac98799",
+        "step": "1",
+        "call": {
+          "name": "sql_query",
+          "args": {
+            "query": "SELECT price FROM inventory WHERE item = ?",
+            "params": [
+              "gadget"
+            ]
+          }
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "rows": [
+              {
+                "price": 8.0
+              }
+            ],
+            "row_count": 1
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 0.8940000116126612
+        }
+      }
+    ],
+    "observations": [
+      {
+        "name": "sql_query",
+        "ok": true,
+        "value": {
+          "rows": [
+            {
+              "price": 8.0
+            }
+          ],
+          "row_count": 1
+        },
+        "error": null,
+        "attempts": 1,
+        "latency_ms": 0.8940000116126612
+      }
+    ],
+    "context_state": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "Use a parameterized SQL query to get the price of gadget from inventory. Return the entire tool output.",
+          "important": true,
+          "facts": {}
+        },
+        {
+          "role": "tool",
+          "content": "{\"name\": \"sql_query\", \"ok\": true, \"value\": {\"rows\": [{\"price\": 8.0}], \"row_count\": 1}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.8940000116126612}",
+          "important": false,
+          "facts": {}
+        }
+      ],
+      "facts": {},
+      "history_summary": [],
+      "estimated_tokens": 93,
+      "dropped_messages": 0,
+      "dropped_facts": 0,
+      "estimator": "ceil(UTF-8 bytes / 4), not provider tokens"
+    },
+    "errors": [],
+    "final_result": {
+      "rows": [
+        {
+          "price": 8.0
+        }
+      ],
+      "row_count": 1
+    },
+    "created_at": "2026-09-09T10:50:51.091332+00:00",
+    "finished_at": "2026-09-09T10:50:52.913161+00:00",
+    "latency_ms": 1821.5620000119088,
+    "llm_call_count": 2,
+    "tool_call_count": 1,
+    "token_usage": {
+      "prompt_tokens": 3306,
+      "completion_tokens": 53,
+      "total_tokens": 3359
+    },
+    "cost_usd": null,
+    "replay_of": null
+  },
+  "events": [
+    {
+      "seq": 0,
+      "timestamp": "2026-09-09T10:50:51.091467+00:00",
+      "kind": "request",
+      "step": null,
+      "data": {
+        "request": {
+          "mode": "react",
+          "user_request": "Use a parameterized SQL query to get the price of gadget from inventory. Return the entire tool output.",
+          "session_id": "c64d6672-bfd2-440a-951e-93d3b5ebc67d",
+          "tool": null,
+          "steps": [],
+          "parallel": true,
+          "max_parallel": 4,
+          "max_steps": 8,
+          "timeout_s": 150.0,
+          "llm_timeout_s": 60.0,
+          "llm_retries": 1,
+          "provider": "deepseek",
+          "mock_script": [],
+          "fallback": null,
+          "permissions": [
+            "read"
+          ],
+          "messages": [],
+          "context_policy": {
+            "strategy": "structured",
+            "message_budget": 8,
+            "token_budget": 2048,
+            "recent_window": 4,
+            "tool_summary_chars": 400
+          }
+        },
+        "mode": "react"
+      }
+    },
+    {
+      "seq": 1,
+      "timestamp": "2026-09-09T10:50:51.091609+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 43,
+        "messages": 1,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 2,
+      "timestamp": "2026-09-09T10:50:51.095260+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "PENDING",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 3,
+      "timestamp": "2026-09-09T10:50:51.098796+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 43,
+        "messages": 1,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 4,
+      "timestamp": "2026-09-09T10:50:51.098811+00:00",
+      "kind": "llm_start",
+      "step": "1",
+      "data": {
+        "provider": "deepseek",
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 5,
+      "timestamp": "2026-09-09T10:50:52.075389+00:00",
+      "kind": "llm_call",
+      "step": "1",
+      "data": {
+        "metadata": {
+          "provider": "openai-compatible",
+          "model": "deepseek-v4-flash",
+          "finish_reason": "stop",
+          "http_status": 200
+        },
+        "usage": {
+          "prompt_tokens": 1617,
+          "completion_tokens": 31,
+          "total_tokens": 1648
+        },
+        "attempt": 1,
+        "latency_ms": 976.5186669974355
+      }
+    },
+    {
+      "seq": 6,
+      "timestamp": "2026-09-09T10:50:52.075529+00:00",
+      "kind": "action",
+      "step": "1",
+      "data": {
+        "type": "tool",
+        "name": "sql_query",
+        "args": {
+          "query": "SELECT price FROM inventory WHERE item = ?",
+          "params": [
+            "gadget"
+          ]
+        },
+        "result": null
+      }
+    },
+    {
+      "seq": 7,
+      "timestamp": "2026-09-09T10:50:52.075562+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "WAITING_TOOL"
+      }
+    },
+    {
+      "seq": 8,
+      "timestamp": "2026-09-09T10:50:52.081313+00:00",
+      "kind": "tool_selected",
+      "step": "1",
+      "data": {
+        "call_id": "3bb5f16c-3f9e-42b0-82c8-5ab42ac98799",
+        "name": "sql_query",
+        "args": {
+          "query": "SELECT price FROM inventory WHERE item = ?",
+          "params": [
+            "gadget"
+          ]
+        }
+      }
+    },
+    {
+      "seq": 9,
+      "timestamp": "2026-09-09T10:50:52.081447+00:00",
+      "kind": "tool_attempt",
+      "step": "1",
+      "data": {
+        "call_id": "3bb5f16c-3f9e-42b0-82c8-5ab42ac98799",
+        "name": "sql_query",
+        "args": {
+          "query": "SELECT price FROM inventory WHERE item = ?",
+          "params": [
+            "gadget"
+          ]
+        },
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 10,
+      "timestamp": "2026-09-09T10:50:52.082246+00:00",
+      "kind": "attempt_end",
+      "step": "1",
+      "data": {
+        "call_id": "3bb5f16c-3f9e-42b0-82c8-5ab42ac98799",
+        "attempt": 1,
+        "ok": true,
+        "latency_ms": 0.7935000030556694
+      }
+    },
+    {
+      "seq": 11,
+      "timestamp": "2026-09-09T10:50:52.082400+00:00",
+      "kind": "tool_result",
+      "step": "1",
+      "data": {
+        "call_id": "3bb5f16c-3f9e-42b0-82c8-5ab42ac98799",
+        "name": "sql_query",
+        "args": {
+          "query": "SELECT price FROM inventory WHERE item = ?",
+          "params": [
+            "gadget"
+          ]
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "rows": [
+              {
+                "price": 8.0
+              }
+            ],
+            "row_count": 1
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 0.8940000116126612
+        },
+        "summary": "{\"rows\":[{\"price\":8.0}],\"row_count\":1}"
+      }
+    },
+    {
+      "seq": 12,
+      "timestamp": "2026-09-09T10:50:52.082432+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "WAITING_TOOL",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 13,
+      "timestamp": "2026-09-09T10:50:52.086655+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 93,
+        "messages": 2,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 14,
+      "timestamp": "2026-09-09T10:50:52.086717+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 93,
+        "messages": 2,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 15,
+      "timestamp": "2026-09-09T10:50:52.086736+00:00",
+      "kind": "llm_start",
+      "step": "2",
+      "data": {
+        "provider": "deepseek",
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 16,
+      "timestamp": "2026-09-09T10:50:52.908733+00:00",
+      "kind": "llm_call",
+      "step": "2",
+      "data": {
+        "metadata": {
+          "provider": "openai-compatible",
+          "model": "deepseek-v4-flash",
+          "finish_reason": "stop",
+          "http_status": 200
+        },
+        "usage": {
+          "prompt_tokens": 1689,
+          "completion_tokens": 22,
+          "total_tokens": 1711
+        },
+        "attempt": 1,
+        "latency_ms": 821.9560410070699
+      }
+    },
+    {
+      "seq": 17,
+      "timestamp": "2026-09-09T10:50:52.908821+00:00",
+      "kind": "action",
+      "step": "2",
+      "data": {
+        "type": "final",
+        "name": null,
+        "args": {},
+        "result": {
+          "rows": [
+            {
+              "price": 8.0
+            }
+          ],
+          "row_count": 1
+        }
+      }
+    },
+    {
+      "seq": 18,
+      "timestamp": "2026-09-09T10:50:52.908851+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "SUCCESS"
+      }
+    },
+    {
+      "seq": 19,
+      "timestamp": "2026-09-09T10:50:52.913216+00:00",
+      "kind": "final",
+      "step": null,
+      "data": {
+        "result": {
+          "rows": [
+            {
+              "price": 8.0
+            }
+          ],
+          "row_count": 1
+        },
+        "status": "SUCCESS",
+        "latency_ms": 1821.5620000119088
+      }
+    }
+  ]
+}

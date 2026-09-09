@@ -1,0 +1,540 @@
+{
+  "state": {
+    "request_id": "26be1610-240f-4a12-8674-9ef62c2550a8",
+    "session_id": "7d9c6858-1ec4-4755-8e08-aad08e179287",
+    "execution_mode": "pipeline",
+    "user_request": "",
+    "status": "FAILED",
+    "current_step": 3,
+    "tool_history": [
+      {
+        "call_id": "3da71c49-5c54-4b03-b5fa-277c35022c6c",
+        "step": "ok",
+        "call": {
+          "name": "calculator",
+          "args": {
+            "expression": "4"
+          }
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "value": 4.0
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 0.05612500535789877
+        }
+      },
+      {
+        "call_id": "8968430f-1123-469e-9569-1a6664435a68",
+        "step": "bad",
+        "call": {
+          "name": "http_mock",
+          "args": {
+            "scenario": "retry_exhausted"
+          }
+        },
+        "result": {
+          "ok": false,
+          "value": null,
+          "error": {
+            "code": "RETRY_EXHAUSTED",
+            "message": "Tool retry budget exhausted",
+            "retryable": false,
+            "details": {
+              "cause": "HTTP_UNAVAILABLE",
+              "attempts": 2
+            }
+          },
+          "attempts": 2,
+          "latency_ms": 11.3574580027489
+        }
+      }
+    ],
+    "observations": [
+      {
+        "name": "calculator",
+        "ok": true,
+        "value": {
+          "value": 4.0
+        },
+        "error": null,
+        "attempts": 1,
+        "latency_ms": 0.05612500535789877
+      },
+      {
+        "name": "http_mock",
+        "ok": false,
+        "value": null,
+        "error": {
+          "code": "RETRY_EXHAUSTED",
+          "message": "Tool retry budget exhausted",
+          "retryable": false,
+          "details": {
+            "cause": "HTTP_UNAVAILABLE",
+            "attempts": 2
+          }
+        },
+        "attempts": 2,
+        "latency_ms": 11.3574580027489
+      }
+    ],
+    "context_state": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "",
+          "important": true,
+          "facts": {}
+        },
+        {
+          "role": "tool",
+          "content": "{\"name\": \"calculator\", \"ok\": true, \"value\": {\"value\": 4.0}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.05612500535789877}",
+          "important": false,
+          "facts": {}
+        },
+        {
+          "role": "tool",
+          "content": "{\"name\": \"http_mock\", \"ok\": false, \"value\": null, \"error\": {\"code\": \"RETRY_EXHAUSTED\", \"message\": \"Tool retry budget exhausted\", \"retryable\": false, \"details\": {\"cause\": \"HTTP_UNAVAILABLE\", \"attempts\": 2}}, \"attempts\": 2, \"latency_ms\": 11.3574580027489}",
+          "important": false,
+          "facts": {}
+        }
+      ],
+      "facts": {},
+      "history_summary": [],
+      "estimated_tokens": 138,
+      "dropped_messages": 0,
+      "dropped_facts": 0,
+      "estimator": "ceil(UTF-8 bytes / 4), not provider tokens"
+    },
+    "errors": [
+      {
+        "code": "RETRY_EXHAUSTED",
+        "message": "Tool retry budget exhausted",
+        "retryable": false,
+        "details": {
+          "cause": "HTTP_UNAVAILABLE",
+          "attempts": 2
+        }
+      }
+    ],
+    "final_result": {
+      "steps": {
+        "bad": {
+          "status": "FAILED",
+          "value": null,
+          "error": {
+            "code": "RETRY_EXHAUSTED",
+            "message": "Tool retry budget exhausted",
+            "retryable": false,
+            "details": {
+              "cause": "HTTP_UNAVAILABLE",
+              "attempts": 2
+            }
+          }
+        },
+        "ok": {
+          "status": "SUCCESS",
+          "value": {
+            "value": 4.0
+          },
+          "error": null
+        },
+        "child": {
+          "status": "BLOCKED",
+          "value": null
+        }
+      }
+    },
+    "created_at": "2026-09-09T10:50:12.170836+00:00",
+    "finished_at": "2026-09-09T10:50:12.190790+00:00",
+    "latency_ms": 19.823041002382524,
+    "llm_call_count": 0,
+    "tool_call_count": 3,
+    "token_usage": null,
+    "cost_usd": null,
+    "replay_of": null
+  },
+  "events": [
+    {
+      "seq": 0,
+      "timestamp": "2026-09-09T10:50:12.170918+00:00",
+      "kind": "request",
+      "step": null,
+      "data": {
+        "request": {
+          "mode": "pipeline",
+          "user_request": "",
+          "session_id": "7d9c6858-1ec4-4755-8e08-aad08e179287",
+          "tool": null,
+          "steps": [
+            {
+              "id": "bad",
+              "tool": {
+                "name": "http_mock",
+                "args": {
+                  "scenario": "retry_exhausted"
+                }
+              },
+              "depends_on": [],
+              "when": null,
+              "fallback": null,
+              "optional": false
+            },
+            {
+              "id": "child",
+              "tool": {
+                "name": "calculator",
+                "args": {
+                  "expression": "1"
+                }
+              },
+              "depends_on": [
+                "bad"
+              ],
+              "when": null,
+              "fallback": null,
+              "optional": false
+            },
+            {
+              "id": "ok",
+              "tool": {
+                "name": "calculator",
+                "args": {
+                  "expression": "4"
+                }
+              },
+              "depends_on": [],
+              "when": null,
+              "fallback": null,
+              "optional": false
+            }
+          ],
+          "parallel": true,
+          "max_parallel": 4,
+          "max_steps": 8,
+          "timeout_s": 30.0,
+          "llm_timeout_s": 15.0,
+          "llm_retries": 1,
+          "provider": "mock",
+          "mock_script": [],
+          "fallback": null,
+          "permissions": [
+            "read"
+          ],
+          "messages": [],
+          "context_policy": {
+            "strategy": "structured",
+            "message_budget": 8,
+            "token_budget": 2048,
+            "recent_window": 4,
+            "tool_summary_chars": 400
+          }
+        },
+        "mode": "pipeline"
+      }
+    },
+    {
+      "seq": 1,
+      "timestamp": "2026-09-09T10:50:12.170965+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 17,
+        "messages": 1,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 2,
+      "timestamp": "2026-09-09T10:50:12.172833+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "PENDING",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 3,
+      "timestamp": "2026-09-09T10:50:12.173963+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "WAITING_TOOL"
+      }
+    },
+    {
+      "seq": 4,
+      "timestamp": "2026-09-09T10:50:12.175072+00:00",
+      "kind": "tool_selected",
+      "step": "bad",
+      "data": {
+        "call_id": "8968430f-1123-469e-9569-1a6664435a68",
+        "name": "http_mock",
+        "args": {
+          "scenario": "retry_exhausted"
+        }
+      }
+    },
+    {
+      "seq": 5,
+      "timestamp": "2026-09-09T10:50:12.175126+00:00",
+      "kind": "tool_attempt",
+      "step": "bad",
+      "data": {
+        "call_id": "8968430f-1123-469e-9569-1a6664435a68",
+        "name": "http_mock",
+        "args": {
+          "scenario": "retry_exhausted"
+        },
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 6,
+      "timestamp": "2026-09-09T10:50:12.175155+00:00",
+      "kind": "tool_selected",
+      "step": "ok",
+      "data": {
+        "call_id": "3da71c49-5c54-4b03-b5fa-277c35022c6c",
+        "name": "calculator",
+        "args": {
+          "expression": "4"
+        }
+      }
+    },
+    {
+      "seq": 7,
+      "timestamp": "2026-09-09T10:50:12.175171+00:00",
+      "kind": "tool_attempt",
+      "step": "ok",
+      "data": {
+        "call_id": "3da71c49-5c54-4b03-b5fa-277c35022c6c",
+        "name": "calculator",
+        "args": {
+          "expression": "4"
+        },
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 8,
+      "timestamp": "2026-09-09T10:50:12.175211+00:00",
+      "kind": "attempt_end",
+      "step": "ok",
+      "data": {
+        "call_id": "3da71c49-5c54-4b03-b5fa-277c35022c6c",
+        "attempt": 1,
+        "ok": true,
+        "latency_ms": 0.04033399454783648
+      }
+    },
+    {
+      "seq": 9,
+      "timestamp": "2026-09-09T10:50:12.175239+00:00",
+      "kind": "tool_result",
+      "step": "ok",
+      "data": {
+        "call_id": "3da71c49-5c54-4b03-b5fa-277c35022c6c",
+        "name": "calculator",
+        "args": {
+          "expression": "4"
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "value": 4.0
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 0.05612500535789877
+        },
+        "summary": "{\"value\":4.0}"
+      }
+    },
+    {
+      "seq": 10,
+      "timestamp": "2026-09-09T10:50:12.175278+00:00",
+      "kind": "attempt_end",
+      "step": "bad",
+      "data": {
+        "call_id": "8968430f-1123-469e-9569-1a6664435a68",
+        "attempt": 1,
+        "ok": false,
+        "error": {
+          "code": "HTTP_UNAVAILABLE",
+          "message": "Synthetic transient upstream failure",
+          "retryable": true,
+          "details": {}
+        },
+        "latency_ms": 0.15300000086426735
+      }
+    },
+    {
+      "seq": 11,
+      "timestamp": "2026-09-09T10:50:12.175285+00:00",
+      "kind": "retry",
+      "step": "bad",
+      "data": {
+        "call_id": "8968430f-1123-469e-9569-1a6664435a68",
+        "attempt": 1,
+        "next_attempt": 2,
+        "cause": "HTTP_UNAVAILABLE"
+      }
+    },
+    {
+      "seq": 12,
+      "timestamp": "2026-09-09T10:50:12.186388+00:00",
+      "kind": "tool_attempt",
+      "step": "bad",
+      "data": {
+        "call_id": "8968430f-1123-469e-9569-1a6664435a68",
+        "name": "http_mock",
+        "args": {
+          "scenario": "retry_exhausted"
+        },
+        "attempt": 2
+      }
+    },
+    {
+      "seq": 13,
+      "timestamp": "2026-09-09T10:50:12.186431+00:00",
+      "kind": "attempt_end",
+      "step": "bad",
+      "data": {
+        "call_id": "8968430f-1123-469e-9569-1a6664435a68",
+        "attempt": 2,
+        "ok": false,
+        "error": {
+          "code": "HTTP_UNAVAILABLE",
+          "message": "Synthetic transient upstream failure",
+          "retryable": true,
+          "details": {}
+        },
+        "latency_ms": 0.07425001240335405
+      }
+    },
+    {
+      "seq": 14,
+      "timestamp": "2026-09-09T10:50:12.186471+00:00",
+      "kind": "tool_result",
+      "step": "bad",
+      "data": {
+        "call_id": "8968430f-1123-469e-9569-1a6664435a68",
+        "name": "http_mock",
+        "args": {
+          "scenario": "retry_exhausted"
+        },
+        "result": {
+          "ok": false,
+          "value": null,
+          "error": {
+            "code": "RETRY_EXHAUSTED",
+            "message": "Tool retry budget exhausted",
+            "retryable": false,
+            "details": {
+              "cause": "HTTP_UNAVAILABLE",
+              "attempts": 2
+            }
+          },
+          "attempts": 2,
+          "latency_ms": 11.3574580027489
+        },
+        "summary": "null"
+      }
+    },
+    {
+      "seq": 15,
+      "timestamp": "2026-09-09T10:50:12.186521+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "WAITING_TOOL",
+        "to": "RECOVERING"
+      }
+    },
+    {
+      "seq": 16,
+      "timestamp": "2026-09-09T10:50:12.188078+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RECOVERING",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 17,
+      "timestamp": "2026-09-09T10:50:12.189421+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 138,
+        "messages": 3,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 18,
+      "timestamp": "2026-09-09T10:50:12.189432+00:00",
+      "kind": "step_skipped",
+      "step": "child",
+      "data": {
+        "status": "BLOCKED"
+      }
+    },
+    {
+      "seq": 19,
+      "timestamp": "2026-09-09T10:50:12.189441+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "FAILED"
+      }
+    },
+    {
+      "seq": 20,
+      "timestamp": "2026-09-09T10:50:12.190806+00:00",
+      "kind": "final",
+      "step": null,
+      "data": {
+        "result": {
+          "steps": {
+            "bad": {
+              "status": "FAILED",
+              "value": null,
+              "error": {
+                "code": "RETRY_EXHAUSTED",
+                "message": "Tool retry budget exhausted",
+                "retryable": false,
+                "details": {
+                  "cause": "HTTP_UNAVAILABLE",
+                  "attempts": 2
+                }
+              }
+            },
+            "ok": {
+              "status": "SUCCESS",
+              "value": {
+                "value": 4.0
+              },
+              "error": null
+            },
+            "child": {
+              "status": "BLOCKED",
+              "value": null
+            }
+          }
+        },
+        "status": "FAILED",
+        "latency_ms": 19.823041002382524
+      }
+    }
+  ]
+}

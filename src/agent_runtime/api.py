@@ -26,7 +26,10 @@ class CancelResponse(Model):
 def create_app(database_url: str | None = None) -> FastAPI:
     @asynccontextmanager
     async def lifespan(app: FastAPI):
-        store = Store(database_url or os.getenv("DATABASE_URL", "sqlite+aiosqlite:///./runtime-data/runtime.db"))
+        store = Store(
+            database_url
+            or os.getenv("DATABASE_URL", "sqlite+aiosqlite:///./runtime-data/runtime.db")
+        )
         await store.initialize(recover_interrupted=True)
         runtime = Runtime(demo_registry(), store)
         app.state.runtime = runtime
@@ -40,12 +43,15 @@ def create_app(database_url: str | None = None) -> FastAPI:
                 await asyncio.gather(*tasks, return_exceptions=True)
             await store.close()
 
-    app = FastAPI(title="Agent Runtime & Tool Workflow Platform", version=__version__, lifespan=lifespan)
+    app = FastAPI(
+        title="Agent Runtime & Tool Workflow Platform", version=__version__, lifespan=lifespan
+    )
 
     @app.get("/health", response_model=Health)
     async def health():
         # Probe actual persistence connection, not only process liveness.
         from sqlalchemy import text
+
         async with app.state.runtime.store.engine.connect() as con:
             await con.execute(text("SELECT 1"))
         return Health(status="ok", version=__version__, storage="sqlite")

@@ -1,0 +1,493 @@
+{
+  "recorded_at": "2026-09-09T10:50:52.918725+00:00",
+  "git_head": "64ce2d187532206a7bea7c9ccf46e27f747c49c8",
+  "python": "3.14.6",
+  "system": "Darwin",
+  "machine": "arm64",
+  "timing": "time.perf_counter; wall latency includes runtime persistence; no monetary price configured",
+  "dataset": {
+    "version": "1.0.0",
+    "sha256": "844b92b3e3602bb4f8bf61b9065eefb4b91f50a5f99f3f7bc9f7bb4a96285614",
+    "count": 48,
+    "development": 32,
+    "held_out": 16,
+    "live_eligible": 8,
+    "policy": "Frozen before held-out runs; no runtime imports from evaluation; no special held-out rules."
+  },
+  "source": "live-deepseek",
+  "split": "held-out",
+  "metrics": {
+    "task_success": {
+      "hits": 7,
+      "total": 8,
+      "rate": 0.875
+    },
+    "tool_selection_accuracy": {
+      "hits": 10,
+      "total": 10,
+      "rate": 1.0
+    },
+    "tool_argument_accuracy": {
+      "hits": 9,
+      "total": 10,
+      "rate": 0.9
+    },
+    "workflow_completion": {
+      "hits": 0,
+      "total": 0,
+      "rate": null
+    },
+    "recovery_success": {
+      "hits": 0,
+      "total": 0,
+      "rate": null
+    },
+    "context_fact_retention": {
+      "hits": 0,
+      "total": 0,
+      "rate": null
+    },
+    "latency_ms": {
+      "mean": 2460.3383385019697,
+      "median": 2463.0515620010556,
+      "max": 3448.5559580061818
+    },
+    "llm_call_count": 18,
+    "tool_call_count": 10,
+    "terminal_success_count": 8,
+    "token_usage": {
+      "total_tokens": 30436
+    },
+    "cost_usd": null
+  },
+  "rows": [
+    {
+      "id": "d09",
+      "split": "held-out",
+      "kind": "run",
+      "mode": "react",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "final_result.value": true
+      },
+      "status": "SUCCESS",
+      "workflow_completed": null,
+      "recovery_case": false,
+      "latency_ms": 2501.0703330044635,
+      "llm_call_count": 2,
+      "tool_call_count": 1,
+      "token_usage": {
+        "prompt_tokens": 3280,
+        "completion_tokens": 31,
+        "total_tokens": 3311
+      },
+      "cost_usd": null,
+      "final_result": {
+        "value": 221.0
+      },
+      "errors": [],
+      "trace": "live-deepseek-traces/d09.json",
+      "source": "live-deepseek",
+      "selection_hits": 1,
+      "argument_hits": 1,
+      "call_accuracy_denominator": 1,
+      "selected_calls": [
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "13*17"
+          }
+        }
+      ]
+    },
+    {
+      "id": "d10",
+      "split": "held-out",
+      "kind": "run",
+      "mode": "react",
+      "task_success": false,
+      "checks": {
+        "status": true,
+        "final_result.rows.0.total": false
+      },
+      "status": "SUCCESS",
+      "workflow_completed": null,
+      "recovery_case": false,
+      "latency_ms": 2425.0327909976477,
+      "llm_call_count": 2,
+      "tool_call_count": 1,
+      "token_usage": {
+        "prompt_tokens": 3298,
+        "completion_tokens": 79,
+        "total_tokens": 3377
+      },
+      "cost_usd": null,
+      "final_result": {
+        "name": "sql_query",
+        "ok": true,
+        "value": {
+          "rows": [
+            {
+              "total": 47
+            }
+          ],
+          "row_count": 1
+        },
+        "error": null,
+        "attempts": 1,
+        "latency_ms": 1.6538329946342856
+      },
+      "errors": [],
+      "trace": "live-deepseek-traces/d10.json",
+      "source": "live-deepseek",
+      "selection_hits": 1,
+      "argument_hits": 1,
+      "call_accuracy_denominator": 1,
+      "selected_calls": [
+        {
+          "name": "sql_query",
+          "args": {
+            "query": "SELECT SUM(quantity) AS total FROM inventory"
+          }
+        }
+      ]
+    },
+    {
+      "id": "d11",
+      "split": "held-out",
+      "kind": "run",
+      "mode": "react",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "final_result.text": true
+      },
+      "status": "SUCCESS",
+      "workflow_completed": null,
+      "recovery_case": false,
+      "latency_ms": 2586.5965419943677,
+      "llm_call_count": 2,
+      "tool_call_count": 1,
+      "token_usage": {
+        "prompt_tokens": 3301,
+        "completion_tokens": 50,
+        "total_tokens": 3351
+      },
+      "cost_usd": null,
+      "final_result": {
+        "key": "owner",
+        "text": "Synthetic project owner: Team Atlas.",
+        "source": "synthetic-knowledge-v1"
+      },
+      "errors": [],
+      "trace": "live-deepseek-traces/d11.json",
+      "source": "live-deepseek",
+      "selection_hits": 1,
+      "argument_hits": 1,
+      "call_accuracy_denominator": 1,
+      "selected_calls": [
+        {
+          "name": "knowledge_lookup",
+          "args": {
+            "key": "owner"
+          }
+        }
+      ]
+    },
+    {
+      "id": "d12",
+      "split": "held-out",
+      "kind": "run",
+      "mode": "react",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "final_result.mean": true,
+        "final_result.sum": true
+      },
+      "status": "SUCCESS",
+      "workflow_completed": null,
+      "recovery_case": false,
+      "latency_ms": 2066.942334000487,
+      "llm_call_count": 2,
+      "tool_call_count": 1,
+      "token_usage": {
+        "prompt_tokens": 3322,
+        "completion_tokens": 57,
+        "total_tokens": 3379
+      },
+      "cost_usd": null,
+      "final_result": {
+        "count": 3,
+        "sum": 27.0,
+        "mean": 9.0,
+        "min": 4.0,
+        "max": 14.0
+      },
+      "errors": [],
+      "trace": "live-deepseek-traces/d12.json",
+      "source": "live-deepseek",
+      "selection_hits": 1,
+      "argument_hits": 1,
+      "call_accuracy_denominator": 1,
+      "selected_calls": [
+        {
+          "name": "data_analysis",
+          "args": {
+            "values": [
+              4,
+              9,
+              14
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "r09",
+      "split": "held-out",
+      "kind": "run",
+      "mode": "react",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "final_result.value": true
+      },
+      "status": "SUCCESS",
+      "workflow_completed": null,
+      "recovery_case": false,
+      "latency_ms": 3448.5559580061818,
+      "llm_call_count": 3,
+      "tool_call_count": 2,
+      "token_usage": {
+        "prompt_tokens": 5046,
+        "completion_tokens": 49,
+        "total_tokens": 5095
+      },
+      "cost_usd": null,
+      "final_result": {
+        "value": 65.0
+      },
+      "errors": [],
+      "trace": "live-deepseek-traces/r09.json",
+      "source": "live-deepseek",
+      "selection_hits": 2,
+      "argument_hits": 2,
+      "call_accuracy_denominator": 2,
+      "selected_calls": [
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "7*8"
+          }
+        },
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "56+9"
+          }
+        }
+      ]
+    },
+    {
+      "id": "r10",
+      "split": "held-out",
+      "kind": "run",
+      "mode": "react",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "final_result.sum": true,
+        "final_result.mean": true
+      },
+      "status": "SUCCESS",
+      "workflow_completed": null,
+      "recovery_case": false,
+      "latency_ms": 2932.3071249964414,
+      "llm_call_count": 3,
+      "tool_call_count": 2,
+      "token_usage": {
+        "prompt_tokens": 5119,
+        "completion_tokens": 75,
+        "total_tokens": 5194
+      },
+      "cost_usd": null,
+      "final_result": {
+        "count": 3,
+        "sum": 30.0,
+        "mean": 10.0,
+        "min": 4.0,
+        "max": 20.0
+      },
+      "errors": [],
+      "trace": "live-deepseek-traces/r10.json",
+      "source": "live-deepseek",
+      "selection_hits": 2,
+      "argument_hits": 2,
+      "call_accuracy_denominator": 2,
+      "selected_calls": [
+        {
+          "name": "http_mock",
+          "args": {
+            "resource": "beta"
+          }
+        },
+        {
+          "name": "data_analysis",
+          "args": {
+            "values": [
+              20,
+              4,
+              6
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "r11",
+      "split": "held-out",
+      "kind": "run",
+      "mode": "react",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "final_result.key": true,
+        "final_result.text": true
+      },
+      "status": "SUCCESS",
+      "workflow_completed": null,
+      "recovery_case": false,
+      "latency_ms": 1900.6396250042599,
+      "llm_call_count": 2,
+      "tool_call_count": 1,
+      "token_usage": {
+        "prompt_tokens": 3310,
+        "completion_tokens": 60,
+        "total_tokens": 3370
+      },
+      "cost_usd": null,
+      "final_result": {
+        "key": "retry",
+        "text": "Retry only transient failures of idempotent tools within a bounded budget.",
+        "source": "synthetic-knowledge-v1"
+      },
+      "errors": [],
+      "trace": "live-deepseek-traces/r11.json",
+      "source": "live-deepseek",
+      "selection_hits": 1,
+      "argument_hits": 1,
+      "call_accuracy_denominator": 1,
+      "selected_calls": [
+        {
+          "name": "knowledge_lookup",
+          "args": {
+            "key": "retry"
+          }
+        }
+      ]
+    },
+    {
+      "id": "r12",
+      "split": "held-out",
+      "kind": "run",
+      "mode": "react",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "final_result.rows.0.price": true
+      },
+      "status": "SUCCESS",
+      "workflow_completed": null,
+      "recovery_case": false,
+      "latency_ms": 1821.5620000119088,
+      "llm_call_count": 2,
+      "tool_call_count": 1,
+      "token_usage": {
+        "prompt_tokens": 3306,
+        "completion_tokens": 53,
+        "total_tokens": 3359
+      },
+      "cost_usd": null,
+      "final_result": {
+        "rows": [
+          {
+            "price": 8.0
+          }
+        ],
+        "row_count": 1
+      },
+      "errors": [],
+      "trace": "live-deepseek-traces/r12.json",
+      "source": "live-deepseek",
+      "selection_hits": 1,
+      "argument_hits": 0,
+      "call_accuracy_denominator": 1,
+      "selected_calls": [
+        {
+          "name": "sql_query",
+          "args": {
+            "query": "SELECT price FROM inventory WHERE item = ?",
+            "params": [
+              "gadget"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "metric_notes": {
+    "task_success": "Passes all semantic assertions, including expected safe failure for negative tasks; context fixtures require all four facts.",
+    "tool_argument_accuracy": "Exact declared name+argument multiset; semantically equivalent SQL/arithmetic can score lower.",
+    "workflow_completion": "SUCCESS terminal pipeline runs / all pipeline runs, including deliberately failing workflows.",
+    "recovery_success": "Expected recovery OR safe terminal failure contract on error cases, not always conversion to SUCCESS.",
+    "tokens": "Only provider-reported usage; context estimator is reported separately. No reliable monetary cost."
+  },
+  "by_split": {
+    "held-out": {
+      "task_success": {
+        "hits": 7,
+        "total": 8,
+        "rate": 0.875
+      },
+      "tool_selection_accuracy": {
+        "hits": 10,
+        "total": 10,
+        "rate": 1.0
+      },
+      "tool_argument_accuracy": {
+        "hits": 9,
+        "total": 10,
+        "rate": 0.9
+      },
+      "workflow_completion": {
+        "hits": 0,
+        "total": 0,
+        "rate": null
+      },
+      "recovery_success": {
+        "hits": 0,
+        "total": 0,
+        "rate": null
+      },
+      "context_fact_retention": {
+        "hits": 0,
+        "total": 0,
+        "rate": null
+      },
+      "latency_ms": {
+        "mean": 2460.3383385019697,
+        "median": 2463.0515620010556,
+        "max": 3448.5559580061818
+      },
+      "llm_call_count": 18,
+      "tool_call_count": 10,
+      "terminal_success_count": 8,
+      "token_usage": {
+        "total_tokens": 30436
+      },
+      "cost_usd": null
+    }
+  }
+}

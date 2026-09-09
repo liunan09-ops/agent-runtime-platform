@@ -1,0 +1,299 @@
+{
+  "state": {
+    "request_id": "9c13e92c-2784-4229-a838-1e19205a3dc0",
+    "session_id": "6dfbbae7-abc1-4f07-807f-1a413207d161",
+    "execution_mode": "direct",
+    "user_request": "",
+    "status": "SUCCESS",
+    "current_step": 1,
+    "tool_history": [
+      {
+        "call_id": "52a6929e-40ba-4b0d-be7f-4215a21c0828",
+        "step": "direct",
+        "call": {
+          "name": "sql_query",
+          "args": {
+            "query": "SELECT quantity FROM inventory WHERE item=?",
+            "params": [
+              "widget"
+            ]
+          }
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "rows": [
+              {
+                "quantity": 12
+              }
+            ],
+            "row_count": 1
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 0.7404170028166845
+        }
+      }
+    ],
+    "observations": [
+      {
+        "name": "sql_query",
+        "ok": true,
+        "value": {
+          "rows": [
+            {
+              "quantity": 12
+            }
+          ],
+          "row_count": 1
+        },
+        "error": null,
+        "attempts": 1,
+        "latency_ms": 0.7404170028166845
+      }
+    ],
+    "context_state": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "",
+          "important": true,
+          "facts": {}
+        },
+        {
+          "role": "tool",
+          "content": "{\"name\": \"sql_query\", \"ok\": true, \"value\": {\"rows\": [{\"quantity\": 12}], \"row_count\": 1}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.7404170028166845}",
+          "important": false,
+          "facts": {}
+        }
+      ],
+      "facts": {},
+      "history_summary": [],
+      "estimated_tokens": 67,
+      "dropped_messages": 0,
+      "dropped_facts": 0,
+      "estimator": "ceil(UTF-8 bytes / 4), not provider tokens"
+    },
+    "errors": [],
+    "final_result": {
+      "rows": [
+        {
+          "quantity": 12
+        }
+      ],
+      "row_count": 1
+    },
+    "created_at": "2026-09-09T10:50:11.399418+00:00",
+    "finished_at": "2026-09-09T10:50:11.407988+00:00",
+    "latency_ms": 8.41416600451339,
+    "llm_call_count": 0,
+    "tool_call_count": 1,
+    "token_usage": null,
+    "cost_usd": null,
+    "replay_of": null
+  },
+  "events": [
+    {
+      "seq": 0,
+      "timestamp": "2026-09-09T10:50:11.399522+00:00",
+      "kind": "request",
+      "step": null,
+      "data": {
+        "request": {
+          "mode": "direct",
+          "user_request": "",
+          "session_id": "6dfbbae7-abc1-4f07-807f-1a413207d161",
+          "tool": {
+            "name": "sql_query",
+            "args": {
+              "query": "SELECT quantity FROM inventory WHERE item=?",
+              "params": [
+                "widget"
+              ]
+            }
+          },
+          "steps": [],
+          "parallel": true,
+          "max_parallel": 4,
+          "max_steps": 8,
+          "timeout_s": 30.0,
+          "llm_timeout_s": 15.0,
+          "llm_retries": 1,
+          "provider": "mock",
+          "mock_script": [],
+          "fallback": null,
+          "permissions": [
+            "read"
+          ],
+          "messages": [],
+          "context_policy": {
+            "strategy": "structured",
+            "message_budget": 8,
+            "token_budget": 2048,
+            "recent_window": 4,
+            "tool_summary_chars": 400
+          }
+        },
+        "mode": "direct"
+      }
+    },
+    {
+      "seq": 1,
+      "timestamp": "2026-09-09T10:50:11.399573+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 17,
+        "messages": 1,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 2,
+      "timestamp": "2026-09-09T10:50:11.401725+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "PENDING",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 3,
+      "timestamp": "2026-09-09T10:50:11.403084+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "WAITING_TOOL"
+      }
+    },
+    {
+      "seq": 4,
+      "timestamp": "2026-09-09T10:50:11.404244+00:00",
+      "kind": "tool_selected",
+      "step": "direct",
+      "data": {
+        "call_id": "52a6929e-40ba-4b0d-be7f-4215a21c0828",
+        "name": "sql_query",
+        "args": {
+          "query": "SELECT quantity FROM inventory WHERE item=?",
+          "params": [
+            "widget"
+          ]
+        }
+      }
+    },
+    {
+      "seq": 5,
+      "timestamp": "2026-09-09T10:50:11.404280+00:00",
+      "kind": "tool_attempt",
+      "step": "direct",
+      "data": {
+        "call_id": "52a6929e-40ba-4b0d-be7f-4215a21c0828",
+        "name": "sql_query",
+        "args": {
+          "query": "SELECT quantity FROM inventory WHERE item=?",
+          "params": [
+            "widget"
+          ]
+        },
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 6,
+      "timestamp": "2026-09-09T10:50:11.404989+00:00",
+      "kind": "attempt_end",
+      "step": "direct",
+      "data": {
+        "call_id": "52a6929e-40ba-4b0d-be7f-4215a21c0828",
+        "attempt": 1,
+        "ok": true,
+        "latency_ms": 0.7104579999577254
+      }
+    },
+    {
+      "seq": 7,
+      "timestamp": "2026-09-09T10:50:11.405037+00:00",
+      "kind": "tool_result",
+      "step": "direct",
+      "data": {
+        "call_id": "52a6929e-40ba-4b0d-be7f-4215a21c0828",
+        "name": "sql_query",
+        "args": {
+          "query": "SELECT quantity FROM inventory WHERE item=?",
+          "params": [
+            "widget"
+          ]
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "rows": [
+              {
+                "quantity": 12
+              }
+            ],
+            "row_count": 1
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 0.7404170028166845
+        },
+        "summary": "{\"rows\":[{\"quantity\":12}],\"row_count\":1}"
+      }
+    },
+    {
+      "seq": 8,
+      "timestamp": "2026-09-09T10:50:11.405048+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "WAITING_TOOL",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 9,
+      "timestamp": "2026-09-09T10:50:11.406387+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 67,
+        "messages": 2,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 10,
+      "timestamp": "2026-09-09T10:50:11.406402+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "SUCCESS"
+      }
+    },
+    {
+      "seq": 11,
+      "timestamp": "2026-09-09T10:50:11.407997+00:00",
+      "kind": "final",
+      "step": null,
+      "data": {
+        "result": {
+          "rows": [
+            {
+              "quantity": 12
+            }
+          ],
+          "row_count": 1
+        },
+        "status": "SUCCESS",
+        "latency_ms": 8.41416600451339
+      }
+    }
+  ]
+}

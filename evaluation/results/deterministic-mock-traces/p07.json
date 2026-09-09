@@ -1,0 +1,427 @@
+{
+  "state": {
+    "request_id": "f83a6b5f-5095-4a48-9a60-a3a951428852",
+    "session_id": "c5878760-4f8c-4c17-a169-b839cefe6926",
+    "execution_mode": "pipeline",
+    "user_request": "",
+    "status": "SUCCESS",
+    "current_step": 1,
+    "tool_history": [
+      {
+        "call_id": "2a8f5d0b-aac8-4602-a5ec-f1f3478dca3f",
+        "step": "a",
+        "call": {
+          "name": "http_mock",
+          "args": {
+            "scenario": "exception"
+          }
+        },
+        "result": {
+          "ok": false,
+          "value": null,
+          "error": {
+            "code": "TOOL_EXCEPTION",
+            "message": "Tool raised an exception",
+            "retryable": false,
+            "details": {
+              "exception_type": "RuntimeError"
+            }
+          },
+          "attempts": 1,
+          "latency_ms": 0.11325000377837569
+        }
+      },
+      {
+        "call_id": "8a313c88-7551-445a-97b9-2ce044496817",
+        "step": "a:fallback",
+        "call": {
+          "name": "calculator",
+          "args": {
+            "expression": "9"
+          }
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "value": 9.0
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 0.05283299833536148
+        }
+      }
+    ],
+    "observations": [
+      {
+        "name": "http_mock",
+        "ok": false,
+        "value": null,
+        "error": {
+          "code": "TOOL_EXCEPTION",
+          "message": "Tool raised an exception",
+          "retryable": false,
+          "details": {
+            "exception_type": "RuntimeError"
+          }
+        },
+        "attempts": 1,
+        "latency_ms": 0.11325000377837569
+      },
+      {
+        "name": "calculator",
+        "ok": true,
+        "value": {
+          "value": 9.0
+        },
+        "error": null,
+        "attempts": 1,
+        "latency_ms": 0.05283299833536148
+      }
+    ],
+    "context_state": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "",
+          "important": true,
+          "facts": {}
+        },
+        {
+          "role": "tool",
+          "content": "{\"name\": \"http_mock\", \"ok\": false, \"value\": null, \"error\": {\"code\": \"TOOL_EXCEPTION\", \"message\": \"Tool raised an exception\", \"retryable\": false, \"details\": {\"exception_type\": \"RuntimeError\"}}, \"attempts\": 1, \"latency_ms\": 0.11325000377837569}",
+          "important": false,
+          "facts": {}
+        },
+        {
+          "role": "tool",
+          "content": "{\"name\": \"calculator\", \"ok\": true, \"value\": {\"value\": 9.0}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.05283299833536148}",
+          "important": false,
+          "facts": {}
+        }
+      ],
+      "facts": {},
+      "history_summary": [],
+      "estimated_tokens": 135,
+      "dropped_messages": 0,
+      "dropped_facts": 0,
+      "estimator": "ceil(UTF-8 bytes / 4), not provider tokens"
+    },
+    "errors": [
+      {
+        "code": "TOOL_EXCEPTION",
+        "message": "Tool raised an exception",
+        "retryable": false,
+        "details": {
+          "exception_type": "RuntimeError"
+        }
+      }
+    ],
+    "final_result": {
+      "steps": {
+        "a": {
+          "status": "SUCCESS",
+          "value": {
+            "value": 9.0
+          },
+          "error": null
+        }
+      }
+    },
+    "created_at": "2026-09-09T10:50:12.072728+00:00",
+    "finished_at": "2026-09-09T10:50:12.081426+00:00",
+    "latency_ms": 8.578915992984548,
+    "llm_call_count": 0,
+    "tool_call_count": 2,
+    "token_usage": null,
+    "cost_usd": null,
+    "replay_of": null
+  },
+  "events": [
+    {
+      "seq": 0,
+      "timestamp": "2026-09-09T10:50:12.072802+00:00",
+      "kind": "request",
+      "step": null,
+      "data": {
+        "request": {
+          "mode": "pipeline",
+          "user_request": "",
+          "session_id": "c5878760-4f8c-4c17-a169-b839cefe6926",
+          "tool": null,
+          "steps": [
+            {
+              "id": "a",
+              "tool": {
+                "name": "http_mock",
+                "args": {
+                  "scenario": "exception"
+                }
+              },
+              "depends_on": [],
+              "when": null,
+              "fallback": {
+                "name": "calculator",
+                "args": {
+                  "expression": "9"
+                }
+              },
+              "optional": false
+            }
+          ],
+          "parallel": true,
+          "max_parallel": 4,
+          "max_steps": 8,
+          "timeout_s": 30.0,
+          "llm_timeout_s": 15.0,
+          "llm_retries": 1,
+          "provider": "mock",
+          "mock_script": [],
+          "fallback": null,
+          "permissions": [
+            "read"
+          ],
+          "messages": [],
+          "context_policy": {
+            "strategy": "structured",
+            "message_budget": 8,
+            "token_budget": 2048,
+            "recent_window": 4,
+            "tool_summary_chars": 400
+          }
+        },
+        "mode": "pipeline"
+      }
+    },
+    {
+      "seq": 1,
+      "timestamp": "2026-09-09T10:50:12.072847+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 17,
+        "messages": 1,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 2,
+      "timestamp": "2026-09-09T10:50:12.074719+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "PENDING",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 3,
+      "timestamp": "2026-09-09T10:50:12.076045+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "WAITING_TOOL"
+      }
+    },
+    {
+      "seq": 4,
+      "timestamp": "2026-09-09T10:50:12.077985+00:00",
+      "kind": "tool_selected",
+      "step": "a",
+      "data": {
+        "call_id": "2a8f5d0b-aac8-4602-a5ec-f1f3478dca3f",
+        "name": "http_mock",
+        "args": {
+          "scenario": "exception"
+        }
+      }
+    },
+    {
+      "seq": 5,
+      "timestamp": "2026-09-09T10:50:12.078046+00:00",
+      "kind": "tool_attempt",
+      "step": "a",
+      "data": {
+        "call_id": "2a8f5d0b-aac8-4602-a5ec-f1f3478dca3f",
+        "name": "http_mock",
+        "args": {
+          "scenario": "exception"
+        },
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 6,
+      "timestamp": "2026-09-09T10:50:12.078103+00:00",
+      "kind": "attempt_end",
+      "step": "a",
+      "data": {
+        "call_id": "2a8f5d0b-aac8-4602-a5ec-f1f3478dca3f",
+        "attempt": 1,
+        "ok": false,
+        "error": {
+          "code": "TOOL_EXCEPTION",
+          "message": "Tool raised an exception",
+          "retryable": false,
+          "details": {
+            "exception_type": "RuntimeError"
+          }
+        },
+        "latency_ms": 0.054750009439885616
+      }
+    },
+    {
+      "seq": 7,
+      "timestamp": "2026-09-09T10:50:12.078139+00:00",
+      "kind": "tool_result",
+      "step": "a",
+      "data": {
+        "call_id": "2a8f5d0b-aac8-4602-a5ec-f1f3478dca3f",
+        "name": "http_mock",
+        "args": {
+          "scenario": "exception"
+        },
+        "result": {
+          "ok": false,
+          "value": null,
+          "error": {
+            "code": "TOOL_EXCEPTION",
+            "message": "Tool raised an exception",
+            "retryable": false,
+            "details": {
+              "exception_type": "RuntimeError"
+            }
+          },
+          "attempts": 1,
+          "latency_ms": 0.11325000377837569
+        },
+        "summary": "null"
+      }
+    },
+    {
+      "seq": 8,
+      "timestamp": "2026-09-09T10:50:12.078145+00:00",
+      "kind": "fallback",
+      "step": "a",
+      "data": {
+        "tool": "calculator"
+      }
+    },
+    {
+      "seq": 9,
+      "timestamp": "2026-09-09T10:50:12.078157+00:00",
+      "kind": "tool_selected",
+      "step": "a:fallback",
+      "data": {
+        "call_id": "8a313c88-7551-445a-97b9-2ce044496817",
+        "name": "calculator",
+        "args": {
+          "expression": "9"
+        }
+      }
+    },
+    {
+      "seq": 10,
+      "timestamp": "2026-09-09T10:50:12.078172+00:00",
+      "kind": "tool_attempt",
+      "step": "a:fallback",
+      "data": {
+        "call_id": "8a313c88-7551-445a-97b9-2ce044496817",
+        "name": "calculator",
+        "args": {
+          "expression": "9"
+        },
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 11,
+      "timestamp": "2026-09-09T10:50:12.078210+00:00",
+      "kind": "attempt_end",
+      "step": "a:fallback",
+      "data": {
+        "call_id": "8a313c88-7551-445a-97b9-2ce044496817",
+        "attempt": 1,
+        "ok": true,
+        "latency_ms": 0.03912499232683331
+      }
+    },
+    {
+      "seq": 12,
+      "timestamp": "2026-09-09T10:50:12.078232+00:00",
+      "kind": "tool_result",
+      "step": "a:fallback",
+      "data": {
+        "call_id": "8a313c88-7551-445a-97b9-2ce044496817",
+        "name": "calculator",
+        "args": {
+          "expression": "9"
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "value": 9.0
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 0.05283299833536148
+        },
+        "summary": "{\"value\":9.0}"
+      }
+    },
+    {
+      "seq": 13,
+      "timestamp": "2026-09-09T10:50:12.078279+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "WAITING_TOOL",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 14,
+      "timestamp": "2026-09-09T10:50:12.079905+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 135,
+        "messages": 3,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 15,
+      "timestamp": "2026-09-09T10:50:12.079919+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "SUCCESS"
+      }
+    },
+    {
+      "seq": 16,
+      "timestamp": "2026-09-09T10:50:12.081440+00:00",
+      "kind": "final",
+      "step": null,
+      "data": {
+        "result": {
+          "steps": {
+            "a": {
+              "status": "SUCCESS",
+              "value": {
+                "value": 9.0
+              },
+              "error": null
+            }
+          }
+        },
+        "status": "SUCCESS",
+        "latency_ms": 8.578915992984548
+      }
+    }
+  ]
+}

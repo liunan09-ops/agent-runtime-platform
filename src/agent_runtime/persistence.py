@@ -30,6 +30,7 @@ class EventRow(Base):
 
 class Store:
     """Single-process SQLite persistence. One session per transaction; no shared AsyncSession."""
+
     def __init__(self, url: str = "sqlite+aiosqlite:///:memory:"):
         if not url.startswith("sqlite+aiosqlite:///"):
             raise ValueError("This demo supports SQLite + aiosqlite only")
@@ -59,10 +60,25 @@ class Store:
                     old = trace.state.status
                     trace.state.transition(Status.FAILED)
                     trace.state.finished_at = utcnow()
-                    trace.state.errors.append(Error(code="INTERRUPTED", message="Previous process ended before completion"))
-                    trace.events.append(TraceEvent(seq=len(trace.events), kind="state_transition",
-                                                   data={"from": old, "to": "FAILED", "cause": "INTERRUPTED"}))
-                    trace.events.append(TraceEvent(seq=len(trace.events), kind="final", data={"result": None, "status": "FAILED"}))
+                    trace.state.errors.append(
+                        Error(
+                            code="INTERRUPTED", message="Previous process ended before completion"
+                        )
+                    )
+                    trace.events.append(
+                        TraceEvent(
+                            seq=len(trace.events),
+                            kind="state_transition",
+                            data={"from": old, "to": "FAILED", "cause": "INTERRUPTED"},
+                        )
+                    )
+                    trace.events.append(
+                        TraceEvent(
+                            seq=len(trace.events),
+                            kind="final",
+                            data={"result": None, "status": "FAILED"},
+                        )
+                    )
                     await self.save(trace.state, trace.events)
 
     async def save(self, state: RunState, events: list[TraceEvent]):
@@ -70,17 +86,29 @@ class Store:
         serialized = [redact(e.model_dump(mode="json")) for e in events]
         async with self.lock, self.sessions.begin() as session:
             await session.merge(RunRow(request_id=state.request_id, state=snapshot))
-            last = await session.scalar(select(func.max(EventRow.seq)).where(EventRow.request_id == state.request_id))
-            session.add_all(EventRow(request_id=state.request_id, seq=e["seq"], event=e)
-                            for e in serialized if last is None or e["seq"] > last)
+            last = await session.scalar(
+                select(func.max(EventRow.seq)).where(EventRow.request_id == state.request_id)
+            )
+            session.add_all(
+                EventRow(request_id=state.request_id, seq=e["seq"], event=e)
+                for e in serialized
+                if last is None or e["seq"] > last
+            )
 
     async def get(self, request_id: str) -> TraceResponse | None:
         async with self.lock, self.sessions() as session:
             row = await session.get(RunRow, request_id)
             if row is None:
                 return None
-            events = (await session.scalars(select(EventRow).where(EventRow.request_id == request_id).order_by(EventRow.seq))).all()
-            return TraceResponse(state=RunState.model_validate(row.state), events=[TraceEvent.model_validate(e.event) for e in events])
+            events = (
+                await session.scalars(
+                    select(EventRow).where(EventRow.request_id == request_id).order_by(EventRow.seq)
+                )
+            ).all()
+            return TraceResponse(
+                state=RunState.model_validate(row.state),
+                events=[TraceEvent.model_validate(e.event) for e in events],
+            )
 
     async def close(self):
         await self.engine.dispose()

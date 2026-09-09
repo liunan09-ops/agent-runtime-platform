@@ -1,0 +1,606 @@
+{
+  "state": {
+    "request_id": "91f11840-2f27-47d4-b119-5d3cd8967a51",
+    "session_id": "1fafecc1-13f1-4139-987a-37f448053b33",
+    "execution_mode": "pipeline",
+    "user_request": "",
+    "status": "SUCCESS",
+    "current_step": 3,
+    "tool_history": [
+      {
+        "call_id": "6bbe0b04-5668-46ef-af91-09ca8c6ebe97",
+        "step": "a",
+        "call": {
+          "name": "calculator",
+          "args": {
+            "expression": "12"
+          }
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "value": 12.0
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 0.07491699943784624
+        }
+      },
+      {
+        "call_id": "9f5cb0a5-227f-4d7b-be38-13f5a237329f",
+        "step": "b",
+        "call": {
+          "name": "calculator",
+          "args": {
+            "expression": "18"
+          }
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "value": 18.0
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 0.026583002181723714
+        }
+      },
+      {
+        "call_id": "d806df76-ca05-4113-a3a0-d1d3cf1286fd",
+        "step": "c",
+        "call": {
+          "name": "data_analysis",
+          "args": {
+            "values": [
+              12.0,
+              18.0
+            ]
+          }
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "count": 2,
+            "sum": 30.0,
+            "mean": 15.0,
+            "min": 12.0,
+            "max": 18.0
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 0.03187499532941729
+        }
+      }
+    ],
+    "observations": [
+      {
+        "name": "calculator",
+        "ok": true,
+        "value": {
+          "value": 12.0
+        },
+        "error": null,
+        "attempts": 1,
+        "latency_ms": 0.07491699943784624
+      },
+      {
+        "name": "calculator",
+        "ok": true,
+        "value": {
+          "value": 18.0
+        },
+        "error": null,
+        "attempts": 1,
+        "latency_ms": 0.026583002181723714
+      },
+      {
+        "name": "data_analysis",
+        "ok": true,
+        "value": {
+          "count": 2,
+          "sum": 30.0,
+          "mean": 15.0,
+          "min": 12.0,
+          "max": 18.0
+        },
+        "error": null,
+        "attempts": 1,
+        "latency_ms": 0.03187499532941729
+      }
+    ],
+    "context_state": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "",
+          "important": true,
+          "facts": {}
+        },
+        {
+          "role": "tool",
+          "content": "{\"name\": \"calculator\", \"ok\": true, \"value\": {\"value\": 12.0}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.07491699943784624}",
+          "important": false,
+          "facts": {}
+        },
+        {
+          "role": "tool",
+          "content": "{\"name\": \"calculator\", \"ok\": true, \"value\": {\"value\": 18.0}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.026583002181723714}",
+          "important": false,
+          "facts": {}
+        },
+        {
+          "role": "tool",
+          "content": "{\"name\": \"data_analysis\", \"ok\": true, \"value\": {\"count\": 2, \"sum\": 30.0, \"mean\": 15.0, \"min\": 12.0, \"max\": 18.0}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.03187499532941729}",
+          "important": false,
+          "facts": {}
+        }
+      ],
+      "facts": {},
+      "history_summary": [],
+      "estimated_tokens": 160,
+      "dropped_messages": 0,
+      "dropped_facts": 0,
+      "estimator": "ceil(UTF-8 bytes / 4), not provider tokens"
+    },
+    "errors": [],
+    "final_result": {
+      "steps": {
+        "a": {
+          "status": "SUCCESS",
+          "value": {
+            "value": 12.0
+          },
+          "error": null
+        },
+        "b": {
+          "status": "SUCCESS",
+          "value": {
+            "value": 18.0
+          },
+          "error": null
+        },
+        "c": {
+          "status": "SUCCESS",
+          "value": {
+            "count": 2,
+            "sum": 30.0,
+            "mean": 15.0,
+            "min": 12.0,
+            "max": 18.0
+          },
+          "error": null
+        }
+      }
+    },
+    "created_at": "2026-09-09T10:50:12.121572+00:00",
+    "finished_at": "2026-09-09T10:50:12.132183+00:00",
+    "latency_ms": 10.456125004566275,
+    "llm_call_count": 0,
+    "tool_call_count": 3,
+    "token_usage": null,
+    "cost_usd": null,
+    "replay_of": null
+  },
+  "events": [
+    {
+      "seq": 0,
+      "timestamp": "2026-09-09T10:50:12.121665+00:00",
+      "kind": "request",
+      "step": null,
+      "data": {
+        "request": {
+          "mode": "pipeline",
+          "user_request": "",
+          "session_id": "1fafecc1-13f1-4139-987a-37f448053b33",
+          "tool": null,
+          "steps": [
+            {
+              "id": "a",
+              "tool": {
+                "name": "calculator",
+                "args": {
+                  "expression": "12"
+                }
+              },
+              "depends_on": [],
+              "when": null,
+              "fallback": null,
+              "optional": false
+            },
+            {
+              "id": "b",
+              "tool": {
+                "name": "calculator",
+                "args": {
+                  "expression": "18"
+                }
+              },
+              "depends_on": [],
+              "when": null,
+              "fallback": null,
+              "optional": false
+            },
+            {
+              "id": "c",
+              "tool": {
+                "name": "data_analysis",
+                "args": {
+                  "values": [
+                    {
+                      "$ref": "a.value"
+                    },
+                    {
+                      "$ref": "b.value"
+                    }
+                  ]
+                }
+              },
+              "depends_on": [
+                "a",
+                "b"
+              ],
+              "when": null,
+              "fallback": null,
+              "optional": false
+            }
+          ],
+          "parallel": true,
+          "max_parallel": 4,
+          "max_steps": 8,
+          "timeout_s": 30.0,
+          "llm_timeout_s": 15.0,
+          "llm_retries": 1,
+          "provider": "mock",
+          "mock_script": [],
+          "fallback": null,
+          "permissions": [
+            "read"
+          ],
+          "messages": [],
+          "context_policy": {
+            "strategy": "structured",
+            "message_budget": 8,
+            "token_budget": 2048,
+            "recent_window": 4,
+            "tool_summary_chars": 400
+          }
+        },
+        "mode": "pipeline"
+      }
+    },
+    {
+      "seq": 1,
+      "timestamp": "2026-09-09T10:50:12.121725+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 17,
+        "messages": 1,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 2,
+      "timestamp": "2026-09-09T10:50:12.123794+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "PENDING",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 3,
+      "timestamp": "2026-09-09T10:50:12.125099+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "WAITING_TOOL"
+      }
+    },
+    {
+      "seq": 4,
+      "timestamp": "2026-09-09T10:50:12.126327+00:00",
+      "kind": "tool_selected",
+      "step": "a",
+      "data": {
+        "call_id": "6bbe0b04-5668-46ef-af91-09ca8c6ebe97",
+        "name": "calculator",
+        "args": {
+          "expression": "12"
+        }
+      }
+    },
+    {
+      "seq": 5,
+      "timestamp": "2026-09-09T10:50:12.126358+00:00",
+      "kind": "tool_attempt",
+      "step": "a",
+      "data": {
+        "call_id": "6bbe0b04-5668-46ef-af91-09ca8c6ebe97",
+        "name": "calculator",
+        "args": {
+          "expression": "12"
+        },
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 6,
+      "timestamp": "2026-09-09T10:50:12.126406+00:00",
+      "kind": "attempt_end",
+      "step": "a",
+      "data": {
+        "call_id": "6bbe0b04-5668-46ef-af91-09ca8c6ebe97",
+        "attempt": 1,
+        "ok": true,
+        "latency_ms": 0.04949999856762588
+      }
+    },
+    {
+      "seq": 7,
+      "timestamp": "2026-09-09T10:50:12.126437+00:00",
+      "kind": "tool_result",
+      "step": "a",
+      "data": {
+        "call_id": "6bbe0b04-5668-46ef-af91-09ca8c6ebe97",
+        "name": "calculator",
+        "args": {
+          "expression": "12"
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "value": 12.0
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 0.07491699943784624
+        },
+        "summary": "{\"value\":12.0}"
+      }
+    },
+    {
+      "seq": 8,
+      "timestamp": "2026-09-09T10:50:12.126454+00:00",
+      "kind": "tool_selected",
+      "step": "b",
+      "data": {
+        "call_id": "9f5cb0a5-227f-4d7b-be38-13f5a237329f",
+        "name": "calculator",
+        "args": {
+          "expression": "18"
+        }
+      }
+    },
+    {
+      "seq": 9,
+      "timestamp": "2026-09-09T10:50:12.126463+00:00",
+      "kind": "tool_attempt",
+      "step": "b",
+      "data": {
+        "call_id": "9f5cb0a5-227f-4d7b-be38-13f5a237329f",
+        "name": "calculator",
+        "args": {
+          "expression": "18"
+        },
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 10,
+      "timestamp": "2026-09-09T10:50:12.126480+00:00",
+      "kind": "attempt_end",
+      "step": "b",
+      "data": {
+        "call_id": "9f5cb0a5-227f-4d7b-be38-13f5a237329f",
+        "attempt": 1,
+        "ok": true,
+        "latency_ms": 0.018292004824616015
+      }
+    },
+    {
+      "seq": 11,
+      "timestamp": "2026-09-09T10:50:12.126499+00:00",
+      "kind": "tool_result",
+      "step": "b",
+      "data": {
+        "call_id": "9f5cb0a5-227f-4d7b-be38-13f5a237329f",
+        "name": "calculator",
+        "args": {
+          "expression": "18"
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "value": 18.0
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 0.026583002181723714
+        },
+        "summary": "{\"value\":18.0}"
+      }
+    },
+    {
+      "seq": 12,
+      "timestamp": "2026-09-09T10:50:12.126545+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "WAITING_TOOL",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 13,
+      "timestamp": "2026-09-09T10:50:12.127980+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 102,
+        "messages": 3,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 14,
+      "timestamp": "2026-09-09T10:50:12.127990+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "WAITING_TOOL"
+      }
+    },
+    {
+      "seq": 15,
+      "timestamp": "2026-09-09T10:50:12.129279+00:00",
+      "kind": "tool_selected",
+      "step": "c",
+      "data": {
+        "call_id": "d806df76-ca05-4113-a3a0-d1d3cf1286fd",
+        "name": "data_analysis",
+        "args": {
+          "values": [
+            12.0,
+            18.0
+          ]
+        }
+      }
+    },
+    {
+      "seq": 16,
+      "timestamp": "2026-09-09T10:50:12.129298+00:00",
+      "kind": "tool_attempt",
+      "step": "c",
+      "data": {
+        "call_id": "d806df76-ca05-4113-a3a0-d1d3cf1286fd",
+        "name": "data_analysis",
+        "args": {
+          "values": [
+            12.0,
+            18.0
+          ]
+        },
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 17,
+      "timestamp": "2026-09-09T10:50:12.129313+00:00",
+      "kind": "attempt_end",
+      "step": "c",
+      "data": {
+        "call_id": "d806df76-ca05-4113-a3a0-d1d3cf1286fd",
+        "attempt": 1,
+        "ok": true,
+        "latency_ms": 0.01812499249354005
+      }
+    },
+    {
+      "seq": 18,
+      "timestamp": "2026-09-09T10:50:12.129338+00:00",
+      "kind": "tool_result",
+      "step": "c",
+      "data": {
+        "call_id": "d806df76-ca05-4113-a3a0-d1d3cf1286fd",
+        "name": "data_analysis",
+        "args": {
+          "values": [
+            12.0,
+            18.0
+          ]
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "count": 2,
+            "sum": 30.0,
+            "mean": 15.0,
+            "min": 12.0,
+            "max": 18.0
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 0.03187499532941729
+        },
+        "summary": "{\"count\":2,\"sum\":30.0,\"mean\":15.0,\"min\":12.0,\"max\":18.0}"
+      }
+    },
+    {
+      "seq": 19,
+      "timestamp": "2026-09-09T10:50:12.129378+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "WAITING_TOOL",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 20,
+      "timestamp": "2026-09-09T10:50:12.130762+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 160,
+        "messages": 4,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 21,
+      "timestamp": "2026-09-09T10:50:12.130772+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "SUCCESS"
+      }
+    },
+    {
+      "seq": 22,
+      "timestamp": "2026-09-09T10:50:12.132196+00:00",
+      "kind": "final",
+      "step": null,
+      "data": {
+        "result": {
+          "steps": {
+            "a": {
+              "status": "SUCCESS",
+              "value": {
+                "value": 12.0
+              },
+              "error": null
+            },
+            "b": {
+              "status": "SUCCESS",
+              "value": {
+                "value": 18.0
+              },
+              "error": null
+            },
+            "c": {
+              "status": "SUCCESS",
+              "value": {
+                "count": 2,
+                "sum": 30.0,
+                "mean": 15.0,
+                "min": 12.0,
+                "max": 18.0
+              },
+              "error": null
+            }
+          }
+        },
+        "status": "SUCCESS",
+        "latency_ms": 10.456125004566275
+      }
+    }
+  ]
+}

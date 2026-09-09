@@ -21,6 +21,7 @@ agent_runtime = ["data/*.json"]
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
+pythonpath = ["."]
 testpaths = ["tests"]
 markers = ["live: requires RUN_LIVE_TESTS=1 and DEEPSEEK_API_KEY"]
 

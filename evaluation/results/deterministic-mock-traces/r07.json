@@ -1,0 +1,289 @@
+{
+  "state": {
+    "request_id": "84bed066-9f24-4627-9f41-c78b2300754f",
+    "session_id": "955ad3aa-0690-4492-b936-52aebbb9227d",
+    "execution_mode": "react",
+    "user_request": "",
+    "status": "FAILED",
+    "current_step": 1,
+    "tool_history": [],
+    "observations": [],
+    "context_state": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "",
+          "important": true,
+          "facts": {}
+        },
+        {
+          "role": "user",
+          "content": "Runtime feedback: MALFORMED_LLM_OUTPUT. Return a valid JSON action.",
+          "important": false,
+          "facts": {}
+        }
+      ],
+      "facts": {},
+      "history_summary": [],
+      "estimated_tokens": 41,
+      "dropped_messages": 0,
+      "dropped_facts": 0,
+      "estimator": "ceil(UTF-8 bytes / 4), not provider tokens"
+    },
+    "errors": [
+      {
+        "code": "MALFORMED_LLM_OUTPUT",
+        "message": "Expected a JSON tool or final action",
+        "retryable": true,
+        "details": {}
+      },
+      {
+        "code": "MALFORMED_LLM_OUTPUT",
+        "message": "Expected a JSON tool or final action",
+        "retryable": true,
+        "details": {}
+      }
+    ],
+    "final_result": null,
+    "created_at": "2026-09-09T10:50:11.758356+00:00",
+    "finished_at": "2026-09-09T10:50:11.767367+00:00",
+    "latency_ms": 8.884750001016073,
+    "llm_call_count": 2,
+    "tool_call_count": 0,
+    "token_usage": null,
+    "cost_usd": null,
+    "replay_of": null
+  },
+  "events": [
+    {
+      "seq": 0,
+      "timestamp": "2026-09-09T10:50:11.758424+00:00",
+      "kind": "request",
+      "step": null,
+      "data": {
+        "request": {
+          "mode": "react",
+          "user_request": "",
+          "session_id": "955ad3aa-0690-4492-b936-52aebbb9227d",
+          "tool": null,
+          "steps": [],
+          "parallel": true,
+          "max_parallel": 4,
+          "max_steps": 8,
+          "timeout_s": 30.0,
+          "llm_timeout_s": 15.0,
+          "llm_retries": 1,
+          "provider": "mock",
+          "mock_script": [
+            "bad",
+            "still bad"
+          ],
+          "fallback": null,
+          "permissions": [
+            "read"
+          ],
+          "messages": [],
+          "context_policy": {
+            "strategy": "structured",
+            "message_budget": 8,
+            "token_budget": 2048,
+            "recent_window": 4,
+            "tool_summary_chars": 400
+          }
+        },
+        "mode": "react"
+      }
+    },
+    {
+      "seq": 1,
+      "timestamp": "2026-09-09T10:50:11.758482+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 17,
+        "messages": 1,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 2,
+      "timestamp": "2026-09-09T10:50:11.760356+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "PENDING",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 3,
+      "timestamp": "2026-09-09T10:50:11.762397+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 17,
+        "messages": 1,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 4,
+      "timestamp": "2026-09-09T10:50:11.762404+00:00",
+      "kind": "llm_start",
+      "step": "1",
+      "data": {
+        "provider": "mock",
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 5,
+      "timestamp": "2026-09-09T10:50:11.762421+00:00",
+      "kind": "llm_call",
+      "step": "1",
+      "data": {
+        "metadata": {
+          "provider": "mock",
+          "model": "scripted-v1",
+          "script_index": 1
+        },
+        "usage": null,
+        "attempt": 1,
+        "latency_ms": 0.015792000340297818
+      }
+    },
+    {
+      "seq": 6,
+      "timestamp": "2026-09-09T10:50:11.762443+00:00",
+      "kind": "llm_error",
+      "step": "1",
+      "data": {
+        "error": {
+          "code": "MALFORMED_LLM_OUTPUT",
+          "message": "Expected a JSON tool or final action",
+          "retryable": true,
+          "details": {}
+        },
+        "attempt": 1,
+        "latency_ms": 0.03825000021606684
+      }
+    },
+    {
+      "seq": 7,
+      "timestamp": "2026-09-09T10:50:11.762450+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "RECOVERING"
+      }
+    },
+    {
+      "seq": 8,
+      "timestamp": "2026-09-09T10:50:11.763674+00:00",
+      "kind": "llm_retry",
+      "step": "1",
+      "data": {
+        "attempt": 1,
+        "cause": "MALFORMED_LLM_OUTPUT"
+      }
+    },
+    {
+      "seq": 9,
+      "timestamp": "2026-09-09T10:50:11.763681+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RECOVERING",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 10,
+      "timestamp": "2026-09-09T10:50:11.764859+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 41,
+        "messages": 2,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 11,
+      "timestamp": "2026-09-09T10:50:11.764866+00:00",
+      "kind": "llm_start",
+      "step": "1",
+      "data": {
+        "provider": "mock",
+        "attempt": 2
+      }
+    },
+    {
+      "seq": 12,
+      "timestamp": "2026-09-09T10:50:11.764877+00:00",
+      "kind": "llm_call",
+      "step": "1",
+      "data": {
+        "metadata": {
+          "provider": "mock",
+          "model": "scripted-v1",
+          "script_index": 2
+        },
+        "usage": null,
+        "attempt": 2,
+        "latency_ms": 0.010583986295387149
+      }
+    },
+    {
+      "seq": 13,
+      "timestamp": "2026-09-09T10:50:11.764892+00:00",
+      "kind": "llm_error",
+      "step": "1",
+      "data": {
+        "error": {
+          "code": "MALFORMED_LLM_OUTPUT",
+          "message": "Expected a JSON tool or final action",
+          "retryable": true,
+          "details": {}
+        },
+        "attempt": 2,
+        "latency_ms": 0.02462499833200127
+      }
+    },
+    {
+      "seq": 14,
+      "timestamp": "2026-09-09T10:50:11.764897+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "RECOVERING"
+      }
+    },
+    {
+      "seq": 15,
+      "timestamp": "2026-09-09T10:50:11.766147+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RECOVERING",
+        "to": "FAILED"
+      }
+    },
+    {
+      "seq": 16,
+      "timestamp": "2026-09-09T10:50:11.767375+00:00",
+      "kind": "final",
+      "step": null,
+      "data": {
+        "result": null,
+        "status": "FAILED",
+        "latency_ms": 8.884750001016073
+      }
+    }
+  ]
+}

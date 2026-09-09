@@ -1,0 +1,372 @@
+{
+  "state": {
+    "request_id": "7a007d7d-6262-4862-8801-9bcebe9a3b51",
+    "session_id": "b26d5a47-fb6f-44b4-b4af-1d141f190abd",
+    "execution_mode": "pipeline",
+    "user_request": "",
+    "status": "FAILED",
+    "current_step": 2,
+    "tool_history": [
+      {
+        "call_id": "c1ce5b17-834b-4ab3-b4c2-b28eee940160",
+        "step": "a",
+        "call": {
+          "name": "calculator",
+          "args": {
+            "expression": "1"
+          }
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "value": 1.0
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 0.06600000779144466
+        }
+      }
+    ],
+    "observations": [
+      {
+        "name": "calculator",
+        "ok": true,
+        "value": {
+          "value": 1.0
+        },
+        "error": null,
+        "attempts": 1,
+        "latency_ms": 0.06600000779144466
+      }
+    ],
+    "context_state": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "",
+          "important": true,
+          "facts": {}
+        },
+        {
+          "role": "tool",
+          "content": "{\"name\": \"calculator\", \"ok\": true, \"value\": {\"value\": 1.0}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.06600000779144466}",
+          "important": false,
+          "facts": {}
+        }
+      ],
+      "facts": {},
+      "history_summary": [],
+      "estimated_tokens": 59,
+      "dropped_messages": 0,
+      "dropped_facts": 0,
+      "estimator": "ceil(UTF-8 bytes / 4), not provider tokens"
+    },
+    "errors": [
+      {
+        "code": "INVALID_REFERENCE",
+        "message": "Pipeline reference could not be resolved",
+        "retryable": false,
+        "details": {}
+      }
+    ],
+    "final_result": {
+      "steps": {
+        "a": {
+          "status": "SUCCESS",
+          "value": {
+            "value": 1.0
+          },
+          "error": null
+        },
+        "b": {
+          "status": "FAILED",
+          "value": null,
+          "error": {
+            "code": "INVALID_REFERENCE",
+            "message": "Pipeline reference could not be resolved",
+            "retryable": false,
+            "details": {}
+          }
+        }
+      }
+    },
+    "created_at": "2026-09-09T10:50:12.095179+00:00",
+    "finished_at": "2026-09-09T10:50:12.107617+00:00",
+    "latency_ms": 12.299208989134058,
+    "llm_call_count": 0,
+    "tool_call_count": 1,
+    "token_usage": null,
+    "cost_usd": null,
+    "replay_of": null
+  },
+  "events": [
+    {
+      "seq": 0,
+      "timestamp": "2026-09-09T10:50:12.095262+00:00",
+      "kind": "request",
+      "step": null,
+      "data": {
+        "request": {
+          "mode": "pipeline",
+          "user_request": "",
+          "session_id": "b26d5a47-fb6f-44b4-b4af-1d141f190abd",
+          "tool": null,
+          "steps": [
+            {
+              "id": "a",
+              "tool": {
+                "name": "calculator",
+                "args": {
+                  "expression": "1"
+                }
+              },
+              "depends_on": [],
+              "when": null,
+              "fallback": null,
+              "optional": false
+            },
+            {
+              "id": "b",
+              "tool": {
+                "name": "data_analysis",
+                "args": {
+                  "values": [
+                    {
+                      "$ref": "a.missing"
+                    }
+                  ]
+                }
+              },
+              "depends_on": [
+                "a"
+              ],
+              "when": null,
+              "fallback": null,
+              "optional": false
+            }
+          ],
+          "parallel": true,
+          "max_parallel": 4,
+          "max_steps": 8,
+          "timeout_s": 30.0,
+          "llm_timeout_s": 15.0,
+          "llm_retries": 1,
+          "provider": "mock",
+          "mock_script": [],
+          "fallback": null,
+          "permissions": [
+            "read"
+          ],
+          "messages": [],
+          "context_policy": {
+            "strategy": "structured",
+            "message_budget": 8,
+            "token_budget": 2048,
+            "recent_window": 4,
+            "tool_summary_chars": 400
+          }
+        },
+        "mode": "pipeline"
+      }
+    },
+    {
+      "seq": 1,
+      "timestamp": "2026-09-09T10:50:12.095317+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 17,
+        "messages": 1,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 2,
+      "timestamp": "2026-09-09T10:50:12.097467+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "PENDING",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 3,
+      "timestamp": "2026-09-09T10:50:12.098762+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "WAITING_TOOL"
+      }
+    },
+    {
+      "seq": 4,
+      "timestamp": "2026-09-09T10:50:12.100017+00:00",
+      "kind": "tool_selected",
+      "step": "a",
+      "data": {
+        "call_id": "c1ce5b17-834b-4ab3-b4c2-b28eee940160",
+        "name": "calculator",
+        "args": {
+          "expression": "1"
+        }
+      }
+    },
+    {
+      "seq": 5,
+      "timestamp": "2026-09-09T10:50:12.100050+00:00",
+      "kind": "tool_attempt",
+      "step": "a",
+      "data": {
+        "call_id": "c1ce5b17-834b-4ab3-b4c2-b28eee940160",
+        "name": "calculator",
+        "args": {
+          "expression": "1"
+        },
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 6,
+      "timestamp": "2026-09-09T10:50:12.100092+00:00",
+      "kind": "attempt_end",
+      "step": "a",
+      "data": {
+        "call_id": "c1ce5b17-834b-4ab3-b4c2-b28eee940160",
+        "attempt": 1,
+        "ok": true,
+        "latency_ms": 0.04400000034365803
+      }
+    },
+    {
+      "seq": 7,
+      "timestamp": "2026-09-09T10:50:12.100122+00:00",
+      "kind": "tool_result",
+      "step": "a",
+      "data": {
+        "call_id": "c1ce5b17-834b-4ab3-b4c2-b28eee940160",
+        "name": "calculator",
+        "args": {
+          "expression": "1"
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "value": 1.0
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 0.06600000779144466
+        },
+        "summary": "{\"value\":1.0}"
+      }
+    },
+    {
+      "seq": 8,
+      "timestamp": "2026-09-09T10:50:12.100167+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "WAITING_TOOL",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 9,
+      "timestamp": "2026-09-09T10:50:12.101988+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 59,
+        "messages": 2,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 10,
+      "timestamp": "2026-09-09T10:50:12.102008+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "WAITING_TOOL"
+      }
+    },
+    {
+      "seq": 11,
+      "timestamp": "2026-09-09T10:50:12.103486+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "WAITING_TOOL",
+        "to": "RECOVERING"
+      }
+    },
+    {
+      "seq": 12,
+      "timestamp": "2026-09-09T10:50:12.104814+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RECOVERING",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 13,
+      "timestamp": "2026-09-09T10:50:12.106201+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 59,
+        "messages": 2,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 14,
+      "timestamp": "2026-09-09T10:50:12.106219+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "FAILED"
+      }
+    },
+    {
+      "seq": 15,
+      "timestamp": "2026-09-09T10:50:12.107632+00:00",
+      "kind": "final",
+      "step": null,
+      "data": {
+        "result": {
+          "steps": {
+            "a": {
+              "status": "SUCCESS",
+              "value": {
+                "value": 1.0
+              },
+              "error": null
+            },
+            "b": {
+              "status": "FAILED",
+              "value": null,
+              "error": {
+                "code": "INVALID_REFERENCE",
+                "message": "Pipeline reference could not be resolved",
+                "retryable": false,
+                "details": {}
+              }
+            }
+          }
+        },
+        "status": "FAILED",
+        "latency_ms": 12.299208989134058
+      }
+    }
+  ]
+}

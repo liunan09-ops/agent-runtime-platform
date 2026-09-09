@@ -1,4 +1,5 @@
 """Five offline tools. All data are synthetic; no arbitrary code or outbound URL tool."""
+
 import ast
 import asyncio
 import json
@@ -27,8 +28,13 @@ class CalcOutput(Model):
 
 
 async def calculate(args: CalcInput):
-    ops = {ast.Add: operator.add, ast.Sub: operator.sub, ast.Mult: operator.mul,
-           ast.Div: operator.truediv, ast.Mod: operator.mod}
+    ops = {
+        ast.Add: operator.add,
+        ast.Sub: operator.sub,
+        ast.Mult: operator.mul,
+        ast.Div: operator.truediv,
+        ast.Mod: operator.mod,
+    }
 
     def evaluate(node, depth=0):
         if depth > 20:
@@ -36,9 +42,13 @@ async def calculate(args: CalcInput):
         if isinstance(node, ast.Constant) and type(node.value) in (int, float):
             result = float(node.value)
         elif isinstance(node, ast.BinOp) and type(node.op) in ops:
-            result = ops[type(node.op)](evaluate(node.left, depth + 1), evaluate(node.right, depth + 1))
+            result = ops[type(node.op)](
+                evaluate(node.left, depth + 1), evaluate(node.right, depth + 1)
+            )
         elif isinstance(node, ast.UnaryOp) and isinstance(node.op, (ast.UAdd, ast.USub)):
-            result = evaluate(node.operand, depth + 1) * (-1 if isinstance(node.op, ast.USub) else 1)
+            result = evaluate(node.operand, depth + 1) * (
+                -1 if isinstance(node.op, ast.USub) else 1
+            )
         else:
             raise ValueError("unsupported expression")
         if not math.isfinite(result) or abs(result) > 1e15:
@@ -48,7 +58,9 @@ async def calculate(args: CalcInput):
     try:
         return {"value": evaluate(ast.parse(args.expression, mode="eval").body)}
     except (ValueError, SyntaxError, ZeroDivisionError, OverflowError) as exc:
-        raise ToolFailure("INVALID_EXPRESSION", "Only bounded arithmetic + - * / % is allowed") from exc
+        raise ToolFailure(
+            "INVALID_EXPRESSION", "Only bounded arithmetic + - * / % is allowed"
+        ) from exc
 
 
 class QueryInput(Model):
@@ -64,12 +76,16 @@ class QueryOutput(Model):
 def _query(args: QueryInput):
     with closing(sqlite3.connect(":memory:")) as con:
         con.execute("CREATE TABLE inventory (item TEXT, quantity INTEGER, price REAL)")
-        con.executemany("INSERT INTO inventory VALUES (?, ?, ?)",
-                        [("widget", 12, 2.5), ("gadget", 5, 8.0), ("bolt", 30, 0.5)])
+        con.executemany(
+            "INSERT INTO inventory VALUES (?, ?, ?)",
+            [("widget", 12, 2.5), ("gadget", 5, 8.0), ("bolt", 30, 0.5)],
+        )
         con.commit()
         con.execute("PRAGMA query_only=ON")
         allowed = {sqlite3.SQLITE_SELECT, sqlite3.SQLITE_READ, sqlite3.SQLITE_FUNCTION}
-        con.set_authorizer(lambda action, *_: sqlite3.SQLITE_OK if action in allowed else sqlite3.SQLITE_DENY)
+        con.set_authorizer(
+            lambda action, *_: sqlite3.SQLITE_OK if action in allowed else sqlite3.SQLITE_DENY
+        )
         ticks = 0
 
         def budget():
@@ -82,7 +98,9 @@ def _query(args: QueryInput):
         try:
             rows = [dict(r) for r in con.execute(args.query, args.params).fetchmany(100)]
         except sqlite3.Error as exc:
-            raise ToolFailure("QUERY_REJECTED", "Only bounded read-only SQL on demo inventory is allowed") from exc
+            raise ToolFailure(
+                "QUERY_REJECTED", "Only bounded read-only SQL on demo inventory is allowed"
+            ) from exc
         return {"rows": rows, "row_count": len(rows)}
 
 
@@ -109,11 +127,18 @@ async def mock_http(args: HTTPInput):
     if args.scenario == "exception":
         raise RuntimeError("synthetic tool exception")
     if args.scenario == "retry_exhausted" or (args.scenario == "retry_once" and args._attempt == 1):
-        raise ToolFailure("HTTP_UNAVAILABLE", "Synthetic transient upstream failure", retryable=True)
+        raise ToolFailure(
+            "HTTP_UNAVAILABLE", "Synthetic transient upstream failure", retryable=True
+        )
 
     def handler(request):
-        return httpx.Response(200, json={"resource": args.resource,
-                                         "value": {"alpha": 10, "beta": 20, "gamma": 30}[args.resource]})
+        return httpx.Response(
+            200,
+            json={
+                "resource": args.resource,
+                "value": {"alpha": 10, "beta": 20, "gamma": 30}[args.resource],
+            },
+        )
 
     async with httpx.AsyncClient(transport=httpx.MockTransport(handler)) as client:
         response = await client.get(f"https://demo.invalid/{args.resource}")
@@ -151,18 +176,55 @@ class AnalysisOutput(Model):
 
 async def analyze(args: AnalysisInput):
     total = math.fsum(args.values)
-    return {"count": len(args.values), "sum": total, "mean": total / len(args.values),
-            "min": min(args.values), "max": max(args.values)}
+    return {
+        "count": len(args.values),
+        "sum": total,
+        "mean": total / len(args.values),
+        "min": min(args.values),
+        "max": max(args.values),
+    }
 
 
 def demo_registry() -> ToolRegistry:
     registry = ToolRegistry()
     for tool in [
-        Tool("calculator", "Evaluate bounded arithmetic using + - * / % and parentheses.", CalcInput, CalcOutput, calculate),
-        Tool("sql_query", "Read-only SQLite inventory(item,quantity,price): widget/12/2.5, gadget/5/8.0, bolt/30/0.5. Max 100 rows.", QueryInput, QueryOutput, query),
-        Tool("http_mock", "Offline HTTP fixture: alpha=10, beta=20, gamma=30. Scenario injects deterministic latency/failures.", HTTPInput, HTTPOutput, mock_http, timeout_s=0.12, retry=RetryPolicy(max_attempts=2)),
-        Tool("knowledge_lookup", "Read synthetic local knowledge by key: runtime, retry, context, owner, constraint.", LookupInput, LookupOutput, lookup),
-        Tool("data_analysis", "Compute count, sum, mean, min and max of a numeric array; no arbitrary Python execution.", AnalysisInput, AnalysisOutput, analyze),
+        Tool(
+            "calculator",
+            "Evaluate bounded arithmetic using + - * / % and parentheses.",
+            CalcInput,
+            CalcOutput,
+            calculate,
+        ),
+        Tool(
+            "sql_query",
+            "Read-only SQLite inventory(item,quantity,price): widget/12/2.5, gadget/5/8.0, bolt/30/0.5. Max 100 rows.",
+            QueryInput,
+            QueryOutput,
+            query,
+        ),
+        Tool(
+            "http_mock",
+            "Offline HTTP fixture: alpha=10, beta=20, gamma=30. Scenario injects deterministic latency/failures.",
+            HTTPInput,
+            HTTPOutput,
+            mock_http,
+            timeout_s=0.12,
+            retry=RetryPolicy(max_attempts=2),
+        ),
+        Tool(
+            "knowledge_lookup",
+            "Read synthetic local knowledge by key: runtime, retry, context, owner, constraint.",
+            LookupInput,
+            LookupOutput,
+            lookup,
+        ),
+        Tool(
+            "data_analysis",
+            "Compute count, sum, mean, min and max of a numeric array; no arbitrary Python execution.",
+            AnalysisInput,
+            AnalysisOutput,
+            analyze,
+        ),
     ]:
         registry.register(tool)
     return registry

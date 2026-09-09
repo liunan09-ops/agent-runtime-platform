@@ -1,0 +1,2285 @@
+{
+  "recorded_at": "2026-09-09T10:50:12.952993+00:00",
+  "git_head": "64ce2d187532206a7bea7c9ccf46e27f747c49c8",
+  "python": "3.14.6",
+  "system": "Darwin",
+  "machine": "arm64",
+  "timing": "time.perf_counter; wall latency includes runtime persistence; no monetary price configured",
+  "dataset": {
+    "version": "1.0.0",
+    "sha256": "844b92b3e3602bb4f8bf61b9065eefb4b91f50a5f99f3f7bc9f7bb4a96285614",
+    "count": 48,
+    "development": 32,
+    "held_out": 16,
+    "live_eligible": 8,
+    "policy": "Frozen before held-out runs; no runtime imports from evaluation; no special held-out rules."
+  },
+  "source": "deterministic-mock",
+  "split": "all",
+  "metrics": {
+    "task_success": {
+      "hits": 44,
+      "total": 48,
+      "rate": 0.9166666666666666
+    },
+    "tool_selection_accuracy": {
+      "hits": 55,
+      "total": 55,
+      "rate": 1.0
+    },
+    "tool_argument_accuracy": {
+      "hits": 53,
+      "total": 55,
+      "rate": 0.9636363636363636
+    },
+    "workflow_completion": {
+      "hits": 9,
+      "total": 12,
+      "rate": 0.75
+    },
+    "recovery_success": {
+      "hits": 17,
+      "total": 17,
+      "rate": 1.0
+    },
+    "context_fact_retention": {
+      "hits": 24,
+      "total": 32,
+      "rate": 0.75
+    },
+    "latency_ms": {
+      "mean": 19.894923478508037,
+      "median": 8.591750003688503,
+      "max": 270.12912499776576
+    },
+    "llm_call_count": 29,
+    "tool_call_count": 52,
+    "terminal_success_count": 30,
+    "token_usage": null,
+    "cost_usd": null
+  },
+  "rows": [
+    {
+      "id": "d01",
+      "split": "development",
+      "kind": "run",
+      "mode": "direct",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "final_result.value": true
+      },
+      "status": "SUCCESS",
+      "workflow_completed": null,
+      "recovery_case": false,
+      "latency_ms": 9.405958000570536,
+      "llm_call_count": 0,
+      "tool_call_count": 1,
+      "token_usage": null,
+      "cost_usd": null,
+      "final_result": {
+        "value": 14.0
+      },
+      "errors": [],
+      "trace": "deterministic-mock-traces/d01.json",
+      "source": "deterministic-mock",
+      "selection_hits": 1,
+      "argument_hits": 1,
+      "call_accuracy_denominator": 1,
+      "selected_calls": [
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "2+3*4"
+          }
+        }
+      ]
+    },
+    {
+      "id": "d02",
+      "split": "development",
+      "kind": "run",
+      "mode": "direct",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "final_result.value": true
+      },
+      "status": "SUCCESS",
+      "workflow_completed": null,
+      "recovery_case": false,
+      "latency_ms": 7.6518330024555326,
+      "llm_call_count": 0,
+      "tool_call_count": 1,
+      "token_usage": null,
+      "cost_usd": null,
+      "final_result": {
+        "value": 2.5
+      },
+      "errors": [],
+      "trace": "deterministic-mock-traces/d02.json",
+      "source": "deterministic-mock",
+      "selection_hits": 1,
+      "argument_hits": 1,
+      "call_accuracy_denominator": 1,
+      "selected_calls": [
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "(8-3)/2"
+          }
+        }
+      ]
+    },
+    {
+      "id": "d03",
+      "split": "development",
+      "kind": "run",
+      "mode": "direct",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "final_result.rows.0.quantity": true
+      },
+      "status": "SUCCESS",
+      "workflow_completed": null,
+      "recovery_case": false,
+      "latency_ms": 8.41416600451339,
+      "llm_call_count": 0,
+      "tool_call_count": 1,
+      "token_usage": null,
+      "cost_usd": null,
+      "final_result": {
+        "rows": [
+          {
+            "quantity": 12
+          }
+        ],
+        "row_count": 1
+      },
+      "errors": [],
+      "trace": "deterministic-mock-traces/d03.json",
+      "source": "deterministic-mock",
+      "selection_hits": 1,
+      "argument_hits": 1,
+      "call_accuracy_denominator": 1,
+      "selected_calls": [
+        {
+          "name": "sql_query",
+          "args": {
+            "query": "SELECT quantity FROM inventory WHERE item=?",
+            "params": [
+              "widget"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "d04",
+      "split": "development",
+      "kind": "run",
+      "mode": "direct",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "final_result.key": true
+      },
+      "status": "SUCCESS",
+      "workflow_completed": null,
+      "recovery_case": false,
+      "latency_ms": 8.832957988488488,
+      "llm_call_count": 0,
+      "tool_call_count": 1,
+      "token_usage": null,
+      "cost_usd": null,
+      "final_result": {
+        "key": "runtime",
+        "text": "A runtime validates, schedules and observes tool execution.",
+        "source": "synthetic-knowledge-v1"
+      },
+      "errors": [],
+      "trace": "deterministic-mock-traces/d04.json",
+      "source": "deterministic-mock",
+      "selection_hits": 1,
+      "argument_hits": 1,
+      "call_accuracy_denominator": 1,
+      "selected_calls": [
+        {
+          "name": "knowledge_lookup",
+          "args": {
+            "key": "runtime"
+          }
+        }
+      ]
+    },
+    {
+      "id": "d05",
+      "split": "development",
+      "kind": "run",
+      "mode": "direct",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "final_result.mean": true
+      },
+      "status": "SUCCESS",
+      "workflow_completed": null,
+      "recovery_case": false,
+      "latency_ms": 7.142082991776988,
+      "llm_call_count": 0,
+      "tool_call_count": 1,
+      "token_usage": null,
+      "cost_usd": null,
+      "final_result": {
+        "count": 3,
+        "sum": 12.0,
+        "mean": 4.0,
+        "min": 2.0,
+        "max": 6.0
+      },
+      "errors": [],
+      "trace": "deterministic-mock-traces/d05.json",
+      "source": "deterministic-mock",
+      "selection_hits": 1,
+      "argument_hits": 1,
+      "call_accuracy_denominator": 1,
+      "selected_calls": [
+        {
+          "name": "data_analysis",
+          "args": {
+            "values": [
+              2,
+              4,
+              6
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "d06",
+      "split": "development",
+      "kind": "run",
+      "mode": "direct",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "final_result.value": true
+      },
+      "status": "SUCCESS",
+      "workflow_completed": null,
+      "recovery_case": false,
+      "latency_ms": 7.584749997477047,
+      "llm_call_count": 0,
+      "tool_call_count": 1,
+      "token_usage": null,
+      "cost_usd": null,
+      "final_result": {
+        "resource": "alpha",
+        "value": 10,
+        "source": "httpx.MockTransport"
+      },
+      "errors": [],
+      "trace": "deterministic-mock-traces/d06.json",
+      "source": "deterministic-mock",
+      "selection_hits": 1,
+      "argument_hits": 1,
+      "call_accuracy_denominator": 1,
+      "selected_calls": [
+        {
+          "name": "http_mock",
+          "args": {
+            "resource": "alpha"
+          }
+        }
+      ]
+    },
+    {
+      "id": "d07",
+      "split": "development",
+      "kind": "run",
+      "mode": "direct",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "errors.0.code": true
+      },
+      "status": "REJECTED",
+      "workflow_completed": null,
+      "recovery_case": true,
+      "latency_ms": 8.650333998957649,
+      "llm_call_count": 0,
+      "tool_call_count": 0,
+      "token_usage": null,
+      "cost_usd": null,
+      "final_result": null,
+      "errors": [
+        {
+          "code": "INVALID_ARGUMENTS",
+          "message": "Input schema validation failed",
+          "retryable": false,
+          "details": {
+            "fields": [
+              "expression"
+            ]
+          }
+        }
+      ],
+      "trace": "deterministic-mock-traces/d07.json",
+      "source": "deterministic-mock",
+      "selection_hits": 1,
+      "argument_hits": 1,
+      "call_accuracy_denominator": 1,
+      "selected_calls": [
+        {
+          "name": "calculator",
+          "args": {
+            "expression": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "d08",
+      "split": "development",
+      "kind": "run",
+      "mode": "direct",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "errors.0.code": true
+      },
+      "status": "REJECTED",
+      "workflow_completed": null,
+      "recovery_case": true,
+      "latency_ms": 7.891707995440811,
+      "llm_call_count": 0,
+      "tool_call_count": 0,
+      "token_usage": null,
+      "cost_usd": null,
+      "final_result": null,
+      "errors": [
+        {
+          "code": "UNAVAILABLE_TOOL",
+          "message": "Tool is not registered",
+          "retryable": false,
+          "details": {}
+        }
+      ],
+      "trace": "deterministic-mock-traces/d08.json",
+      "source": "deterministic-mock",
+      "selection_hits": 1,
+      "argument_hits": 1,
+      "call_accuracy_denominator": 1,
+      "selected_calls": [
+        {
+          "name": "missing",
+          "args": {}
+        }
+      ]
+    },
+    {
+      "id": "d09",
+      "split": "held-out",
+      "kind": "run",
+      "mode": "direct",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "final_result.value": true
+      },
+      "status": "SUCCESS",
+      "workflow_completed": null,
+      "recovery_case": false,
+      "latency_ms": 6.756041999324225,
+      "llm_call_count": 0,
+      "tool_call_count": 1,
+      "token_usage": null,
+      "cost_usd": null,
+      "final_result": {
+        "value": 221.0
+      },
+      "errors": [],
+      "trace": "deterministic-mock-traces/d09.json",
+      "source": "deterministic-mock",
+      "selection_hits": 1,
+      "argument_hits": 1,
+      "call_accuracy_denominator": 1,
+      "selected_calls": [
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "13*17"
+          }
+        }
+      ]
+    },
+    {
+      "id": "d10",
+      "split": "held-out",
+      "kind": "run",
+      "mode": "direct",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "final_result.rows.0.total": true
+      },
+      "status": "SUCCESS",
+      "workflow_completed": null,
+      "recovery_case": false,
+      "latency_ms": 7.705791009357199,
+      "llm_call_count": 0,
+      "tool_call_count": 1,
+      "token_usage": null,
+      "cost_usd": null,
+      "final_result": {
+        "rows": [
+          {
+            "total": 47
+          }
+        ],
+        "row_count": 1
+      },
+      "errors": [],
+      "trace": "deterministic-mock-traces/d10.json",
+      "source": "deterministic-mock",
+      "selection_hits": 1,
+      "argument_hits": 1,
+      "call_accuracy_denominator": 1,
+      "selected_calls": [
+        {
+          "name": "sql_query",
+          "args": {
+            "query": "SELECT SUM(quantity) AS total FROM inventory"
+          }
+        }
+      ]
+    },
+    {
+      "id": "d11",
+      "split": "held-out",
+      "kind": "run",
+      "mode": "direct",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "final_result.text": true
+      },
+      "status": "SUCCESS",
+      "workflow_completed": null,
+      "recovery_case": false,
+      "latency_ms": 7.184208996477537,
+      "llm_call_count": 0,
+      "tool_call_count": 1,
+      "token_usage": null,
+      "cost_usd": null,
+      "final_result": {
+        "key": "owner",
+        "text": "Synthetic project owner: Team Atlas.",
+        "source": "synthetic-knowledge-v1"
+      },
+      "errors": [],
+      "trace": "deterministic-mock-traces/d11.json",
+      "source": "deterministic-mock",
+      "selection_hits": 1,
+      "argument_hits": 1,
+      "call_accuracy_denominator": 1,
+      "selected_calls": [
+        {
+          "name": "knowledge_lookup",
+          "args": {
+            "key": "owner"
+          }
+        }
+      ]
+    },
+    {
+      "id": "d12",
+      "split": "held-out",
+      "kind": "run",
+      "mode": "direct",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "final_result.mean": true,
+        "final_result.sum": true
+      },
+      "status": "SUCCESS",
+      "workflow_completed": null,
+      "recovery_case": false,
+      "latency_ms": 6.982415987295099,
+      "llm_call_count": 0,
+      "tool_call_count": 1,
+      "token_usage": null,
+      "cost_usd": null,
+      "final_result": {
+        "count": 3,
+        "sum": 27.0,
+        "mean": 9.0,
+        "min": 4.0,
+        "max": 14.0
+      },
+      "errors": [],
+      "trace": "deterministic-mock-traces/d12.json",
+      "source": "deterministic-mock",
+      "selection_hits": 1,
+      "argument_hits": 1,
+      "call_accuracy_denominator": 1,
+      "selected_calls": [
+        {
+          "name": "data_analysis",
+          "args": {
+            "values": [
+              4,
+              9,
+              14
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "r01",
+      "split": "development",
+      "kind": "run",
+      "mode": "react",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "final_result.value": true
+      },
+      "status": "SUCCESS",
+      "workflow_completed": null,
+      "recovery_case": false,
+      "latency_ms": 8.595417006290518,
+      "llm_call_count": 2,
+      "tool_call_count": 1,
+      "token_usage": null,
+      "cost_usd": null,
+      "final_result": {
+        "value": 42.0
+      },
+      "errors": [],
+      "trace": "deterministic-mock-traces/r01.json",
+      "source": "deterministic-mock",
+      "selection_hits": 1,
+      "argument_hits": 1,
+      "call_accuracy_denominator": 1,
+      "selected_calls": [
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "6*7"
+          }
+        }
+      ]
+    },
+    {
+      "id": "r02",
+      "split": "development",
+      "kind": "run",
+      "mode": "react",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "final_result.value": true,
+        "errors.0.code": true
+      },
+      "status": "SUCCESS",
+      "workflow_completed": null,
+      "recovery_case": true,
+      "latency_ms": 10.901832996751182,
+      "llm_call_count": 3,
+      "tool_call_count": 1,
+      "token_usage": null,
+      "cost_usd": null,
+      "final_result": {
+        "value": 11.0
+      },
+      "errors": [
+        {
+          "code": "MALFORMED_LLM_OUTPUT",
+          "message": "Expected a JSON tool or final action",
+          "retryable": true,
+          "details": {}
+        }
+      ],
+      "trace": "deterministic-mock-traces/r02.json",
+      "source": "deterministic-mock",
+      "selection_hits": 1,
+      "argument_hits": 1,
+      "call_accuracy_denominator": 1,
+      "selected_calls": [
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "3+8"
+          }
+        }
+      ]
+    },
+    {
+      "id": "r03",
+      "split": "development",
+      "kind": "run",
+      "mode": "react",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "final_result.value": true,
+        "errors.0.code": true
+      },
+      "status": "SUCCESS",
+      "workflow_completed": null,
+      "recovery_case": true,
+      "latency_ms": 12.511000008089468,
+      "llm_call_count": 3,
+      "tool_call_count": 1,
+      "token_usage": null,
+      "cost_usd": null,
+      "final_result": {
+        "value": 16.0
+      },
+      "errors": [
+        {
+          "code": "INVALID_ARGUMENTS",
+          "message": "Input schema validation failed",
+          "retryable": false,
+          "details": {
+            "fields": [
+              "expression"
+            ]
+          }
+        }
+      ],
+      "trace": "deterministic-mock-traces/r03.json",
+      "source": "deterministic-mock",
+      "selection_hits": 2,
+      "argument_hits": 2,
+      "call_accuracy_denominator": 2,
+      "selected_calls": [
+        {
+          "name": "calculator",
+          "args": {}
+        },
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "4*4"
+          }
+        }
+      ]
+    },
+    {
+      "id": "r04",
+      "split": "development",
+      "kind": "run",
+      "mode": "react",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "final_result.value": true
+      },
+      "status": "SUCCESS",
+      "workflow_completed": null,
+      "recovery_case": true,
+      "latency_ms": 12.364125010208227,
+      "llm_call_count": 3,
+      "tool_call_count": 1,
+      "token_usage": null,
+      "cost_usd": null,
+      "final_result": {
+        "value": 12.0
+      },
+      "errors": [
+        {
+          "code": "UNAVAILABLE_TOOL",
+          "message": "Tool is not registered",
+          "retryable": false,
+          "details": {}
+        }
+      ],
+      "trace": "deterministic-mock-traces/r04.json",
+      "source": "deterministic-mock",
+      "selection_hits": 2,
+      "argument_hits": 2,
+      "call_accuracy_denominator": 2,
+      "selected_calls": [
+        {
+          "name": "missing",
+          "args": {}
+        },
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "5+7"
+          }
+        }
+      ]
+    },
+    {
+      "id": "r05",
+      "split": "development",
+      "kind": "run",
+      "mode": "react",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "final_result.value": true,
+        "tool_call_count": true
+      },
+      "status": "SUCCESS",
+      "workflow_completed": null,
+      "recovery_case": false,
+      "latency_ms": 21.477000002050772,
+      "llm_call_count": 2,
+      "tool_call_count": 2,
+      "token_usage": null,
+      "cost_usd": null,
+      "final_result": {
+        "resource": "alpha",
+        "value": 10,
+        "source": "httpx.MockTransport"
+      },
+      "errors": [],
+      "trace": "deterministic-mock-traces/r05.json",
+      "source": "deterministic-mock",
+      "selection_hits": 1,
+      "argument_hits": 1,
+      "call_accuracy_denominator": 1,
+      "selected_calls": [
+        {
+          "name": "http_mock",
+          "args": {
+            "scenario": "retry_once"
+          }
+        }
+      ]
+    },
+    {
+      "id": "r06",
+      "split": "development",
+      "kind": "run",
+      "mode": "react",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "errors.0.code": true
+      },
+      "status": "FAILED",
+      "workflow_completed": null,
+      "recovery_case": true,
+      "latency_ms": 11.30041699798312,
+      "llm_call_count": 2,
+      "tool_call_count": 2,
+      "token_usage": null,
+      "cost_usd": null,
+      "final_result": null,
+      "errors": [
+        {
+          "code": "MAX_STEPS",
+          "message": "ReAct step budget exhausted",
+          "retryable": false,
+          "details": {}
+        }
+      ],
+      "trace": "deterministic-mock-traces/r06.json",
+      "source": "deterministic-mock",
+      "selection_hits": 2,
+      "argument_hits": 2,
+      "call_accuracy_denominator": 2,
+      "selected_calls": [
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "1"
+          }
+        },
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "2"
+          }
+        }
+      ]
+    },
+    {
+      "id": "r07",
+      "split": "development",
+      "kind": "run",
+      "mode": "react",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "errors.1.code": true
+      },
+      "status": "FAILED",
+      "workflow_completed": null,
+      "recovery_case": true,
+      "latency_ms": 8.884750001016073,
+      "llm_call_count": 2,
+      "tool_call_count": 0,
+      "token_usage": null,
+      "cost_usd": null,
+      "final_result": null,
+      "errors": [
+        {
+          "code": "MALFORMED_LLM_OUTPUT",
+          "message": "Expected a JSON tool or final action",
+          "retryable": true,
+          "details": {}
+        },
+        {
+          "code": "MALFORMED_LLM_OUTPUT",
+          "message": "Expected a JSON tool or final action",
+          "retryable": true,
+          "details": {}
+        }
+      ],
+      "trace": "deterministic-mock-traces/r07.json",
+      "source": "deterministic-mock",
+      "selection_hits": 0,
+      "argument_hits": 0,
+      "call_accuracy_denominator": 0,
+      "selected_calls": []
+    },
+    {
+      "id": "r08",
+      "split": "development",
+      "kind": "run",
+      "mode": "react",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "final_result.value": true,
+        "errors.0.code": true
+      },
+      "status": "SUCCESS",
+      "workflow_completed": null,
+      "recovery_case": true,
+      "latency_ms": 12.373833000310697,
+      "llm_call_count": 2,
+      "tool_call_count": 1,
+      "token_usage": null,
+      "cost_usd": null,
+      "final_result": {
+        "value": 15.0
+      },
+      "errors": [
+        {
+          "code": "LLM_UNAVAILABLE",
+          "message": "LLM unavailable or timed out",
+          "retryable": true,
+          "details": {}
+        },
+        {
+          "code": "LLM_UNAVAILABLE",
+          "message": "LLM unavailable or timed out",
+          "retryable": true,
+          "details": {}
+        }
+      ],
+      "trace": "deterministic-mock-traces/r08.json",
+      "source": "deterministic-mock",
+      "selection_hits": 1,
+      "argument_hits": 1,
+      "call_accuracy_denominator": 1,
+      "selected_calls": [
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "10+5"
+          }
+        }
+      ]
+    },
+    {
+      "id": "r09",
+      "split": "held-out",
+      "kind": "run",
+      "mode": "react",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "final_result.value": true
+      },
+      "status": "SUCCESS",
+      "workflow_completed": null,
+      "recovery_case": false,
+      "latency_ms": 11.13104099931661,
+      "llm_call_count": 3,
+      "tool_call_count": 2,
+      "token_usage": null,
+      "cost_usd": null,
+      "final_result": {
+        "value": 65.0
+      },
+      "errors": [],
+      "trace": "deterministic-mock-traces/r09.json",
+      "source": "deterministic-mock",
+      "selection_hits": 2,
+      "argument_hits": 2,
+      "call_accuracy_denominator": 2,
+      "selected_calls": [
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "7*8"
+          }
+        },
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "56+9"
+          }
+        }
+      ]
+    },
+    {
+      "id": "r10",
+      "split": "held-out",
+      "kind": "run",
+      "mode": "react",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "final_result.sum": true,
+        "final_result.mean": true
+      },
+      "status": "SUCCESS",
+      "workflow_completed": null,
+      "recovery_case": false,
+      "latency_ms": 12.878749999799766,
+      "llm_call_count": 3,
+      "tool_call_count": 2,
+      "token_usage": null,
+      "cost_usd": null,
+      "final_result": {
+        "count": 3,
+        "sum": 30.0,
+        "mean": 10.0,
+        "min": 4.0,
+        "max": 20.0
+      },
+      "errors": [],
+      "trace": "deterministic-mock-traces/r10.json",
+      "source": "deterministic-mock",
+      "selection_hits": 2,
+      "argument_hits": 2,
+      "call_accuracy_denominator": 2,
+      "selected_calls": [
+        {
+          "name": "http_mock",
+          "args": {
+            "resource": "beta"
+          }
+        },
+        {
+          "name": "data_analysis",
+          "args": {
+            "values": [
+              20,
+              4,
+              6
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "r11",
+      "split": "held-out",
+      "kind": "run",
+      "mode": "react",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "final_result.key": true,
+        "final_result.text": true
+      },
+      "status": "SUCCESS",
+      "workflow_completed": null,
+      "recovery_case": false,
+      "latency_ms": 8.433332986896858,
+      "llm_call_count": 2,
+      "tool_call_count": 1,
+      "token_usage": null,
+      "cost_usd": null,
+      "final_result": {
+        "key": "retry",
+        "text": "Retry only transient failures of idempotent tools within a bounded budget.",
+        "source": "synthetic-knowledge-v1"
+      },
+      "errors": [],
+      "trace": "deterministic-mock-traces/r11.json",
+      "source": "deterministic-mock",
+      "selection_hits": 1,
+      "argument_hits": 1,
+      "call_accuracy_denominator": 1,
+      "selected_calls": [
+        {
+          "name": "knowledge_lookup",
+          "args": {
+            "key": "retry"
+          }
+        }
+      ]
+    },
+    {
+      "id": "r12",
+      "split": "held-out",
+      "kind": "run",
+      "mode": "react",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "final_result.rows.0.price": true
+      },
+      "status": "SUCCESS",
+      "workflow_completed": null,
+      "recovery_case": false,
+      "latency_ms": 8.588083001086488,
+      "llm_call_count": 2,
+      "tool_call_count": 1,
+      "token_usage": null,
+      "cost_usd": null,
+      "final_result": {
+        "rows": [
+          {
+            "price": 8.0
+          }
+        ],
+        "row_count": 1
+      },
+      "errors": [],
+      "trace": "deterministic-mock-traces/r12.json",
+      "source": "deterministic-mock",
+      "selection_hits": 1,
+      "argument_hits": 1,
+      "call_accuracy_denominator": 1,
+      "selected_calls": [
+        {
+          "name": "sql_query",
+          "args": {
+            "query": "SELECT price FROM inventory WHERE item=?",
+            "params": [
+              "gadget"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "p01",
+      "split": "development",
+      "kind": "run",
+      "mode": "pipeline",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "final_result.steps.b.value.sum": true
+      },
+      "status": "SUCCESS",
+      "workflow_completed": true,
+      "recovery_case": false,
+      "latency_ms": 10.119958998984657,
+      "llm_call_count": 0,
+      "tool_call_count": 2,
+      "token_usage": null,
+      "cost_usd": null,
+      "final_result": {
+        "steps": {
+          "a": {
+            "status": "SUCCESS",
+            "value": {
+              "value": 5.0
+            },
+            "error": null
+          },
+          "b": {
+            "status": "SUCCESS",
+            "value": {
+              "count": 2,
+              "sum": 12.0,
+              "mean": 6.0,
+              "min": 5.0,
+              "max": 7.0
+            },
+            "error": null
+          }
+        }
+      },
+      "errors": [],
+      "trace": "deterministic-mock-traces/p01.json",
+      "source": "deterministic-mock",
+      "selection_hits": 2,
+      "argument_hits": 1,
+      "call_accuracy_denominator": 2,
+      "selected_calls": [
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "2+3"
+          }
+        },
+        {
+          "name": "data_analysis",
+          "args": {
+            "values": [
+              5.0,
+              7
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "p02",
+      "split": "development",
+      "kind": "run",
+      "mode": "pipeline",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "final_result.steps.b.value.value": true
+      },
+      "status": "SUCCESS",
+      "workflow_completed": true,
+      "recovery_case": false,
+      "latency_ms": 49.07216600258835,
+      "llm_call_count": 0,
+      "tool_call_count": 2,
+      "token_usage": null,
+      "cost_usd": null,
+      "final_result": {
+        "steps": {
+          "a": {
+            "status": "SUCCESS",
+            "value": {
+              "resource": "alpha",
+              "value": 10,
+              "source": "httpx.MockTransport"
+            },
+            "error": null
+          },
+          "b": {
+            "status": "SUCCESS",
+            "value": {
+              "resource": "beta",
+              "value": 20,
+              "source": "httpx.MockTransport"
+            },
+            "error": null
+          }
+        }
+      },
+      "errors": [],
+      "trace": "deterministic-mock-traces/p02.json",
+      "source": "deterministic-mock",
+      "selection_hits": 2,
+      "argument_hits": 2,
+      "call_accuracy_denominator": 2,
+      "selected_calls": [
+        {
+          "name": "http_mock",
+          "args": {
+            "resource": "alpha",
+            "delay_ms": 40
+          }
+        },
+        {
+          "name": "http_mock",
+          "args": {
+            "resource": "beta",
+            "delay_ms": 40
+          }
+        }
+      ]
+    },
+    {
+      "id": "p03",
+      "split": "development",
+      "kind": "run",
+      "mode": "pipeline",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "final_result.steps.b.value.value": true
+      },
+      "status": "SUCCESS",
+      "workflow_completed": true,
+      "recovery_case": false,
+      "latency_ms": 9.90000000456348,
+      "llm_call_count": 0,
+      "tool_call_count": 2,
+      "token_usage": null,
+      "cost_usd": null,
+      "final_result": {
+        "steps": {
+          "a": {
+            "status": "SUCCESS",
+            "value": {
+              "value": 3.0
+            },
+            "error": null
+          },
+          "b": {
+            "status": "SUCCESS",
+            "value": {
+              "value": 7.0
+            },
+            "error": null
+          }
+        }
+      },
+      "errors": [],
+      "trace": "deterministic-mock-traces/p03.json",
+      "source": "deterministic-mock",
+      "selection_hits": 2,
+      "argument_hits": 2,
+      "call_accuracy_denominator": 2,
+      "selected_calls": [
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "3"
+          }
+        },
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "7"
+          }
+        }
+      ]
+    },
+    {
+      "id": "p04",
+      "split": "development",
+      "kind": "run",
+      "mode": "pipeline",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "final_result.steps.b.status": true
+      },
+      "status": "SUCCESS",
+      "workflow_completed": true,
+      "recovery_case": false,
+      "latency_ms": 6.831499995314516,
+      "llm_call_count": 0,
+      "tool_call_count": 1,
+      "token_usage": null,
+      "cost_usd": null,
+      "final_result": {
+        "steps": {
+          "a": {
+            "status": "SUCCESS",
+            "value": {
+              "value": 3.0
+            },
+            "error": null
+          },
+          "b": {
+            "status": "SKIPPED",
+            "value": null
+          }
+        }
+      },
+      "errors": [],
+      "trace": "deterministic-mock-traces/p04.json",
+      "source": "deterministic-mock",
+      "selection_hits": 1,
+      "argument_hits": 1,
+      "call_accuracy_denominator": 1,
+      "selected_calls": [
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "3"
+          }
+        }
+      ]
+    },
+    {
+      "id": "p05",
+      "split": "development",
+      "kind": "run",
+      "mode": "pipeline",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "final_result.steps.ok.value.value": true
+      },
+      "status": "FAILED",
+      "workflow_completed": false,
+      "recovery_case": true,
+      "latency_ms": 8.632083001430146,
+      "llm_call_count": 0,
+      "tool_call_count": 1,
+      "token_usage": null,
+      "cost_usd": null,
+      "final_result": {
+        "steps": {
+          "bad": {
+            "status": "FAILED",
+            "value": null,
+            "error": {
+              "code": "UNAVAILABLE_TOOL",
+              "message": "Tool is not registered",
+              "retryable": false,
+              "details": {}
+            }
+          },
+          "ok": {
+            "status": "SUCCESS",
+            "value": {
+              "value": 11.0
+            },
+            "error": null
+          }
+        }
+      },
+      "errors": [
+        {
+          "code": "UNAVAILABLE_TOOL",
+          "message": "Tool is not registered",
+          "retryable": false,
+          "details": {}
+        }
+      ],
+      "trace": "deterministic-mock-traces/p05.json",
+      "source": "deterministic-mock",
+      "selection_hits": 2,
+      "argument_hits": 2,
+      "call_accuracy_denominator": 2,
+      "selected_calls": [
+        {
+          "name": "missing",
+          "args": {}
+        },
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "11"
+          }
+        }
+      ]
+    },
+    {
+      "id": "p06",
+      "split": "development",
+      "kind": "run",
+      "mode": "pipeline",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "final_result.steps.ok.value.value": true
+      },
+      "status": "SUCCESS",
+      "workflow_completed": true,
+      "recovery_case": true,
+      "latency_ms": 8.293582999613136,
+      "llm_call_count": 0,
+      "tool_call_count": 1,
+      "token_usage": null,
+      "cost_usd": null,
+      "final_result": {
+        "steps": {
+          "bad": {
+            "status": "FAILED",
+            "value": null,
+            "error": {
+              "code": "UNAVAILABLE_TOOL",
+              "message": "Tool is not registered",
+              "retryable": false,
+              "details": {}
+            }
+          },
+          "ok": {
+            "status": "SUCCESS",
+            "value": {
+              "value": 11.0
+            },
+            "error": null
+          }
+        }
+      },
+      "errors": [
+        {
+          "code": "UNAVAILABLE_TOOL",
+          "message": "Tool is not registered",
+          "retryable": false,
+          "details": {}
+        }
+      ],
+      "trace": "deterministic-mock-traces/p06.json",
+      "source": "deterministic-mock",
+      "selection_hits": 2,
+      "argument_hits": 2,
+      "call_accuracy_denominator": 2,
+      "selected_calls": [
+        {
+          "name": "missing",
+          "args": {}
+        },
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "11"
+          }
+        }
+      ]
+    },
+    {
+      "id": "p07",
+      "split": "development",
+      "kind": "run",
+      "mode": "pipeline",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "final_result.steps.a.value.value": true
+      },
+      "status": "SUCCESS",
+      "workflow_completed": true,
+      "recovery_case": true,
+      "latency_ms": 8.578915992984548,
+      "llm_call_count": 0,
+      "tool_call_count": 2,
+      "token_usage": null,
+      "cost_usd": null,
+      "final_result": {
+        "steps": {
+          "a": {
+            "status": "SUCCESS",
+            "value": {
+              "value": 9.0
+            },
+            "error": null
+          }
+        }
+      },
+      "errors": [
+        {
+          "code": "TOOL_EXCEPTION",
+          "message": "Tool raised an exception",
+          "retryable": false,
+          "details": {
+            "exception_type": "RuntimeError"
+          }
+        }
+      ],
+      "trace": "deterministic-mock-traces/p07.json",
+      "source": "deterministic-mock",
+      "selection_hits": 2,
+      "argument_hits": 2,
+      "call_accuracy_denominator": 2,
+      "selected_calls": [
+        {
+          "name": "http_mock",
+          "args": {
+            "scenario": "exception"
+          }
+        },
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "9"
+          }
+        }
+      ]
+    },
+    {
+      "id": "p08",
+      "split": "development",
+      "kind": "run",
+      "mode": "pipeline",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "errors.0.code": true
+      },
+      "status": "FAILED",
+      "workflow_completed": false,
+      "recovery_case": true,
+      "latency_ms": 12.299208989134058,
+      "llm_call_count": 0,
+      "tool_call_count": 1,
+      "token_usage": null,
+      "cost_usd": null,
+      "final_result": {
+        "steps": {
+          "a": {
+            "status": "SUCCESS",
+            "value": {
+              "value": 1.0
+            },
+            "error": null
+          },
+          "b": {
+            "status": "FAILED",
+            "value": null,
+            "error": {
+              "code": "INVALID_REFERENCE",
+              "message": "Pipeline reference could not be resolved",
+              "retryable": false,
+              "details": {}
+            }
+          }
+        }
+      },
+      "errors": [
+        {
+          "code": "INVALID_REFERENCE",
+          "message": "Pipeline reference could not be resolved",
+          "retryable": false,
+          "details": {}
+        }
+      ],
+      "trace": "deterministic-mock-traces/p08.json",
+      "source": "deterministic-mock",
+      "selection_hits": 1,
+      "argument_hits": 1,
+      "call_accuracy_denominator": 1,
+      "selected_calls": [
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "p09",
+      "split": "held-out",
+      "kind": "run",
+      "mode": "pipeline",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "final_result.steps.c.value.mean": true
+      },
+      "status": "SUCCESS",
+      "workflow_completed": true,
+      "recovery_case": false,
+      "latency_ms": 10.456125004566275,
+      "llm_call_count": 0,
+      "tool_call_count": 3,
+      "token_usage": null,
+      "cost_usd": null,
+      "final_result": {
+        "steps": {
+          "a": {
+            "status": "SUCCESS",
+            "value": {
+              "value": 12.0
+            },
+            "error": null
+          },
+          "b": {
+            "status": "SUCCESS",
+            "value": {
+              "value": 18.0
+            },
+            "error": null
+          },
+          "c": {
+            "status": "SUCCESS",
+            "value": {
+              "count": 2,
+              "sum": 30.0,
+              "mean": 15.0,
+              "min": 12.0,
+              "max": 18.0
+            },
+            "error": null
+          }
+        }
+      },
+      "errors": [],
+      "trace": "deterministic-mock-traces/p09.json",
+      "source": "deterministic-mock",
+      "selection_hits": 3,
+      "argument_hits": 2,
+      "call_accuracy_denominator": 3,
+      "selected_calls": [
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "12"
+          }
+        },
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "18"
+          }
+        },
+        {
+          "name": "data_analysis",
+          "args": {
+            "values": [
+              12.0,
+              18.0
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "p10",
+      "split": "held-out",
+      "kind": "run",
+      "mode": "pipeline",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "final_result.steps.yes.value.value": true,
+        "final_result.steps.no.status": true
+      },
+      "status": "SUCCESS",
+      "workflow_completed": true,
+      "recovery_case": false,
+      "latency_ms": 10.562957992078736,
+      "llm_call_count": 0,
+      "tool_call_count": 2,
+      "token_usage": null,
+      "cost_usd": null,
+      "final_result": {
+        "steps": {
+          "a": {
+            "status": "SUCCESS",
+            "value": {
+              "resource": "gamma",
+              "value": 30,
+              "source": "httpx.MockTransport"
+            },
+            "error": null
+          },
+          "no": {
+            "status": "SKIPPED",
+            "value": null
+          },
+          "yes": {
+            "status": "SUCCESS",
+            "value": {
+              "value": 60.0
+            },
+            "error": null
+          }
+        }
+      },
+      "errors": [],
+      "trace": "deterministic-mock-traces/p10.json",
+      "source": "deterministic-mock",
+      "selection_hits": 2,
+      "argument_hits": 2,
+      "call_accuracy_denominator": 2,
+      "selected_calls": [
+        {
+          "name": "http_mock",
+          "args": {
+            "resource": "gamma"
+          }
+        },
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "30*2"
+          }
+        }
+      ]
+    },
+    {
+      "id": "p11",
+      "split": "held-out",
+      "kind": "run",
+      "mode": "pipeline",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "final_result.steps.child.status": true,
+        "final_result.steps.ok.value.value": true
+      },
+      "status": "FAILED",
+      "workflow_completed": false,
+      "recovery_case": true,
+      "latency_ms": 19.823041002382524,
+      "llm_call_count": 0,
+      "tool_call_count": 3,
+      "token_usage": null,
+      "cost_usd": null,
+      "final_result": {
+        "steps": {
+          "bad": {
+            "status": "FAILED",
+            "value": null,
+            "error": {
+              "code": "RETRY_EXHAUSTED",
+              "message": "Tool retry budget exhausted",
+              "retryable": false,
+              "details": {
+                "cause": "HTTP_UNAVAILABLE",
+                "attempts": 2
+              }
+            }
+          },
+          "ok": {
+            "status": "SUCCESS",
+            "value": {
+              "value": 4.0
+            },
+            "error": null
+          },
+          "child": {
+            "status": "BLOCKED",
+            "value": null
+          }
+        }
+      },
+      "errors": [
+        {
+          "code": "RETRY_EXHAUSTED",
+          "message": "Tool retry budget exhausted",
+          "retryable": false,
+          "details": {
+            "cause": "HTTP_UNAVAILABLE",
+            "attempts": 2
+          }
+        }
+      ],
+      "trace": "deterministic-mock-traces/p11.json",
+      "source": "deterministic-mock",
+      "selection_hits": 2,
+      "argument_hits": 2,
+      "call_accuracy_denominator": 2,
+      "selected_calls": [
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "4"
+          }
+        },
+        {
+          "name": "http_mock",
+          "args": {
+            "scenario": "retry_exhausted"
+          }
+        }
+      ]
+    },
+    {
+      "id": "p12",
+      "split": "held-out",
+      "kind": "run",
+      "mode": "pipeline",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "final_result.steps.a.value.value": true
+      },
+      "status": "SUCCESS",
+      "workflow_completed": true,
+      "recovery_case": true,
+      "latency_ms": 270.12912499776576,
+      "llm_call_count": 0,
+      "tool_call_count": 3,
+      "token_usage": null,
+      "cost_usd": null,
+      "final_result": {
+        "steps": {
+          "a": {
+            "status": "SUCCESS",
+            "value": {
+              "resource": "gamma",
+              "value": 30,
+              "source": "httpx.MockTransport"
+            },
+            "error": null
+          }
+        }
+      },
+      "errors": [
+        {
+          "code": "RETRY_EXHAUSTED",
+          "message": "Tool retry budget exhausted",
+          "retryable": false,
+          "details": {
+            "cause": "TOOL_TIMEOUT",
+            "attempts": 2
+          }
+        }
+      ],
+      "trace": "deterministic-mock-traces/p12.json",
+      "source": "deterministic-mock",
+      "selection_hits": 2,
+      "argument_hits": 2,
+      "call_accuracy_denominator": 2,
+      "selected_calls": [
+        {
+          "name": "http_mock",
+          "args": {
+            "scenario": "timeout"
+          }
+        },
+        {
+          "name": "http_mock",
+          "args": {
+            "resource": "gamma"
+          }
+        }
+      ]
+    },
+    {
+      "id": "e01",
+      "split": "development",
+      "kind": "context",
+      "strategy": "naive",
+      "turns": 5,
+      "task_success": false,
+      "fact_hits": 2,
+      "fact_total": 4,
+      "context_bytes": 640,
+      "estimated_context_tokens": 160,
+      "input_messages": 10,
+      "retained_messages": 4,
+      "latency_ms": 0.17020800441969186,
+      "llm_call_count": 0,
+      "tool_call_count": 0,
+      "token_usage": null,
+      "cost_usd": null,
+      "checks": {
+        "all_required_facts": false
+      },
+      "source": "deterministic context extraction fixture"
+    },
+    {
+      "id": "e02",
+      "split": "development",
+      "kind": "context",
+      "strategy": "structured",
+      "turns": 5,
+      "task_success": true,
+      "fact_hits": 4,
+      "fact_total": 4,
+      "context_bytes": 1267,
+      "estimated_context_tokens": 317,
+      "input_messages": 10,
+      "retained_messages": 5,
+      "latency_ms": 0.11512500350363553,
+      "llm_call_count": 0,
+      "tool_call_count": 0,
+      "token_usage": null,
+      "cost_usd": null,
+      "checks": {
+        "all_required_facts": true
+      },
+      "source": "deterministic context extraction fixture"
+    },
+    {
+      "id": "e03",
+      "split": "development",
+      "kind": "context",
+      "strategy": "naive",
+      "turns": 10,
+      "task_success": false,
+      "fact_hits": 2,
+      "fact_total": 4,
+      "context_bytes": 640,
+      "estimated_context_tokens": 160,
+      "input_messages": 20,
+      "retained_messages": 4,
+      "latency_ms": 0.07987499702721834,
+      "llm_call_count": 0,
+      "tool_call_count": 0,
+      "token_usage": null,
+      "cost_usd": null,
+      "checks": {
+        "all_required_facts": false
+      },
+      "source": "deterministic context extraction fixture"
+    },
+    {
+      "id": "e04",
+      "split": "development",
+      "kind": "context",
+      "strategy": "structured",
+      "turns": 10,
+      "task_success": true,
+      "fact_hits": 4,
+      "fact_total": 4,
+      "context_bytes": 1569,
+      "estimated_context_tokens": 393,
+      "input_messages": 20,
+      "retained_messages": 5,
+      "latency_ms": 0.1305839978158474,
+      "llm_call_count": 0,
+      "tool_call_count": 0,
+      "token_usage": null,
+      "cost_usd": null,
+      "checks": {
+        "all_required_facts": true
+      },
+      "source": "deterministic context extraction fixture"
+    },
+    {
+      "id": "e05",
+      "split": "development",
+      "kind": "context",
+      "strategy": "naive",
+      "turns": 20,
+      "task_success": false,
+      "fact_hits": 2,
+      "fact_total": 4,
+      "context_bytes": 642,
+      "estimated_context_tokens": 161,
+      "input_messages": 40,
+      "retained_messages": 4,
+      "latency_ms": 0.06758300878573209,
+      "llm_call_count": 0,
+      "tool_call_count": 0,
+      "token_usage": null,
+      "cost_usd": null,
+      "checks": {
+        "all_required_facts": false
+      },
+      "source": "deterministic context extraction fixture"
+    },
+    {
+      "id": "e06",
+      "split": "development",
+      "kind": "context",
+      "strategy": "structured",
+      "turns": 20,
+      "task_success": true,
+      "fact_hits": 4,
+      "fact_total": 4,
+      "context_bytes": 1571,
+      "estimated_context_tokens": 393,
+      "input_messages": 40,
+      "retained_messages": 5,
+      "latency_ms": 0.13124999532010406,
+      "llm_call_count": 0,
+      "tool_call_count": 0,
+      "token_usage": null,
+      "cost_usd": null,
+      "checks": {
+        "all_required_facts": true
+      },
+      "source": "deterministic context extraction fixture"
+    },
+    {
+      "id": "e07",
+      "split": "development",
+      "kind": "context",
+      "strategy": "naive",
+      "turns": 40,
+      "task_success": false,
+      "fact_hits": 2,
+      "fact_total": 4,
+      "context_bytes": 642,
+      "estimated_context_tokens": 161,
+      "input_messages": 80,
+      "retained_messages": 4,
+      "latency_ms": 0.06645800021942705,
+      "llm_call_count": 0,
+      "tool_call_count": 0,
+      "token_usage": null,
+      "cost_usd": null,
+      "checks": {
+        "all_required_facts": false
+      },
+      "source": "deterministic context extraction fixture"
+    },
+    {
+      "id": "e08",
+      "split": "development",
+      "kind": "context",
+      "strategy": "structured",
+      "turns": 40,
+      "task_success": true,
+      "fact_hits": 4,
+      "fact_total": 4,
+      "context_bytes": 1571,
+      "estimated_context_tokens": 393,
+      "input_messages": 80,
+      "retained_messages": 5,
+      "latency_ms": 0.12375001097097993,
+      "llm_call_count": 0,
+      "tool_call_count": 0,
+      "token_usage": null,
+      "cost_usd": null,
+      "checks": {
+        "all_required_facts": true
+      },
+      "source": "deterministic context extraction fixture"
+    },
+    {
+      "id": "e09",
+      "split": "held-out",
+      "kind": "replay",
+      "mode": "direct",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "final_result.value": true,
+        "replay_final_result": true,
+        "replay_status": true,
+        "replay_no_calls": true
+      },
+      "status": "SUCCESS",
+      "workflow_completed": null,
+      "recovery_case": false,
+      "latency_ms": 7.091915991622955,
+      "llm_call_count": 0,
+      "tool_call_count": 1,
+      "token_usage": null,
+      "cost_usd": null,
+      "final_result": {
+        "value": 81.0
+      },
+      "errors": [],
+      "trace": "deterministic-mock-traces/e09.json",
+      "source": "deterministic-mock",
+      "selection_hits": 1,
+      "argument_hits": 1,
+      "call_accuracy_denominator": 1,
+      "selected_calls": [
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "9*9"
+          }
+        }
+      ]
+    },
+    {
+      "id": "e10",
+      "split": "held-out",
+      "kind": "replay",
+      "mode": "direct",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "errors.0.code": true,
+        "replay_final_result": true,
+        "replay_status": true,
+        "replay_no_calls": true
+      },
+      "status": "FAILED",
+      "workflow_completed": null,
+      "recovery_case": true,
+      "latency_ms": 7.966582998051308,
+      "llm_call_count": 0,
+      "tool_call_count": 1,
+      "token_usage": null,
+      "cost_usd": null,
+      "final_result": null,
+      "errors": [
+        {
+          "code": "TOOL_EXCEPTION",
+          "message": "Tool raised an exception",
+          "retryable": false,
+          "details": {
+            "exception_type": "RuntimeError"
+          }
+        }
+      ],
+      "trace": "deterministic-mock-traces/e10.json",
+      "source": "deterministic-mock",
+      "selection_hits": 1,
+      "argument_hits": 1,
+      "call_accuracy_denominator": 1,
+      "selected_calls": [
+        {
+          "name": "http_mock",
+          "args": {
+            "scenario": "exception"
+          }
+        }
+      ]
+    },
+    {
+      "id": "e11",
+      "split": "held-out",
+      "kind": "run",
+      "mode": "direct",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "errors.0.code": true,
+        "errors.0.details.cause": true
+      },
+      "status": "FAILED",
+      "workflow_completed": null,
+      "recovery_case": true,
+      "latency_ms": 269.8247079970315,
+      "llm_call_count": 0,
+      "tool_call_count": 2,
+      "token_usage": null,
+      "cost_usd": null,
+      "final_result": null,
+      "errors": [
+        {
+          "code": "RETRY_EXHAUSTED",
+          "message": "Tool retry budget exhausted",
+          "retryable": false,
+          "details": {
+            "cause": "TOOL_TIMEOUT",
+            "attempts": 2
+          }
+        }
+      ],
+      "trace": "deterministic-mock-traces/e11.json",
+      "source": "deterministic-mock",
+      "selection_hits": 1,
+      "argument_hits": 1,
+      "call_accuracy_denominator": 1,
+      "selected_calls": [
+        {
+          "name": "http_mock",
+          "args": {
+            "scenario": "timeout"
+          }
+        }
+      ]
+    },
+    {
+      "id": "e12",
+      "split": "held-out",
+      "kind": "run",
+      "mode": "direct",
+      "task_success": true,
+      "checks": {
+        "status": true,
+        "errors.0.code": true
+      },
+      "status": "REJECTED",
+      "workflow_completed": null,
+      "recovery_case": true,
+      "latency_ms": 10.847792000276968,
+      "llm_call_count": 0,
+      "tool_call_count": 0,
+      "token_usage": null,
+      "cost_usd": null,
+      "final_result": null,
+      "errors": [
+        {
+          "code": "PERMISSION_DENIED",
+          "message": "Tool permission is not granted",
+          "retryable": false,
+          "details": {}
+        }
+      ],
+      "trace": "deterministic-mock-traces/e12.json",
+      "source": "deterministic-mock",
+      "selection_hits": 1,
+      "argument_hits": 1,
+      "call_accuracy_denominator": 1,
+      "selected_calls": [
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "1"
+          }
+        }
+      ]
+    }
+  ],
+  "metric_notes": {
+    "task_success": "Passes all semantic assertions, including expected safe failure for negative tasks; context fixtures require all four facts.",
+    "tool_argument_accuracy": "Exact declared name+argument multiset; semantically equivalent SQL/arithmetic can score lower.",
+    "workflow_completion": "SUCCESS terminal pipeline runs / all pipeline runs, including deliberately failing workflows.",
+    "recovery_success": "Expected recovery OR safe terminal failure contract on error cases, not always conversion to SUCCESS.",
+    "tokens": "Only provider-reported usage; context estimator is reported separately. No reliable monetary cost."
+  },
+  "by_split": {
+    "development": {
+      "task_success": {
+        "hits": 28,
+        "total": 32,
+        "rate": 0.875
+      },
+      "tool_selection_accuracy": {
+        "hits": 32,
+        "total": 32,
+        "rate": 1.0
+      },
+      "tool_argument_accuracy": {
+        "hits": 31,
+        "total": 32,
+        "rate": 0.96875
+      },
+      "workflow_completion": {
+        "hits": 6,
+        "total": 8,
+        "rate": 0.75
+      },
+      "recovery_success": {
+        "hits": 12,
+        "total": 12,
+        "rate": 1.0
+      },
+      "context_fact_retention": {
+        "hits": 24,
+        "total": 32,
+        "rate": 0.75
+      },
+      "latency_ms": {
+        "mean": 8.706075437658,
+        "median": 8.587166499637533,
+        "max": 49.07216600258835
+      },
+      "llm_call_count": 19,
+      "tool_call_count": 27,
+      "terminal_success_count": 18,
+      "token_usage": null,
+      "cost_usd": null
+    },
+    "held-out": {
+      "task_success": {
+        "hits": 16,
+        "total": 16,
+        "rate": 1.0
+      },
+      "tool_selection_accuracy": {
+        "hits": 23,
+        "total": 23,
+        "rate": 1.0
+      },
+      "tool_argument_accuracy": {
+        "hits": 22,
+        "total": 23,
+        "rate": 0.9565217391304348
+      },
+      "workflow_completion": {
+        "hits": 3,
+        "total": 4,
+        "rate": 0.75
+      },
+      "recovery_success": {
+        "hits": 5,
+        "total": 5,
+        "rate": 1.0
+      },
+      "context_fact_retention": {
+        "hits": 0,
+        "total": 0,
+        "rate": null
+      },
+      "latency_ms": {
+        "mean": 42.27261956020811,
+        "median": 9.522104002826381,
+        "max": 270.12912499776576
+      },
+      "llm_call_count": 10,
+      "tool_call_count": 25,
+      "terminal_success_count": 12,
+      "token_usage": null,
+      "cost_usd": null
+    }
+  }
+}

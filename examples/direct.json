@@ -1,0 +1,1 @@
+{"mode":"direct","user_request":"Compute 6*7","tool":{"name":"calculator","args":{"expression":"6*7"}}}

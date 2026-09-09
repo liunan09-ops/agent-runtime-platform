@@ -1,0 +1,259 @@
+{
+  "state": {
+    "request_id": "3a464113-b3f3-4c60-8b44-7fdb4a07c2c0",
+    "session_id": "21638ecd-7af2-4f43-9d7b-1bf8fc06a4fe",
+    "execution_mode": "direct",
+    "user_request": "Use calculator to compute 13*17. Return its entire output object.",
+    "status": "SUCCESS",
+    "current_step": 1,
+    "tool_history": [
+      {
+        "call_id": "7a6f5d98-51b2-41e6-b025-3d2c54ffe10a",
+        "step": "direct",
+        "call": {
+          "name": "calculator",
+          "args": {
+            "expression": "13*17"
+          }
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "value": 221.0
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 0.07783400360494852
+        }
+      }
+    ],
+    "observations": [
+      {
+        "name": "calculator",
+        "ok": true,
+        "value": {
+          "value": 221.0
+        },
+        "error": null,
+        "attempts": 1,
+        "latency_ms": 0.07783400360494852
+      }
+    ],
+    "context_state": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "Use calculator to compute 13*17. Return its entire output object.",
+          "important": true,
+          "facts": {}
+        },
+        {
+          "role": "tool",
+          "content": "{\"name\": \"calculator\", \"ok\": true, \"value\": {\"value\": 221.0}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.07783400360494852}",
+          "important": false,
+          "facts": {}
+        }
+      ],
+      "facts": {},
+      "history_summary": [],
+      "estimated_tokens": 76,
+      "dropped_messages": 0,
+      "dropped_facts": 0,
+      "estimator": "ceil(UTF-8 bytes / 4), not provider tokens"
+    },
+    "errors": [],
+    "final_result": {
+      "value": 221.0
+    },
+    "created_at": "2026-09-09T10:50:11.524014+00:00",
+    "finished_at": "2026-09-09T10:50:11.530903+00:00",
+    "latency_ms": 6.756041999324225,
+    "llm_call_count": 0,
+    "tool_call_count": 1,
+    "token_usage": null,
+    "cost_usd": null,
+    "replay_of": null
+  },
+  "events": [
+    {
+      "seq": 0,
+      "timestamp": "2026-09-09T10:50:11.524090+00:00",
+      "kind": "request",
+      "step": null,
+      "data": {
+        "request": {
+          "mode": "direct",
+          "user_request": "Use calculator to compute 13*17. Return its entire output object.",
+          "session_id": "21638ecd-7af2-4f43-9d7b-1bf8fc06a4fe",
+          "tool": {
+            "name": "calculator",
+            "args": {
+              "expression": "13*17"
+            }
+          },
+          "steps": [],
+          "parallel": true,
+          "max_parallel": 4,
+          "max_steps": 8,
+          "timeout_s": 30.0,
+          "llm_timeout_s": 15.0,
+          "llm_retries": 1,
+          "provider": "mock",
+          "mock_script": [],
+          "fallback": null,
+          "permissions": [
+            "read"
+          ],
+          "messages": [],
+          "context_policy": {
+            "strategy": "structured",
+            "message_budget": 8,
+            "token_budget": 2048,
+            "recent_window": 4,
+            "tool_summary_chars": 400
+          }
+        },
+        "mode": "direct"
+      }
+    },
+    {
+      "seq": 1,
+      "timestamp": "2026-09-09T10:50:11.524146+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 33,
+        "messages": 1,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 2,
+      "timestamp": "2026-09-09T10:50:11.526049+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "PENDING",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 3,
+      "timestamp": "2026-09-09T10:50:11.527178+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "WAITING_TOOL"
+      }
+    },
+    {
+      "seq": 4,
+      "timestamp": "2026-09-09T10:50:11.528329+00:00",
+      "kind": "tool_selected",
+      "step": "direct",
+      "data": {
+        "call_id": "7a6f5d98-51b2-41e6-b025-3d2c54ffe10a",
+        "name": "calculator",
+        "args": {
+          "expression": "13*17"
+        }
+      }
+    },
+    {
+      "seq": 5,
+      "timestamp": "2026-09-09T10:50:11.528364+00:00",
+      "kind": "tool_attempt",
+      "step": "direct",
+      "data": {
+        "call_id": "7a6f5d98-51b2-41e6-b025-3d2c54ffe10a",
+        "name": "calculator",
+        "args": {
+          "expression": "13*17"
+        },
+        "attempt": 1
+      }
+    },
+    {
+      "seq": 6,
+      "timestamp": "2026-09-09T10:50:11.528413+00:00",
+      "kind": "attempt_end",
+      "step": "direct",
+      "data": {
+        "call_id": "7a6f5d98-51b2-41e6-b025-3d2c54ffe10a",
+        "attempt": 1,
+        "ok": true,
+        "latency_ms": 0.05200000305194408
+      }
+    },
+    {
+      "seq": 7,
+      "timestamp": "2026-09-09T10:50:11.528442+00:00",
+      "kind": "tool_result",
+      "step": "direct",
+      "data": {
+        "call_id": "7a6f5d98-51b2-41e6-b025-3d2c54ffe10a",
+        "name": "calculator",
+        "args": {
+          "expression": "13*17"
+        },
+        "result": {
+          "ok": true,
+          "value": {
+            "value": 221.0
+          },
+          "error": null,
+          "attempts": 1,
+          "latency_ms": 0.07783400360494852
+        },
+        "summary": "{\"value\":221.0}"
+      }
+    },
+    {
+      "seq": 8,
+      "timestamp": "2026-09-09T10:50:11.528450+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "WAITING_TOOL",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 9,
+      "timestamp": "2026-09-09T10:50:11.529711+00:00",
+      "kind": "context",
+      "step": null,
+      "data": {
+        "estimated_tokens": 76,
+        "messages": 2,
+        "facts": 0,
+        "dropped_facts": 0
+      }
+    },
+    {
+      "seq": 10,
+      "timestamp": "2026-09-09T10:50:11.529723+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RUNNING",
+        "to": "SUCCESS"
+      }
+    },
+    {
+      "seq": 11,
+      "timestamp": "2026-09-09T10:50:11.530912+00:00",
+      "kind": "final",
+      "step": null,
+      "data": {
+        "result": {
+          "value": 221.0
+        },
+        "status": "SUCCESS",
+        "latency_ms": 6.756041999324225
+      }
+    }
+  ]
+}

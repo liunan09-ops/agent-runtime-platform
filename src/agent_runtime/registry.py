@@ -49,11 +49,17 @@ class Tool:
     idempotent: bool = True
 
     def schema(self) -> ToolSchema:
-        return ToolSchema(name=self.name, description=self.description,
-                          input_schema=self.input_model.model_json_schema(),
-                          output_contract=self.output_model.model_json_schema(),
-                          timeout_s=self.timeout_s, retry_policy=self.retry or RetryPolicy(),
-                          permission=self.permission, risk=self.risk, idempotent=self.idempotent)
+        return ToolSchema(
+            name=self.name,
+            description=self.description,
+            input_schema=self.input_model.model_json_schema(),
+            output_contract=self.output_model.model_json_schema(),
+            timeout_s=self.timeout_s,
+            retry_policy=self.retry or RetryPolicy(),
+            permission=self.permission,
+            risk=self.risk,
+            idempotent=self.idempotent,
+        )
 
 
 EventSink = Callable[[str, dict[str, Any]], None]
@@ -83,26 +89,42 @@ class ToolRegistry:
         tool = self._tools.get(name)
         return tool.schema() if tool else None
 
-    async def invoke(self, name: str, args: dict, permissions: list[str] | None = None,
-                     emit: EventSink | None = None) -> ToolResult:
+    async def invoke(
+        self,
+        name: str,
+        args: dict,
+        permissions: list[str] | None = None,
+        emit: EventSink | None = None,
+    ) -> ToolResult:
         start = time.perf_counter()
         emit = emit or (lambda *_: None)
         tool = self._tools.get(name)
         attempts = 0
 
         def failure(error: Error) -> ToolResult:
-            return ToolResult(ok=False, error=error, attempts=attempts,
-                              latency_ms=(time.perf_counter() - start) * 1000)
+            return ToolResult(
+                ok=False,
+                error=error,
+                attempts=attempts,
+                latency_ms=(time.perf_counter() - start) * 1000,
+            )
 
         if tool is None:
             return failure(Error(code="UNAVAILABLE_TOOL", message="Tool is not registered"))
         if tool.permission not in (permissions if permissions is not None else ["read"]):
-            return failure(Error(code="PERMISSION_DENIED", message="Tool permission is not granted"))
+            return failure(
+                Error(code="PERMISSION_DENIED", message="Tool permission is not granted")
+            )
         try:
             validated = tool.input_model.model_validate(args)
         except ValidationError as exc:
-            return failure(Error(code="INVALID_ARGUMENTS", message="Input schema validation failed",
-                                 details={"fields": [".".join(map(str, e["loc"])) for e in exc.errors()]}))
+            return failure(
+                Error(
+                    code="INVALID_ARGUMENTS",
+                    message="Input schema validation failed",
+                    details={"fields": [".".join(map(str, e["loc"])) for e in exc.errors()]},
+                )
+            )
         retry = tool.retry or RetryPolicy()
         allowed = retry.max_attempts if tool.idempotent else 1
         error = Error(code="TOOL_EXCEPTION", message="Tool failed")
@@ -118,27 +140,52 @@ class ToolRegistry:
                 except ValidationError:
                     error = Error(code="OUTPUT_CONTRACT", message="Tool output violated contract")
                 else:
-                    emit("attempt_end", {"attempt": attempt, "ok": True,
-                                         "latency_ms": (time.perf_counter() - attempt_start) * 1000})
-                    return ToolResult(ok=True, value=value, attempts=attempt,
-                                      latency_ms=(time.perf_counter() - start) * 1000)
+                    emit(
+                        "attempt_end",
+                        {
+                            "attempt": attempt,
+                            "ok": True,
+                            "latency_ms": (time.perf_counter() - attempt_start) * 1000,
+                        },
+                    )
+                    return ToolResult(
+                        ok=True,
+                        value=value,
+                        attempts=attempt,
+                        latency_ms=(time.perf_counter() - start) * 1000,
+                    )
             except TimeoutError:
-                error = Error(code="TOOL_TIMEOUT", message="Tool attempt exceeded deadline", retryable=True)
+                error = Error(
+                    code="TOOL_TIMEOUT", message="Tool attempt exceeded deadline", retryable=True
+                )
             except asyncio.CancelledError:
                 emit("tool_cancelled", {"attempt": attempt})
                 raise
             except ToolFailure as exc:
                 error = exc.error
             except Exception as exc:
-                error = Error(code="TOOL_EXCEPTION", message="Tool raised an exception",
-                              details={"exception_type": type(exc).__name__})
-            emit("attempt_end", {"attempt": attempt, "ok": False, "error": error.model_dump(mode="json"),
-                                 "latency_ms": (time.perf_counter() - attempt_start) * 1000})
+                error = Error(
+                    code="TOOL_EXCEPTION",
+                    message="Tool raised an exception",
+                    details={"exception_type": type(exc).__name__},
+                )
+            emit(
+                "attempt_end",
+                {
+                    "attempt": attempt,
+                    "ok": False,
+                    "error": error.model_dump(mode="json"),
+                    "latency_ms": (time.perf_counter() - attempt_start) * 1000,
+                },
+            )
             if not error.retryable or attempt == allowed:
                 break
             emit("retry", {"attempt": attempt, "next_attempt": attempt + 1, "cause": error.code})
             await asyncio.sleep(retry.backoff_s * attempt)
         if error.retryable and attempts == allowed and allowed > 1:
-            error = Error(code="RETRY_EXHAUSTED", message="Tool retry budget exhausted",
-                          details={"cause": error.code, "attempts": attempts})
+            error = Error(
+                code="RETRY_EXHAUSTED",
+                message="Tool retry budget exhausted",
+                details={"cause": error.code, "attempts": attempts},
+            )
         return failure(error)
