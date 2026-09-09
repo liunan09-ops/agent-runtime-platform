@@ -1,14 +1,14 @@
 {
   "state": {
-    "request_id": "079dc04f-7058-4ce5-897a-40d1e96d43a7",
-    "session_id": "88999959-918d-4f78-b654-7480f666c0bf",
+    "request_id": "4a533651-c34d-48fd-aa15-b380d34fa29c",
+    "session_id": "9ac52244-8c0f-4465-b556-e2d4f5b663e2",
     "execution_mode": "direct",
     "user_request": "",
     "status": "REJECTED",
     "current_step": 1,
     "tool_history": [
       {
-        "call_id": "d5d7b913-1280-4ad5-ba58-b6d7b35da295",
+        "call_id": "308ee170-0372-4243-ac0c-73c62aa5e265",
         "step": "direct",
         "call": {
           "name": "missing",
@@ -24,7 +24,7 @@
             "details": {}
           },
           "attempts": 0,
-          "latency_ms": 0.008082992280833423
+          "latency_ms": 0.012375006917864084
         }
       }
     ],
@@ -40,7 +40,7 @@
           "details": {}
         },
         "attempts": 0,
-        "latency_ms": 0.008082992280833423
+        "latency_ms": 0.012375006917864084
       }
     ],
     "context_state": {
@@ -53,7 +53,7 @@
         },
         {
           "role": "tool",
-          "content": "{\"name\": \"missing\", \"ok\": false, \"value\": null, \"error\": {\"code\": \"UNAVAILABLE_TOOL\", \"message\": \"Tool is not registered\", \"retryable\": false, \"details\": {}}, \"attempts\": 0, \"latency_ms\": 0.008082992280833423}",
+          "content": "{\"name\": \"missing\", \"ok\": false, \"value\": null, \"error\": {\"code\": \"UNAVAILABLE_TOOL\", \"message\": \"Tool is not registered\", \"retryable\": false, \"details\": {}}, \"attempts\": 0, \"latency_ms\": 0.012375006917864084}",
           "important": false,
           "facts": {}
         }
@@ -74,9 +74,9 @@
       }
     ],
     "final_result": null,
-    "created_at": "2026-09-09T10:50:11.503798+00:00",
-    "finished_at": "2026-09-09T10:50:11.511817+00:00",
-    "latency_ms": 7.891707995440811,
+    "created_at": "2026-09-09T10:58:04.971271+00:00",
+    "finished_at": "2026-09-09T10:58:04.981190+00:00",
+    "latency_ms": 9.744791997945867,
     "llm_call_count": 0,
     "tool_call_count": 0,
     "token_usage": null,
@@ -86,14 +86,14 @@
   "events": [
     {
       "seq": 0,
-      "timestamp": "2026-09-09T10:50:11.503869+00:00",
+      "timestamp": "2026-09-09T10:58:04.971364+00:00",
       "kind": "request",
       "step": null,
       "data": {
         "request": {
           "mode": "direct",
           "user_request": "",
-          "session_id": "88999959-918d-4f78-b654-7480f666c0bf",
+          "session_id": "9ac52244-8c0f-4465-b556-e2d4f5b663e2",
           "tool": {
             "name": "missing",
             "args": {}
@@ -125,7 +125,7 @@
     },
     {
       "seq": 1,
-      "timestamp": "2026-09-09T10:50:11.503924+00:00",
+      "timestamp": "2026-09-09T10:58:04.971442+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -137,7 +137,7 @@
     },
     {
       "seq": 2,
-      "timestamp": "2026-09-09T10:50:11.505841+00:00",
+      "timestamp": "2026-09-09T10:58:04.974435+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -147,7 +147,7 @@
     },
     {
       "seq": 3,
-      "timestamp": "2026-09-09T10:50:11.507047+00:00",
+      "timestamp": "2026-09-09T10:58:04.976019+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -157,22 +157,22 @@
     },
     {
       "seq": 4,
-      "timestamp": "2026-09-09T10:50:11.508201+00:00",
+      "timestamp": "2026-09-09T10:58:04.977284+00:00",
       "kind": "tool_selected",
       "step": "direct",
       "data": {
-        "call_id": "d5d7b913-1280-4ad5-ba58-b6d7b35da295",
+        "call_id": "308ee170-0372-4243-ac0c-73c62aa5e265",
         "name": "missing",
         "args": {}
       }
     },
     {
       "seq": 5,
-      "timestamp": "2026-09-09T10:50:11.508245+00:00",
+      "timestamp": "2026-09-09T10:58:04.977344+00:00",
       "kind": "tool_result",
       "step": "direct",
       "data": {
-        "call_id": "d5d7b913-1280-4ad5-ba58-b6d7b35da295",
+        "call_id": "308ee170-0372-4243-ac0c-73c62aa5e265",
         "name": "missing",
         "args": {},
         "result": {
@@ -185,14 +185,14 @@
             "details": {}
           },
           "attempts": 0,
-          "latency_ms": 0.008082992280833423
+          "latency_ms": 0.012375006917864084
         },
         "summary": "null"
       }
     },
     {
       "seq": 6,
-      "timestamp": "2026-09-09T10:50:11.508256+00:00",
+      "timestamp": "2026-09-09T10:58:04.977356+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -202,7 +202,7 @@
     },
     {
       "seq": 7,
-      "timestamp": "2026-09-09T10:50:11.509431+00:00",
+      "timestamp": "2026-09-09T10:58:04.978670+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -212,7 +212,7 @@
     },
     {
       "seq": 8,
-      "timestamp": "2026-09-09T10:50:11.510586+00:00",
+      "timestamp": "2026-09-09T10:58:04.979895+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -224,7 +224,7 @@
     },
     {
       "seq": 9,
-      "timestamp": "2026-09-09T10:50:11.510600+00:00",
+      "timestamp": "2026-09-09T10:58:04.979911+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -234,13 +234,13 @@
     },
     {
       "seq": 10,
-      "timestamp": "2026-09-09T10:50:11.511825+00:00",
+      "timestamp": "2026-09-09T10:58:04.981199+00:00",
       "kind": "final",
       "step": null,
       "data": {
         "result": null,
         "status": "REJECTED",
-        "latency_ms": 7.891707995440811
+        "latency_ms": 9.744791997945867
       }
     }
   ]

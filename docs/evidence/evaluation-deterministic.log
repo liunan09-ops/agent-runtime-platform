@@ -1,0 +1,90 @@
+{"id": "d01", "success": true, "latency_ms": 10.68}
+{"id": "d02", "success": true, "latency_ms": 9.38}
+{"id": "d03", "success": true, "latency_ms": 9.49}
+{"id": "d04", "success": true, "latency_ms": 10.6}
+{"id": "d05", "success": true, "latency_ms": 9.02}
+{"id": "d06", "success": true, "latency_ms": 9.83}
+{"id": "d07", "success": true, "latency_ms": 9.9}
+{"id": "d08", "success": true, "latency_ms": 9.74}
+{"id": "d09", "success": true, "latency_ms": 7.38}
+{"id": "d10", "success": true, "latency_ms": 7.29}
+{"id": "d11", "success": true, "latency_ms": 7.36}
+{"id": "d12", "success": true, "latency_ms": 7.03}
+{"id": "r01", "success": true, "latency_ms": 9.47}
+{"id": "r02", "success": true, "latency_ms": 12.0}
+{"id": "r03", "success": true, "latency_ms": 13.03}
+{"id": "r04", "success": true, "latency_ms": 13.57}
+{"id": "r05", "success": true, "latency_ms": 21.02}
+{"id": "r06", "success": true, "latency_ms": 12.11}
+{"id": "r07", "success": true, "latency_ms": 9.49}
+{"id": "r08", "success": true, "latency_ms": 13.57}
+{"id": "r09", "success": true, "latency_ms": 13.41}
+{"id": "r10", "success": true, "latency_ms": 14.94}
+{"id": "r11", "success": true, "latency_ms": 9.85}
+{"id": "r12", "success": true, "latency_ms": 11.53}
+{"id": "p01", "success": true, "latency_ms": 11.49}
+{"id": "p02", "success": true, "latency_ms": 52.69}
+{"id": "p03", "success": true, "latency_ms": 12.2}
+{"id": "p04", "success": true, "latency_ms": 8.26}
+{"id": "p05", "success": true, "latency_ms": 8.89}
+{"id": "p06", "success": true, "latency_ms": 9.6}
+{"id": "p07", "success": true, "latency_ms": 11.28}
+{"id": "p08", "success": true, "latency_ms": 12.49}
+{"id": "p09", "success": true, "latency_ms": 12.18}
+{"id": "p10", "success": true, "latency_ms": 11.75}
+{"id": "p11", "success": true, "latency_ms": 21.56}
+{"id": "p12", "success": true, "latency_ms": 273.3}
+{"id": "e01", "success": false, "latency_ms": 0.15}
+{"id": "e02", "success": true, "latency_ms": 0.12}
+{"id": "e03", "success": false, "latency_ms": 0.09}
+{"id": "e04", "success": true, "latency_ms": 0.15}
+{"id": "e05", "success": false, "latency_ms": 0.08}
+{"id": "e06", "success": true, "latency_ms": 0.15}
+{"id": "e07", "success": false, "latency_ms": 0.07}
+{"id": "e08", "success": true, "latency_ms": 0.16}
+{"id": "e09", "success": true, "latency_ms": 7.67}
+{"id": "e10", "success": true, "latency_ms": 8.3}
+{"id": "e11", "success": true, "latency_ms": 266.69}
+{"id": "e12", "success": true, "latency_ms": 8.84}
+{
+  "task_success": {
+    "hits": 44,
+    "total": 48,
+    "rate": 0.9166666666666666
+  },
+  "tool_selection_accuracy": {
+    "hits": 55,
+    "total": 55,
+    "rate": 1.0
+  },
+  "tool_argument_accuracy": {
+    "hits": 53,
+    "total": 55,
+    "rate": 0.9636363636363636
+  },
+  "workflow_completion": {
+    "hits": 9,
+    "total": 12,
+    "rate": 0.75
+  },
+  "recovery_success": {
+    "hits": 17,
+    "total": 17,
+    "rate": 1.0
+  },
+  "context_fact_retention": {
+    "hits": 24,
+    "total": 32,
+    "rate": 0.75
+  },
+  "latency_ms": {
+    "mean": 20.830658062247192,
+    "median": 9.788562500034459,
+    "max": 273.30041700042784
+  },
+  "llm_call_count": 29,
+  "tool_call_count": 52,
+  "terminal_success_count": 30,
+  "token_usage": null,
+  "cost_usd": null
+}

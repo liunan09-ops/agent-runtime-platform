@@ -1,14 +1,14 @@
 {
   "state": {
-    "request_id": "0b4db08e-1ec1-4cd6-9b76-37f899f64a47",
-    "session_id": "00a885f8-d07f-404c-b37b-5faf3917c973",
+    "request_id": "cd7786bc-becb-4b5f-bf39-303827934706",
+    "session_id": "255670af-e5b4-469e-98ff-fb70251d8ad5",
     "execution_mode": "pipeline",
     "user_request": "",
     "status": "FAILED",
     "current_step": 2,
     "tool_history": [
       {
-        "call_id": "9b517639-2896-4223-bb67-ab84b81f8415",
+        "call_id": "3e815c57-74f3-476b-a082-1dc8ca388292",
         "step": "bad",
         "call": {
           "name": "missing",
@@ -24,11 +24,11 @@
             "details": {}
           },
           "attempts": 0,
-          "latency_ms": 0.006834001396782696
+          "latency_ms": 0.008917006198316813
         }
       },
       {
-        "call_id": "62754a86-8964-4c7f-80ed-3e9b68e6a748",
+        "call_id": "22181c7c-72b6-43f8-8dc1-721e72ac2503",
         "step": "ok",
         "call": {
           "name": "calculator",
@@ -43,7 +43,7 @@
           },
           "error": null,
           "attempts": 1,
-          "latency_ms": 0.06925000343471766
+          "latency_ms": 0.07870799163356423
         }
       }
     ],
@@ -59,7 +59,7 @@
           "details": {}
         },
         "attempts": 0,
-        "latency_ms": 0.006834001396782696
+        "latency_ms": 0.008917006198316813
       },
       {
         "name": "calculator",
@@ -69,7 +69,7 @@
         },
         "error": null,
         "attempts": 1,
-        "latency_ms": 0.06925000343471766
+        "latency_ms": 0.07870799163356423
       }
     ],
     "context_state": {
@@ -82,13 +82,13 @@
         },
         {
           "role": "tool",
-          "content": "{\"name\": \"missing\", \"ok\": false, \"value\": null, \"error\": {\"code\": \"UNAVAILABLE_TOOL\", \"message\": \"Tool is not registered\", \"retryable\": false, \"details\": {}}, \"attempts\": 0, \"latency_ms\": 0.006834001396782696}",
+          "content": "{\"name\": \"missing\", \"ok\": false, \"value\": null, \"error\": {\"code\": \"UNAVAILABLE_TOOL\", \"message\": \"Tool is not registered\", \"retryable\": false, \"details\": {}}, \"attempts\": 0, \"latency_ms\": 0.008917006198316813}",
           "important": false,
           "facts": {}
         },
         {
           "role": "tool",
-          "content": "{\"name\": \"calculator\", \"ok\": true, \"value\": {\"value\": 11.0}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.06925000343471766}",
+          "content": "{\"name\": \"calculator\", \"ok\": true, \"value\": {\"value\": 11.0}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.07870799163356423}",
           "important": false,
           "facts": {}
         }
@@ -129,9 +129,9 @@
         }
       }
     },
-    "created_at": "2026-09-09T10:50:12.029392+00:00",
-    "finished_at": "2026-09-09T10:50:12.038170+00:00",
-    "latency_ms": 8.632083001430146,
+    "created_at": "2026-09-09T10:58:05.557117+00:00",
+    "finished_at": "2026-09-09T10:58:05.566162+00:00",
+    "latency_ms": 8.894708997104317,
     "llm_call_count": 0,
     "tool_call_count": 1,
     "token_usage": null,
@@ -141,14 +141,14 @@
   "events": [
     {
       "seq": 0,
-      "timestamp": "2026-09-09T10:50:12.029481+00:00",
+      "timestamp": "2026-09-09T10:58:05.557207+00:00",
       "kind": "request",
       "step": null,
       "data": {
         "request": {
           "mode": "pipeline",
           "user_request": "",
-          "session_id": "00a885f8-d07f-404c-b37b-5faf3917c973",
+          "session_id": "255670af-e5b4-469e-98ff-fb70251d8ad5",
           "tool": null,
           "steps": [
             {
@@ -202,7 +202,7 @@
     },
     {
       "seq": 1,
-      "timestamp": "2026-09-09T10:50:12.029536+00:00",
+      "timestamp": "2026-09-09T10:58:05.557267+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -214,7 +214,7 @@
     },
     {
       "seq": 2,
-      "timestamp": "2026-09-09T10:50:12.031583+00:00",
+      "timestamp": "2026-09-09T10:58:05.559272+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -224,7 +224,7 @@
     },
     {
       "seq": 3,
-      "timestamp": "2026-09-09T10:50:12.032838+00:00",
+      "timestamp": "2026-09-09T10:58:05.560570+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -234,22 +234,22 @@
     },
     {
       "seq": 4,
-      "timestamp": "2026-09-09T10:50:12.034023+00:00",
+      "timestamp": "2026-09-09T10:58:05.561847+00:00",
       "kind": "tool_selected",
       "step": "bad",
       "data": {
-        "call_id": "9b517639-2896-4223-bb67-ab84b81f8415",
+        "call_id": "3e815c57-74f3-476b-a082-1dc8ca388292",
         "name": "missing",
         "args": {}
       }
     },
     {
       "seq": 5,
-      "timestamp": "2026-09-09T10:50:12.034071+00:00",
+      "timestamp": "2026-09-09T10:58:05.561905+00:00",
       "kind": "tool_result",
       "step": "bad",
       "data": {
-        "call_id": "9b517639-2896-4223-bb67-ab84b81f8415",
+        "call_id": "3e815c57-74f3-476b-a082-1dc8ca388292",
         "name": "missing",
         "args": {},
         "result": {
@@ -262,18 +262,18 @@
             "details": {}
           },
           "attempts": 0,
-          "latency_ms": 0.006834001396782696
+          "latency_ms": 0.008917006198316813
         },
         "summary": "null"
       }
     },
     {
       "seq": 6,
-      "timestamp": "2026-09-09T10:50:12.034089+00:00",
+      "timestamp": "2026-09-09T10:58:05.561924+00:00",
       "kind": "tool_selected",
       "step": "ok",
       "data": {
-        "call_id": "62754a86-8964-4c7f-80ed-3e9b68e6a748",
+        "call_id": "22181c7c-72b6-43f8-8dc1-721e72ac2503",
         "name": "calculator",
         "args": {
           "expression": "11"
@@ -282,11 +282,11 @@
     },
     {
       "seq": 7,
-      "timestamp": "2026-09-09T10:50:12.034110+00:00",
+      "timestamp": "2026-09-09T10:58:05.561949+00:00",
       "kind": "tool_attempt",
       "step": "ok",
       "data": {
-        "call_id": "62754a86-8964-4c7f-80ed-3e9b68e6a748",
+        "call_id": "22181c7c-72b6-43f8-8dc1-721e72ac2503",
         "name": "calculator",
         "args": {
           "expression": "11"
@@ -296,23 +296,23 @@
     },
     {
       "seq": 8,
-      "timestamp": "2026-09-09T10:50:12.034158+00:00",
+      "timestamp": "2026-09-09T10:58:05.562003+00:00",
       "kind": "attempt_end",
       "step": "ok",
       "data": {
-        "call_id": "62754a86-8964-4c7f-80ed-3e9b68e6a748",
+        "call_id": "22181c7c-72b6-43f8-8dc1-721e72ac2503",
         "attempt": 1,
         "ok": true,
-        "latency_ms": 0.04824998904950917
+        "latency_ms": 0.055208001867868006
       }
     },
     {
       "seq": 9,
-      "timestamp": "2026-09-09T10:50:12.034182+00:00",
+      "timestamp": "2026-09-09T10:58:05.562025+00:00",
       "kind": "tool_result",
       "step": "ok",
       "data": {
-        "call_id": "62754a86-8964-4c7f-80ed-3e9b68e6a748",
+        "call_id": "22181c7c-72b6-43f8-8dc1-721e72ac2503",
         "name": "calculator",
         "args": {
           "expression": "11"
@@ -324,14 +324,14 @@
           },
           "error": null,
           "attempts": 1,
-          "latency_ms": 0.06925000343471766
+          "latency_ms": 0.07870799163356423
         },
         "summary": "{\"value\":11.0}"
       }
     },
     {
       "seq": 10,
-      "timestamp": "2026-09-09T10:50:12.034266+00:00",
+      "timestamp": "2026-09-09T10:58:05.562078+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -341,7 +341,7 @@
     },
     {
       "seq": 11,
-      "timestamp": "2026-09-09T10:50:12.035599+00:00",
+      "timestamp": "2026-09-09T10:58:05.563467+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -351,7 +351,7 @@
     },
     {
       "seq": 12,
-      "timestamp": "2026-09-09T10:50:12.036872+00:00",
+      "timestamp": "2026-09-09T10:58:05.564757+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -363,7 +363,7 @@
     },
     {
       "seq": 13,
-      "timestamp": "2026-09-09T10:50:12.036884+00:00",
+      "timestamp": "2026-09-09T10:58:05.564768+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -373,7 +373,7 @@
     },
     {
       "seq": 14,
-      "timestamp": "2026-09-09T10:50:12.038184+00:00",
+      "timestamp": "2026-09-09T10:58:05.566180+00:00",
       "kind": "final",
       "step": null,
       "data": {
@@ -399,7 +399,7 @@
           }
         },
         "status": "FAILED",
-        "latency_ms": 8.632083001430146
+        "latency_ms": 8.894708997104317
       }
     }
   ]

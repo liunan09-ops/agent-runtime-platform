@@ -17,3 +17,5 @@ dist/
 runtime-data/
 .DS_Store
 
+# Generated only after the final commit; see FINAL_AGENT_RUNTIME_REPORT.md.
+docs/evidence/final-head.json

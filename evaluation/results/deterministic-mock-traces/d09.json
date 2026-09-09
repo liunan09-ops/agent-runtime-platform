@@ -1,14 +1,14 @@
 {
   "state": {
-    "request_id": "3a464113-b3f3-4c60-8b44-7fdb4a07c2c0",
-    "session_id": "21638ecd-7af2-4f43-9d7b-1bf8fc06a4fe",
+    "request_id": "f4f9c68d-af03-4394-a9ec-64b9eff1aaa9",
+    "session_id": "53b386cd-d948-4e02-a0fe-8239354bd0ba",
     "execution_mode": "direct",
     "user_request": "Use calculator to compute 13*17. Return its entire output object.",
     "status": "SUCCESS",
     "current_step": 1,
     "tool_history": [
       {
-        "call_id": "7a6f5d98-51b2-41e6-b025-3d2c54ffe10a",
+        "call_id": "41baf377-5ec1-4041-832e-38ccf9e3657e",
         "step": "direct",
         "call": {
           "name": "calculator",
@@ -23,7 +23,7 @@
           },
           "error": null,
           "attempts": 1,
-          "latency_ms": 0.07783400360494852
+          "latency_ms": 0.08150000940077007
         }
       }
     ],
@@ -36,7 +36,7 @@
         },
         "error": null,
         "attempts": 1,
-        "latency_ms": 0.07783400360494852
+        "latency_ms": 0.08150000940077007
       }
     ],
     "context_state": {
@@ -49,7 +49,7 @@
         },
         {
           "role": "tool",
-          "content": "{\"name\": \"calculator\", \"ok\": true, \"value\": {\"value\": 221.0}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.07783400360494852}",
+          "content": "{\"name\": \"calculator\", \"ok\": true, \"value\": {\"value\": 221.0}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.08150000940077007}",
           "important": false,
           "facts": {}
         }
@@ -65,9 +65,9 @@
     "final_result": {
       "value": 221.0
     },
-    "created_at": "2026-09-09T10:50:11.524014+00:00",
-    "finished_at": "2026-09-09T10:50:11.530903+00:00",
-    "latency_ms": 6.756041999324225,
+    "created_at": "2026-09-09T10:58:04.996331+00:00",
+    "finished_at": "2026-09-09T10:58:05.003869+00:00",
+    "latency_ms": 7.380334005574696,
     "llm_call_count": 0,
     "tool_call_count": 1,
     "token_usage": null,
@@ -77,14 +77,14 @@
   "events": [
     {
       "seq": 0,
-      "timestamp": "2026-09-09T10:50:11.524090+00:00",
+      "timestamp": "2026-09-09T10:58:04.996423+00:00",
       "kind": "request",
       "step": null,
       "data": {
         "request": {
           "mode": "direct",
           "user_request": "Use calculator to compute 13*17. Return its entire output object.",
-          "session_id": "21638ecd-7af2-4f43-9d7b-1bf8fc06a4fe",
+          "session_id": "53b386cd-d948-4e02-a0fe-8239354bd0ba",
           "tool": {
             "name": "calculator",
             "args": {
@@ -118,7 +118,7 @@
     },
     {
       "seq": 1,
-      "timestamp": "2026-09-09T10:50:11.524146+00:00",
+      "timestamp": "2026-09-09T10:58:04.996487+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -130,7 +130,7 @@
     },
     {
       "seq": 2,
-      "timestamp": "2026-09-09T10:50:11.526049+00:00",
+      "timestamp": "2026-09-09T10:58:04.998664+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -140,7 +140,7 @@
     },
     {
       "seq": 3,
-      "timestamp": "2026-09-09T10:50:11.527178+00:00",
+      "timestamp": "2026-09-09T10:58:04.999952+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -150,11 +150,11 @@
     },
     {
       "seq": 4,
-      "timestamp": "2026-09-09T10:50:11.528329+00:00",
+      "timestamp": "2026-09-09T10:58:05.001213+00:00",
       "kind": "tool_selected",
       "step": "direct",
       "data": {
-        "call_id": "7a6f5d98-51b2-41e6-b025-3d2c54ffe10a",
+        "call_id": "41baf377-5ec1-4041-832e-38ccf9e3657e",
         "name": "calculator",
         "args": {
           "expression": "13*17"
@@ -163,11 +163,11 @@
     },
     {
       "seq": 5,
-      "timestamp": "2026-09-09T10:50:11.528364+00:00",
+      "timestamp": "2026-09-09T10:58:05.001250+00:00",
       "kind": "tool_attempt",
       "step": "direct",
       "data": {
-        "call_id": "7a6f5d98-51b2-41e6-b025-3d2c54ffe10a",
+        "call_id": "41baf377-5ec1-4041-832e-38ccf9e3657e",
         "name": "calculator",
         "args": {
           "expression": "13*17"
@@ -177,23 +177,23 @@
     },
     {
       "seq": 6,
-      "timestamp": "2026-09-09T10:50:11.528413+00:00",
+      "timestamp": "2026-09-09T10:58:05.001301+00:00",
       "kind": "attempt_end",
       "step": "direct",
       "data": {
-        "call_id": "7a6f5d98-51b2-41e6-b025-3d2c54ffe10a",
+        "call_id": "41baf377-5ec1-4041-832e-38ccf9e3657e",
         "attempt": 1,
         "ok": true,
-        "latency_ms": 0.05200000305194408
+        "latency_ms": 0.05383300594985485
       }
     },
     {
       "seq": 7,
-      "timestamp": "2026-09-09T10:50:11.528442+00:00",
+      "timestamp": "2026-09-09T10:58:05.001335+00:00",
       "kind": "tool_result",
       "step": "direct",
       "data": {
-        "call_id": "7a6f5d98-51b2-41e6-b025-3d2c54ffe10a",
+        "call_id": "41baf377-5ec1-4041-832e-38ccf9e3657e",
         "name": "calculator",
         "args": {
           "expression": "13*17"
@@ -205,14 +205,14 @@
           },
           "error": null,
           "attempts": 1,
-          "latency_ms": 0.07783400360494852
+          "latency_ms": 0.08150000940077007
         },
         "summary": "{\"value\":221.0}"
       }
     },
     {
       "seq": 8,
-      "timestamp": "2026-09-09T10:50:11.528450+00:00",
+      "timestamp": "2026-09-09T10:58:05.001344+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -222,7 +222,7 @@
     },
     {
       "seq": 9,
-      "timestamp": "2026-09-09T10:50:11.529711+00:00",
+      "timestamp": "2026-09-09T10:58:05.002650+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -234,7 +234,7 @@
     },
     {
       "seq": 10,
-      "timestamp": "2026-09-09T10:50:11.529723+00:00",
+      "timestamp": "2026-09-09T10:58:05.002661+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -244,7 +244,7 @@
     },
     {
       "seq": 11,
-      "timestamp": "2026-09-09T10:50:11.530912+00:00",
+      "timestamp": "2026-09-09T10:58:05.003878+00:00",
       "kind": "final",
       "step": null,
       "data": {
@@ -252,7 +252,7 @@
           "value": 221.0
         },
         "status": "SUCCESS",
-        "latency_ms": 6.756041999324225
+        "latency_ms": 7.380334005574696
       }
     }
   ]

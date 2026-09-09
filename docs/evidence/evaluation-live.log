@@ -1,0 +1,52 @@
+{"id": "d09", "success": true, "latency_ms": 2501.07}
+{"id": "d10", "success": false, "latency_ms": 2425.03}
+{"id": "d11", "success": true, "latency_ms": 2586.6}
+{"id": "d12", "success": true, "latency_ms": 2066.94}
+{"id": "r09", "success": true, "latency_ms": 3448.56}
+{"id": "r10", "success": true, "latency_ms": 2932.31}
+{"id": "r11", "success": true, "latency_ms": 1900.64}
+{"id": "r12", "success": true, "latency_ms": 1821.56}
+{
+  "task_success": {
+    "hits": 7,
+    "total": 8,
+    "rate": 0.875
+  },
+  "tool_selection_accuracy": {
+    "hits": 10,
+    "total": 10,
+    "rate": 1.0
+  },
+  "tool_argument_accuracy": {
+    "hits": 9,
+    "total": 10,
+    "rate": 0.9
+  },
+  "workflow_completion": {
+    "hits": 0,
+    "total": 0,
+    "rate": null
+  },
+  "recovery_success": {
+    "hits": 0,
+    "total": 0,
+    "rate": null
+  },
+  "context_fact_retention": {
+    "hits": 0,
+    "total": 0,
+    "rate": null
+  },
+  "latency_ms": {
+    "mean": 2460.3383385019697,
+    "median": 2463.0515620010556,
+    "max": 3448.5559580061818
+  },
+  "llm_call_count": 18,
+  "tool_call_count": 10,
+  "terminal_success_count": 8,
+  "token_usage": {
+    "total_tokens": 30436
+  },
+  "cost_usd": null
+}

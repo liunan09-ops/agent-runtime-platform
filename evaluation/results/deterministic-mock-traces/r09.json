@@ -1,14 +1,14 @@
 {
   "state": {
-    "request_id": "1c0db240-f340-47ed-9707-295cadb962d8",
-    "session_id": "f892e461-3845-4089-a276-a6460dad6d92",
+    "request_id": "635ee12a-1c0a-475b-95a7-f48e672f384d",
+    "session_id": "18ed58f4-8b17-46bd-b067-050491f3e160",
     "execution_mode": "react",
     "user_request": "First use calculator to compute 7*8. Then use calculator to add 9 to that result. Return the entire final tool output.",
     "status": "SUCCESS",
     "current_step": 3,
     "tool_history": [
       {
-        "call_id": "f89bfe14-a844-4c40-8a8a-c645f7a4845a",
+        "call_id": "18d26cab-2599-40a4-bc98-a0fa65cf20d3",
         "step": "1",
         "call": {
           "name": "calculator",
@@ -23,11 +23,11 @@
           },
           "error": null,
           "attempts": 1,
-          "latency_ms": 0.06274999759625643
+          "latency_ms": 0.17320799815934151
         }
       },
       {
-        "call_id": "f0f545e6-3dd4-43f1-9352-0a8674299639",
+        "call_id": "31e03baf-4987-4636-bb03-fb130202dca3",
         "step": "2",
         "call": {
           "name": "calculator",
@@ -42,7 +42,7 @@
           },
           "error": null,
           "attempts": 1,
-          "latency_ms": 0.038875004975125194
+          "latency_ms": 0.05979099660180509
         }
       }
     ],
@@ -55,7 +55,7 @@
         },
         "error": null,
         "attempts": 1,
-        "latency_ms": 0.06274999759625643
+        "latency_ms": 0.17320799815934151
       },
       {
         "name": "calculator",
@@ -65,7 +65,7 @@
         },
         "error": null,
         "attempts": 1,
-        "latency_ms": 0.038875004975125194
+        "latency_ms": 0.05979099660180509
       }
     ],
     "context_state": {
@@ -78,13 +78,13 @@
         },
         {
           "role": "tool",
-          "content": "{\"name\": \"calculator\", \"ok\": true, \"value\": {\"value\": 56.0}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.06274999759625643}",
+          "content": "{\"name\": \"calculator\", \"ok\": true, \"value\": {\"value\": 56.0}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.17320799815934151}",
           "important": false,
           "facts": {}
         },
         {
           "role": "tool",
-          "content": "{\"name\": \"calculator\", \"ok\": true, \"value\": {\"value\": 65.0}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.038875004975125194}",
+          "content": "{\"name\": \"calculator\", \"ok\": true, \"value\": {\"value\": 65.0}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.05979099660180509}",
           "important": false,
           "facts": {}
         }
@@ -100,9 +100,9 @@
     "final_result": {
       "value": 65.0
     },
-    "created_at": "2026-09-09T10:50:11.806366+00:00",
-    "finished_at": "2026-09-09T10:50:11.817622+00:00",
-    "latency_ms": 11.13104099931661,
+    "created_at": "2026-09-09T10:58:05.300629+00:00",
+    "finished_at": "2026-09-09T10:58:05.314193+00:00",
+    "latency_ms": 13.411291991360486,
     "llm_call_count": 3,
     "tool_call_count": 2,
     "token_usage": null,
@@ -112,14 +112,14 @@
   "events": [
     {
       "seq": 0,
-      "timestamp": "2026-09-09T10:50:11.806443+00:00",
+      "timestamp": "2026-09-09T10:58:05.300721+00:00",
       "kind": "request",
       "step": null,
       "data": {
         "request": {
           "mode": "react",
           "user_request": "First use calculator to compute 7*8. Then use calculator to add 9 to that result. Return the entire final tool output.",
-          "session_id": "f892e461-3845-4089-a276-a6460dad6d92",
+          "session_id": "18ed58f4-8b17-46bd-b067-050491f3e160",
           "tool": null,
           "steps": [],
           "parallel": true,
@@ -169,7 +169,7 @@
     },
     {
       "seq": 1,
-      "timestamp": "2026-09-09T10:50:11.806493+00:00",
+      "timestamp": "2026-09-09T10:58:05.300782+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -181,7 +181,7 @@
     },
     {
       "seq": 2,
-      "timestamp": "2026-09-09T10:50:11.808356+00:00",
+      "timestamp": "2026-09-09T10:58:05.302857+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -191,7 +191,7 @@
     },
     {
       "seq": 3,
-      "timestamp": "2026-09-09T10:50:11.810505+00:00",
+      "timestamp": "2026-09-09T10:58:05.305221+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -203,7 +203,7 @@
     },
     {
       "seq": 4,
-      "timestamp": "2026-09-09T10:50:11.810514+00:00",
+      "timestamp": "2026-09-09T10:58:05.305235+00:00",
       "kind": "llm_start",
       "step": "1",
       "data": {
@@ -213,7 +213,7 @@
     },
     {
       "seq": 5,
-      "timestamp": "2026-09-09T10:50:11.810535+00:00",
+      "timestamp": "2026-09-09T10:58:05.305258+00:00",
       "kind": "llm_call",
       "step": "1",
       "data": {
@@ -224,12 +224,12 @@
         },
         "usage": null,
         "attempt": 1,
-        "latency_ms": 0.020749997929669917
+        "latency_ms": 0.024416993255726993
       }
     },
     {
       "seq": 6,
-      "timestamp": "2026-09-09T10:50:11.810556+00:00",
+      "timestamp": "2026-09-09T10:58:05.305280+00:00",
       "kind": "action",
       "step": "1",
       "data": {
@@ -243,7 +243,7 @@
     },
     {
       "seq": 7,
-      "timestamp": "2026-09-09T10:50:11.810564+00:00",
+      "timestamp": "2026-09-09T10:58:05.305287+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -253,11 +253,11 @@
     },
     {
       "seq": 8,
-      "timestamp": "2026-09-09T10:50:11.811901+00:00",
+      "timestamp": "2026-09-09T10:58:05.306782+00:00",
       "kind": "tool_selected",
       "step": "1",
       "data": {
-        "call_id": "f89bfe14-a844-4c40-8a8a-c645f7a4845a",
+        "call_id": "18d26cab-2599-40a4-bc98-a0fa65cf20d3",
         "name": "calculator",
         "args": {
           "expression": "7*8"
@@ -266,11 +266,11 @@
     },
     {
       "seq": 9,
-      "timestamp": "2026-09-09T10:50:11.811926+00:00",
+      "timestamp": "2026-09-09T10:58:05.306813+00:00",
       "kind": "tool_attempt",
       "step": "1",
       "data": {
-        "call_id": "f89bfe14-a844-4c40-8a8a-c645f7a4845a",
+        "call_id": "18d26cab-2599-40a4-bc98-a0fa65cf20d3",
         "name": "calculator",
         "args": {
           "expression": "7*8"
@@ -280,23 +280,23 @@
     },
     {
       "seq": 10,
-      "timestamp": "2026-09-09T10:50:11.811969+00:00",
+      "timestamp": "2026-09-09T10:58:05.306948+00:00",
       "kind": "attempt_end",
       "step": "1",
       "data": {
-        "call_id": "f89bfe14-a844-4c40-8a8a-c645f7a4845a",
+        "call_id": "18d26cab-2599-40a4-bc98-a0fa65cf20d3",
         "attempt": 1,
         "ok": true,
-        "latency_ms": 0.046290995669551194
+        "latency_ms": 0.1209579932037741
       }
     },
     {
       "seq": 11,
-      "timestamp": "2026-09-09T10:50:11.811998+00:00",
+      "timestamp": "2026-09-09T10:58:05.307044+00:00",
       "kind": "tool_result",
       "step": "1",
       "data": {
-        "call_id": "f89bfe14-a844-4c40-8a8a-c645f7a4845a",
+        "call_id": "18d26cab-2599-40a4-bc98-a0fa65cf20d3",
         "name": "calculator",
         "args": {
           "expression": "7*8"
@@ -308,14 +308,14 @@
           },
           "error": null,
           "attempts": 1,
-          "latency_ms": 0.06274999759625643
+          "latency_ms": 0.17320799815934151
         },
         "summary": "{\"value\":56.0}"
       }
     },
     {
       "seq": 12,
-      "timestamp": "2026-09-09T10:50:11.812007+00:00",
+      "timestamp": "2026-09-09T10:58:05.307068+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -325,7 +325,7 @@
     },
     {
       "seq": 13,
-      "timestamp": "2026-09-09T10:50:11.813297+00:00",
+      "timestamp": "2026-09-09T10:58:05.308827+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -337,7 +337,7 @@
     },
     {
       "seq": 14,
-      "timestamp": "2026-09-09T10:50:11.813320+00:00",
+      "timestamp": "2026-09-09T10:58:05.308858+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -349,7 +349,7 @@
     },
     {
       "seq": 15,
-      "timestamp": "2026-09-09T10:50:11.813326+00:00",
+      "timestamp": "2026-09-09T10:58:05.308865+00:00",
       "kind": "llm_start",
       "step": "2",
       "data": {
@@ -359,7 +359,7 @@
     },
     {
       "seq": 16,
-      "timestamp": "2026-09-09T10:50:11.813340+00:00",
+      "timestamp": "2026-09-09T10:58:05.308883+00:00",
       "kind": "llm_call",
       "step": "2",
       "data": {
@@ -370,12 +370,12 @@
         },
         "usage": null,
         "attempt": 1,
-        "latency_ms": 0.012834003427997231
+        "latency_ms": 0.01737500133458525
       }
     },
     {
       "seq": 17,
-      "timestamp": "2026-09-09T10:50:11.813355+00:00",
+      "timestamp": "2026-09-09T10:58:05.308905+00:00",
       "kind": "action",
       "step": "2",
       "data": {
@@ -389,7 +389,7 @@
     },
     {
       "seq": 18,
-      "timestamp": "2026-09-09T10:50:11.813361+00:00",
+      "timestamp": "2026-09-09T10:58:05.308913+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -399,11 +399,11 @@
     },
     {
       "seq": 19,
-      "timestamp": "2026-09-09T10:50:11.814684+00:00",
+      "timestamp": "2026-09-09T10:58:05.310418+00:00",
       "kind": "tool_selected",
       "step": "2",
       "data": {
-        "call_id": "f0f545e6-3dd4-43f1-9352-0a8674299639",
+        "call_id": "31e03baf-4987-4636-bb03-fb130202dca3",
         "name": "calculator",
         "args": {
           "expression": "56+9"
@@ -412,11 +412,11 @@
     },
     {
       "seq": 20,
-      "timestamp": "2026-09-09T10:50:11.814700+00:00",
+      "timestamp": "2026-09-09T10:58:05.310444+00:00",
       "kind": "tool_attempt",
       "step": "2",
       "data": {
-        "call_id": "f0f545e6-3dd4-43f1-9352-0a8674299639",
+        "call_id": "31e03baf-4987-4636-bb03-fb130202dca3",
         "name": "calculator",
         "args": {
           "expression": "56+9"
@@ -426,23 +426,23 @@
     },
     {
       "seq": 21,
-      "timestamp": "2026-09-09T10:50:11.814725+00:00",
+      "timestamp": "2026-09-09T10:58:05.310483+00:00",
       "kind": "attempt_end",
       "step": "2",
       "data": {
-        "call_id": "f0f545e6-3dd4-43f1-9352-0a8674299639",
+        "call_id": "31e03baf-4987-4636-bb03-fb130202dca3",
         "attempt": 1,
         "ok": true,
-        "latency_ms": 0.027582995244301856
+        "latency_ms": 0.04225000157020986
       }
     },
     {
       "seq": 22,
-      "timestamp": "2026-09-09T10:50:11.814751+00:00",
+      "timestamp": "2026-09-09T10:58:05.310516+00:00",
       "kind": "tool_result",
       "step": "2",
       "data": {
-        "call_id": "f0f545e6-3dd4-43f1-9352-0a8674299639",
+        "call_id": "31e03baf-4987-4636-bb03-fb130202dca3",
         "name": "calculator",
         "args": {
           "expression": "56+9"
@@ -454,14 +454,14 @@
           },
           "error": null,
           "attempts": 1,
-          "latency_ms": 0.038875004975125194
+          "latency_ms": 0.05979099660180509
         },
         "summary": "{\"value\":65.0}"
       }
     },
     {
       "seq": 23,
-      "timestamp": "2026-09-09T10:50:11.814759+00:00",
+      "timestamp": "2026-09-09T10:58:05.310526+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -471,7 +471,7 @@
     },
     {
       "seq": 24,
-      "timestamp": "2026-09-09T10:50:11.816155+00:00",
+      "timestamp": "2026-09-09T10:58:05.312482+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -483,7 +483,7 @@
     },
     {
       "seq": 25,
-      "timestamp": "2026-09-09T10:50:11.816181+00:00",
+      "timestamp": "2026-09-09T10:58:05.312515+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -495,7 +495,7 @@
     },
     {
       "seq": 26,
-      "timestamp": "2026-09-09T10:50:11.816187+00:00",
+      "timestamp": "2026-09-09T10:58:05.312525+00:00",
       "kind": "llm_start",
       "step": "3",
       "data": {
@@ -505,7 +505,7 @@
     },
     {
       "seq": 27,
-      "timestamp": "2026-09-09T10:50:11.816201+00:00",
+      "timestamp": "2026-09-09T10:58:05.312547+00:00",
       "kind": "llm_call",
       "step": "3",
       "data": {
@@ -516,12 +516,12 @@
         },
         "usage": null,
         "attempt": 1,
-        "latency_ms": 0.013083001249469817
+        "latency_ms": 0.02420799864921719
       }
     },
     {
       "seq": 28,
-      "timestamp": "2026-09-09T10:50:11.816213+00:00",
+      "timestamp": "2026-09-09T10:58:05.312569+00:00",
       "kind": "action",
       "step": "3",
       "data": {
@@ -535,7 +535,7 @@
     },
     {
       "seq": 29,
-      "timestamp": "2026-09-09T10:50:11.816221+00:00",
+      "timestamp": "2026-09-09T10:58:05.312580+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -545,7 +545,7 @@
     },
     {
       "seq": 30,
-      "timestamp": "2026-09-09T10:50:11.817632+00:00",
+      "timestamp": "2026-09-09T10:58:05.314205+00:00",
       "kind": "final",
       "step": null,
       "data": {
@@ -553,7 +553,7 @@
           "value": 65.0
         },
         "status": "SUCCESS",
-        "latency_ms": 11.13104099931661
+        "latency_ms": 13.411291991360486
       }
     }
   ]

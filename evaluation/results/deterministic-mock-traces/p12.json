@@ -1,14 +1,14 @@
 {
   "state": {
-    "request_id": "aa2e5454-73c7-4f63-a9a3-93665f2e69a3",
-    "session_id": "107867c9-24e2-40fb-b74d-57d2bff653c0",
+    "request_id": "bca1c6ee-60b6-462d-98d5-0ea2ef7d800a",
+    "session_id": "1c316bc0-0906-4240-a31e-98f3c8fb8fd1",
     "execution_mode": "pipeline",
     "user_request": "",
     "status": "SUCCESS",
     "current_step": 1,
     "tool_history": [
       {
-        "call_id": "9f3f4540-4c53-4188-9821-bb1d70603d18",
+        "call_id": "74c9a1a6-8cb4-4e2e-8251-af9e837345af",
         "step": "a",
         "call": {
           "name": "http_mock",
@@ -29,11 +29,11 @@
             }
           },
           "attempts": 2,
-          "latency_ms": 253.74549999833107
+          "latency_ms": 253.74787498731166
         }
       },
       {
-        "call_id": "800792ea-b532-4b15-a0b9-5e3201546426",
+        "call_id": "1e9ec91f-5a4d-4264-8825-9f1e3ac7071b",
         "step": "a:fallback",
         "call": {
           "name": "http_mock",
@@ -50,7 +50,7 @@
           },
           "error": null,
           "attempts": 1,
-          "latency_ms": 1.669584002229385
+          "latency_ms": 2.6857079938054085
         }
       }
     ],
@@ -69,7 +69,7 @@
           }
         },
         "attempts": 2,
-        "latency_ms": 253.74549999833107
+        "latency_ms": 253.74787498731166
       },
       {
         "name": "http_mock",
@@ -81,7 +81,7 @@
         },
         "error": null,
         "attempts": 1,
-        "latency_ms": 1.669584002229385
+        "latency_ms": 2.6857079938054085
       }
     ],
     "context_state": {
@@ -94,13 +94,13 @@
         },
         {
           "role": "tool",
-          "content": "{\"name\": \"http_mock\", \"ok\": false, \"value\": null, \"error\": {\"code\": \"RETRY_EXHAUSTED\", \"message\": \"Tool retry budget exhausted\", \"retryable\": false, \"details\": {\"cause\": \"TOOL_TIMEOUT\", \"attempts\": 2}}, \"attempts\": 2, \"latency_ms\": 253.74549999833107}",
+          "content": "{\"name\": \"http_mock\", \"ok\": false, \"value\": null, \"error\": {\"code\": \"RETRY_EXHAUSTED\", \"message\": \"Tool retry budget exhausted\", \"retryable\": false, \"details\": {\"cause\": \"TOOL_TIMEOUT\", \"attempts\": 2}}, \"attempts\": 2, \"latency_ms\": 253.74787498731166}",
           "important": false,
           "facts": {}
         },
         {
           "role": "tool",
-          "content": "{\"name\": \"http_mock\", \"ok\": true, \"value\": {\"resource\": \"gamma\", \"value\": 30, \"source\": \"httpx.MockTransport\"}, \"error\": null, \"attempts\": 1, \"latency_ms\": 1.669584002229385}",
+          "content": "{\"name\": \"http_mock\", \"ok\": true, \"value\": {\"resource\": \"gamma\", \"value\": 30, \"source\": \"httpx.MockTransport\"}, \"error\": null, \"attempts\": 1, \"latency_ms\": 2.6857079938054085}",
           "important": false,
           "facts": {}
         }
@@ -136,9 +136,9 @@
         }
       }
     },
-    "created_at": "2026-09-09T10:50:12.204368+00:00",
-    "finished_at": "2026-09-09T10:50:12.474615+00:00",
-    "latency_ms": 270.12912499776576,
+    "created_at": "2026-09-09T10:58:05.752901+00:00",
+    "finished_at": "2026-09-09T10:58:06.026340+00:00",
+    "latency_ms": 273.30041700042784,
     "llm_call_count": 0,
     "tool_call_count": 3,
     "token_usage": null,
@@ -148,14 +148,14 @@
   "events": [
     {
       "seq": 0,
-      "timestamp": "2026-09-09T10:50:12.204442+00:00",
+      "timestamp": "2026-09-09T10:58:05.752989+00:00",
       "kind": "request",
       "step": null,
       "data": {
         "request": {
           "mode": "pipeline",
           "user_request": "",
-          "session_id": "107867c9-24e2-40fb-b74d-57d2bff653c0",
+          "session_id": "1c316bc0-0906-4240-a31e-98f3c8fb8fd1",
           "tool": null,
           "steps": [
             {
@@ -203,7 +203,7 @@
     },
     {
       "seq": 1,
-      "timestamp": "2026-09-09T10:50:12.204490+00:00",
+      "timestamp": "2026-09-09T10:58:05.753048+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -215,7 +215,7 @@
     },
     {
       "seq": 2,
-      "timestamp": "2026-09-09T10:50:12.206516+00:00",
+      "timestamp": "2026-09-09T10:58:05.755055+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -225,7 +225,7 @@
     },
     {
       "seq": 3,
-      "timestamp": "2026-09-09T10:50:12.207643+00:00",
+      "timestamp": "2026-09-09T10:58:05.756345+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -235,11 +235,11 @@
     },
     {
       "seq": 4,
-      "timestamp": "2026-09-09T10:50:12.208830+00:00",
+      "timestamp": "2026-09-09T10:58:05.758202+00:00",
       "kind": "tool_selected",
       "step": "a",
       "data": {
-        "call_id": "9f3f4540-4c53-4188-9821-bb1d70603d18",
+        "call_id": "74c9a1a6-8cb4-4e2e-8251-af9e837345af",
         "name": "http_mock",
         "args": {
           "scenario": "timeout"
@@ -248,11 +248,11 @@
     },
     {
       "seq": 5,
-      "timestamp": "2026-09-09T10:50:12.208876+00:00",
+      "timestamp": "2026-09-09T10:58:05.758264+00:00",
       "kind": "tool_attempt",
       "step": "a",
       "data": {
-        "call_id": "9f3f4540-4c53-4188-9821-bb1d70603d18",
+        "call_id": "74c9a1a6-8cb4-4e2e-8251-af9e837345af",
         "name": "http_mock",
         "args": {
           "scenario": "timeout"
@@ -262,11 +262,11 @@
     },
     {
       "seq": 6,
-      "timestamp": "2026-09-09T10:50:12.330066+00:00",
+      "timestamp": "2026-09-09T10:58:05.879485+00:00",
       "kind": "attempt_end",
       "step": "a",
       "data": {
-        "call_id": "9f3f4540-4c53-4188-9821-bb1d70603d18",
+        "call_id": "74c9a1a6-8cb4-4e2e-8251-af9e837345af",
         "attempt": 1,
         "ok": false,
         "error": {
@@ -275,16 +275,16 @@
           "retryable": true,
           "details": {}
         },
-        "latency_ms": 121.16658299055416
+        "latency_ms": 121.19074999645818
       }
     },
     {
       "seq": 7,
-      "timestamp": "2026-09-09T10:50:12.330090+00:00",
+      "timestamp": "2026-09-09T10:58:05.879518+00:00",
       "kind": "retry",
       "step": "a",
       "data": {
-        "call_id": "9f3f4540-4c53-4188-9821-bb1d70603d18",
+        "call_id": "74c9a1a6-8cb4-4e2e-8251-af9e837345af",
         "attempt": 1,
         "next_attempt": 2,
         "cause": "TOOL_TIMEOUT"
@@ -292,11 +292,11 @@
     },
     {
       "seq": 8,
-      "timestamp": "2026-09-09T10:50:12.341188+00:00",
+      "timestamp": "2026-09-09T10:58:05.890530+00:00",
       "kind": "tool_attempt",
       "step": "a",
       "data": {
-        "call_id": "9f3f4540-4c53-4188-9821-bb1d70603d18",
+        "call_id": "74c9a1a6-8cb4-4e2e-8251-af9e837345af",
         "name": "http_mock",
         "args": {
           "scenario": "timeout"
@@ -306,11 +306,11 @@
     },
     {
       "seq": 9,
-      "timestamp": "2026-09-09T10:50:12.462521+00:00",
+      "timestamp": "2026-09-09T10:58:06.011892+00:00",
       "kind": "attempt_end",
       "step": "a",
       "data": {
-        "call_id": "9f3f4540-4c53-4188-9821-bb1d70603d18",
+        "call_id": "74c9a1a6-8cb4-4e2e-8251-af9e837345af",
         "attempt": 2,
         "ok": false,
         "error": {
@@ -319,16 +319,16 @@
           "retryable": true,
           "details": {}
         },
-        "latency_ms": 121.28879099327605
+        "latency_ms": 121.31841600057669
       }
     },
     {
       "seq": 10,
-      "timestamp": "2026-09-09T10:50:12.462761+00:00",
+      "timestamp": "2026-09-09T10:58:06.012168+00:00",
       "kind": "tool_result",
       "step": "a",
       "data": {
-        "call_id": "9f3f4540-4c53-4188-9821-bb1d70603d18",
+        "call_id": "74c9a1a6-8cb4-4e2e-8251-af9e837345af",
         "name": "http_mock",
         "args": {
           "scenario": "timeout"
@@ -346,14 +346,14 @@
             }
           },
           "attempts": 2,
-          "latency_ms": 253.74549999833107
+          "latency_ms": 253.74787498731166
         },
         "summary": "null"
       }
     },
     {
       "seq": 11,
-      "timestamp": "2026-09-09T10:50:12.462805+00:00",
+      "timestamp": "2026-09-09T10:58:06.012221+00:00",
       "kind": "fallback",
       "step": "a",
       "data": {
@@ -362,11 +362,11 @@
     },
     {
       "seq": 12,
-      "timestamp": "2026-09-09T10:50:12.462908+00:00",
+      "timestamp": "2026-09-09T10:58:06.012328+00:00",
       "kind": "tool_selected",
       "step": "a:fallback",
       "data": {
-        "call_id": "800792ea-b532-4b15-a0b9-5e3201546426",
+        "call_id": "1e9ec91f-5a4d-4264-8825-9f1e3ac7071b",
         "name": "http_mock",
         "args": {
           "resource": "gamma"
@@ -375,11 +375,11 @@
     },
     {
       "seq": 13,
-      "timestamp": "2026-09-09T10:50:12.463075+00:00",
+      "timestamp": "2026-09-09T10:58:06.013437+00:00",
       "kind": "tool_attempt",
       "step": "a:fallback",
       "data": {
-        "call_id": "800792ea-b532-4b15-a0b9-5e3201546426",
+        "call_id": "1e9ec91f-5a4d-4264-8825-9f1e3ac7071b",
         "name": "http_mock",
         "args": {
           "resource": "gamma"
@@ -389,23 +389,23 @@
     },
     {
       "seq": 14,
-      "timestamp": "2026-09-09T10:50:12.464565+00:00",
+      "timestamp": "2026-09-09T10:58:06.014975+00:00",
       "kind": "attempt_end",
       "step": "a:fallback",
       "data": {
-        "call_id": "800792ea-b532-4b15-a0b9-5e3201546426",
+        "call_id": "1e9ec91f-5a4d-4264-8825-9f1e3ac7071b",
         "attempt": 1,
         "ok": true,
-        "latency_ms": 1.4994580124039203
+        "latency_ms": 1.6641669935779646
       }
     },
     {
       "seq": 15,
-      "timestamp": "2026-09-09T10:50:12.464742+00:00",
+      "timestamp": "2026-09-09T10:58:06.015138+00:00",
       "kind": "tool_result",
       "step": "a:fallback",
       "data": {
-        "call_id": "800792ea-b532-4b15-a0b9-5e3201546426",
+        "call_id": "1e9ec91f-5a4d-4264-8825-9f1e3ac7071b",
         "name": "http_mock",
         "args": {
           "resource": "gamma"
@@ -419,24 +419,34 @@
           },
           "error": null,
           "attempts": 1,
-          "latency_ms": 1.669584002229385
+          "latency_ms": 2.6857079938054085
         },
         "summary": "{\"resource\":\"gamma\",\"value\":30,\"source\":\"httpx.MockTransport\"}"
       }
     },
     {
       "seq": 16,
-      "timestamp": "2026-09-09T10:50:12.464924+00:00",
+      "timestamp": "2026-09-09T10:58:06.015247+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
         "from": "WAITING_TOOL",
-        "to": "RUNNING"
+        "to": "RECOVERING"
       }
     },
     {
       "seq": 17,
-      "timestamp": "2026-09-09T10:50:12.471380+00:00",
+      "timestamp": "2026-09-09T10:58:06.019768+00:00",
+      "kind": "state_transition",
+      "step": null,
+      "data": {
+        "from": "RECOVERING",
+        "to": "RUNNING"
+      }
+    },
+    {
+      "seq": 18,
+      "timestamp": "2026-09-09T10:58:06.023107+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -447,8 +457,8 @@
       }
     },
     {
-      "seq": 18,
-      "timestamp": "2026-09-09T10:50:12.471422+00:00",
+      "seq": 19,
+      "timestamp": "2026-09-09T10:58:06.023145+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -457,8 +467,8 @@
       }
     },
     {
-      "seq": 19,
-      "timestamp": "2026-09-09T10:50:12.474651+00:00",
+      "seq": 20,
+      "timestamp": "2026-09-09T10:58:06.026385+00:00",
       "kind": "final",
       "step": null,
       "data": {
@@ -476,7 +486,7 @@
           }
         },
         "status": "SUCCESS",
-        "latency_ms": 270.12912499776576
+        "latency_ms": 273.30041700042784
       }
     }
   ]

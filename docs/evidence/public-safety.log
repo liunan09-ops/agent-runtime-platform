@@ -1,0 +1,17 @@
+{
+  "recorded_at": "2026-09-09T11:12:56.330225+00:00",
+  "scope": "Project source, fixtures, documentation, evidence files and historical project blobs since fixed base; excludes virtualenv, runtime databases, standard Git author identities.",
+  "files_scanned": 116,
+  "historical_blobs_scanned": 108,
+  "findings": [],
+  "outside_project_changes": [],
+  "manual_review": {
+    "synthetic_data_only": true,
+    "no_corporate_data": true,
+    "no_old_project_artifacts": true,
+    "env_example_empty_credentials": true,
+    "docker_copy_allowlist": true,
+    "normal_git_author_metadata_retained": true
+  },
+  "PUBLIC_REPO_SAFE": "YES"
+}

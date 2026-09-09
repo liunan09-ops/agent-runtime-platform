@@ -1,14 +1,14 @@
 {
   "state": {
-    "request_id": "5d105644-3aca-491b-bcc6-5c3d430f3a30",
-    "session_id": "d963fdc3-6c36-448a-9cf3-7aad2e7e102d",
+    "request_id": "260c4146-5e0d-430f-9cb3-d8c3de0e09d5",
+    "session_id": "ddb1af18-1c6a-4cea-9e71-d298694cccb9",
     "execution_mode": "react",
     "user_request": "",
     "status": "SUCCESS",
     "current_step": 2,
     "tool_history": [
       {
-        "call_id": "308c6423-7e71-48e6-8fdc-21f241a0060a",
+        "call_id": "9cd1fed4-64dd-481c-9133-3f189f8567e1",
         "step": "1",
         "call": {
           "name": "http_mock",
@@ -25,7 +25,7 @@
           },
           "error": null,
           "attempts": 2,
-          "latency_ms": 11.568375004571863
+          "latency_ms": 10.668165996321477
         }
       }
     ],
@@ -40,7 +40,7 @@
         },
         "error": null,
         "attempts": 2,
-        "latency_ms": 11.568375004571863
+        "latency_ms": 10.668165996321477
       }
     ],
     "context_state": {
@@ -53,7 +53,7 @@
         },
         {
           "role": "tool",
-          "content": "{\"name\": \"http_mock\", \"ok\": true, \"value\": {\"resource\": \"alpha\", \"value\": 10, \"source\": \"httpx.MockTransport\"}, \"error\": null, \"attempts\": 2, \"latency_ms\": 11.568375004571863}",
+          "content": "{\"name\": \"http_mock\", \"ok\": true, \"value\": {\"resource\": \"alpha\", \"value\": 10, \"source\": \"httpx.MockTransport\"}, \"error\": null, \"attempts\": 2, \"latency_ms\": 10.668165996321477}",
           "important": false,
           "facts": {}
         }
@@ -71,9 +71,9 @@
       "value": 10,
       "source": "httpx.MockTransport"
     },
-    "created_at": "2026-09-09T10:50:11.699387+00:00",
-    "finished_at": "2026-09-09T10:50:11.720999+00:00",
-    "latency_ms": 21.477000002050772,
+    "created_at": "2026-09-09T10:58:05.185989+00:00",
+    "finished_at": "2026-09-09T10:58:05.207127+00:00",
+    "latency_ms": 21.01654100988526,
     "llm_call_count": 2,
     "tool_call_count": 2,
     "token_usage": null,
@@ -83,14 +83,14 @@
   "events": [
     {
       "seq": 0,
-      "timestamp": "2026-09-09T10:50:11.699473+00:00",
+      "timestamp": "2026-09-09T10:58:05.186060+00:00",
       "kind": "request",
       "step": null,
       "data": {
         "request": {
           "mode": "react",
           "user_request": "",
-          "session_id": "d963fdc3-6c36-448a-9cf3-7aad2e7e102d",
+          "session_id": "ddb1af18-1c6a-4cea-9e71-d298694cccb9",
           "tool": null,
           "steps": [],
           "parallel": true,
@@ -133,7 +133,7 @@
     },
     {
       "seq": 1,
-      "timestamp": "2026-09-09T10:50:11.699523+00:00",
+      "timestamp": "2026-09-09T10:58:05.186111+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -145,7 +145,7 @@
     },
     {
       "seq": 2,
-      "timestamp": "2026-09-09T10:50:11.701552+00:00",
+      "timestamp": "2026-09-09T10:58:05.188108+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -155,7 +155,7 @@
     },
     {
       "seq": 3,
-      "timestamp": "2026-09-09T10:50:11.703753+00:00",
+      "timestamp": "2026-09-09T10:58:05.190321+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -167,7 +167,7 @@
     },
     {
       "seq": 4,
-      "timestamp": "2026-09-09T10:50:11.703761+00:00",
+      "timestamp": "2026-09-09T10:58:05.190331+00:00",
       "kind": "llm_start",
       "step": "1",
       "data": {
@@ -177,7 +177,7 @@
     },
     {
       "seq": 5,
-      "timestamp": "2026-09-09T10:50:11.703783+00:00",
+      "timestamp": "2026-09-09T10:58:05.190354+00:00",
       "kind": "llm_call",
       "step": "1",
       "data": {
@@ -188,12 +188,12 @@
         },
         "usage": null,
         "attempt": 1,
-        "latency_ms": 0.020334002329036593
+        "latency_ms": 0.022459003957919776
       }
     },
     {
       "seq": 6,
-      "timestamp": "2026-09-09T10:50:11.703805+00:00",
+      "timestamp": "2026-09-09T10:58:05.190377+00:00",
       "kind": "action",
       "step": "1",
       "data": {
@@ -207,7 +207,7 @@
     },
     {
       "seq": 7,
-      "timestamp": "2026-09-09T10:50:11.703812+00:00",
+      "timestamp": "2026-09-09T10:58:05.190384+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -217,11 +217,11 @@
     },
     {
       "seq": 8,
-      "timestamp": "2026-09-09T10:50:11.705134+00:00",
+      "timestamp": "2026-09-09T10:58:05.191692+00:00",
       "kind": "tool_selected",
       "step": "1",
       "data": {
-        "call_id": "308c6423-7e71-48e6-8fdc-21f241a0060a",
+        "call_id": "9cd1fed4-64dd-481c-9133-3f189f8567e1",
         "name": "http_mock",
         "args": {
           "scenario": "retry_once"
@@ -230,11 +230,11 @@
     },
     {
       "seq": 9,
-      "timestamp": "2026-09-09T10:50:11.705173+00:00",
+      "timestamp": "2026-09-09T10:58:05.191727+00:00",
       "kind": "tool_attempt",
       "step": "1",
       "data": {
-        "call_id": "308c6423-7e71-48e6-8fdc-21f241a0060a",
+        "call_id": "9cd1fed4-64dd-481c-9133-3f189f8567e1",
         "name": "http_mock",
         "args": {
           "scenario": "retry_once"
@@ -244,11 +244,11 @@
     },
     {
       "seq": 10,
-      "timestamp": "2026-09-09T10:50:11.705228+00:00",
+      "timestamp": "2026-09-09T10:58:05.191780+00:00",
       "kind": "attempt_end",
       "step": "1",
       "data": {
-        "call_id": "308c6423-7e71-48e6-8fdc-21f241a0060a",
+        "call_id": "9cd1fed4-64dd-481c-9133-3f189f8567e1",
         "attempt": 1,
         "ok": false,
         "error": {
@@ -257,16 +257,16 @@
           "retryable": true,
           "details": {}
         },
-        "latency_ms": 0.05354100721888244
+        "latency_ms": 0.05212500400375575
       }
     },
     {
       "seq": 11,
-      "timestamp": "2026-09-09T10:50:11.705235+00:00",
+      "timestamp": "2026-09-09T10:58:05.191787+00:00",
       "kind": "retry",
       "step": "1",
       "data": {
-        "call_id": "308c6423-7e71-48e6-8fdc-21f241a0060a",
+        "call_id": "9cd1fed4-64dd-481c-9133-3f189f8567e1",
         "attempt": 1,
         "next_attempt": 2,
         "cause": "HTTP_UNAVAILABLE"
@@ -274,11 +274,11 @@
     },
     {
       "seq": 12,
-      "timestamp": "2026-09-09T10:50:11.716327+00:00",
+      "timestamp": "2026-09-09T10:58:05.201951+00:00",
       "kind": "tool_attempt",
       "step": "1",
       "data": {
-        "call_id": "308c6423-7e71-48e6-8fdc-21f241a0060a",
+        "call_id": "9cd1fed4-64dd-481c-9133-3f189f8567e1",
         "name": "http_mock",
         "args": {
           "scenario": "retry_once"
@@ -288,23 +288,23 @@
     },
     {
       "seq": 13,
-      "timestamp": "2026-09-09T10:50:11.716707+00:00",
+      "timestamp": "2026-09-09T10:58:05.202363+00:00",
       "kind": "attempt_end",
       "step": "1",
       "data": {
-        "call_id": "308c6423-7e71-48e6-8fdc-21f241a0060a",
+        "call_id": "9cd1fed4-64dd-481c-9133-3f189f8567e1",
         "attempt": 2,
         "ok": true,
-        "latency_ms": 0.3910000086762011
+        "latency_ms": 0.4286659968784079
       }
     },
     {
       "seq": 14,
-      "timestamp": "2026-09-09T10:50:11.716741+00:00",
+      "timestamp": "2026-09-09T10:58:05.202405+00:00",
       "kind": "tool_result",
       "step": "1",
       "data": {
-        "call_id": "308c6423-7e71-48e6-8fdc-21f241a0060a",
+        "call_id": "9cd1fed4-64dd-481c-9133-3f189f8567e1",
         "name": "http_mock",
         "args": {
           "scenario": "retry_once"
@@ -318,14 +318,14 @@
           },
           "error": null,
           "attempts": 2,
-          "latency_ms": 11.568375004571863
+          "latency_ms": 10.668165996321477
         },
         "summary": "{\"resource\":\"alpha\",\"value\":10,\"source\":\"httpx.MockTransport\"}"
       }
     },
     {
       "seq": 15,
-      "timestamp": "2026-09-09T10:50:11.716751+00:00",
+      "timestamp": "2026-09-09T10:58:05.202436+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -335,7 +335,7 @@
     },
     {
       "seq": 16,
-      "timestamp": "2026-09-09T10:50:11.718199+00:00",
+      "timestamp": "2026-09-09T10:58:05.204170+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -345,7 +345,7 @@
     },
     {
       "seq": 17,
-      "timestamp": "2026-09-09T10:50:11.719463+00:00",
+      "timestamp": "2026-09-09T10:58:05.205620+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -357,7 +357,7 @@
     },
     {
       "seq": 18,
-      "timestamp": "2026-09-09T10:50:11.719486+00:00",
+      "timestamp": "2026-09-09T10:58:05.205647+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -369,7 +369,7 @@
     },
     {
       "seq": 19,
-      "timestamp": "2026-09-09T10:50:11.719492+00:00",
+      "timestamp": "2026-09-09T10:58:05.205654+00:00",
       "kind": "llm_start",
       "step": "2",
       "data": {
@@ -379,7 +379,7 @@
     },
     {
       "seq": 20,
-      "timestamp": "2026-09-09T10:50:11.719507+00:00",
+      "timestamp": "2026-09-09T10:58:05.205672+00:00",
       "kind": "llm_call",
       "step": "2",
       "data": {
@@ -390,12 +390,12 @@
         },
         "usage": null,
         "attempt": 1,
-        "latency_ms": 0.014082994312047958
+        "latency_ms": 0.01833400165196508
       }
     },
     {
       "seq": 21,
-      "timestamp": "2026-09-09T10:50:11.719524+00:00",
+      "timestamp": "2026-09-09T10:58:05.205696+00:00",
       "kind": "action",
       "step": "2",
       "data": {
@@ -411,7 +411,7 @@
     },
     {
       "seq": 22,
-      "timestamp": "2026-09-09T10:50:11.719530+00:00",
+      "timestamp": "2026-09-09T10:58:05.205704+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -421,7 +421,7 @@
     },
     {
       "seq": 23,
-      "timestamp": "2026-09-09T10:50:11.721013+00:00",
+      "timestamp": "2026-09-09T10:58:05.207141+00:00",
       "kind": "final",
       "step": null,
       "data": {
@@ -431,7 +431,7 @@
           "source": "httpx.MockTransport"
         },
         "status": "SUCCESS",
-        "latency_ms": 21.477000002050772
+        "latency_ms": 21.01654100988526
       }
     }
   ]

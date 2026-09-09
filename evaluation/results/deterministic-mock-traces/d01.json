@@ -1,14 +1,14 @@
 {
   "state": {
-    "request_id": "b321128b-a44f-4c0f-b38a-f1285b344352",
-    "session_id": "9cfa73af-2187-49b9-b9ed-6169d459b54a",
+    "request_id": "ece2a4e5-5d68-4005-a5b9-ad4ffb59d596",
+    "session_id": "f7b40cd6-eb29-448e-9767-34a98d4b5f9f",
     "execution_mode": "direct",
     "user_request": "",
     "status": "SUCCESS",
     "current_step": 1,
     "tool_history": [
       {
-        "call_id": "e36d5c54-ee1a-4c36-b5be-38781bf2eab0",
+        "call_id": "4ca722e3-bf59-4ea9-ae9c-c510e0872558",
         "step": "direct",
         "call": {
           "name": "calculator",
@@ -23,7 +23,7 @@
           },
           "error": null,
           "attempts": 1,
-          "latency_ms": 0.07233300129882991
+          "latency_ms": 0.08537499525118619
         }
       }
     ],
@@ -36,7 +36,7 @@
         },
         "error": null,
         "attempts": 1,
-        "latency_ms": 0.07233300129882991
+        "latency_ms": 0.08537499525118619
       }
     ],
     "context_state": {
@@ -49,7 +49,7 @@
         },
         {
           "role": "tool",
-          "content": "{\"name\": \"calculator\", \"ok\": true, \"value\": {\"value\": 14.0}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.07233300129882991}",
+          "content": "{\"name\": \"calculator\", \"ok\": true, \"value\": {\"value\": 14.0}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.08537499525118619}",
           "important": false,
           "facts": {}
         }
@@ -65,9 +65,9 @@
     "final_result": {
       "value": 14.0
     },
-    "created_at": "2026-09-09T10:50:11.341311+00:00",
-    "finished_at": "2026-09-09T10:50:11.350881+00:00",
-    "latency_ms": 9.405958000570536,
+    "created_at": "2026-09-09T10:58:04.795763+00:00",
+    "finished_at": "2026-09-09T10:58:04.806805+00:00",
+    "latency_ms": 10.681208994355984,
     "llm_call_count": 0,
     "tool_call_count": 1,
     "token_usage": null,
@@ -77,14 +77,14 @@
   "events": [
     {
       "seq": 0,
-      "timestamp": "2026-09-09T10:50:11.341402+00:00",
+      "timestamp": "2026-09-09T10:58:04.796049+00:00",
       "kind": "request",
       "step": null,
       "data": {
         "request": {
           "mode": "direct",
           "user_request": "",
-          "session_id": "9cfa73af-2187-49b9-b9ed-6169d459b54a",
+          "session_id": "f7b40cd6-eb29-448e-9767-34a98d4b5f9f",
           "tool": {
             "name": "calculator",
             "args": {
@@ -118,7 +118,7 @@
     },
     {
       "seq": 1,
-      "timestamp": "2026-09-09T10:50:11.341480+00:00",
+      "timestamp": "2026-09-09T10:58:04.796127+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -130,7 +130,7 @@
     },
     {
       "seq": 2,
-      "timestamp": "2026-09-09T10:50:11.345185+00:00",
+      "timestamp": "2026-09-09T10:58:04.800302+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -140,7 +140,7 @@
     },
     {
       "seq": 3,
-      "timestamp": "2026-09-09T10:50:11.346864+00:00",
+      "timestamp": "2026-09-09T10:58:04.802554+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -150,11 +150,11 @@
     },
     {
       "seq": 4,
-      "timestamp": "2026-09-09T10:50:11.348094+00:00",
+      "timestamp": "2026-09-09T10:58:04.803876+00:00",
       "kind": "tool_selected",
       "step": "direct",
       "data": {
-        "call_id": "e36d5c54-ee1a-4c36-b5be-38781bf2eab0",
+        "call_id": "4ca722e3-bf59-4ea9-ae9c-c510e0872558",
         "name": "calculator",
         "args": {
           "expression": "2+3*4"
@@ -163,11 +163,11 @@
     },
     {
       "seq": 5,
-      "timestamp": "2026-09-09T10:50:11.348125+00:00",
+      "timestamp": "2026-09-09T10:58:04.803915+00:00",
       "kind": "tool_attempt",
       "step": "direct",
       "data": {
-        "call_id": "e36d5c54-ee1a-4c36-b5be-38781bf2eab0",
+        "call_id": "4ca722e3-bf59-4ea9-ae9c-c510e0872558",
         "name": "calculator",
         "args": {
           "expression": "2+3*4"
@@ -177,23 +177,23 @@
     },
     {
       "seq": 6,
-      "timestamp": "2026-09-09T10:50:11.348170+00:00",
+      "timestamp": "2026-09-09T10:58:04.803968+00:00",
       "kind": "attempt_end",
       "step": "direct",
       "data": {
-        "call_id": "e36d5c54-ee1a-4c36-b5be-38781bf2eab0",
+        "call_id": "4ca722e3-bf59-4ea9-ae9c-c510e0872558",
         "attempt": 1,
         "ok": true,
-        "latency_ms": 0.049874986871145666
+        "latency_ms": 0.059416997828520834
       }
     },
     {
       "seq": 7,
-      "timestamp": "2026-09-09T10:50:11.348202+00:00",
+      "timestamp": "2026-09-09T10:58:04.804007+00:00",
       "kind": "tool_result",
       "step": "direct",
       "data": {
-        "call_id": "e36d5c54-ee1a-4c36-b5be-38781bf2eab0",
+        "call_id": "4ca722e3-bf59-4ea9-ae9c-c510e0872558",
         "name": "calculator",
         "args": {
           "expression": "2+3*4"
@@ -205,14 +205,14 @@
           },
           "error": null,
           "attempts": 1,
-          "latency_ms": 0.07233300129882991
+          "latency_ms": 0.08537499525118619
         },
         "summary": "{\"value\":14.0}"
       }
     },
     {
       "seq": 8,
-      "timestamp": "2026-09-09T10:50:11.348212+00:00",
+      "timestamp": "2026-09-09T10:58:04.804018+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -222,7 +222,7 @@
     },
     {
       "seq": 9,
-      "timestamp": "2026-09-09T10:50:11.349546+00:00",
+      "timestamp": "2026-09-09T10:58:04.805381+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -234,7 +234,7 @@
     },
     {
       "seq": 10,
-      "timestamp": "2026-09-09T10:50:11.349560+00:00",
+      "timestamp": "2026-09-09T10:58:04.805398+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -244,7 +244,7 @@
     },
     {
       "seq": 11,
-      "timestamp": "2026-09-09T10:50:11.350899+00:00",
+      "timestamp": "2026-09-09T10:58:04.806822+00:00",
       "kind": "final",
       "step": null,
       "data": {
@@ -252,7 +252,7 @@
           "value": 14.0
         },
         "status": "SUCCESS",
-        "latency_ms": 9.405958000570536
+        "latency_ms": 10.681208994355984
       }
     }
   ]

@@ -1,14 +1,14 @@
 {
   "state": {
-    "request_id": "debeb9a7-624d-4032-9514-23cce15dd8e5",
-    "session_id": "960f50e8-425d-40cf-9a12-fd277773ce53",
+    "request_id": "382d157c-f8e8-4bba-9bc6-d3b615060657",
+    "session_id": "2f0fea24-7c06-4b9a-b80f-43f634f0bdc9",
     "execution_mode": "direct",
     "user_request": "",
     "status": "SUCCESS",
     "current_step": 1,
     "tool_history": [
       {
-        "call_id": "4d5e4fc9-49b4-40cd-b5f0-df0b6d6af552",
+        "call_id": "31b95e42-a0f3-4666-8877-680990cb9f8f",
         "step": "direct",
         "call": {
           "name": "knowledge_lookup",
@@ -25,7 +25,7 @@
           },
           "error": null,
           "attempts": 1,
-          "latency_ms": 1.3360419980017468
+          "latency_ms": 1.335499997367151
         }
       }
     ],
@@ -40,7 +40,7 @@
         },
         "error": null,
         "attempts": 1,
-        "latency_ms": 1.3360419980017468
+        "latency_ms": 1.335499997367151
       }
     ],
     "context_state": {
@@ -53,7 +53,7 @@
         },
         {
           "role": "tool",
-          "content": "{\"name\": \"knowledge_lookup\", \"ok\": true, \"value\": {\"key\": \"runtime\", \"text\": \"A runtime validates, schedules and observes tool execution.\", \"source\": \"synthetic-knowledge-v1\"}, \"error\": null, \"attempts\": 1, \"latency_ms\": 1.3360419980017468}",
+          "content": "{\"name\": \"knowledge_lookup\", \"ok\": true, \"value\": {\"key\": \"runtime\", \"text\": \"A runtime validates, schedules and observes tool execution.\", \"source\": \"synthetic-knowledge-v1\"}, \"error\": null, \"attempts\": 1, \"latency_ms\": 1.335499997367151}",
           "important": false,
           "facts": {}
         }
@@ -71,9 +71,9 @@
       "text": "A runtime validates, schedules and observes tool execution.",
       "source": "synthetic-knowledge-v1"
     },
-    "created_at": "2026-09-09T10:50:11.420370+00:00",
-    "finished_at": "2026-09-09T10:50:11.429374+00:00",
-    "latency_ms": 8.832957988488488,
+    "created_at": "2026-09-09T10:58:04.873158+00:00",
+    "finished_at": "2026-09-09T10:58:04.884156+00:00",
+    "latency_ms": 10.597958986181766,
     "llm_call_count": 0,
     "tool_call_count": 1,
     "token_usage": null,
@@ -83,14 +83,14 @@
   "events": [
     {
       "seq": 0,
-      "timestamp": "2026-09-09T10:50:11.420463+00:00",
+      "timestamp": "2026-09-09T10:58:04.873405+00:00",
       "kind": "request",
       "step": null,
       "data": {
         "request": {
           "mode": "direct",
           "user_request": "",
-          "session_id": "960f50e8-425d-40cf-9a12-fd277773ce53",
+          "session_id": "2f0fea24-7c06-4b9a-b80f-43f634f0bdc9",
           "tool": {
             "name": "knowledge_lookup",
             "args": {
@@ -124,7 +124,7 @@
     },
     {
       "seq": 1,
-      "timestamp": "2026-09-09T10:50:11.420539+00:00",
+      "timestamp": "2026-09-09T10:58:04.873557+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -136,7 +136,7 @@
     },
     {
       "seq": 2,
-      "timestamp": "2026-09-09T10:50:11.422892+00:00",
+      "timestamp": "2026-09-09T10:58:04.876252+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -146,7 +146,7 @@
     },
     {
       "seq": 3,
-      "timestamp": "2026-09-09T10:50:11.424044+00:00",
+      "timestamp": "2026-09-09T10:58:04.877552+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -156,11 +156,11 @@
     },
     {
       "seq": 4,
-      "timestamp": "2026-09-09T10:50:11.425182+00:00",
+      "timestamp": "2026-09-09T10:58:04.878892+00:00",
       "kind": "tool_selected",
       "step": "direct",
       "data": {
-        "call_id": "4d5e4fc9-49b4-40cd-b5f0-df0b6d6af552",
+        "call_id": "31b95e42-a0f3-4666-8877-680990cb9f8f",
         "name": "knowledge_lookup",
         "args": {
           "key": "runtime"
@@ -169,11 +169,11 @@
     },
     {
       "seq": 5,
-      "timestamp": "2026-09-09T10:50:11.425215+00:00",
+      "timestamp": "2026-09-09T10:58:04.878948+00:00",
       "kind": "tool_attempt",
       "step": "direct",
       "data": {
-        "call_id": "4d5e4fc9-49b4-40cd-b5f0-df0b6d6af552",
+        "call_id": "31b95e42-a0f3-4666-8877-680990cb9f8f",
         "name": "knowledge_lookup",
         "args": {
           "key": "runtime"
@@ -183,23 +183,23 @@
     },
     {
       "seq": 6,
-      "timestamp": "2026-09-09T10:50:11.426523+00:00",
+      "timestamp": "2026-09-09T10:58:04.880234+00:00",
       "kind": "attempt_end",
       "step": "direct",
       "data": {
-        "call_id": "4d5e4fc9-49b4-40cd-b5f0-df0b6d6af552",
+        "call_id": "31b95e42-a0f3-4666-8877-680990cb9f8f",
         "attempt": 1,
         "ok": true,
-        "latency_ms": 1.30808399990201
+        "latency_ms": 1.2868749909102917
       }
     },
     {
       "seq": 7,
-      "timestamp": "2026-09-09T10:50:11.426565+00:00",
+      "timestamp": "2026-09-09T10:58:04.880284+00:00",
       "kind": "tool_result",
       "step": "direct",
       "data": {
-        "call_id": "4d5e4fc9-49b4-40cd-b5f0-df0b6d6af552",
+        "call_id": "31b95e42-a0f3-4666-8877-680990cb9f8f",
         "name": "knowledge_lookup",
         "args": {
           "key": "runtime"
@@ -213,14 +213,14 @@
           },
           "error": null,
           "attempts": 1,
-          "latency_ms": 1.3360419980017468
+          "latency_ms": 1.335499997367151
         },
         "summary": "{\"key\":\"runtime\",\"text\":\"A runtime validates, schedules and observes tool execution.\",\"source\":\"synthetic-knowledge-v1\"}"
       }
     },
     {
       "seq": 8,
-      "timestamp": "2026-09-09T10:50:11.426576+00:00",
+      "timestamp": "2026-09-09T10:58:04.880296+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -230,7 +230,7 @@
     },
     {
       "seq": 9,
-      "timestamp": "2026-09-09T10:50:11.428138+00:00",
+      "timestamp": "2026-09-09T10:58:04.882622+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -242,7 +242,7 @@
     },
     {
       "seq": 10,
-      "timestamp": "2026-09-09T10:50:11.428147+00:00",
+      "timestamp": "2026-09-09T10:58:04.882637+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -252,7 +252,7 @@
     },
     {
       "seq": 11,
-      "timestamp": "2026-09-09T10:50:11.429386+00:00",
+      "timestamp": "2026-09-09T10:58:04.884180+00:00",
       "kind": "final",
       "step": null,
       "data": {
@@ -262,7 +262,7 @@
           "source": "synthetic-knowledge-v1"
         },
         "status": "SUCCESS",
-        "latency_ms": 8.832957988488488
+        "latency_ms": 10.597958986181766
       }
     }
   ]

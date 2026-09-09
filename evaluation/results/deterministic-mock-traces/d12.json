@@ -1,14 +1,14 @@
 {
   "state": {
-    "request_id": "d36f9062-5190-4ef2-8151-5e089e1d3d48",
-    "session_id": "b6f3e6b6-000c-4db7-9b02-07b04733ceab",
+    "request_id": "5f460b49-a22c-46fc-a4d0-87c6896906f0",
+    "session_id": "17c73622-0af2-4138-9c4c-985428806c79",
     "execution_mode": "direct",
     "user_request": "Analyze [4,9,14] with data_analysis. Return the entire tool output.",
     "status": "SUCCESS",
     "current_step": 1,
     "tool_history": [
       {
-        "call_id": "8a2af59c-6a6e-4268-b955-82d275bd878a",
+        "call_id": "2e9511c6-2802-4531-9635-bfa4cafc979c",
         "step": "direct",
         "call": {
           "name": "data_analysis",
@@ -31,7 +31,7 @@
           },
           "error": null,
           "attempts": 1,
-          "latency_ms": 0.05112499638926238
+          "latency_ms": 0.05425000563263893
         }
       }
     ],
@@ -48,7 +48,7 @@
         },
         "error": null,
         "attempts": 1,
-        "latency_ms": 0.05112499638926238
+        "latency_ms": 0.05425000563263893
       }
     ],
     "context_state": {
@@ -61,7 +61,7 @@
         },
         {
           "role": "tool",
-          "content": "{\"name\": \"data_analysis\", \"ok\": true, \"value\": {\"count\": 3, \"sum\": 27.0, \"mean\": 9.0, \"min\": 4.0, \"max\": 14.0}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.05112499638926238}",
+          "content": "{\"name\": \"data_analysis\", \"ok\": true, \"value\": {\"count\": 3, \"sum\": 27.0, \"mean\": 9.0, \"min\": 4.0, \"max\": 14.0}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.05425000563263893}",
           "important": false,
           "facts": {}
         }
@@ -81,9 +81,9 @@
       "min": 4.0,
       "max": 14.0
     },
-    "created_at": "2026-09-09T10:50:11.583871+00:00",
-    "finished_at": "2026-09-09T10:50:11.590984+00:00",
-    "latency_ms": 6.982415987295099,
+    "created_at": "2026-09-09T10:58:05.060259+00:00",
+    "finished_at": "2026-09-09T10:58:05.067423+00:00",
+    "latency_ms": 7.030791995930485,
     "llm_call_count": 0,
     "tool_call_count": 1,
     "token_usage": null,
@@ -93,14 +93,14 @@
   "events": [
     {
       "seq": 0,
-      "timestamp": "2026-09-09T10:50:11.583946+00:00",
+      "timestamp": "2026-09-09T10:58:05.060339+00:00",
       "kind": "request",
       "step": null,
       "data": {
         "request": {
           "mode": "direct",
           "user_request": "Analyze [4,9,14] with data_analysis. Return the entire tool output.",
-          "session_id": "b6f3e6b6-000c-4db7-9b02-07b04733ceab",
+          "session_id": "17c73622-0af2-4138-9c4c-985428806c79",
           "tool": {
             "name": "data_analysis",
             "args": {
@@ -138,7 +138,7 @@
     },
     {
       "seq": 1,
-      "timestamp": "2026-09-09T10:50:11.584000+00:00",
+      "timestamp": "2026-09-09T10:58:05.060391+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -150,7 +150,7 @@
     },
     {
       "seq": 2,
-      "timestamp": "2026-09-09T10:50:11.586066+00:00",
+      "timestamp": "2026-09-09T10:58:05.062373+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -160,7 +160,7 @@
     },
     {
       "seq": 3,
-      "timestamp": "2026-09-09T10:50:11.587265+00:00",
+      "timestamp": "2026-09-09T10:58:05.063625+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -170,11 +170,11 @@
     },
     {
       "seq": 4,
-      "timestamp": "2026-09-09T10:50:11.588369+00:00",
+      "timestamp": "2026-09-09T10:58:05.064766+00:00",
       "kind": "tool_selected",
       "step": "direct",
       "data": {
-        "call_id": "8a2af59c-6a6e-4268-b955-82d275bd878a",
+        "call_id": "2e9511c6-2802-4531-9635-bfa4cafc979c",
         "name": "data_analysis",
         "args": {
           "values": [
@@ -187,11 +187,11 @@
     },
     {
       "seq": 5,
-      "timestamp": "2026-09-09T10:50:11.588407+00:00",
+      "timestamp": "2026-09-09T10:58:05.064803+00:00",
       "kind": "tool_attempt",
       "step": "direct",
       "data": {
-        "call_id": "8a2af59c-6a6e-4268-b955-82d275bd878a",
+        "call_id": "2e9511c6-2802-4531-9635-bfa4cafc979c",
         "name": "data_analysis",
         "args": {
           "values": [
@@ -205,23 +205,23 @@
     },
     {
       "seq": 6,
-      "timestamp": "2026-09-09T10:50:11.588430+00:00",
+      "timestamp": "2026-09-09T10:58:05.064826+00:00",
       "kind": "attempt_end",
       "step": "direct",
       "data": {
-        "call_id": "8a2af59c-6a6e-4268-b955-82d275bd878a",
+        "call_id": "2e9511c6-2802-4531-9635-bfa4cafc979c",
         "attempt": 1,
         "ok": true,
-        "latency_ms": 0.024917011614888906
+        "latency_ms": 0.02566599869169295
       }
     },
     {
       "seq": 7,
-      "timestamp": "2026-09-09T10:50:11.588463+00:00",
+      "timestamp": "2026-09-09T10:58:05.064862+00:00",
       "kind": "tool_result",
       "step": "direct",
       "data": {
-        "call_id": "8a2af59c-6a6e-4268-b955-82d275bd878a",
+        "call_id": "2e9511c6-2802-4531-9635-bfa4cafc979c",
         "name": "data_analysis",
         "args": {
           "values": [
@@ -241,14 +241,14 @@
           },
           "error": null,
           "attempts": 1,
-          "latency_ms": 0.05112499638926238
+          "latency_ms": 0.05425000563263893
         },
         "summary": "{\"count\":3,\"sum\":27.0,\"mean\":9.0,\"min\":4.0,\"max\":14.0}"
       }
     },
     {
       "seq": 8,
-      "timestamp": "2026-09-09T10:50:11.588472+00:00",
+      "timestamp": "2026-09-09T10:58:05.064872+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -258,7 +258,7 @@
     },
     {
       "seq": 9,
-      "timestamp": "2026-09-09T10:50:11.589731+00:00",
+      "timestamp": "2026-09-09T10:58:05.066128+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -270,7 +270,7 @@
     },
     {
       "seq": 10,
-      "timestamp": "2026-09-09T10:50:11.589744+00:00",
+      "timestamp": "2026-09-09T10:58:05.066140+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -280,7 +280,7 @@
     },
     {
       "seq": 11,
-      "timestamp": "2026-09-09T10:50:11.590993+00:00",
+      "timestamp": "2026-09-09T10:58:05.067431+00:00",
       "kind": "final",
       "step": null,
       "data": {
@@ -292,7 +292,7 @@
           "max": 14.0
         },
         "status": "SUCCESS",
-        "latency_ms": 6.982415987295099
+        "latency_ms": 7.030791995930485
       }
     }
   ]

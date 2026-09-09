@@ -1,0 +1,87 @@
+{
+  "recorded_at": "2026-09-09T10:53:49.478299+00:00",
+  "image": "agent-runtime-platform:2026-09",
+  "image_id": "sha256:7357d34569a35420a321a2e189d9453686d997f82032c1f91f5a59e332f61f6f",
+  "docker_server": "29.7.2",
+  "checks": {
+    "health": {
+      "status": "ok",
+      "version": "0.1.0",
+      "storage": "sqlite"
+    },
+    "offline_runs": {
+      "direct.json": {
+        "status": "SUCCESS",
+        "request_id": "9b66cd09-470d-4b46-9ada-084d92253d0a",
+        "final_result": {
+          "value": 42.0
+        }
+      },
+      "react-offline.json": {
+        "status": "SUCCESS",
+        "request_id": "5c1b5146-2c11-43b2-a0cf-7697f7acf0cd",
+        "final_result": {
+          "value": 323.0
+        }
+      },
+      "pipeline.json": {
+        "status": "SUCCESS",
+        "request_id": "d6f10b37-7d1f-4899-8636-c900e16f68b8",
+        "final_result": {
+          "steps": {
+            "alpha": {
+              "status": "SUCCESS",
+              "value": {
+                "resource": "alpha",
+                "value": 10,
+                "source": "httpx.MockTransport"
+              },
+              "error": null
+            },
+            "beta": {
+              "status": "SUCCESS",
+              "value": {
+                "resource": "beta",
+                "value": 20,
+                "source": "httpx.MockTransport"
+              },
+              "error": null
+            },
+            "summary": {
+              "status": "SUCCESS",
+              "value": {
+                "count": 2,
+                "sum": 30.0,
+                "mean": 15.0,
+                "min": 10.0,
+                "max": 20.0
+              },
+              "error": null
+            },
+            "unmatched": {
+              "status": "SKIPPED",
+              "value": null
+            },
+            "matched": {
+              "status": "SUCCESS",
+              "value": {
+                "key": "runtime",
+                "text": "A runtime validates, schedules and observes tool execution.",
+                "source": "synthetic-knowledge-v1"
+              },
+              "error": null
+            }
+          }
+        }
+      }
+    },
+    "trace_event_count": 31,
+    "deterministic_replay": true
+  },
+  "live": {
+    "status": "NOT_REACHED"
+  },
+  "result": "FAIL",
+  "error_type": "RuntimeError",
+  "diagnosis": "Docker remapped the ephemeral published port after restart. The verifier now refreshes the port; the app restarted successfully."
+}

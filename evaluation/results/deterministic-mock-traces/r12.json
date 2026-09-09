@@ -1,14 +1,14 @@
 {
   "state": {
-    "request_id": "d28ffe12-a585-4888-a532-adfc3afa6534",
-    "session_id": "73ded3d9-3d51-4e63-8366-0f4be2123c9e",
+    "request_id": "4bc433b0-a1d6-4ed2-8ba2-de54bcbcce7c",
+    "session_id": "269bc4be-866e-4f41-b6bd-a2ff1721ab46",
     "execution_mode": "react",
     "user_request": "Use a parameterized SQL query to get the price of gadget from inventory. Return the entire tool output.",
     "status": "SUCCESS",
     "current_step": 2,
     "tool_history": [
       {
-        "call_id": "73c3632c-3d13-45d8-961c-f3b90a6d4b7f",
+        "call_id": "cd2af338-f954-4bae-af4f-1c16e51bf383",
         "step": "1",
         "call": {
           "name": "sql_query",
@@ -31,7 +31,7 @@
           },
           "error": null,
           "attempts": 1,
-          "latency_ms": 0.23920800595078617
+          "latency_ms": 0.2689579996513203
         }
       }
     ],
@@ -49,7 +49,7 @@
         },
         "error": null,
         "attempts": 1,
-        "latency_ms": 0.23920800595078617
+        "latency_ms": 0.2689579996513203
       }
     ],
     "context_state": {
@@ -62,7 +62,7 @@
         },
         {
           "role": "tool",
-          "content": "{\"name\": \"sql_query\", \"ok\": true, \"value\": {\"rows\": [{\"price\": 8.0}], \"row_count\": 1}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.23920800595078617}",
+          "content": "{\"name\": \"sql_query\", \"ok\": true, \"value\": {\"rows\": [{\"price\": 8.0}], \"row_count\": 1}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.2689579996513203}",
           "important": false,
           "facts": {}
         }
@@ -83,9 +83,9 @@
       ],
       "row_count": 1
     },
-    "created_at": "2026-09-09T10:50:11.877935+00:00",
-    "finished_at": "2026-09-09T10:50:11.886670+00:00",
-    "latency_ms": 8.588083001086488,
+    "created_at": "2026-09-09T10:58:05.385365+00:00",
+    "finished_at": "2026-09-09T10:58:05.397044+00:00",
+    "latency_ms": 11.529542010976002,
     "llm_call_count": 2,
     "tool_call_count": 1,
     "token_usage": null,
@@ -95,14 +95,14 @@
   "events": [
     {
       "seq": 0,
-      "timestamp": "2026-09-09T10:50:11.878012+00:00",
+      "timestamp": "2026-09-09T10:58:05.385456+00:00",
       "kind": "request",
       "step": null,
       "data": {
         "request": {
           "mode": "react",
           "user_request": "Use a parameterized SQL query to get the price of gadget from inventory. Return the entire tool output.",
-          "session_id": "73ded3d9-3d51-4e63-8366-0f4be2123c9e",
+          "session_id": "269bc4be-866e-4f41-b6bd-a2ff1721ab46",
           "tool": null,
           "steps": [],
           "parallel": true,
@@ -148,7 +148,7 @@
     },
     {
       "seq": 1,
-      "timestamp": "2026-09-09T10:50:11.878080+00:00",
+      "timestamp": "2026-09-09T10:58:05.385515+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -160,7 +160,7 @@
     },
     {
       "seq": 2,
-      "timestamp": "2026-09-09T10:50:11.880010+00:00",
+      "timestamp": "2026-09-09T10:58:05.387869+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -170,7 +170,7 @@
     },
     {
       "seq": 3,
-      "timestamp": "2026-09-09T10:50:11.882097+00:00",
+      "timestamp": "2026-09-09T10:58:05.390284+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -182,7 +182,7 @@
     },
     {
       "seq": 4,
-      "timestamp": "2026-09-09T10:50:11.882106+00:00",
+      "timestamp": "2026-09-09T10:58:05.390315+00:00",
       "kind": "llm_start",
       "step": "1",
       "data": {
@@ -192,7 +192,7 @@
     },
     {
       "seq": 5,
-      "timestamp": "2026-09-09T10:50:11.882125+00:00",
+      "timestamp": "2026-09-09T10:58:05.390369+00:00",
       "kind": "llm_call",
       "step": "1",
       "data": {
@@ -203,12 +203,12 @@
         },
         "usage": null,
         "attempt": 1,
-        "latency_ms": 0.018749997252598405
+        "latency_ms": 0.05524999869521707
       }
     },
     {
       "seq": 6,
-      "timestamp": "2026-09-09T10:50:11.882150+00:00",
+      "timestamp": "2026-09-09T10:58:05.390428+00:00",
       "kind": "action",
       "step": "1",
       "data": {
@@ -225,7 +225,7 @@
     },
     {
       "seq": 7,
-      "timestamp": "2026-09-09T10:50:11.882158+00:00",
+      "timestamp": "2026-09-09T10:58:05.390446+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -235,11 +235,11 @@
     },
     {
       "seq": 8,
-      "timestamp": "2026-09-09T10:50:11.883441+00:00",
+      "timestamp": "2026-09-09T10:58:05.392684+00:00",
       "kind": "tool_selected",
       "step": "1",
       "data": {
-        "call_id": "73c3632c-3d13-45d8-961c-f3b90a6d4b7f",
+        "call_id": "cd2af338-f954-4bae-af4f-1c16e51bf383",
         "name": "sql_query",
         "args": {
           "query": "SELECT price FROM inventory WHERE item=?",
@@ -251,11 +251,11 @@
     },
     {
       "seq": 9,
-      "timestamp": "2026-09-09T10:50:11.883467+00:00",
+      "timestamp": "2026-09-09T10:58:05.392726+00:00",
       "kind": "tool_attempt",
       "step": "1",
       "data": {
-        "call_id": "73c3632c-3d13-45d8-961c-f3b90a6d4b7f",
+        "call_id": "cd2af338-f954-4bae-af4f-1c16e51bf383",
         "name": "sql_query",
         "args": {
           "query": "SELECT price FROM inventory WHERE item=?",
@@ -268,23 +268,23 @@
     },
     {
       "seq": 10,
-      "timestamp": "2026-09-09T10:50:11.883682+00:00",
+      "timestamp": "2026-09-09T10:58:05.392962+00:00",
       "kind": "attempt_end",
       "step": "1",
       "data": {
-        "call_id": "73c3632c-3d13-45d8-961c-f3b90a6d4b7f",
+        "call_id": "cd2af338-f954-4bae-af4f-1c16e51bf383",
         "attempt": 1,
         "ok": true,
-        "latency_ms": 0.21387499873526394
+        "latency_ms": 0.23691699607297778
       }
     },
     {
       "seq": 11,
-      "timestamp": "2026-09-09T10:50:11.883725+00:00",
+      "timestamp": "2026-09-09T10:58:05.393008+00:00",
       "kind": "tool_result",
       "step": "1",
       "data": {
-        "call_id": "73c3632c-3d13-45d8-961c-f3b90a6d4b7f",
+        "call_id": "cd2af338-f954-4bae-af4f-1c16e51bf383",
         "name": "sql_query",
         "args": {
           "query": "SELECT price FROM inventory WHERE item=?",
@@ -304,14 +304,14 @@
           },
           "error": null,
           "attempts": 1,
-          "latency_ms": 0.23920800595078617
+          "latency_ms": 0.2689579996513203
         },
         "summary": "{\"rows\":[{\"price\":8.0}],\"row_count\":1}"
       }
     },
     {
       "seq": 12,
-      "timestamp": "2026-09-09T10:50:11.883736+00:00",
+      "timestamp": "2026-09-09T10:58:05.393020+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -321,7 +321,7 @@
     },
     {
       "seq": 13,
-      "timestamp": "2026-09-09T10:50:11.885290+00:00",
+      "timestamp": "2026-09-09T10:58:05.394913+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -333,7 +333,7 @@
     },
     {
       "seq": 14,
-      "timestamp": "2026-09-09T10:50:11.885314+00:00",
+      "timestamp": "2026-09-09T10:58:05.394943+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -345,7 +345,7 @@
     },
     {
       "seq": 15,
-      "timestamp": "2026-09-09T10:50:11.885319+00:00",
+      "timestamp": "2026-09-09T10:58:05.394951+00:00",
       "kind": "llm_start",
       "step": "2",
       "data": {
@@ -355,7 +355,7 @@
     },
     {
       "seq": 16,
-      "timestamp": "2026-09-09T10:50:11.885333+00:00",
+      "timestamp": "2026-09-09T10:58:05.394970+00:00",
       "kind": "llm_call",
       "step": "2",
       "data": {
@@ -366,12 +366,12 @@
         },
         "usage": null,
         "attempt": 1,
-        "latency_ms": 0.013124998076818883
+        "latency_ms": 0.018916995031759143
       }
     },
     {
       "seq": 17,
-      "timestamp": "2026-09-09T10:50:11.885352+00:00",
+      "timestamp": "2026-09-09T10:58:05.394996+00:00",
       "kind": "action",
       "step": "2",
       "data": {
@@ -390,7 +390,7 @@
     },
     {
       "seq": 18,
-      "timestamp": "2026-09-09T10:50:11.885365+00:00",
+      "timestamp": "2026-09-09T10:58:05.395008+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -400,7 +400,7 @@
     },
     {
       "seq": 19,
-      "timestamp": "2026-09-09T10:50:11.886679+00:00",
+      "timestamp": "2026-09-09T10:58:05.397059+00:00",
       "kind": "final",
       "step": null,
       "data": {
@@ -413,7 +413,7 @@
           "row_count": 1
         },
         "status": "SUCCESS",
-        "latency_ms": 8.588083001086488
+        "latency_ms": 11.529542010976002
       }
     }
   ]

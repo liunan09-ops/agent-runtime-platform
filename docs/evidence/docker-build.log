@@ -1,0 +1,141 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 767B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.11-slim
+#2 DONE 1.8s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 148B done
+#3 DONE 0.0s
+
+#4 [1/5] FROM docker.io/library/python:3.11-slim@sha256:9534e5a8e315485d4061ed659af0fd78a284c015f9b73661b41d6bab25604534
+#4 resolve docker.io/library/python:3.11-slim@sha256:9534e5a8e315485d4061ed659af0fd78a284c015f9b73661b41d6bab25604534 done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 17.56kB done
+#5 DONE 0.0s
+
+#6 [2/5] WORKDIR /app
+#6 CACHED
+
+#7 [3/5] COPY requirements.lock pyproject.toml README.md ./
+#7 DONE 0.0s
+
+#8 [4/5] COPY src ./src
+#8 DONE 0.0s
+
+#9 [5/5] RUN pip install --no-cache-dir -r requirements.lock && pip install --no-cache-dir --no-deps .     && useradd --uid 10001 --create-home runtime     && mkdir -p /app/runtime-data && chown runtime:runtime /app/runtime-data
+#9 0.948 Collecting aiosqlite==0.22.1 (from -r requirements.lock (line 2))
+#9 1.242   Downloading aiosqlite-0.22.1-py3-none-any.whl.metadata (4.3 kB)
+#9 1.377 Collecting annotated-doc==0.0.5 (from -r requirements.lock (line 3))
+#9 1.507   Downloading annotated_doc-0.0.5-py3-none-any.whl.metadata (6.5 kB)
+#9 1.642 Collecting annotated-types==0.8.0 (from -r requirements.lock (line 4))
+#9 1.754   Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+#9 1.974 Collecting anyio==4.15.1 (from -r requirements.lock (line 5))
+#9 2.099   Downloading anyio-4.15.1-py3-none-any.whl.metadata (4.7 kB)
+#9 2.252 Collecting certifi==2026.7.22 (from -r requirements.lock (line 6))
+#9 2.376   Downloading certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+#9 2.511 Collecting click==8.5.0 (from -r requirements.lock (line 7))
+#9 2.652   Downloading click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+#9 2.824 Collecting fastapi==0.141.1 (from -r requirements.lock (line 8))
+#9 2.980   Downloading fastapi-0.141.1-py3-none-any.whl.metadata (27 kB)
+#9 3.218 Collecting greenlet==3.5.5 (from -r requirements.lock (line 9))
+#9 3.334   Downloading greenlet-3.5.5-cp311-cp311-manylinux_2_24_aarch64.manylinux_2_28_aarch64.whl.metadata (3.8 kB)
+#9 3.462 Collecting h11==0.16.0 (from -r requirements.lock (line 10))
+#9 3.587   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+#9 3.740 Collecting httpcore==1.0.9 (from -r requirements.lock (line 11))
+#9 3.861   Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+#9 4.191 Collecting httpx==0.28.1 (from -r requirements.lock (line 12))
+#9 4.307   Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+#9 4.449 Collecting idna==3.19 (from -r requirements.lock (line 13))
+#9 4.560   Downloading idna-3.19-py3-none-any.whl.metadata (9.2 kB)
+#9 4.798 Collecting pydantic==2.13.5 (from -r requirements.lock (line 14))
+#9 4.908   Downloading pydantic-2.13.5-py3-none-any.whl.metadata (110 kB)
+#9 4.985      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 110.2/110.2 kB 116.4 MB/s eta 0:00:00
+#9 5.579 Collecting pydantic-core==2.46.5 (from -r requirements.lock (line 15))
+#9 5.702   Downloading pydantic_core-2.46.5-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (6.6 kB)
+#9 6.066 Collecting sqlalchemy==2.0.52 (from -r requirements.lock (line 16))
+#9 6.181   Downloading sqlalchemy-2.0.52-cp311-cp311-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl.metadata (9.6 kB)
+#9 6.339 Collecting starlette==1.6.0 (from -r requirements.lock (line 17))
+#9 6.460   Downloading starlette-1.6.0-py3-none-any.whl.metadata (6.4 kB)
+#9 6.602 Collecting typing-extensions==4.16.0 (from -r requirements.lock (line 18))
+#9 6.720   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+#9 6.852 Collecting typing-inspection==0.4.4 (from -r requirements.lock (line 19))
+#9 6.978   Downloading typing_inspection-0.4.4-py3-none-any.whl.metadata (2.6 kB)
+#9 7.136 Collecting uvicorn==0.52.4 (from -r requirements.lock (line 20))
+#9 7.255   Downloading uvicorn-0.52.4-py3-none-any.whl.metadata (6.6 kB)
+#9 7.482 Downloading aiosqlite-0.22.1-py3-none-any.whl (17 kB)
+#9 7.609 Downloading annotated_doc-0.0.5-py3-none-any.whl (5.3 kB)
+#9 7.718 Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+#9 7.842 Downloading anyio-4.15.1-py3-none-any.whl (132 kB)
+#9 7.971    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 132.1/132.1 kB 4.7 MB/s eta 0:00:00
+#9 8.084 Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+#9 8.953    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 137.0/137.0 kB 146.7 kB/s eta 0:00:00
+#9 9.061 Downloading click-8.5.0-py3-none-any.whl (125 kB)
+#9 9.076    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 125.3/125.3 kB 10.9 MB/s eta 0:00:00
+#9 9.194 Downloading fastapi-0.141.1-py3-none-any.whl (131 kB)
+#9 9.311    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 132.0/132.0 kB 139.4 MB/s eta 0:00:00
+#9 9.421 Downloading greenlet-3.5.5-cp311-cp311-manylinux_2_24_aarch64.manylinux_2_28_aarch64.whl (613 kB)
+#9 9.508    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 613.6/613.6 kB 7.4 MB/s eta 0:00:00
+#9 9.618 Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+#9 9.755 Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+#9 9.768    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.8/78.8 kB 10.4 MB/s eta 0:00:00
+#9 9.883 Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+#9 9.912    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.5/73.5 kB 2.5 MB/s eta 0:00:00
+#9 10.02 Downloading idna-3.19-py3-none-any.whl (68 kB)
+#9 10.04    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 68.5/68.5 kB 3.6 MB/s eta 0:00:00
+#9 10.15 Downloading pydantic-2.13.5-py3-none-any.whl (472 kB)
+#9 10.28    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 472.6/472.6 kB 3.5 MB/s eta 0:00:00
+#9 10.41 Downloading pydantic_core-2.46.5-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (1.9 MB)
+#9 10.66    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 MB 7.7 MB/s eta 0:00:00
+#9 10.78 Downloading sqlalchemy-2.0.52-cp311-cp311-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (3.4 MB)
+#9 11.14    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.4/3.4 MB 9.4 MB/s eta 0:00:00
+#9 11.27 Downloading starlette-1.6.0-py3-none-any.whl (75 kB)
+#9 11.28    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 76.0/76.0 kB 272.5 MB/s eta 0:00:00
+#9 11.39 Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+#9 11.40    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.6/45.6 kB 9.7 MB/s eta 0:00:00
+#9 11.51 Downloading typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+#9 11.62 Downloading uvicorn-0.52.4-py3-none-any.whl (79 kB)
+#9 11.62    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 79.9/79.9 kB 26.2 MB/s eta 0:00:00
+#9 11.70 Installing collected packages: typing-extensions, idna, h11, greenlet, click, certifi, annotated-types, annotated-doc, aiosqlite, uvicorn, typing-inspection, sqlalchemy, pydantic-core, httpcore, anyio, starlette, pydantic, httpx, fastapi
+#9 12.50 Successfully installed aiosqlite-0.22.1 annotated-doc-0.0.5 annotated-types-0.8.0 anyio-4.15.1 certifi-2026.7.22 click-8.5.0 fastapi-0.141.1 greenlet-3.5.5 h11-0.16.0 httpcore-1.0.9 httpx-0.28.1 idna-3.19 pydantic-2.13.5 pydantic-core-2.46.5 sqlalchemy-2.0.52 starlette-1.6.0 typing-extensions-4.16.0 typing-inspection-0.4.4 uvicorn-0.52.4
+#9 12.50 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#9 12.79
+#9 12.79 [notice] A new release of pip is available: 24.0 -> 26.2.1
+#9 12.79 [notice] To update, run: pip install --upgrade pip
+#9 13.45 Processing /app
+#9 13.45   Installing build dependencies: started
+#9 15.62   Installing build dependencies: finished with status 'done'
+#9 15.62   Getting requirements to build wheel: started
+#9 15.82   Getting requirements to build wheel: finished with status 'done'
+#9 15.83   Preparing metadata (pyproject.toml): started
+#9 16.02   Preparing metadata (pyproject.toml): finished with status 'done'
+#9 16.03 Building wheels for collected packages: agent-runtime-platform
+#9 16.03   Building wheel for agent-runtime-platform (pyproject.toml): started
+#9 16.24   Building wheel for agent-runtime-platform (pyproject.toml): finished with status 'done'
+#9 16.24   Created wheel for agent-runtime-platform: filename=agent_runtime_platform-0.1.0-py3-none-any.whl size=29530 sha256=bedc8c4b817961a6583d4c5a9d7210d6061866aaa0b27b26985d41192277a897
+#9 16.24   Stored in directory: /tmp/pip-ephem-wheel-cache-6bxrrw4a/wheels/57/0f/98/bb57b2b57b95807699b822a35c022f139d38a02c27922f27ce
+#9 16.24 Successfully built agent-runtime-platform
+#9 16.24 Installing collected packages: agent-runtime-platform
+#9 16.25 Successfully installed agent-runtime-platform-0.1.0
+#9 16.25 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#9 16.56
+#9 16.56 [notice] A new release of pip is available: 24.0 -> 26.2.1
+#9 16.56 [notice] To update, run: pip install --upgrade pip
+#9 DONE 16.7s
+
+#10 exporting to image
+#10 exporting layers
+#10 exporting layers 0.7s done
+#10 exporting manifest sha256:a2c4742cc71eb24f030553d3915275ee97e38c1393f16a4952681ea9a0506cee done
+#10 exporting config sha256:3f8327584a0fc5d3f8ac7bccfab4bcad4c65fade843d66d37caebf3c67f397fa done
+#10 exporting attestation manifest sha256:70ab09adb0e63ddceca305454ced236ceb97d194945ba259070b5d109d61eee8 done
+#10 exporting manifest list sha256:6f8fd063ea546b10d58d0b2d57a4e0d6c865797ab7bc592873ae5cacd77b8438 done
+#10 naming to docker.io/library/agent-runtime-platform:2026-09 done
+#10 unpacking to docker.io/library/agent-runtime-platform:2026-09
+#10 unpacking to docker.io/library/agent-runtime-platform:2026-09 0.2s done
+#10 DONE 0.9s

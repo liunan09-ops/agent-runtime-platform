@@ -1,14 +1,14 @@
 {
   "state": {
-    "request_id": "c29f295f-829f-4730-91ce-59726136506f",
-    "session_id": "735e4145-4bde-48f4-9c94-c016713cba68",
+    "request_id": "f809d9dd-1e99-4a12-a7a8-41df3f9a0148",
+    "session_id": "9a063cb8-6369-472b-b36b-dee9528a7cc6",
     "execution_mode": "direct",
     "user_request": "",
     "status": "SUCCESS",
     "current_step": 1,
     "tool_history": [
       {
-        "call_id": "f79205f1-5acd-43d6-a3db-36fd235fcd55",
+        "call_id": "003e79ec-73e3-4618-a34b-a82ad6e52b60",
         "step": "direct",
         "call": {
           "name": "data_analysis",
@@ -31,7 +31,7 @@
           },
           "error": null,
           "attempts": 1,
-          "latency_ms": 0.05570899520535022
+          "latency_ms": 0.062457998865284026
         }
       }
     ],
@@ -48,7 +48,7 @@
         },
         "error": null,
         "attempts": 1,
-        "latency_ms": 0.05570899520535022
+        "latency_ms": 0.062457998865284026
       }
     ],
     "context_state": {
@@ -61,7 +61,7 @@
         },
         {
           "role": "tool",
-          "content": "{\"name\": \"data_analysis\", \"ok\": true, \"value\": {\"count\": 3, \"sum\": 12.0, \"mean\": 4.0, \"min\": 2.0, \"max\": 6.0}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.05570899520535022}",
+          "content": "{\"name\": \"data_analysis\", \"ok\": true, \"value\": {\"count\": 3, \"sum\": 12.0, \"mean\": 4.0, \"min\": 2.0, \"max\": 6.0}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.062457998865284026}",
           "important": false,
           "facts": {}
         }
@@ -81,9 +81,9 @@
       "min": 2.0,
       "max": 6.0
     },
-    "created_at": "2026-09-09T10:50:11.442162+00:00",
-    "finished_at": "2026-09-09T10:50:11.449443+00:00",
-    "latency_ms": 7.142082991776988,
+    "created_at": "2026-09-09T10:58:04.898782+00:00",
+    "finished_at": "2026-09-09T10:58:04.907949+00:00",
+    "latency_ms": 9.017499993206002,
     "llm_call_count": 0,
     "tool_call_count": 1,
     "token_usage": null,
@@ -93,14 +93,14 @@
   "events": [
     {
       "seq": 0,
-      "timestamp": "2026-09-09T10:50:11.442240+00:00",
+      "timestamp": "2026-09-09T10:58:04.898877+00:00",
       "kind": "request",
       "step": null,
       "data": {
         "request": {
           "mode": "direct",
           "user_request": "",
-          "session_id": "735e4145-4bde-48f4-9c94-c016713cba68",
+          "session_id": "9a063cb8-6369-472b-b36b-dee9528a7cc6",
           "tool": {
             "name": "data_analysis",
             "args": {
@@ -138,7 +138,7 @@
     },
     {
       "seq": 1,
-      "timestamp": "2026-09-09T10:50:11.442300+00:00",
+      "timestamp": "2026-09-09T10:58:04.898936+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -150,7 +150,7 @@
     },
     {
       "seq": 2,
-      "timestamp": "2026-09-09T10:50:11.444349+00:00",
+      "timestamp": "2026-09-09T10:58:04.901437+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -160,7 +160,7 @@
     },
     {
       "seq": 3,
-      "timestamp": "2026-09-09T10:50:11.445622+00:00",
+      "timestamp": "2026-09-09T10:58:04.902788+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -170,11 +170,11 @@
     },
     {
       "seq": 4,
-      "timestamp": "2026-09-09T10:50:11.446827+00:00",
+      "timestamp": "2026-09-09T10:58:04.904092+00:00",
       "kind": "tool_selected",
       "step": "direct",
       "data": {
-        "call_id": "f79205f1-5acd-43d6-a3db-36fd235fcd55",
+        "call_id": "003e79ec-73e3-4618-a34b-a82ad6e52b60",
         "name": "data_analysis",
         "args": {
           "values": [
@@ -187,11 +187,11 @@
     },
     {
       "seq": 5,
-      "timestamp": "2026-09-09T10:50:11.446863+00:00",
+      "timestamp": "2026-09-09T10:58:04.904136+00:00",
       "kind": "tool_attempt",
       "step": "direct",
       "data": {
-        "call_id": "f79205f1-5acd-43d6-a3db-36fd235fcd55",
+        "call_id": "003e79ec-73e3-4618-a34b-a82ad6e52b60",
         "name": "data_analysis",
         "args": {
           "values": [
@@ -205,23 +205,23 @@
     },
     {
       "seq": 6,
-      "timestamp": "2026-09-09T10:50:11.446888+00:00",
+      "timestamp": "2026-09-09T10:58:04.904162+00:00",
       "kind": "attempt_end",
       "step": "direct",
       "data": {
-        "call_id": "f79205f1-5acd-43d6-a3db-36fd235fcd55",
+        "call_id": "003e79ec-73e3-4618-a34b-a82ad6e52b60",
         "attempt": 1,
         "ok": true,
-        "latency_ms": 0.027166999643668532
+        "latency_ms": 0.02920901170000434
       }
     },
     {
       "seq": 7,
-      "timestamp": "2026-09-09T10:50:11.446923+00:00",
+      "timestamp": "2026-09-09T10:58:04.904202+00:00",
       "kind": "tool_result",
       "step": "direct",
       "data": {
-        "call_id": "f79205f1-5acd-43d6-a3db-36fd235fcd55",
+        "call_id": "003e79ec-73e3-4618-a34b-a82ad6e52b60",
         "name": "data_analysis",
         "args": {
           "values": [
@@ -241,14 +241,14 @@
           },
           "error": null,
           "attempts": 1,
-          "latency_ms": 0.05570899520535022
+          "latency_ms": 0.062457998865284026
         },
         "summary": "{\"count\":3,\"sum\":12.0,\"mean\":4.0,\"min\":2.0,\"max\":6.0}"
       }
     },
     {
       "seq": 8,
-      "timestamp": "2026-09-09T10:50:11.446933+00:00",
+      "timestamp": "2026-09-09T10:58:04.904212+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -258,7 +258,7 @@
     },
     {
       "seq": 9,
-      "timestamp": "2026-09-09T10:50:11.448192+00:00",
+      "timestamp": "2026-09-09T10:58:04.905612+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -270,7 +270,7 @@
     },
     {
       "seq": 10,
-      "timestamp": "2026-09-09T10:50:11.448203+00:00",
+      "timestamp": "2026-09-09T10:58:04.905627+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -280,7 +280,7 @@
     },
     {
       "seq": 11,
-      "timestamp": "2026-09-09T10:50:11.449455+00:00",
+      "timestamp": "2026-09-09T10:58:04.907982+00:00",
       "kind": "final",
       "step": null,
       "data": {
@@ -292,7 +292,7 @@
           "max": 6.0
         },
         "status": "SUCCESS",
-        "latency_ms": 7.142082991776988
+        "latency_ms": 9.017499993206002
       }
     }
   ]

@@ -1,0 +1,106 @@
+{
+  "recorded_at": "2026-09-09T11:10:06.313067+00:00",
+  "image": "agent-runtime-platform:2026-09",
+  "image_id": "sha256:6f8fd063ea546b10d58d0b2d57a4e0d6c865797ab7bc592873ae5cacd77b8438",
+  "docker_server": "29.7.2",
+  "checks": {
+    "health": {
+      "status": "ok",
+      "version": "0.1.0",
+      "storage": "sqlite"
+    },
+    "offline_runs": {
+      "direct.json": {
+        "status": "SUCCESS",
+        "request_id": "c06b9f2b-4d18-478b-869e-edbbfe79605b",
+        "final_result": {
+          "value": 42.0
+        }
+      },
+      "react-offline.json": {
+        "status": "SUCCESS",
+        "request_id": "0563726d-1184-47d5-bfba-f9ca7accc88b",
+        "final_result": {
+          "value": 323.0
+        }
+      },
+      "pipeline.json": {
+        "status": "SUCCESS",
+        "request_id": "28e5cbfa-6e82-42a2-9d26-8d8e73117c1a",
+        "final_result": {
+          "steps": {
+            "alpha": {
+              "status": "SUCCESS",
+              "value": {
+                "resource": "alpha",
+                "value": 10,
+                "source": "httpx.MockTransport"
+              },
+              "error": null
+            },
+            "beta": {
+              "status": "SUCCESS",
+              "value": {
+                "resource": "beta",
+                "value": 20,
+                "source": "httpx.MockTransport"
+              },
+              "error": null
+            },
+            "summary": {
+              "status": "SUCCESS",
+              "value": {
+                "count": 2,
+                "sum": 30.0,
+                "mean": 15.0,
+                "min": 10.0,
+                "max": 20.0
+              },
+              "error": null
+            },
+            "unmatched": {
+              "status": "SKIPPED",
+              "value": null
+            },
+            "matched": {
+              "status": "SUCCESS",
+              "value": {
+                "key": "runtime",
+                "text": "A runtime validates, schedules and observes tool execution.",
+                "source": "synthetic-knowledge-v1"
+              },
+              "error": null
+            }
+          }
+        }
+      }
+    },
+    "trace_event_count": 31,
+    "deterministic_replay": true,
+    "restart_health": {
+      "status": "ok",
+      "version": "0.1.0",
+      "storage": "sqlite"
+    },
+    "restart_persistence": true,
+    "user": "10001",
+    "env_file_absent": true,
+    "python": "Python 3.11.16"
+  },
+  "live": {
+    "status": "SUCCESS",
+    "final_result": {
+      "value": 323.0
+    },
+    "token_usage": {
+      "prompt_tokens": 3280,
+      "completion_tokens": 31,
+      "total_tokens": 3311
+    },
+    "llm_call_count": 2,
+    "tool_call_count": 1,
+    "latency_ms": 2493.6539179999995,
+    "errors": []
+  },
+  "result": "PASS"
+}

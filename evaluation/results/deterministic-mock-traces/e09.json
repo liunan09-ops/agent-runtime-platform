@@ -1,14 +1,14 @@
 {
   "state": {
-    "request_id": "a5dec31f-47f1-4667-ba3d-0ddd53a57d18",
-    "session_id": "5d4920e2-b23f-481b-bc05-2e38af1ba4cc",
+    "request_id": "71321870-a028-4210-92e5-7f526c3232c1",
+    "session_id": "253b9b33-496c-4831-afa7-a8932403c0bf",
     "execution_mode": "direct",
     "user_request": "",
     "status": "SUCCESS",
     "current_step": 1,
     "tool_history": [
       {
-        "call_id": "c71d071e-448d-4473-acfc-44bde06fd2b8",
+        "call_id": "9817173b-c0b2-496c-9c0d-3d9218f803c6",
         "step": "direct",
         "call": {
           "name": "calculator",
@@ -23,7 +23,7 @@
           },
           "error": null,
           "attempts": 1,
-          "latency_ms": 0.0728330051060766
+          "latency_ms": 0.0805000017862767
         }
       }
     ],
@@ -36,7 +36,7 @@
         },
         "error": null,
         "attempts": 1,
-        "latency_ms": 0.0728330051060766
+        "latency_ms": 0.0805000017862767
       }
     ],
     "context_state": {
@@ -49,7 +49,7 @@
         },
         {
           "role": "tool",
-          "content": "{\"name\": \"calculator\", \"ok\": true, \"value\": {\"value\": 81.0}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.0728330051060766}",
+          "content": "{\"name\": \"calculator\", \"ok\": true, \"value\": {\"value\": 81.0}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.0805000017862767}",
           "important": false,
           "facts": {}
         }
@@ -65,9 +65,9 @@
     "final_result": {
       "value": 81.0
     },
-    "created_at": "2026-09-09T10:50:12.596405+00:00",
-    "finished_at": "2026-09-09T10:50:12.603625+00:00",
-    "latency_ms": 7.091915991622955,
+    "created_at": "2026-09-09T10:58:06.160264+00:00",
+    "finished_at": "2026-09-09T10:58:06.168097+00:00",
+    "latency_ms": 7.667917001526803,
     "llm_call_count": 0,
     "tool_call_count": 1,
     "token_usage": null,
@@ -77,14 +77,14 @@
   "events": [
     {
       "seq": 0,
-      "timestamp": "2026-09-09T10:50:12.596482+00:00",
+      "timestamp": "2026-09-09T10:58:06.160362+00:00",
       "kind": "request",
       "step": null,
       "data": {
         "request": {
           "mode": "direct",
           "user_request": "",
-          "session_id": "5d4920e2-b23f-481b-bc05-2e38af1ba4cc",
+          "session_id": "253b9b33-496c-4831-afa7-a8932403c0bf",
           "tool": {
             "name": "calculator",
             "args": {
@@ -118,7 +118,7 @@
     },
     {
       "seq": 1,
-      "timestamp": "2026-09-09T10:50:12.596535+00:00",
+      "timestamp": "2026-09-09T10:58:06.160426+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -130,7 +130,7 @@
     },
     {
       "seq": 2,
-      "timestamp": "2026-09-09T10:50:12.598636+00:00",
+      "timestamp": "2026-09-09T10:58:06.162996+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -140,7 +140,7 @@
     },
     {
       "seq": 3,
-      "timestamp": "2026-09-09T10:50:12.599887+00:00",
+      "timestamp": "2026-09-09T10:58:06.164220+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -150,11 +150,11 @@
     },
     {
       "seq": 4,
-      "timestamp": "2026-09-09T10:50:12.601083+00:00",
+      "timestamp": "2026-09-09T10:58:06.165338+00:00",
       "kind": "tool_selected",
       "step": "direct",
       "data": {
-        "call_id": "c71d071e-448d-4473-acfc-44bde06fd2b8",
+        "call_id": "9817173b-c0b2-496c-9c0d-3d9218f803c6",
         "name": "calculator",
         "args": {
           "expression": "9*9"
@@ -163,11 +163,11 @@
     },
     {
       "seq": 5,
-      "timestamp": "2026-09-09T10:50:12.601117+00:00",
+      "timestamp": "2026-09-09T10:58:06.165377+00:00",
       "kind": "tool_attempt",
       "step": "direct",
       "data": {
-        "call_id": "c71d071e-448d-4473-acfc-44bde06fd2b8",
+        "call_id": "9817173b-c0b2-496c-9c0d-3d9218f803c6",
         "name": "calculator",
         "args": {
           "expression": "9*9"
@@ -177,23 +177,23 @@
     },
     {
       "seq": 6,
-      "timestamp": "2026-09-09T10:50:12.601163+00:00",
+      "timestamp": "2026-09-09T10:58:06.165427+00:00",
       "kind": "attempt_end",
       "step": "direct",
       "data": {
-        "call_id": "c71d071e-448d-4473-acfc-44bde06fd2b8",
+        "call_id": "9817173b-c0b2-496c-9c0d-3d9218f803c6",
         "attempt": 1,
         "ok": true,
-        "latency_ms": 0.049708003643900156
+        "latency_ms": 0.052624993259087205
       }
     },
     {
       "seq": 7,
-      "timestamp": "2026-09-09T10:50:12.601201+00:00",
+      "timestamp": "2026-09-09T10:58:06.165459+00:00",
       "kind": "tool_result",
       "step": "direct",
       "data": {
-        "call_id": "c71d071e-448d-4473-acfc-44bde06fd2b8",
+        "call_id": "9817173b-c0b2-496c-9c0d-3d9218f803c6",
         "name": "calculator",
         "args": {
           "expression": "9*9"
@@ -205,14 +205,14 @@
           },
           "error": null,
           "attempts": 1,
-          "latency_ms": 0.0728330051060766
+          "latency_ms": 0.0805000017862767
         },
         "summary": "{\"value\":81.0}"
       }
     },
     {
       "seq": 8,
-      "timestamp": "2026-09-09T10:50:12.601210+00:00",
+      "timestamp": "2026-09-09T10:58:06.165467+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -222,7 +222,7 @@
     },
     {
       "seq": 9,
-      "timestamp": "2026-09-09T10:50:12.602460+00:00",
+      "timestamp": "2026-09-09T10:58:06.166797+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -234,7 +234,7 @@
     },
     {
       "seq": 10,
-      "timestamp": "2026-09-09T10:50:12.602473+00:00",
+      "timestamp": "2026-09-09T10:58:06.166815+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -244,7 +244,7 @@
     },
     {
       "seq": 11,
-      "timestamp": "2026-09-09T10:50:12.603636+00:00",
+      "timestamp": "2026-09-09T10:58:06.168107+00:00",
       "kind": "final",
       "step": null,
       "data": {
@@ -252,7 +252,7 @@
           "value": 81.0
         },
         "status": "SUCCESS",
-        "latency_ms": 7.091915991622955
+        "latency_ms": 7.667917001526803
       }
     }
   ]

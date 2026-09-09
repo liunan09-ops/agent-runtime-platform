@@ -1,14 +1,14 @@
 {
   "state": {
-    "request_id": "fc584897-66fa-41ec-92d2-e55982079994",
-    "session_id": "24a8fae1-224f-45a9-aef0-f8f6808f8253",
+    "request_id": "0c17883e-d08e-4b83-b6da-a6652a310e16",
+    "session_id": "1cbd6b85-68c1-47e5-a40b-be4a1edefe16",
     "execution_mode": "react",
     "user_request": "",
     "status": "SUCCESS",
     "current_step": 2,
     "tool_history": [
       {
-        "call_id": "3ae1f566-b9f3-40f7-ab34-27a0d2f8aab1",
+        "call_id": "e58f5c3f-b687-4e7c-9542-092541edf03a",
         "step": "1",
         "call": {
           "name": "calculator",
@@ -23,7 +23,7 @@
           },
           "error": null,
           "attempts": 1,
-          "latency_ms": 0.06062499596737325
+          "latency_ms": 0.07129099685698748
         }
       }
     ],
@@ -36,7 +36,7 @@
         },
         "error": null,
         "attempts": 1,
-        "latency_ms": 0.06062499596737325
+        "latency_ms": 0.07129099685698748
       }
     ],
     "context_state": {
@@ -55,7 +55,7 @@
         },
         {
           "role": "tool",
-          "content": "{\"name\": \"calculator\", \"ok\": true, \"value\": {\"value\": 11.0}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.06062499596737325}",
+          "content": "{\"name\": \"calculator\", \"ok\": true, \"value\": {\"value\": 11.0}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.07129099685698748}",
           "important": false,
           "facts": {}
         }
@@ -78,9 +78,9 @@
     "final_result": {
       "value": 11.0
     },
-    "created_at": "2026-09-09T10:50:11.624978+00:00",
-    "finished_at": "2026-09-09T10:50:11.635996+00:00",
-    "latency_ms": 10.901832996751182,
+    "created_at": "2026-09-09T10:58:05.104737+00:00",
+    "finished_at": "2026-09-09T10:58:05.116882+00:00",
+    "latency_ms": 12.004499993054196,
     "llm_call_count": 3,
     "tool_call_count": 1,
     "token_usage": null,
@@ -90,14 +90,14 @@
   "events": [
     {
       "seq": 0,
-      "timestamp": "2026-09-09T10:50:11.625048+00:00",
+      "timestamp": "2026-09-09T10:58:05.104818+00:00",
       "kind": "request",
       "step": null,
       "data": {
         "request": {
           "mode": "react",
           "user_request": "",
-          "session_id": "24a8fae1-224f-45a9-aef0-f8f6808f8253",
+          "session_id": "1cbd6b85-68c1-47e5-a40b-be4a1edefe16",
           "tool": null,
           "steps": [],
           "parallel": true,
@@ -141,7 +141,7 @@
     },
     {
       "seq": 1,
-      "timestamp": "2026-09-09T10:50:11.625093+00:00",
+      "timestamp": "2026-09-09T10:58:05.104879+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -153,7 +153,7 @@
     },
     {
       "seq": 2,
-      "timestamp": "2026-09-09T10:50:11.626956+00:00",
+      "timestamp": "2026-09-09T10:58:05.106848+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -163,7 +163,7 @@
     },
     {
       "seq": 3,
-      "timestamp": "2026-09-09T10:50:11.629179+00:00",
+      "timestamp": "2026-09-09T10:58:05.109254+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -175,7 +175,7 @@
     },
     {
       "seq": 4,
-      "timestamp": "2026-09-09T10:50:11.629186+00:00",
+      "timestamp": "2026-09-09T10:58:05.109264+00:00",
       "kind": "llm_start",
       "step": "1",
       "data": {
@@ -185,7 +185,7 @@
     },
     {
       "seq": 5,
-      "timestamp": "2026-09-09T10:50:11.629205+00:00",
+      "timestamp": "2026-09-09T10:58:05.109283+00:00",
       "kind": "llm_call",
       "step": "1",
       "data": {
@@ -196,12 +196,12 @@
         },
         "usage": null,
         "attempt": 1,
-        "latency_ms": 0.017458005459047854
+        "latency_ms": 0.018542006728239357
       }
     },
     {
       "seq": 6,
-      "timestamp": "2026-09-09T10:50:11.629242+00:00",
+      "timestamp": "2026-09-09T10:58:05.109502+00:00",
       "kind": "llm_error",
       "step": "1",
       "data": {
@@ -212,12 +212,12 @@
           "details": {}
         },
         "attempt": 1,
-        "latency_ms": 0.05383300594985485
+        "latency_ms": 0.2290840056957677
       }
     },
     {
       "seq": 7,
-      "timestamp": "2026-09-09T10:50:11.629249+00:00",
+      "timestamp": "2026-09-09T10:58:05.109513+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -227,7 +227,7 @@
     },
     {
       "seq": 8,
-      "timestamp": "2026-09-09T10:50:11.630498+00:00",
+      "timestamp": "2026-09-09T10:58:05.110963+00:00",
       "kind": "llm_retry",
       "step": "1",
       "data": {
@@ -237,7 +237,7 @@
     },
     {
       "seq": 9,
-      "timestamp": "2026-09-09T10:50:11.630506+00:00",
+      "timestamp": "2026-09-09T10:58:05.110974+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -247,7 +247,7 @@
     },
     {
       "seq": 10,
-      "timestamp": "2026-09-09T10:50:11.631668+00:00",
+      "timestamp": "2026-09-09T10:58:05.112369+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -259,7 +259,7 @@
     },
     {
       "seq": 11,
-      "timestamp": "2026-09-09T10:50:11.631677+00:00",
+      "timestamp": "2026-09-09T10:58:05.112381+00:00",
       "kind": "llm_start",
       "step": "1",
       "data": {
@@ -269,7 +269,7 @@
     },
     {
       "seq": 12,
-      "timestamp": "2026-09-09T10:50:11.631691+00:00",
+      "timestamp": "2026-09-09T10:58:05.112401+00:00",
       "kind": "llm_call",
       "step": "1",
       "data": {
@@ -280,12 +280,12 @@
         },
         "usage": null,
         "attempt": 2,
-        "latency_ms": 0.014165998436510563
+        "latency_ms": 0.02083399158436805
       }
     },
     {
       "seq": 13,
-      "timestamp": "2026-09-09T10:50:11.631708+00:00",
+      "timestamp": "2026-09-09T10:58:05.112427+00:00",
       "kind": "action",
       "step": "1",
       "data": {
@@ -299,7 +299,7 @@
     },
     {
       "seq": 14,
-      "timestamp": "2026-09-09T10:50:11.631716+00:00",
+      "timestamp": "2026-09-09T10:58:05.112434+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -309,11 +309,11 @@
     },
     {
       "seq": 15,
-      "timestamp": "2026-09-09T10:50:11.633005+00:00",
+      "timestamp": "2026-09-09T10:58:05.113846+00:00",
       "kind": "tool_selected",
       "step": "1",
       "data": {
-        "call_id": "3ae1f566-b9f3-40f7-ab34-27a0d2f8aab1",
+        "call_id": "e58f5c3f-b687-4e7c-9542-092541edf03a",
         "name": "calculator",
         "args": {
           "expression": "3+8"
@@ -322,11 +322,11 @@
     },
     {
       "seq": 16,
-      "timestamp": "2026-09-09T10:50:11.633030+00:00",
+      "timestamp": "2026-09-09T10:58:05.113874+00:00",
       "kind": "tool_attempt",
       "step": "1",
       "data": {
-        "call_id": "3ae1f566-b9f3-40f7-ab34-27a0d2f8aab1",
+        "call_id": "e58f5c3f-b687-4e7c-9542-092541edf03a",
         "name": "calculator",
         "args": {
           "expression": "3+8"
@@ -336,23 +336,23 @@
     },
     {
       "seq": 17,
-      "timestamp": "2026-09-09T10:50:11.633072+00:00",
+      "timestamp": "2026-09-09T10:58:05.113924+00:00",
       "kind": "attempt_end",
       "step": "1",
       "data": {
-        "call_id": "3ae1f566-b9f3-40f7-ab34-27a0d2f8aab1",
+        "call_id": "e58f5c3f-b687-4e7c-9542-092541edf03a",
         "attempt": 1,
         "ok": true,
-        "latency_ms": 0.04533299943432212
+        "latency_ms": 0.0524159986525774
       }
     },
     {
       "seq": 18,
-      "timestamp": "2026-09-09T10:50:11.633099+00:00",
+      "timestamp": "2026-09-09T10:58:05.113955+00:00",
       "kind": "tool_result",
       "step": "1",
       "data": {
-        "call_id": "3ae1f566-b9f3-40f7-ab34-27a0d2f8aab1",
+        "call_id": "e58f5c3f-b687-4e7c-9542-092541edf03a",
         "name": "calculator",
         "args": {
           "expression": "3+8"
@@ -364,14 +364,14 @@
           },
           "error": null,
           "attempts": 1,
-          "latency_ms": 0.06062499596737325
+          "latency_ms": 0.07129099685698748
         },
         "summary": "{\"value\":11.0}"
       }
     },
     {
       "seq": 19,
-      "timestamp": "2026-09-09T10:50:11.633107+00:00",
+      "timestamp": "2026-09-09T10:58:05.113964+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -381,7 +381,7 @@
     },
     {
       "seq": 20,
-      "timestamp": "2026-09-09T10:50:11.634555+00:00",
+      "timestamp": "2026-09-09T10:58:05.115265+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -393,7 +393,7 @@
     },
     {
       "seq": 21,
-      "timestamp": "2026-09-09T10:50:11.634586+00:00",
+      "timestamp": "2026-09-09T10:58:05.115291+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -405,7 +405,7 @@
     },
     {
       "seq": 22,
-      "timestamp": "2026-09-09T10:50:11.634594+00:00",
+      "timestamp": "2026-09-09T10:58:05.115296+00:00",
       "kind": "llm_start",
       "step": "2",
       "data": {
@@ -415,7 +415,7 @@
     },
     {
       "seq": 23,
-      "timestamp": "2026-09-09T10:50:11.634611+00:00",
+      "timestamp": "2026-09-09T10:58:05.115310+00:00",
       "kind": "llm_call",
       "step": "2",
       "data": {
@@ -426,12 +426,12 @@
         },
         "usage": null,
         "attempt": 1,
-        "latency_ms": 0.016707999748177826
+        "latency_ms": 0.01333300315309316
       }
     },
     {
       "seq": 24,
-      "timestamp": "2026-09-09T10:50:11.634626+00:00",
+      "timestamp": "2026-09-09T10:58:05.115323+00:00",
       "kind": "action",
       "step": "2",
       "data": {
@@ -445,7 +445,7 @@
     },
     {
       "seq": 25,
-      "timestamp": "2026-09-09T10:50:11.634635+00:00",
+      "timestamp": "2026-09-09T10:58:05.115332+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -455,7 +455,7 @@
     },
     {
       "seq": 26,
-      "timestamp": "2026-09-09T10:50:11.636004+00:00",
+      "timestamp": "2026-09-09T10:58:05.116896+00:00",
       "kind": "final",
       "step": null,
       "data": {
@@ -463,7 +463,7 @@
           "value": 11.0
         },
         "status": "SUCCESS",
-        "latency_ms": 10.901832996751182
+        "latency_ms": 12.004499993054196
       }
     }
   ]

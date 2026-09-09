@@ -1,14 +1,14 @@
 {
   "state": {
-    "request_id": "9e16bae6-bcee-48de-b83f-3d570e7a3e8c",
-    "session_id": "f9c82264-687b-4861-a937-e560be59a690",
+    "request_id": "0afcb3cf-2945-47ed-8a5e-113e8158235d",
+    "session_id": "065d7aa4-a6d7-4aab-8c4f-6aa5e6959ad6",
     "execution_mode": "direct",
     "user_request": "Look up the owner knowledge key. Return the entire tool output.",
     "status": "SUCCESS",
     "current_step": 1,
     "tool_history": [
       {
-        "call_id": "27305db7-3b06-4bfc-a02c-11cd08ce3087",
+        "call_id": "e79c326d-f061-4852-9b5e-d845cb5828a7",
         "step": "direct",
         "call": {
           "name": "knowledge_lookup",
@@ -25,7 +25,7 @@
           },
           "error": null,
           "attempts": 1,
-          "latency_ms": 0.16245800361502916
+          "latency_ms": 0.15016600082162768
         }
       }
     ],
@@ -40,7 +40,7 @@
         },
         "error": null,
         "attempts": 1,
-        "latency_ms": 0.16245800361502916
+        "latency_ms": 0.15016600082162768
       }
     ],
     "context_state": {
@@ -53,7 +53,7 @@
         },
         {
           "role": "tool",
-          "content": "{\"name\": \"knowledge_lookup\", \"ok\": true, \"value\": {\"key\": \"owner\", \"text\": \"Synthetic project owner: Team Atlas.\", \"source\": \"synthetic-knowledge-v1\"}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.16245800361502916}",
+          "content": "{\"name\": \"knowledge_lookup\", \"ok\": true, \"value\": {\"key\": \"owner\", \"text\": \"Synthetic project owner: Team Atlas.\", \"source\": \"synthetic-knowledge-v1\"}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.15016600082162768}",
           "important": false,
           "facts": {}
         }
@@ -71,9 +71,9 @@
       "text": "Synthetic project owner: Team Atlas.",
       "source": "synthetic-knowledge-v1"
     },
-    "created_at": "2026-09-09T10:50:11.564225+00:00",
-    "finished_at": "2026-09-09T10:50:11.571540+00:00",
-    "latency_ms": 7.184208996477537,
+    "created_at": "2026-09-09T10:58:05.039843+00:00",
+    "finished_at": "2026-09-09T10:58:05.047347+00:00",
+    "latency_ms": 7.362457996350713,
     "llm_call_count": 0,
     "tool_call_count": 1,
     "token_usage": null,
@@ -83,14 +83,14 @@
   "events": [
     {
       "seq": 0,
-      "timestamp": "2026-09-09T10:50:11.564302+00:00",
+      "timestamp": "2026-09-09T10:58:05.039925+00:00",
       "kind": "request",
       "step": null,
       "data": {
         "request": {
           "mode": "direct",
           "user_request": "Look up the owner knowledge key. Return the entire tool output.",
-          "session_id": "f9c82264-687b-4861-a937-e560be59a690",
+          "session_id": "065d7aa4-a6d7-4aab-8c4f-6aa5e6959ad6",
           "tool": {
             "name": "knowledge_lookup",
             "args": {
@@ -124,7 +124,7 @@
     },
     {
       "seq": 1,
-      "timestamp": "2026-09-09T10:50:11.564357+00:00",
+      "timestamp": "2026-09-09T10:58:05.039983+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -136,7 +136,7 @@
     },
     {
       "seq": 2,
-      "timestamp": "2026-09-09T10:50:11.566361+00:00",
+      "timestamp": "2026-09-09T10:58:05.042127+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -146,7 +146,7 @@
     },
     {
       "seq": 3,
-      "timestamp": "2026-09-09T10:50:11.567568+00:00",
+      "timestamp": "2026-09-09T10:58:05.043415+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -156,11 +156,11 @@
     },
     {
       "seq": 4,
-      "timestamp": "2026-09-09T10:50:11.568747+00:00",
+      "timestamp": "2026-09-09T10:58:05.044538+00:00",
       "kind": "tool_selected",
       "step": "direct",
       "data": {
-        "call_id": "27305db7-3b06-4bfc-a02c-11cd08ce3087",
+        "call_id": "e79c326d-f061-4852-9b5e-d845cb5828a7",
         "name": "knowledge_lookup",
         "args": {
           "key": "owner"
@@ -169,11 +169,11 @@
     },
     {
       "seq": 5,
-      "timestamp": "2026-09-09T10:50:11.568788+00:00",
+      "timestamp": "2026-09-09T10:58:05.044577+00:00",
       "kind": "tool_attempt",
       "step": "direct",
       "data": {
-        "call_id": "27305db7-3b06-4bfc-a02c-11cd08ce3087",
+        "call_id": "e79c326d-f061-4852-9b5e-d845cb5828a7",
         "name": "knowledge_lookup",
         "args": {
           "key": "owner"
@@ -183,23 +183,23 @@
     },
     {
       "seq": 6,
-      "timestamp": "2026-09-09T10:50:11.568916+00:00",
+      "timestamp": "2026-09-09T10:58:05.044695+00:00",
       "kind": "attempt_end",
       "step": "direct",
       "data": {
-        "call_id": "27305db7-3b06-4bfc-a02c-11cd08ce3087",
+        "call_id": "e79c326d-f061-4852-9b5e-d845cb5828a7",
         "attempt": 1,
         "ok": true,
-        "latency_ms": 0.1322089956374839
+        "latency_ms": 0.1197500096168369
       }
     },
     {
       "seq": 7,
-      "timestamp": "2026-09-09T10:50:11.568957+00:00",
+      "timestamp": "2026-09-09T10:58:05.044732+00:00",
       "kind": "tool_result",
       "step": "direct",
       "data": {
-        "call_id": "27305db7-3b06-4bfc-a02c-11cd08ce3087",
+        "call_id": "e79c326d-f061-4852-9b5e-d845cb5828a7",
         "name": "knowledge_lookup",
         "args": {
           "key": "owner"
@@ -213,14 +213,14 @@
           },
           "error": null,
           "attempts": 1,
-          "latency_ms": 0.16245800361502916
+          "latency_ms": 0.15016600082162768
         },
         "summary": "{\"key\":\"owner\",\"text\":\"Synthetic project owner: Team Atlas.\",\"source\":\"synthetic-knowledge-v1\"}"
       }
     },
     {
       "seq": 8,
-      "timestamp": "2026-09-09T10:50:11.568969+00:00",
+      "timestamp": "2026-09-09T10:58:05.044741+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -230,7 +230,7 @@
     },
     {
       "seq": 9,
-      "timestamp": "2026-09-09T10:50:11.570302+00:00",
+      "timestamp": "2026-09-09T10:58:05.046158+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -242,7 +242,7 @@
     },
     {
       "seq": 10,
-      "timestamp": "2026-09-09T10:50:11.570313+00:00",
+      "timestamp": "2026-09-09T10:58:05.046168+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -252,7 +252,7 @@
     },
     {
       "seq": 11,
-      "timestamp": "2026-09-09T10:50:11.571554+00:00",
+      "timestamp": "2026-09-09T10:58:05.047357+00:00",
       "kind": "final",
       "step": null,
       "data": {
@@ -262,7 +262,7 @@
           "source": "synthetic-knowledge-v1"
         },
         "status": "SUCCESS",
-        "latency_ms": 7.184208996477537
+        "latency_ms": 7.362457996350713
       }
     }
   ]

@@ -1,7 +1,7 @@
 {
   "state": {
-    "request_id": "84bed066-9f24-4627-9f41-c78b2300754f",
-    "session_id": "955ad3aa-0690-4492-b936-52aebbb9227d",
+    "request_id": "e4cc3ddc-c9ab-413f-b3e9-bc55fa873129",
+    "session_id": "f537bd4d-5136-4747-ade4-6b2c8b222108",
     "execution_mode": "react",
     "user_request": "",
     "status": "FAILED",
@@ -45,9 +45,9 @@
       }
     ],
     "final_result": null,
-    "created_at": "2026-09-09T10:50:11.758356+00:00",
-    "finished_at": "2026-09-09T10:50:11.767367+00:00",
-    "latency_ms": 8.884750001016073,
+    "created_at": "2026-09-09T10:58:05.246993+00:00",
+    "finished_at": "2026-09-09T10:58:05.256616+00:00",
+    "latency_ms": 9.486875002039596,
     "llm_call_count": 2,
     "tool_call_count": 0,
     "token_usage": null,
@@ -57,14 +57,14 @@
   "events": [
     {
       "seq": 0,
-      "timestamp": "2026-09-09T10:50:11.758424+00:00",
+      "timestamp": "2026-09-09T10:58:05.247068+00:00",
       "kind": "request",
       "step": null,
       "data": {
         "request": {
           "mode": "react",
           "user_request": "",
-          "session_id": "955ad3aa-0690-4492-b936-52aebbb9227d",
+          "session_id": "f537bd4d-5136-4747-ade4-6b2c8b222108",
           "tool": null,
           "steps": [],
           "parallel": true,
@@ -96,7 +96,7 @@
     },
     {
       "seq": 1,
-      "timestamp": "2026-09-09T10:50:11.758482+00:00",
+      "timestamp": "2026-09-09T10:58:05.247130+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -108,7 +108,7 @@
     },
     {
       "seq": 2,
-      "timestamp": "2026-09-09T10:50:11.760356+00:00",
+      "timestamp": "2026-09-09T10:58:05.249257+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -118,7 +118,7 @@
     },
     {
       "seq": 3,
-      "timestamp": "2026-09-09T10:50:11.762397+00:00",
+      "timestamp": "2026-09-09T10:58:05.251482+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -130,7 +130,7 @@
     },
     {
       "seq": 4,
-      "timestamp": "2026-09-09T10:50:11.762404+00:00",
+      "timestamp": "2026-09-09T10:58:05.251492+00:00",
       "kind": "llm_start",
       "step": "1",
       "data": {
@@ -140,7 +140,7 @@
     },
     {
       "seq": 5,
-      "timestamp": "2026-09-09T10:50:11.762421+00:00",
+      "timestamp": "2026-09-09T10:58:05.251512+00:00",
       "kind": "llm_call",
       "step": "1",
       "data": {
@@ -151,12 +151,12 @@
         },
         "usage": null,
         "attempt": 1,
-        "latency_ms": 0.015792000340297818
+        "latency_ms": 0.01866600359790027
       }
     },
     {
       "seq": 6,
-      "timestamp": "2026-09-09T10:50:11.762443+00:00",
+      "timestamp": "2026-09-09T10:58:05.251534+00:00",
       "kind": "llm_error",
       "step": "1",
       "data": {
@@ -167,12 +167,12 @@
           "details": {}
         },
         "attempt": 1,
-        "latency_ms": 0.03825000021606684
+        "latency_ms": 0.04166600410826504
       }
     },
     {
       "seq": 7,
-      "timestamp": "2026-09-09T10:50:11.762450+00:00",
+      "timestamp": "2026-09-09T10:58:05.251541+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -182,7 +182,7 @@
     },
     {
       "seq": 8,
-      "timestamp": "2026-09-09T10:50:11.763674+00:00",
+      "timestamp": "2026-09-09T10:58:05.252860+00:00",
       "kind": "llm_retry",
       "step": "1",
       "data": {
@@ -192,7 +192,7 @@
     },
     {
       "seq": 9,
-      "timestamp": "2026-09-09T10:50:11.763681+00:00",
+      "timestamp": "2026-09-09T10:58:05.252871+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -202,7 +202,7 @@
     },
     {
       "seq": 10,
-      "timestamp": "2026-09-09T10:50:11.764859+00:00",
+      "timestamp": "2026-09-09T10:58:05.254079+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -214,7 +214,7 @@
     },
     {
       "seq": 11,
-      "timestamp": "2026-09-09T10:50:11.764866+00:00",
+      "timestamp": "2026-09-09T10:58:05.254088+00:00",
       "kind": "llm_start",
       "step": "1",
       "data": {
@@ -224,7 +224,7 @@
     },
     {
       "seq": 12,
-      "timestamp": "2026-09-09T10:50:11.764877+00:00",
+      "timestamp": "2026-09-09T10:58:05.254101+00:00",
       "kind": "llm_call",
       "step": "1",
       "data": {
@@ -235,12 +235,12 @@
         },
         "usage": null,
         "attempt": 2,
-        "latency_ms": 0.010583986295387149
+        "latency_ms": 0.012207994586788118
       }
     },
     {
       "seq": 13,
-      "timestamp": "2026-09-09T10:50:11.764892+00:00",
+      "timestamp": "2026-09-09T10:58:05.254115+00:00",
       "kind": "llm_error",
       "step": "1",
       "data": {
@@ -251,12 +251,12 @@
           "details": {}
         },
         "attempt": 2,
-        "latency_ms": 0.02462499833200127
+        "latency_ms": 0.026583002181723714
       }
     },
     {
       "seq": 14,
-      "timestamp": "2026-09-09T10:50:11.764897+00:00",
+      "timestamp": "2026-09-09T10:58:05.254121+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -266,7 +266,7 @@
     },
     {
       "seq": 15,
-      "timestamp": "2026-09-09T10:50:11.766147+00:00",
+      "timestamp": "2026-09-09T10:58:05.255414+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -276,13 +276,13 @@
     },
     {
       "seq": 16,
-      "timestamp": "2026-09-09T10:50:11.767375+00:00",
+      "timestamp": "2026-09-09T10:58:05.256628+00:00",
       "kind": "final",
       "step": null,
       "data": {
         "result": null,
         "status": "FAILED",
-        "latency_ms": 8.884750001016073
+        "latency_ms": 9.486875002039596
       }
     }
   ]

@@ -1,14 +1,14 @@
 {
   "state": {
-    "request_id": "9094f17a-8d47-4848-84e5-26c3a0eec368",
-    "session_id": "b6375759-eec4-4357-ba99-eff9a365b29e",
+    "request_id": "c7064b54-286a-426f-8266-4657eec9012c",
+    "session_id": "d015ced9-a682-4650-ac81-d851a52ed3e1",
     "execution_mode": "pipeline",
     "user_request": "",
     "status": "SUCCESS",
     "current_step": 3,
     "tool_history": [
       {
-        "call_id": "c5760ad4-8c24-445d-b791-5f1a2f96f19d",
+        "call_id": "7c5ffe6e-b435-41bc-8910-2ee2c1a0f577",
         "step": "a",
         "call": {
           "name": "http_mock",
@@ -25,11 +25,11 @@
           },
           "error": null,
           "attempts": 1,
-          "latency_ms": 0.38341700565069914
+          "latency_ms": 0.38908299757167697
         }
       },
       {
-        "call_id": "68f1d35c-95e1-488a-bf31-7e274d3eb13e",
+        "call_id": "7bffea4c-face-4f36-8e22-e3da6399d1aa",
         "step": "yes",
         "call": {
           "name": "calculator",
@@ -44,7 +44,7 @@
           },
           "error": null,
           "attempts": 1,
-          "latency_ms": 0.06533399573527277
+          "latency_ms": 0.06291600584518164
         }
       }
     ],
@@ -59,7 +59,7 @@
         },
         "error": null,
         "attempts": 1,
-        "latency_ms": 0.38341700565069914
+        "latency_ms": 0.38908299757167697
       },
       {
         "name": "calculator",
@@ -69,7 +69,7 @@
         },
         "error": null,
         "attempts": 1,
-        "latency_ms": 0.06533399573527277
+        "latency_ms": 0.06291600584518164
       }
     ],
     "context_state": {
@@ -82,13 +82,13 @@
         },
         {
           "role": "tool",
-          "content": "{\"name\": \"http_mock\", \"ok\": true, \"value\": {\"resource\": \"gamma\", \"value\": 30, \"source\": \"httpx.MockTransport\"}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.38341700565069914}",
+          "content": "{\"name\": \"http_mock\", \"ok\": true, \"value\": {\"resource\": \"gamma\", \"value\": 30, \"source\": \"httpx.MockTransport\"}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.38908299757167697}",
           "important": false,
           "facts": {}
         },
         {
           "role": "tool",
-          "content": "{\"name\": \"calculator\", \"ok\": true, \"value\": {\"value\": 60.0}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.06533399573527277}",
+          "content": "{\"name\": \"calculator\", \"ok\": true, \"value\": {\"value\": 60.0}, \"error\": null, \"attempts\": 1, \"latency_ms\": 0.06291600584518164}",
           "important": false,
           "facts": {}
         }
@@ -125,9 +125,9 @@
         }
       }
     },
-    "created_at": "2026-09-09T10:50:12.146836+00:00",
-    "finished_at": "2026-09-09T10:50:12.157563+00:00",
-    "latency_ms": 10.562957992078736,
+    "created_at": "2026-09-09T10:58:05.689637+00:00",
+    "finished_at": "2026-09-09T10:58:05.701550+00:00",
+    "latency_ms": 11.745041992980987,
     "llm_call_count": 0,
     "tool_call_count": 2,
     "token_usage": null,
@@ -137,14 +137,14 @@
   "events": [
     {
       "seq": 0,
-      "timestamp": "2026-09-09T10:50:12.146940+00:00",
+      "timestamp": "2026-09-09T10:58:05.689736+00:00",
       "kind": "request",
       "step": null,
       "data": {
         "request": {
           "mode": "pipeline",
           "user_request": "",
-          "session_id": "b6375759-eec4-4357-ba99-eff9a365b29e",
+          "session_id": "d015ced9-a682-4650-ac81-d851a52ed3e1",
           "tool": null,
           "steps": [
             {
@@ -223,7 +223,7 @@
     },
     {
       "seq": 1,
-      "timestamp": "2026-09-09T10:50:12.146998+00:00",
+      "timestamp": "2026-09-09T10:58:05.689804+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -235,7 +235,7 @@
     },
     {
       "seq": 2,
-      "timestamp": "2026-09-09T10:50:12.149131+00:00",
+      "timestamp": "2026-09-09T10:58:05.692486+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -245,7 +245,7 @@
     },
     {
       "seq": 3,
-      "timestamp": "2026-09-09T10:50:12.150375+00:00",
+      "timestamp": "2026-09-09T10:58:05.693740+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -255,11 +255,11 @@
     },
     {
       "seq": 4,
-      "timestamp": "2026-09-09T10:50:12.151616+00:00",
+      "timestamp": "2026-09-09T10:58:05.694997+00:00",
       "kind": "tool_selected",
       "step": "a",
       "data": {
-        "call_id": "c5760ad4-8c24-445d-b791-5f1a2f96f19d",
+        "call_id": "7c5ffe6e-b435-41bc-8910-2ee2c1a0f577",
         "name": "http_mock",
         "args": {
           "resource": "gamma"
@@ -268,11 +268,11 @@
     },
     {
       "seq": 5,
-      "timestamp": "2026-09-09T10:50:12.151670+00:00",
+      "timestamp": "2026-09-09T10:58:05.695059+00:00",
       "kind": "tool_attempt",
       "step": "a",
       "data": {
-        "call_id": "c5760ad4-8c24-445d-b791-5f1a2f96f19d",
+        "call_id": "7c5ffe6e-b435-41bc-8910-2ee2c1a0f577",
         "name": "http_mock",
         "args": {
           "resource": "gamma"
@@ -282,23 +282,23 @@
     },
     {
       "seq": 6,
-      "timestamp": "2026-09-09T10:50:12.152004+00:00",
+      "timestamp": "2026-09-09T10:58:05.695392+00:00",
       "kind": "attempt_end",
       "step": "a",
       "data": {
-        "call_id": "c5760ad4-8c24-445d-b791-5f1a2f96f19d",
+        "call_id": "7c5ffe6e-b435-41bc-8910-2ee2c1a0f577",
         "attempt": 1,
         "ok": true,
-        "latency_ms": 0.3347089950693771
+        "latency_ms": 0.3341669944347814
       }
     },
     {
       "seq": 7,
-      "timestamp": "2026-09-09T10:50:12.152040+00:00",
+      "timestamp": "2026-09-09T10:58:05.695430+00:00",
       "kind": "tool_result",
       "step": "a",
       "data": {
-        "call_id": "c5760ad4-8c24-445d-b791-5f1a2f96f19d",
+        "call_id": "7c5ffe6e-b435-41bc-8910-2ee2c1a0f577",
         "name": "http_mock",
         "args": {
           "resource": "gamma"
@@ -312,14 +312,14 @@
           },
           "error": null,
           "attempts": 1,
-          "latency_ms": 0.38341700565069914
+          "latency_ms": 0.38908299757167697
         },
         "summary": "{\"resource\":\"gamma\",\"value\":30,\"source\":\"httpx.MockTransport\"}"
       }
     },
     {
       "seq": 8,
-      "timestamp": "2026-09-09T10:50:12.152091+00:00",
+      "timestamp": "2026-09-09T10:58:05.695478+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -329,7 +329,7 @@
     },
     {
       "seq": 9,
-      "timestamp": "2026-09-09T10:50:12.153535+00:00",
+      "timestamp": "2026-09-09T10:58:05.697022+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -341,7 +341,7 @@
     },
     {
       "seq": 10,
-      "timestamp": "2026-09-09T10:50:12.153552+00:00",
+      "timestamp": "2026-09-09T10:58:05.697039+00:00",
       "kind": "step_skipped",
       "step": "no",
       "data": {
@@ -350,7 +350,7 @@
     },
     {
       "seq": 11,
-      "timestamp": "2026-09-09T10:50:12.153559+00:00",
+      "timestamp": "2026-09-09T10:58:05.697046+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -360,11 +360,11 @@
     },
     {
       "seq": 12,
-      "timestamp": "2026-09-09T10:50:12.154849+00:00",
+      "timestamp": "2026-09-09T10:58:05.698336+00:00",
       "kind": "tool_selected",
       "step": "yes",
       "data": {
-        "call_id": "68f1d35c-95e1-488a-bf31-7e274d3eb13e",
+        "call_id": "7bffea4c-face-4f36-8e22-e3da6399d1aa",
         "name": "calculator",
         "args": {
           "expression": "30*2"
@@ -373,11 +373,11 @@
     },
     {
       "seq": 13,
-      "timestamp": "2026-09-09T10:50:12.154871+00:00",
+      "timestamp": "2026-09-09T10:58:05.698356+00:00",
       "kind": "tool_attempt",
       "step": "yes",
       "data": {
-        "call_id": "68f1d35c-95e1-488a-bf31-7e274d3eb13e",
+        "call_id": "7bffea4c-face-4f36-8e22-e3da6399d1aa",
         "name": "calculator",
         "args": {
           "expression": "30*2"
@@ -387,23 +387,23 @@
     },
     {
       "seq": 14,
-      "timestamp": "2026-09-09T10:50:12.154917+00:00",
+      "timestamp": "2026-09-09T10:58:05.698401+00:00",
       "kind": "attempt_end",
       "step": "yes",
       "data": {
-        "call_id": "68f1d35c-95e1-488a-bf31-7e274d3eb13e",
+        "call_id": "7bffea4c-face-4f36-8e22-e3da6399d1aa",
         "attempt": 1,
         "ok": true,
-        "latency_ms": 0.04866700328420848
+        "latency_ms": 0.04733300011139363
       }
     },
     {
       "seq": 15,
-      "timestamp": "2026-09-09T10:50:12.154942+00:00",
+      "timestamp": "2026-09-09T10:58:05.698446+00:00",
       "kind": "tool_result",
       "step": "yes",
       "data": {
-        "call_id": "68f1d35c-95e1-488a-bf31-7e274d3eb13e",
+        "call_id": "7bffea4c-face-4f36-8e22-e3da6399d1aa",
         "name": "calculator",
         "args": {
           "expression": "30*2"
@@ -415,14 +415,14 @@
           },
           "error": null,
           "attempts": 1,
-          "latency_ms": 0.06533399573527277
+          "latency_ms": 0.06291600584518164
         },
         "summary": "{\"value\":60.0}"
       }
     },
     {
       "seq": 16,
-      "timestamp": "2026-09-09T10:50:12.154983+00:00",
+      "timestamp": "2026-09-09T10:58:05.698492+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -432,7 +432,7 @@
     },
     {
       "seq": 17,
-      "timestamp": "2026-09-09T10:50:12.156286+00:00",
+      "timestamp": "2026-09-09T10:58:05.700072+00:00",
       "kind": "context",
       "step": null,
       "data": {
@@ -444,7 +444,7 @@
     },
     {
       "seq": 18,
-      "timestamp": "2026-09-09T10:50:12.156296+00:00",
+      "timestamp": "2026-09-09T10:58:05.700085+00:00",
       "kind": "state_transition",
       "step": null,
       "data": {
@@ -454,7 +454,7 @@
     },
     {
       "seq": 19,
-      "timestamp": "2026-09-09T10:50:12.157577+00:00",
+      "timestamp": "2026-09-09T10:58:05.701567+00:00",
       "kind": "final",
       "step": null,
       "data": {
@@ -483,7 +483,7 @@
           }
         },
         "status": "SUCCESS",
-        "latency_ms": 10.562957992078736
+        "latency_ms": 11.745041992980987
       }
     }
   ]

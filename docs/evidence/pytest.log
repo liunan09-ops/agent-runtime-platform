@@ -1,0 +1,20 @@
+.............s................................                           [100%]
+================================ tests coverage ================================
+_______________ coverage: platform darwin, python 3.14.6-final-0 _______________
+
+Name                               Stmts   Miss  Cover   Missing
+----------------------------------------------------------------
+src/agent_runtime/__init__.py          1      0   100%
+src/agent_runtime/api.py              65      5    92%   41, 43, 84-85, 92
+src/agent_runtime/context.py          48      3    94%   78-81
+src/agent_runtime/demo_tools.py      100      5    95%   41, 49, 55, 93-94
+src/agent_runtime/models.py          169      4    98%   103, 130, 215, 217
+src/agent_runtime/persistence.py      67      1    99%   36
+src/agent_runtime/providers.py        57      3    95%   78, 82, 109
+src/agent_runtime/registry.py        108      0   100%
+src/agent_runtime/runtime.py         259     13    95%   106-115, 230-232, 337, 350-354
+src/agent_runtime/safety.py           17      0   100%
+----------------------------------------------------------------
+TOTAL                                891     34    96%
+Coverage JSON written to file docs/evidence/coverage.json
+45 passed, 1 skipped in 1.26s
