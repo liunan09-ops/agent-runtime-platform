@@ -1,0 +1,7 @@
+{
+  "runtime": "A runtime validates, schedules and observes tool execution.",
+  "retry": "Retry only transient failures of idempotent tools within a bounded budget.",
+  "context": "Keep recent messages and explicit important facts under a context budget.",
+  "owner": "Synthetic project owner: Team Atlas.",
+  "constraint": "Synthetic task constraint: use offline read-only tools."
+}
