@@ -5,6 +5,7 @@ import json
 import math
 import operator
 import sqlite3
+from contextlib import closing
 from importlib.resources import files
 from typing import Literal
 
@@ -61,10 +62,11 @@ class QueryOutput(Model):
 
 
 def _query(args: QueryInput):
-    with sqlite3.connect(":memory:") as con:
+    with closing(sqlite3.connect(":memory:")) as con:
         con.execute("CREATE TABLE inventory (item TEXT, quantity INTEGER, price REAL)")
         con.executemany("INSERT INTO inventory VALUES (?, ?, ?)",
                         [("widget", 12, 2.5), ("gadget", 5, 8.0), ("bolt", 30, 0.5)])
+        con.commit()
         con.execute("PRAGMA query_only=ON")
         allowed = {sqlite3.SQLITE_SELECT, sqlite3.SQLITE_READ, sqlite3.SQLITE_FUNCTION}
         con.set_authorizer(lambda action, *_: sqlite3.SQLITE_OK if action in allowed else sqlite3.SQLITE_DENY)

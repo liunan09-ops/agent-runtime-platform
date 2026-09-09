@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0",
+  "sha256": "844b92b3e3602bb4f8bf61b9065eefb4b91f50a5f99f3f7bc9f7bb4a96285614",
+  "count": 48,
+  "development": 32,
+  "held_out": 16,
+  "live_eligible": 8,
+  "policy": "Frozen before held-out runs; no runtime imports from evaluation; no special held-out rules."
+}

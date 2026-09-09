@@ -1,0 +1,1943 @@
+{
+  "version": "1.0.0",
+  "created_at": "2026-09-09",
+  "data_source": "synthetic project-owned fixtures",
+  "cases": [
+    {
+      "id": "d01",
+      "split": "development",
+      "kind": "run",
+      "tags": [
+        "direct"
+      ],
+      "request": {
+        "mode": "direct",
+        "user_request": "",
+        "tool": {
+          "name": "calculator",
+          "args": {
+            "expression": "2+3*4"
+          }
+        }
+      },
+      "expected": {
+        "status": "SUCCESS",
+        "final_result.value": 14
+      },
+      "expected_calls": [
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "2+3*4"
+          }
+        }
+      ],
+      "live_eligible": false,
+      "live_expected": null
+    },
+    {
+      "id": "d02",
+      "split": "development",
+      "kind": "run",
+      "tags": [
+        "direct"
+      ],
+      "request": {
+        "mode": "direct",
+        "user_request": "",
+        "tool": {
+          "name": "calculator",
+          "args": {
+            "expression": "(8-3)/2"
+          }
+        }
+      },
+      "expected": {
+        "status": "SUCCESS",
+        "final_result.value": 2.5
+      },
+      "expected_calls": [
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "(8-3)/2"
+          }
+        }
+      ],
+      "live_eligible": false,
+      "live_expected": null
+    },
+    {
+      "id": "d03",
+      "split": "development",
+      "kind": "run",
+      "tags": [
+        "direct"
+      ],
+      "request": {
+        "mode": "direct",
+        "user_request": "",
+        "tool": {
+          "name": "sql_query",
+          "args": {
+            "query": "SELECT quantity FROM inventory WHERE item=?",
+            "params": [
+              "widget"
+            ]
+          }
+        }
+      },
+      "expected": {
+        "status": "SUCCESS",
+        "final_result.rows.0.quantity": 12
+      },
+      "expected_calls": [
+        {
+          "name": "sql_query",
+          "args": {
+            "query": "SELECT quantity FROM inventory WHERE item=?",
+            "params": [
+              "widget"
+            ]
+          }
+        }
+      ],
+      "live_eligible": false,
+      "live_expected": null
+    },
+    {
+      "id": "d04",
+      "split": "development",
+      "kind": "run",
+      "tags": [
+        "direct"
+      ],
+      "request": {
+        "mode": "direct",
+        "user_request": "",
+        "tool": {
+          "name": "knowledge_lookup",
+          "args": {
+            "key": "runtime"
+          }
+        }
+      },
+      "expected": {
+        "status": "SUCCESS",
+        "final_result.key": "runtime"
+      },
+      "expected_calls": [
+        {
+          "name": "knowledge_lookup",
+          "args": {
+            "key": "runtime"
+          }
+        }
+      ],
+      "live_eligible": false,
+      "live_expected": null
+    },
+    {
+      "id": "d05",
+      "split": "development",
+      "kind": "run",
+      "tags": [
+        "direct"
+      ],
+      "request": {
+        "mode": "direct",
+        "user_request": "",
+        "tool": {
+          "name": "data_analysis",
+          "args": {
+            "values": [
+              2,
+              4,
+              6
+            ]
+          }
+        }
+      },
+      "expected": {
+        "status": "SUCCESS",
+        "final_result.mean": 4
+      },
+      "expected_calls": [
+        {
+          "name": "data_analysis",
+          "args": {
+            "values": [
+              2,
+              4,
+              6
+            ]
+          }
+        }
+      ],
+      "live_eligible": false,
+      "live_expected": null
+    },
+    {
+      "id": "d06",
+      "split": "development",
+      "kind": "run",
+      "tags": [
+        "direct"
+      ],
+      "request": {
+        "mode": "direct",
+        "user_request": "",
+        "tool": {
+          "name": "http_mock",
+          "args": {
+            "resource": "alpha"
+          }
+        }
+      },
+      "expected": {
+        "status": "SUCCESS",
+        "final_result.value": 10
+      },
+      "expected_calls": [
+        {
+          "name": "http_mock",
+          "args": {
+            "resource": "alpha"
+          }
+        }
+      ],
+      "live_eligible": false,
+      "live_expected": null
+    },
+    {
+      "id": "d07",
+      "split": "development",
+      "kind": "run",
+      "tags": [
+        "validation"
+      ],
+      "request": {
+        "mode": "direct",
+        "tool": {
+          "name": "calculator",
+          "args": {
+            "expression": 7
+          }
+        }
+      },
+      "expected": {
+        "status": "REJECTED",
+        "errors.0.code": "INVALID_ARGUMENTS"
+      },
+      "expected_calls": [
+        {
+          "name": "calculator",
+          "args": {
+            "expression": 7
+          }
+        }
+      ],
+      "live_eligible": false,
+      "live_expected": null
+    },
+    {
+      "id": "d08",
+      "split": "development",
+      "kind": "run",
+      "tags": [
+        "unavailable"
+      ],
+      "request": {
+        "mode": "direct",
+        "tool": {
+          "name": "missing",
+          "args": {}
+        }
+      },
+      "expected": {
+        "status": "REJECTED",
+        "errors.0.code": "UNAVAILABLE_TOOL"
+      },
+      "expected_calls": [
+        {
+          "name": "missing",
+          "args": {}
+        }
+      ],
+      "live_eligible": false,
+      "live_expected": null
+    },
+    {
+      "id": "d09",
+      "split": "held-out",
+      "kind": "run",
+      "tags": [
+        "direct"
+      ],
+      "request": {
+        "mode": "direct",
+        "user_request": "Use calculator to compute 13*17. Return its entire output object.",
+        "tool": {
+          "name": "calculator",
+          "args": {
+            "expression": "13*17"
+          }
+        }
+      },
+      "expected": {
+        "status": "SUCCESS",
+        "final_result.value": 221
+      },
+      "expected_calls": [
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "13*17"
+          }
+        }
+      ],
+      "live_eligible": true,
+      "live_expected": null
+    },
+    {
+      "id": "d10",
+      "split": "held-out",
+      "kind": "run",
+      "tags": [
+        "direct"
+      ],
+      "request": {
+        "mode": "direct",
+        "user_request": "Use SQL to sum inventory quantity, alias the column total. Return the entire tool output.",
+        "tool": {
+          "name": "sql_query",
+          "args": {
+            "query": "SELECT SUM(quantity) AS total FROM inventory"
+          }
+        }
+      },
+      "expected": {
+        "status": "SUCCESS",
+        "final_result.rows.0.total": 47
+      },
+      "expected_calls": [
+        {
+          "name": "sql_query",
+          "args": {
+            "query": "SELECT SUM(quantity) AS total FROM inventory"
+          }
+        }
+      ],
+      "live_eligible": true,
+      "live_expected": null
+    },
+    {
+      "id": "d11",
+      "split": "held-out",
+      "kind": "run",
+      "tags": [
+        "direct"
+      ],
+      "request": {
+        "mode": "direct",
+        "user_request": "Look up the owner knowledge key. Return the entire tool output.",
+        "tool": {
+          "name": "knowledge_lookup",
+          "args": {
+            "key": "owner"
+          }
+        }
+      },
+      "expected": {
+        "status": "SUCCESS",
+        "final_result.text": "Synthetic project owner: Team Atlas."
+      },
+      "expected_calls": [
+        {
+          "name": "knowledge_lookup",
+          "args": {
+            "key": "owner"
+          }
+        }
+      ],
+      "live_eligible": true,
+      "live_expected": null
+    },
+    {
+      "id": "d12",
+      "split": "held-out",
+      "kind": "run",
+      "tags": [
+        "direct"
+      ],
+      "request": {
+        "mode": "direct",
+        "user_request": "Analyze [4,9,14] with data_analysis. Return the entire tool output.",
+        "tool": {
+          "name": "data_analysis",
+          "args": {
+            "values": [
+              4,
+              9,
+              14
+            ]
+          }
+        }
+      },
+      "expected": {
+        "status": "SUCCESS",
+        "final_result.mean": 9,
+        "final_result.sum": 27
+      },
+      "expected_calls": [
+        {
+          "name": "data_analysis",
+          "args": {
+            "values": [
+              4,
+              9,
+              14
+            ]
+          }
+        }
+      ],
+      "live_eligible": true,
+      "live_expected": null
+    },
+    {
+      "id": "r01",
+      "split": "development",
+      "kind": "run",
+      "tags": [
+        "react"
+      ],
+      "request": {
+        "mode": "react",
+        "user_request": "",
+        "mock_script": [
+          {
+            "type": "tool",
+            "name": "calculator",
+            "args": {
+              "expression": "6*7"
+            }
+          },
+          {
+            "type": "final",
+            "result": {
+              "$last_observation": true
+            }
+          }
+        ]
+      },
+      "expected": {
+        "status": "SUCCESS",
+        "final_result.value": 42
+      },
+      "expected_calls": [
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "6*7"
+          }
+        }
+      ],
+      "live_eligible": false,
+      "live_expected": null
+    },
+    {
+      "id": "r02",
+      "split": "development",
+      "kind": "run",
+      "tags": [
+        "react"
+      ],
+      "request": {
+        "mode": "react",
+        "user_request": "",
+        "mock_script": [
+          "not-json",
+          {
+            "type": "tool",
+            "name": "calculator",
+            "args": {
+              "expression": "3+8"
+            }
+          },
+          {
+            "type": "final",
+            "result": {
+              "$last_observation": true
+            }
+          }
+        ]
+      },
+      "expected": {
+        "status": "SUCCESS",
+        "final_result.value": 11,
+        "errors.0.code": "MALFORMED_LLM_OUTPUT"
+      },
+      "expected_calls": [
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "3+8"
+          }
+        }
+      ],
+      "live_eligible": false,
+      "live_expected": null
+    },
+    {
+      "id": "r03",
+      "split": "development",
+      "kind": "run",
+      "tags": [
+        "react"
+      ],
+      "request": {
+        "mode": "react",
+        "user_request": "",
+        "mock_script": [
+          {
+            "type": "tool",
+            "name": "calculator",
+            "args": {}
+          },
+          {
+            "type": "tool",
+            "name": "calculator",
+            "args": {
+              "expression": "4*4"
+            }
+          },
+          {
+            "type": "final",
+            "result": {
+              "$last_observation": true
+            }
+          }
+        ]
+      },
+      "expected": {
+        "status": "SUCCESS",
+        "final_result.value": 16,
+        "errors.0.code": "INVALID_ARGUMENTS"
+      },
+      "expected_calls": [
+        {
+          "name": "calculator",
+          "args": {}
+        },
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "4*4"
+          }
+        }
+      ],
+      "live_eligible": false,
+      "live_expected": null
+    },
+    {
+      "id": "r04",
+      "split": "development",
+      "kind": "run",
+      "tags": [
+        "react"
+      ],
+      "request": {
+        "mode": "react",
+        "user_request": "",
+        "mock_script": [
+          {
+            "type": "tool",
+            "name": "missing",
+            "args": {}
+          },
+          {
+            "type": "tool",
+            "name": "calculator",
+            "args": {
+              "expression": "5+7"
+            }
+          },
+          {
+            "type": "final",
+            "result": {
+              "$last_observation": true
+            }
+          }
+        ]
+      },
+      "expected": {
+        "status": "SUCCESS",
+        "final_result.value": 12
+      },
+      "expected_calls": [
+        {
+          "name": "missing",
+          "args": {}
+        },
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "5+7"
+          }
+        }
+      ],
+      "live_eligible": false,
+      "live_expected": null
+    },
+    {
+      "id": "r05",
+      "split": "development",
+      "kind": "run",
+      "tags": [
+        "react"
+      ],
+      "request": {
+        "mode": "react",
+        "user_request": "",
+        "mock_script": [
+          {
+            "type": "tool",
+            "name": "http_mock",
+            "args": {
+              "scenario": "retry_once"
+            }
+          },
+          {
+            "type": "final",
+            "result": {
+              "$last_observation": true
+            }
+          }
+        ]
+      },
+      "expected": {
+        "status": "SUCCESS",
+        "final_result.value": 10,
+        "tool_call_count": 2
+      },
+      "expected_calls": [
+        {
+          "name": "http_mock",
+          "args": {
+            "scenario": "retry_once"
+          }
+        }
+      ],
+      "live_eligible": false,
+      "live_expected": null
+    },
+    {
+      "id": "r06",
+      "split": "development",
+      "kind": "run",
+      "tags": [
+        "react",
+        "bounded"
+      ],
+      "request": {
+        "mode": "react",
+        "max_steps": 2,
+        "mock_script": [
+          {
+            "type": "tool",
+            "name": "calculator",
+            "args": {
+              "expression": "1"
+            }
+          },
+          {
+            "type": "tool",
+            "name": "calculator",
+            "args": {
+              "expression": "2"
+            }
+          },
+          {
+            "type": "final",
+            "result": {
+              "$last_observation": true
+            }
+          }
+        ]
+      },
+      "expected": {
+        "status": "FAILED",
+        "errors.0.code": "MAX_STEPS"
+      },
+      "expected_calls": [
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "1"
+          }
+        },
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "2"
+          }
+        }
+      ],
+      "live_eligible": false,
+      "live_expected": null
+    },
+    {
+      "id": "r07",
+      "split": "development",
+      "kind": "run",
+      "tags": [
+        "malformed",
+        "failure"
+      ],
+      "request": {
+        "mode": "react",
+        "mock_script": [
+          "bad",
+          "still bad"
+        ]
+      },
+      "expected": {
+        "status": "FAILED",
+        "errors.1.code": "MALFORMED_LLM_OUTPUT"
+      },
+      "expected_calls": [],
+      "live_eligible": false,
+      "live_expected": null
+    },
+    {
+      "id": "r08",
+      "split": "development",
+      "kind": "run",
+      "tags": [
+        "fallback",
+        "recovery"
+      ],
+      "request": {
+        "mode": "react",
+        "mock_script": [],
+        "fallback": {
+          "name": "calculator",
+          "args": {
+            "expression": "10+5"
+          }
+        }
+      },
+      "expected": {
+        "status": "SUCCESS",
+        "final_result.value": 15,
+        "errors.0.code": "LLM_UNAVAILABLE"
+      },
+      "expected_calls": [
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "10+5"
+          }
+        }
+      ],
+      "live_eligible": false,
+      "live_expected": null
+    },
+    {
+      "id": "r09",
+      "split": "held-out",
+      "kind": "run",
+      "tags": [
+        "react"
+      ],
+      "request": {
+        "mode": "react",
+        "user_request": "First use calculator to compute 7*8. Then use calculator to add 9 to that result. Return the entire final tool output.",
+        "mock_script": [
+          {
+            "type": "tool",
+            "name": "calculator",
+            "args": {
+              "expression": "7*8"
+            }
+          },
+          {
+            "type": "tool",
+            "name": "calculator",
+            "args": {
+              "expression": "56+9"
+            }
+          },
+          {
+            "type": "final",
+            "result": {
+              "$last_observation": true
+            }
+          }
+        ]
+      },
+      "expected": {
+        "status": "SUCCESS",
+        "final_result.value": 65
+      },
+      "expected_calls": [
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "7*8"
+          }
+        },
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "56+9"
+          }
+        }
+      ],
+      "live_eligible": true,
+      "live_expected": null
+    },
+    {
+      "id": "r10",
+      "split": "held-out",
+      "kind": "run",
+      "tags": [
+        "react"
+      ],
+      "request": {
+        "mode": "react",
+        "user_request": "Fetch beta using http_mock. Then analyze the list [the fetched value,4,6] with data_analysis. Return the entire analysis output.",
+        "mock_script": [
+          {
+            "type": "tool",
+            "name": "http_mock",
+            "args": {
+              "resource": "beta"
+            }
+          },
+          {
+            "type": "tool",
+            "name": "data_analysis",
+            "args": {
+              "values": [
+                20,
+                4,
+                6
+              ]
+            }
+          },
+          {
+            "type": "final",
+            "result": {
+              "$last_observation": true
+            }
+          }
+        ]
+      },
+      "expected": {
+        "status": "SUCCESS",
+        "final_result.sum": 30,
+        "final_result.mean": 10
+      },
+      "expected_calls": [
+        {
+          "name": "http_mock",
+          "args": {
+            "resource": "beta"
+          }
+        },
+        {
+          "name": "data_analysis",
+          "args": {
+            "values": [
+              20,
+              4,
+              6
+            ]
+          }
+        }
+      ],
+      "live_eligible": true,
+      "live_expected": null
+    },
+    {
+      "id": "r11",
+      "split": "held-out",
+      "kind": "run",
+      "tags": [
+        "react"
+      ],
+      "request": {
+        "mode": "react",
+        "user_request": "Read the retry knowledge key. Return the entire tool output.",
+        "mock_script": [
+          {
+            "type": "tool",
+            "name": "knowledge_lookup",
+            "args": {
+              "key": "retry"
+            }
+          },
+          {
+            "type": "final",
+            "result": {
+              "$last_observation": true
+            }
+          }
+        ]
+      },
+      "expected": {
+        "status": "SUCCESS",
+        "final_result.key": "retry",
+        "final_result.text": "Retry only transient failures of idempotent tools within a bounded budget."
+      },
+      "expected_calls": [
+        {
+          "name": "knowledge_lookup",
+          "args": {
+            "key": "retry"
+          }
+        }
+      ],
+      "live_eligible": true,
+      "live_expected": null
+    },
+    {
+      "id": "r12",
+      "split": "held-out",
+      "kind": "run",
+      "tags": [
+        "react"
+      ],
+      "request": {
+        "mode": "react",
+        "user_request": "Use a parameterized SQL query to get the price of gadget from inventory. Return the entire tool output.",
+        "mock_script": [
+          {
+            "type": "tool",
+            "name": "sql_query",
+            "args": {
+              "query": "SELECT price FROM inventory WHERE item=?",
+              "params": [
+                "gadget"
+              ]
+            }
+          },
+          {
+            "type": "final",
+            "result": {
+              "$last_observation": true
+            }
+          }
+        ]
+      },
+      "expected": {
+        "status": "SUCCESS",
+        "final_result.rows.0.price": 8
+      },
+      "expected_calls": [
+        {
+          "name": "sql_query",
+          "args": {
+            "query": "SELECT price FROM inventory WHERE item=?",
+            "params": [
+              "gadget"
+            ]
+          }
+        }
+      ],
+      "live_eligible": true,
+      "live_expected": null
+    },
+    {
+      "id": "p01",
+      "split": "development",
+      "kind": "run",
+      "tags": [
+        "pipeline",
+        "workflow"
+      ],
+      "request": {
+        "mode": "pipeline",
+        "steps": [
+          {
+            "id": "a",
+            "tool": {
+              "name": "calculator",
+              "args": {
+                "expression": "2+3"
+              }
+            }
+          },
+          {
+            "id": "b",
+            "tool": {
+              "name": "data_analysis",
+              "args": {
+                "values": [
+                  {
+                    "$ref": "a.value"
+                  },
+                  7
+                ]
+              }
+            },
+            "depends_on": [
+              "a"
+            ]
+          }
+        ],
+        "parallel": false
+      },
+      "expected": {
+        "status": "SUCCESS",
+        "final_result.steps.b.value.sum": 12
+      },
+      "expected_calls": [
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "2+3"
+          }
+        },
+        {
+          "name": "data_analysis",
+          "args": {
+            "values": [
+              5,
+              7
+            ]
+          }
+        }
+      ],
+      "live_eligible": false,
+      "live_expected": null
+    },
+    {
+      "id": "p02",
+      "split": "development",
+      "kind": "run",
+      "tags": [
+        "pipeline",
+        "workflow"
+      ],
+      "request": {
+        "mode": "pipeline",
+        "steps": [
+          {
+            "id": "a",
+            "tool": {
+              "name": "http_mock",
+              "args": {
+                "resource": "alpha",
+                "delay_ms": 40
+              }
+            }
+          },
+          {
+            "id": "b",
+            "tool": {
+              "name": "http_mock",
+              "args": {
+                "resource": "beta",
+                "delay_ms": 40
+              }
+            }
+          }
+        ]
+      },
+      "expected": {
+        "status": "SUCCESS",
+        "final_result.steps.b.value.value": 20
+      },
+      "expected_calls": [
+        {
+          "name": "http_mock",
+          "args": {
+            "resource": "alpha",
+            "delay_ms": 40
+          }
+        },
+        {
+          "name": "http_mock",
+          "args": {
+            "resource": "beta",
+            "delay_ms": 40
+          }
+        }
+      ],
+      "live_eligible": false,
+      "live_expected": null
+    },
+    {
+      "id": "p03",
+      "split": "development",
+      "kind": "run",
+      "tags": [
+        "pipeline",
+        "workflow"
+      ],
+      "request": {
+        "mode": "pipeline",
+        "steps": [
+          {
+            "id": "a",
+            "tool": {
+              "name": "calculator",
+              "args": {
+                "expression": "3"
+              }
+            }
+          },
+          {
+            "id": "b",
+            "tool": {
+              "name": "calculator",
+              "args": {
+                "expression": "7"
+              }
+            },
+            "depends_on": [
+              "a"
+            ],
+            "when": {
+              "ref": "a.value",
+              "equals": 3
+            }
+          }
+        ]
+      },
+      "expected": {
+        "status": "SUCCESS",
+        "final_result.steps.b.value.value": 7
+      },
+      "expected_calls": [
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "3"
+          }
+        },
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "7"
+          }
+        }
+      ],
+      "live_eligible": false,
+      "live_expected": null
+    },
+    {
+      "id": "p04",
+      "split": "development",
+      "kind": "run",
+      "tags": [
+        "pipeline",
+        "workflow"
+      ],
+      "request": {
+        "mode": "pipeline",
+        "steps": [
+          {
+            "id": "a",
+            "tool": {
+              "name": "calculator",
+              "args": {
+                "expression": "3"
+              }
+            }
+          },
+          {
+            "id": "b",
+            "tool": {
+              "name": "calculator",
+              "args": {
+                "expression": "7"
+              }
+            },
+            "depends_on": [
+              "a"
+            ],
+            "when": {
+              "ref": "a.value",
+              "equals": 0
+            }
+          }
+        ]
+      },
+      "expected": {
+        "status": "SUCCESS",
+        "final_result.steps.b.status": "SKIPPED"
+      },
+      "expected_calls": [
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "3"
+          }
+        }
+      ],
+      "live_eligible": false,
+      "live_expected": null
+    },
+    {
+      "id": "p05",
+      "split": "development",
+      "kind": "run",
+      "tags": [
+        "pipeline",
+        "workflow"
+      ],
+      "request": {
+        "mode": "pipeline",
+        "steps": [
+          {
+            "id": "bad",
+            "tool": {
+              "name": "missing",
+              "args": {}
+            }
+          },
+          {
+            "id": "ok",
+            "tool": {
+              "name": "calculator",
+              "args": {
+                "expression": "11"
+              }
+            }
+          }
+        ]
+      },
+      "expected": {
+        "status": "FAILED",
+        "final_result.steps.ok.value.value": 11
+      },
+      "expected_calls": [
+        {
+          "name": "missing",
+          "args": {}
+        },
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "11"
+          }
+        }
+      ],
+      "live_eligible": false,
+      "live_expected": null
+    },
+    {
+      "id": "p06",
+      "split": "development",
+      "kind": "run",
+      "tags": [
+        "pipeline",
+        "workflow"
+      ],
+      "request": {
+        "mode": "pipeline",
+        "steps": [
+          {
+            "id": "bad",
+            "tool": {
+              "name": "missing",
+              "args": {}
+            },
+            "optional": true
+          },
+          {
+            "id": "ok",
+            "tool": {
+              "name": "calculator",
+              "args": {
+                "expression": "11"
+              }
+            }
+          }
+        ]
+      },
+      "expected": {
+        "status": "SUCCESS",
+        "final_result.steps.ok.value.value": 11
+      },
+      "expected_calls": [
+        {
+          "name": "missing",
+          "args": {}
+        },
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "11"
+          }
+        }
+      ],
+      "live_eligible": false,
+      "live_expected": null
+    },
+    {
+      "id": "p07",
+      "split": "development",
+      "kind": "run",
+      "tags": [
+        "pipeline",
+        "workflow"
+      ],
+      "request": {
+        "mode": "pipeline",
+        "steps": [
+          {
+            "id": "a",
+            "tool": {
+              "name": "http_mock",
+              "args": {
+                "scenario": "exception"
+              }
+            },
+            "fallback": {
+              "name": "calculator",
+              "args": {
+                "expression": "9"
+              }
+            }
+          }
+        ]
+      },
+      "expected": {
+        "status": "SUCCESS",
+        "final_result.steps.a.value.value": 9
+      },
+      "expected_calls": [
+        {
+          "name": "http_mock",
+          "args": {
+            "scenario": "exception"
+          }
+        },
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "9"
+          }
+        }
+      ],
+      "live_eligible": false,
+      "live_expected": null
+    },
+    {
+      "id": "p08",
+      "split": "development",
+      "kind": "run",
+      "tags": [
+        "pipeline",
+        "workflow"
+      ],
+      "request": {
+        "mode": "pipeline",
+        "steps": [
+          {
+            "id": "a",
+            "tool": {
+              "name": "calculator",
+              "args": {
+                "expression": "1"
+              }
+            }
+          },
+          {
+            "id": "b",
+            "tool": {
+              "name": "data_analysis",
+              "args": {
+                "values": [
+                  {
+                    "$ref": "a.missing"
+                  }
+                ]
+              }
+            },
+            "depends_on": [
+              "a"
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "status": "FAILED",
+        "errors.0.code": "INVALID_REFERENCE"
+      },
+      "expected_calls": [
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "1"
+          }
+        }
+      ],
+      "live_eligible": false,
+      "live_expected": null
+    },
+    {
+      "id": "p09",
+      "split": "held-out",
+      "kind": "run",
+      "tags": [
+        "pipeline",
+        "workflow"
+      ],
+      "request": {
+        "mode": "pipeline",
+        "steps": [
+          {
+            "id": "a",
+            "tool": {
+              "name": "calculator",
+              "args": {
+                "expression": "12"
+              }
+            }
+          },
+          {
+            "id": "b",
+            "tool": {
+              "name": "calculator",
+              "args": {
+                "expression": "18"
+              }
+            }
+          },
+          {
+            "id": "c",
+            "tool": {
+              "name": "data_analysis",
+              "args": {
+                "values": [
+                  {
+                    "$ref": "a.value"
+                  },
+                  {
+                    "$ref": "b.value"
+                  }
+                ]
+              }
+            },
+            "depends_on": [
+              "a",
+              "b"
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "status": "SUCCESS",
+        "final_result.steps.c.value.mean": 15
+      },
+      "expected_calls": [
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "12"
+          }
+        },
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "18"
+          }
+        },
+        {
+          "name": "data_analysis",
+          "args": {
+            "values": [
+              12,
+              18
+            ]
+          }
+        }
+      ],
+      "live_eligible": false,
+      "live_expected": null
+    },
+    {
+      "id": "p10",
+      "split": "held-out",
+      "kind": "run",
+      "tags": [
+        "pipeline",
+        "workflow"
+      ],
+      "request": {
+        "mode": "pipeline",
+        "steps": [
+          {
+            "id": "a",
+            "tool": {
+              "name": "http_mock",
+              "args": {
+                "resource": "gamma"
+              }
+            }
+          },
+          {
+            "id": "yes",
+            "tool": {
+              "name": "calculator",
+              "args": {
+                "expression": "30*2"
+              }
+            },
+            "depends_on": [
+              "a"
+            ],
+            "when": {
+              "ref": "a.value",
+              "equals": 30
+            }
+          },
+          {
+            "id": "no",
+            "tool": {
+              "name": "calculator",
+              "args": {
+                "expression": "0"
+              }
+            },
+            "depends_on": [
+              "a"
+            ],
+            "when": {
+              "ref": "a.value",
+              "equals": 0
+            }
+          }
+        ]
+      },
+      "expected": {
+        "status": "SUCCESS",
+        "final_result.steps.yes.value.value": 60,
+        "final_result.steps.no.status": "SKIPPED"
+      },
+      "expected_calls": [
+        {
+          "name": "http_mock",
+          "args": {
+            "resource": "gamma"
+          }
+        },
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "30*2"
+          }
+        }
+      ],
+      "live_eligible": false,
+      "live_expected": null
+    },
+    {
+      "id": "p11",
+      "split": "held-out",
+      "kind": "run",
+      "tags": [
+        "pipeline",
+        "workflow"
+      ],
+      "request": {
+        "mode": "pipeline",
+        "steps": [
+          {
+            "id": "bad",
+            "tool": {
+              "name": "http_mock",
+              "args": {
+                "scenario": "retry_exhausted"
+              }
+            }
+          },
+          {
+            "id": "child",
+            "tool": {
+              "name": "calculator",
+              "args": {
+                "expression": "1"
+              }
+            },
+            "depends_on": [
+              "bad"
+            ]
+          },
+          {
+            "id": "ok",
+            "tool": {
+              "name": "calculator",
+              "args": {
+                "expression": "4"
+              }
+            }
+          }
+        ]
+      },
+      "expected": {
+        "status": "FAILED",
+        "final_result.steps.child.status": "BLOCKED",
+        "final_result.steps.ok.value.value": 4
+      },
+      "expected_calls": [
+        {
+          "name": "http_mock",
+          "args": {
+            "scenario": "retry_exhausted"
+          }
+        },
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "4"
+          }
+        }
+      ],
+      "live_eligible": false,
+      "live_expected": null
+    },
+    {
+      "id": "p12",
+      "split": "held-out",
+      "kind": "run",
+      "tags": [
+        "pipeline",
+        "workflow"
+      ],
+      "request": {
+        "mode": "pipeline",
+        "steps": [
+          {
+            "id": "a",
+            "tool": {
+              "name": "http_mock",
+              "args": {
+                "scenario": "timeout"
+              }
+            },
+            "fallback": {
+              "name": "http_mock",
+              "args": {
+                "resource": "gamma"
+              }
+            }
+          }
+        ]
+      },
+      "expected": {
+        "status": "SUCCESS",
+        "final_result.steps.a.value.value": 30
+      },
+      "expected_calls": [
+        {
+          "name": "http_mock",
+          "args": {
+            "scenario": "timeout"
+          }
+        },
+        {
+          "name": "http_mock",
+          "args": {
+            "resource": "gamma"
+          }
+        }
+      ],
+      "live_eligible": false,
+      "live_expected": null
+    },
+    {
+      "id": "e01",
+      "split": "development",
+      "kind": "context",
+      "tags": [
+        "context",
+        "retention"
+      ],
+      "request": {
+        "turns": 5,
+        "strategy": "naive",
+        "token_budget": 400
+      },
+      "expected": {
+        "required_facts": 4
+      },
+      "expected_calls": [],
+      "live_eligible": false,
+      "live_expected": null
+    },
+    {
+      "id": "e02",
+      "split": "development",
+      "kind": "context",
+      "tags": [
+        "context",
+        "retention"
+      ],
+      "request": {
+        "turns": 5,
+        "strategy": "structured",
+        "token_budget": 400
+      },
+      "expected": {
+        "required_facts": 4
+      },
+      "expected_calls": [],
+      "live_eligible": false,
+      "live_expected": null
+    },
+    {
+      "id": "e03",
+      "split": "development",
+      "kind": "context",
+      "tags": [
+        "context",
+        "retention"
+      ],
+      "request": {
+        "turns": 10,
+        "strategy": "naive",
+        "token_budget": 400
+      },
+      "expected": {
+        "required_facts": 4
+      },
+      "expected_calls": [],
+      "live_eligible": false,
+      "live_expected": null
+    },
+    {
+      "id": "e04",
+      "split": "development",
+      "kind": "context",
+      "tags": [
+        "context",
+        "retention"
+      ],
+      "request": {
+        "turns": 10,
+        "strategy": "structured",
+        "token_budget": 400
+      },
+      "expected": {
+        "required_facts": 4
+      },
+      "expected_calls": [],
+      "live_eligible": false,
+      "live_expected": null
+    },
+    {
+      "id": "e05",
+      "split": "development",
+      "kind": "context",
+      "tags": [
+        "context",
+        "retention"
+      ],
+      "request": {
+        "turns": 20,
+        "strategy": "naive",
+        "token_budget": 400
+      },
+      "expected": {
+        "required_facts": 4
+      },
+      "expected_calls": [],
+      "live_eligible": false,
+      "live_expected": null
+    },
+    {
+      "id": "e06",
+      "split": "development",
+      "kind": "context",
+      "tags": [
+        "context",
+        "retention"
+      ],
+      "request": {
+        "turns": 20,
+        "strategy": "structured",
+        "token_budget": 400
+      },
+      "expected": {
+        "required_facts": 4
+      },
+      "expected_calls": [],
+      "live_eligible": false,
+      "live_expected": null
+    },
+    {
+      "id": "e07",
+      "split": "development",
+      "kind": "context",
+      "tags": [
+        "context",
+        "retention"
+      ],
+      "request": {
+        "turns": 40,
+        "strategy": "naive",
+        "token_budget": 400
+      },
+      "expected": {
+        "required_facts": 4
+      },
+      "expected_calls": [],
+      "live_eligible": false,
+      "live_expected": null
+    },
+    {
+      "id": "e08",
+      "split": "development",
+      "kind": "context",
+      "tags": [
+        "context",
+        "retention"
+      ],
+      "request": {
+        "turns": 40,
+        "strategy": "structured",
+        "token_budget": 400
+      },
+      "expected": {
+        "required_facts": 4
+      },
+      "expected_calls": [],
+      "live_eligible": false,
+      "live_expected": null
+    },
+    {
+      "id": "e09",
+      "split": "held-out",
+      "kind": "replay",
+      "tags": [
+        "replay"
+      ],
+      "request": {
+        "mode": "direct",
+        "tool": {
+          "name": "calculator",
+          "args": {
+            "expression": "9*9"
+          }
+        }
+      },
+      "expected": {
+        "status": "SUCCESS",
+        "final_result.value": 81
+      },
+      "expected_calls": [
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "9*9"
+          }
+        }
+      ],
+      "live_eligible": false,
+      "live_expected": null
+    },
+    {
+      "id": "e10",
+      "split": "held-out",
+      "kind": "replay",
+      "tags": [
+        "replay",
+        "failure"
+      ],
+      "request": {
+        "mode": "direct",
+        "tool": {
+          "name": "http_mock",
+          "args": {
+            "scenario": "exception"
+          }
+        }
+      },
+      "expected": {
+        "status": "FAILED",
+        "errors.0.code": "TOOL_EXCEPTION"
+      },
+      "expected_calls": [
+        {
+          "name": "http_mock",
+          "args": {
+            "scenario": "exception"
+          }
+        }
+      ],
+      "live_eligible": false,
+      "live_expected": null
+    },
+    {
+      "id": "e11",
+      "split": "held-out",
+      "kind": "run",
+      "tags": [
+        "timeout",
+        "retry"
+      ],
+      "request": {
+        "mode": "direct",
+        "tool": {
+          "name": "http_mock",
+          "args": {
+            "scenario": "timeout"
+          }
+        }
+      },
+      "expected": {
+        "status": "FAILED",
+        "errors.0.code": "RETRY_EXHAUSTED",
+        "errors.0.details.cause": "TOOL_TIMEOUT"
+      },
+      "expected_calls": [
+        {
+          "name": "http_mock",
+          "args": {
+            "scenario": "timeout"
+          }
+        }
+      ],
+      "live_eligible": false,
+      "live_expected": null
+    },
+    {
+      "id": "e12",
+      "split": "held-out",
+      "kind": "run",
+      "tags": [
+        "permission"
+      ],
+      "request": {
+        "mode": "direct",
+        "tool": {
+          "name": "calculator",
+          "args": {
+            "expression": "1"
+          }
+        },
+        "permissions": []
+      },
+      "expected": {
+        "status": "REJECTED",
+        "errors.0.code": "PERMISSION_DENIED"
+      },
+      "expected_calls": [
+        {
+          "name": "calculator",
+          "args": {
+            "expression": "1"
+          }
+        }
+      ],
+      "live_eligible": false,
+      "live_expected": null
+    }
+  ]
+}

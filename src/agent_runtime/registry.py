@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import asyncio
+import inspect
 import time
 from collections.abc import Awaitable, Callable
 from dataclasses import dataclass
@@ -67,7 +68,7 @@ class ToolRegistry:
             raise ValueError(f"duplicate tool: {tool.name}")
         if not 0 < tool.timeout_s <= 120:
             raise ValueError("tool timeout outside (0,120]")
-        if not asyncio.iscoroutinefunction(tool.execute):
+        if not inspect.iscoroutinefunction(tool.execute):
             raise ValueError("execute must be async")
         tool.schema()  # Validate metadata before registration.
         self._tools[tool.name] = tool
